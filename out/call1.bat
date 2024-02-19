@@ -1,0 +1,1 @@
+MattPlot.exe @ -x +"#title Temperatures" +"#header <t[s]><T1\(t\)(t)[K]><T2(t)[1.5K-30]><T3(t)[K]><T4(t)[K]><T5(t)[K]>" +"#ymarker 25" +"#xmarker 1225" "..\tst\dat\Temperatures.dat"

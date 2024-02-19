@@ -1,0 +1,150 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Importing from Matlab</title>
+      <meta name="keywords" content="example: import from Matlab" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="MemDumpPlot.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Examples.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ExportTextToMatlab.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="MemDumpPlot.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ExportTextToMatlab.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Examples" href="Examples.html">Examples</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="MemDumpPlot.html"><span>A memory dump plot</span></a></li>
+                        <li id="current"><a href="ImportFromMatlab.html"><span>Importing from Matlab</span></a></li>
+                        <li><a href="ExportTextToMatlab.html"><span>Exporting text files to Matlab</span></a></li>
+                        <li><a href="ExportToMatlab.html"><span>Exporting to Matlab via m-files</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ImportFromMatlab" title="importing data from matlab and plot">Importing from Matlab</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: import from Matlab" /></object>
+                  
+                  You are working with your math interpreter,
+                  in this example <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a>, and for some reasons
+                  you want to plot some data with <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>.
+                  
+                  
+                  
+                  <h3><a name="ImportFromMatlabSineWave" title="import from matlab a sine wave">A sine wave</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="import from matlab a sine wave" /></object>
+                  
+                  An example on how plot a pair of arrays
+                  exporting them as a text file.<br />
+                  In <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> environment write:
+                  
+                  <pre class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» t = (0:0.1:10)';
+» u = sin(t);
+» tu = [t , u];
+» save ('C:\matdats.txt','tu','-ascii','-double','-tabs')
+</pre>
+                  
+                  The resulting file will be:
+                  
+                  <div class="notepad"> C:\matdats.txt<pre class="notepad">
+  0.0000000000000000e+000	  0.0000000000000000e+000
+  1.0000000000000001e-001	  9.9833416646828155e-002
+  2.0000000000000001e-001	  1.9866933079506122e-001	
+  3.0000000000000004e-001	  2.9552020666133960e-001	
+  4.0000000000000002e-001	  3.8941834230865052e-001	
+  5.0000000000000000e-001	  4.7942553860420301e-001
+  ...
+</pre></div>
+                  
+                  Now you can open it with <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> specifying
+                  to plot second column respect the first, writing:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +"#header &lt;t&gt;&lt;u(t)&gt;" "C:\matdats.txt"
+</pre>
+                  
+                  The chosen columns names <code class="txt">u</code> and <code class="txt">t</code>
+                  are arbitrary.
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="ImportFromMatlabMoreTracks" title="import from matlab a couple of tracks">A couple of tracks</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="import from matlab a couple of tracks" /></object>
+                  
+                  In <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> there is a more general
+                  way to write files, using file handle
+                  and the function <code class="txt">fprintf</code>.
+                  In the following example we write
+                  from <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> a ready to use file that
+                  can be correctly interpreted by <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>
+                  without additional lines.<br />
+                  In <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> environment write:
+                  
+                  <pre class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» N = 1000; % size of tracks
+» t = (0:1/N:1-1/N)'; % an independent variable
+» y1 = wgn(N,1,0); % a white noise
+» y2 = 2*t + 1; % a line
+» T = [t,y1,y2]; % the whole data table
+
+» fid = fopen('C:\matdats2.txt', 'wt');
+» fprintf(fid, '%s\n', '#header &lt;t&gt;&lt;y1(t)&gt;&lt;y2(t)&gt;');
+» fprintf(fid, '%G\t%G\t%G\n', T');
+» fclose(fid);
+</pre>
+                  
+                  The resulting file will be:
+                  
+                  <div class="notepad"> C:\matdats2.txt<pre class="notepad">
+#header &lt;t&gt;&lt;y1(t)&gt;&lt;y2(t)&gt;
+0	-0.0254305	4
+0.001	1.2765	4.002
+0.002	1.33929	4.004
+0.003	-0.0611252	4.006
+0.004	2.33398	4.008
+  ...
+</pre></div>
+                  
+                  This file can be opened
+                  without adding further informations:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot "C:\matdats2.txt"
+</pre>
+                  
+                  
+                  </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

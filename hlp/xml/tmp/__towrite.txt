@@ -1,0 +1,41 @@
+
+Options, shortcuts:
+Due to the way VCL manages ShortCuts,
+you may not use a shift key in
+the ZoomToggle and PanToggle shortcuts!!
+
+You can declare the data labels and units
+and plot them vs the column you want
+with an header preceding the data block
+
+
+
+ESC: exit program
+
+double-click on the form to switch between view mode and
+edit mode.In view mode you can switch between tracks
+(rescaling) with right click or cursor keys; 
+
+Edit mode
+Use CTRL-C,CTRL-V,CTRL-Z to
+copy, paste and edit track data.
+
+You can open file by drag&drop in the main
+form or by cmd line argument:
+
+Changes will be automatically
+saved! Be sure you have a
+backup of the data file
+
+In view mode you can switch between tracks
+(rescaling) with right click or cursor keys;
+you can also rescale all with a common scale
+(CTRL) or with distinct scales but using the
+same axes origin (SHIFT) obtaining an y-shift
+that separates them.
+
+
+
+
+
+

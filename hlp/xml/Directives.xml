@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Directives"
+         title="Parser directives"
+         keywords="advanced parser features,directives"
+         description="some advanced features of text parser"
+         version="0.61" date="oct2010">
+
+    <intro toc="yes">
+        This chapter goes in deep on text format,
+        dealing with the text parser advanced features.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="DirectiveList"
+             title="Available directives"
+             keywords="available directives"
+             description="about available parser directives">
+
+    In text file you can embed other informations
+    than just numbers: &mp; parser supports a
+    syntax to specify parsing options and additional
+    informations on stored data.
+    User can specify informations like:
+
+    <listO>
+      <it>track organization, names, units of measure</it>
+      <it>coding information like decimal separator char or column delimiters</it>
+      <it>parser behaviour: error tolerancy, end of parsing</it>
+      <it>postprocessing on retrieved data (resampling,reordering,rescaling,splitting)</it>
+    </listO>
+
+    Those informations take the form of parser
+    <dfn>directives</dfn> that can be directly embedded
+    in the text stream by the producer itself or
+    passed as command-line argument when launching
+    program (see below and
+    <a href="CommandlineArguments.html">related section</a>).
+
+    Directives syntax is similar to those of <cpp>C</cpp>
+    preprocessor: they consist of a specific keyword
+    prefixed by the special character <txt>#</txt>;
+    they can be eventually followed by a string argument,
+    which consist of the
+    <dfn hint="stripped of starting and ending space chars">trimmed</dfn>
+    string between directive keyword and end of line.
+    Directives must not follow a particular sequence;
+    see below for some examples.
+
+    Supported directives are:
+    <table hcol="1">
+        <thead> <c>Keyword</c> <c>Argument</c> <c>Description</c> <c>Remarks</c> </thead>
+        <row>
+          <c><a href="Header.html"><txt>#header</txt></a></c> <c>string</c>
+          <c>columns informations</c>
+          <c>ordinate-abscissa relations, names, scales, units, delimiters</c>
+        </row>
+        <row>
+          <c><a href="Resample.html"><txt>#resample</txt></a></c> <c>index sequence definition</c>
+          <c>resample and reorder</c>
+          <c>modify samples sequence after
+             parsing; indexes are referred respect
+             shorter column and rescaled for the
+             others; the scope is in the current
+             <a href="TextFormat.html#DataSessionDef">data session</a></c>
+        </row>
+        <row>
+          <c><a href="Split.html"><txt>#split</txt></a></c> <c>sequence of numbers</c>
+          <c>split columns</c>
+          <c>slice proportionally data columns;
+             the scope is in the current
+             <a href="TextFormat.html#DataSessionDef">data session</a></c>
+        </row>
+        <row>
+          <c><txt>#title</txt></c> <c>string</c>
+          <c>title of plot frame</c>
+          <c>shown in plot area;
+             persists between <a href="TextFormat.html#DataSessionDef">data sessions</a></c>
+        </row>
+        <row>
+          <c><txt>#xlabel</txt></c> <c>string</c>
+          <c>abscissa axis label in plot frame</c>
+          <c>shown in plot area in place of current
+             track abscissa label, persists between
+             <a href="TextFormat.html#DataSessionDef">data sessions</a></c>
+        </row>
+        <row>
+          <c><txt>#ylabel</txt></c> <c>string</c>
+          <c>ordinate axis label in plot frame</c>
+          <c>shown in plot area in place of current
+             track ordinate label, persists between
+             <a href="TextFormat.html#DataSessionDef">data sessions</a></c>
+        </row>
+        <row>
+          <c><txt>#xmarker</txt></c> <c>number</c>
+          <c>a vertical line in plot frame
+             at a given abscissa</c>
+          <c>persists between <a href="TextFormat.html#DataSessionDef">data sessions</a>.
+             See <action name="AddMarker"/></c>
+        </row>
+        <row>
+          <c><txt>#ymarker</txt></c> <c>number</c>
+          <c>a horizontal line in plot frame at
+             a given ordinate</c>
+          <c>persists between data sessions.
+             See <action name="AddMarker"/></c>
+        </row>
+        <row>
+          <c><txt>#text</txt></c> <c>(number;number) string</c>
+          <c>a text label in plot frame</c>
+          <c>shown in plot area at given coordinate,
+             persists between <a href="TextFormat.html#DataSessionDef">data sessions</a>.
+             See <action name="AddText"/>.
+             Prefix text string with <txt>+</txt>
+             to show point coordinates.</c>
+        </row>
+        <row>
+          <c><txt>#tolerant</txt></c> <c>bool</c>
+          <c>accept strange numbers</c>
+          <c>like <txt>-.</txt> or <txt>E+</txt> etc...;
+             persists between <a href="TextFormat.html#DataSessionDef">data sessions</a></c>
+        </row>
+        <row>
+          <c><txt>#decimalseparator</txt></c> <c>char</c>
+          <c>declaration of decimal separator char</c>
+          <c>(ex. 1.2 or 1,2) override the global one defined in
+             <option name="DecimalSeparator"/> option;
+             persists between data sessions.
+             This directive neutralizes the curse of infamous
+             <quote>locale settings</quote>
+             </c>
+        </row>
+        <row>
+          <c><txt>#thousandseparator</txt></c> <c>char</c>
+          <c>skipped character in number literals integer part</c>
+          <c>used to ignore the thousand grouping character when
+             converting number literals; use an empty argument
+             to disable; persists between data sessions</c>
+        </row>
+        <row>
+          <c><txt>#strictdelimiter</txt></c> <c>char</c>
+          <c>declare and pretend a rigid data delimiter</c>
+          <c>with empty argument will be taken into account
+             delimiters in header;
+             persists between data sessions</c>
+        </row>
+        <row>
+          <c><txt>#maxlines</txt></c> <c>unsigned int</c>
+          <c>maximum parsed lines</c>
+          <c>parsing will end when line number exceeds
+             this value; external appended lines are not
+             taken into account;
+             persists between data sessions</c>
+        </row>
+        <row>
+          <c><txt>#end</txt></c> <c/>
+          <c>force end parsing</c>
+          <c></c>
+        </row>
+    </table>
+    
+<notepad caption="Directives example">
+#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2(z)&gt;
+#title  Plot1
+#xlabel angles [rad]
+#resample [20:30)[0:20)[30:2:100)
+#split 1|2|1
+#decimalseparator  .
+#thousandseparator  ,
+#tolerant  false
+#strictdelimiter ;
+#xmarker 3.14
+#ymarker 1.5
+/* The following is a text label;
+   prefixing text with + shows
+   point coordinates */
+#text (6.28;1) +Here ends period
+
+// data start here
+1;2;3
+4;5;6
+//...
+</notepad>
+
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Header"
+             title="Header directive"
+             keywords="headers, columns header"
+             description="declaring tracks names, scales, units, links">
+
+    Numbers are not the only information for a plot:
+    generally it is necessary to know who is plotted
+    respect who, and some other facultative things
+    like &track; names, units, etc...
+    These informations are passed with a data header;
+    the syntax adopted by &mp; privileges briefness
+    over standardization (like &XML; format).
+    <br/>
+    With the <txt>header</txt> directive the
+    following information can be specified:
+
+    <listQ>
+        <it>Expected data columns number</it>
+        <it>Strings specifying column names, units of measure and data type</it>
+        <it>Columns relationship (dependent and independent variables, real and imaginary part of a complex &track; -not yet ready-)</it>
+        <it>Linear transformations (scale and offset) on columns</it>
+    </listQ>
+
+    The header argument consists of a string composed
+    by a sequence of data columns delcaration; each
+    declaration is composed by a string enclosed by
+    <kbd hint="U+003C">&lt;</kbd><kbd hint="U+003E">&gt;</kbd>
+    organized as follows:
+    <p><txt>&lt;column_name(plotted_respect)[unit of measure and scaling]&gt;</txt></p>
+    The first string assigns an unique identifier
+    (among the whole file) to the associated
+    data column.
+    Rounded brackets enclose informations about
+    the independent variable; it could be another
+    column name or a rescaled index
+    (self declared independent variable).
+    Squared brackets enclose information about
+    units, scaling and data type.
+
+    <scrap name="label_escape_char">
+        If you desire a column name including
+        brackets, use the escape character
+        <txt>\</txt> as in this example.
+<notepad caption="escape character">
+#header   &lt;z&gt;  &lt;y\(x\)(z)&gt;
+</notepad>
+        This declares a first column named
+        <txt>z</txt> and a second column named
+        <txt>y(x)</txt> plotted respect column
+        <txt>z</txt>.
+    </scrap>
+    
+    I think the best way to introduce header
+    syntax is by examples:
+
+<notepad caption="Basic examples">
+
+
+/* In this header example will be specified that
+   the following data are composed by three
+   columns; the first column is a motor torque
+   that must be plotted respect the second column,
+   a speed, and the third is a current that must be
+   plotted simply respect its samples index, so:
+   .declare three data columns, giving names
+   .plot the first respect the second
+   .plot the third simply by its index            */
+#header &lt;T(w)&gt;&lt;w&gt;&lt;i()&gt;
+0     0    0
+6.32  2    1.24
+...
+
+/* In the following example some information
+   were added:
+   .Torque is measured in tenth of Nm
+   .Speed is measured in rpm
+   .Current is measured in tens of A every 0.5ms  */
+#header &lt;T(w)[0.1Nm]&gt;&lt;w[rpm]&gt;&lt;i([0.5ms])[10A]&gt;
+0     0    0
+6.32  2    1.24
+...
+
+/* In the following example some information
+   were added:
+   .Fix a current offset of -0.7A
+   .The current independent variable is now labeled  't'
+   .Current's measure time 't' starts at 100ms  */
+#header &lt;T(w)[0.1Nm]&gt;&lt;w[rpm]&gt;&lt;i(t[0.5ms+100])[10A-0.7]&gt;
+0     0    0
+6.32  2    1.24
+...
+
+/* There is actually another information you can
+   embed in the data column declaration, its data
+   type: */
+#header &lt;time [4E-3s]&gt;&lt;AnOut[0.1V+0.01|u16|]&gt;
+1  -32768
+2  -32768
+...
+/* The u16 tells that the column is composed by
+   16bit unsigned integers, so -1 will be casted
+   to 65535, -32768 to 32768 and so on */
+</notepad>
+
+    <scrap name="one_column_split">
+        The number of declared column must
+        exactly match the actual number of
+        data columns; the only exception is
+        when there is only one column of data,
+        which will be splitted according to
+        header declaration
+        (see <a href="Split.html">Split directive</a>).
+    </scrap>
+    
+    Here some specifications:
+    <listO>
+      <it>Column declarations are enclosed by &lt;&gt;; characters
+          outside are ignored</it>
+      <it>(not ready) Declaration string can be prefixed and enclosed by {}.
+          <txt>Re</txt> prefix indicates that column is a real part
+          of a complex number, while <txt>Im</txt> indicates the
+          imaginary part (prefixes are case sensitive)</it>
+      <it>A single column declaration is composed by three
+          consecutive parts (spaces are ignored):
+          <listD>
+             <it>Column name (mandatory): an unambiguous label
+                 starting with an alphabetic character</it>
+             <it>Abscissa data (optional): a string enclosed by <txt>()</txt>
+                 indicating that column is an ordinate;
+                 the string can be empty, an existing column label,
+                 or an index scale composed by a rescaling
+                 factor, unit label and offset</it>
+             <it>Unit data (optional): a string composed by
+                 rescaling factor, unit label and an offset
+                 enclosed by <txt>[]</txt> (spaces are ignored).
+                 Here you can append also a data type declaration
+                 such as <txt>|u16|</txt>; <txt>u</txt> stands for
+                 unsigned integer, <txt>i</txt> for signed integer;
+                 this prefix is followed by a bit number.
+                 The effect is that each data is casted to type and
+                 then a bit mask is applied.</it>
+          </listD>
+      </it>
+      <it>Names and units are case sensitive</it>
+      <it>If all columns corresponds to abscissa, they
+          will be converted as indexed ordinates</it>
+    </listO>
+
+
+    <!-- <a onclick="doSection(chars)">(click to show/hide)</a> -->
+    <scrap name="chars"> 
+        The default characters that identify a column field in
+        header are same characters of &XML; tags:
+        <kbd hint="U+003C">&lt;</kbd><kbd hint="U+003E">&gt;</kbd>.
+        As explicit developer choice, user cannot modify this default.
+        Note that initially were adopted the 'guillemet' or french
+        quotation marks
+        <kbd hint="U+00AB">«</kbd> (<lbl hint="U+00AB">Alt+0171</lbl>)
+        <kbd hint="U+00BB">»</kbd> (<lbl hint="U+00BB">Alt+0187</lbl>),
+        but finally this choice was discarded to avoid &ASCII; extension
+        chars.
+    </scrap>
+
+
+<notepad caption="More headers">
+// Note that extra-spaces are simply ignored
+// by the parser.
+
+// plot 'y1' vs 'x' and 'y2' vs 'z'
+#header &lt;x&gt; &lt;y1(x)&gt; &lt;z&gt; &lt;y2(z)&gt;
+
+// plot all vs their ordinal index
+// 'c' is rescaled and measured in 'mm'
+#header &lt; t()&gt; &lt; a() &gt; &lt;b()&gt; &lt;c() [0.1mm]&gt;
+// or in a more concise form:
+#header &lt; t&gt; &lt; a &gt; &lt;b&gt; &lt;c [0.1mm]&gt;
+// Note that the following plots only 'a' vs
+// its idx, because the remaining columns are
+// taken as unused abscissas:
+#header &lt; t&gt; &lt; a() &gt; &lt;b&gt; &lt;c [0.1mm]&gt;
+
+// plot 'a','c' vs 't'; 'b1' vs its index
+#header &lt;t [ms]&gt; &lt;a(t) [cm]&gt; &lt;b1() &gt; &lt;c(t)[Km]&gt;
+
+// plot 'I','v' vs 'r'
+// 'I' is measured in A, rescaled respect 10A,
+// with an offset correction of -0.43A
+#header &lt; I(r)[10A-0.43]&gt; &lt;r [ohm]&gt; &lt;v(r) [V]&gt;
+
+// Different abscissas: a power (acquired in
+// watt) vs current and a voltage vs a
+// different current 'i2'
+#header &lt;i1 [A]&gt; &lt;i2 [A]&gt; &lt; P(i1) [.001KW]&gt;  &lt;v(i2) [V]&gt;
+
+// Index rescaling
+// plot 'x' vs its idx measured in newton,
+// 'y' vs 'csi'
+// 'z' vs its idx multiplied by '0.2 m'
+#header &lt;x([1N])&gt; &lt;y(csi)&gt; &lt;csi [m]&gt; &lt;z([.2m])&gt;
+
+// A synchronized time acquisition of three quantities:
+// 'x' with a sample frequency of 2KHz,
+// 'y' with a sample frequency of 1KHz,
+// 'z' with a sample frequency of 0.5KHz
+#header &lt;x([.5ms])&gt; &lt;y([1ms])&gt; &lt;z([2ms])&gt;
+
+// A feature yet to come: polar plot of complex datas
+// A space vector current (Id,Iq) measured at time 't'
+#header &lt;t[ms]&gt;&lt;Re{I(t)[A]}&gt;&lt;Im{I(t)[A]}&gt;
+
+</notepad>
+
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Split"
+             title="Split directive"
+             keywords="split"
+             description="partitioning data columns">
+
+    The <txt>split</txt> directive allows to
+    partition the original data columns, indicating
+    with a seqeunce of numbers the proportion
+    of slice sizes.
+    For example the file:
+
+<notepad caption="Split example">
+#split 1,4
+   00
+   01
+   02
+   03
+   04
+   05
+   06
+   07
+   08
+   09
+</notepad>
+
+    Is equivalent to:
+<notepad caption="Splitted">
+   00  02
+   01  03
+       04
+       05
+       06
+       07
+       08
+       09
+</notepad>
+
+    This directive is extended also in
+    case of more columns (though I can't
+    figure in which situation this can
+    be useful).
+    The following file:
+<notepad caption="More columns">
+#split 2,1
+   00  10
+   01  11
+   02  12
+   03  13
+   04  14
+   05  15
+</notepad>
+
+    Is equivalent to:
+<notepad caption="Splitted">
+   00  04  10  14
+   01  05  11  15
+   02      12
+   03      13
+</notepad>
+
+    An automatic split is performed
+    when an header declaring more
+    columns as indexed ordinates is
+    followed by a single column of data;
+    in this case the single column will be
+    automatically splitted according to
+    specified indexes scale; for example
+    the file:
+<notepad caption="AutoSplit">
+#header &lt;a([0.5])&gt; &lt;b([1])&gt; &lt;c([2])&gt;
+   00
+   01
+   02
+   03
+   04
+   05
+   06
+</notepad>
+
+    Is equivalent to:
+<notepad caption="AutoSplitted">
+#header &lt;a([0.5])&gt; &lt;b([1])&gt; &lt;c([2])&gt;
+   00  04  06
+   01  05
+   02
+   03
+</notepad>
+
+    Or also, in the equivalent
+    multiple session syntax:
+<notepad caption="AutoSplitted">
+#header &lt;a([0.5])&gt;
+   00
+   01
+   02
+   03
+#header &lt;b([1])&gt;
+   04
+   05
+#header &lt;c([2])&gt;
+   06
+</notepad>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Resample"
+             title="Resample directive"
+             keywords="resample"
+             description="undersampling and reordering data">
+
+    The <txt>resample</txt> directive applies to all
+    retrieved data columns proportionally to their
+    size.
+    It enables a postprocessing activity to reorder
+    and undersample data according to a sequence
+    of indexes provided as argument.
+    A sequence is composed by a chain of intervals,
+    each interval is an arithmetic progression of
+    indexes, characterized by a starting index, a step
+    (1 if not specified) and an ending index.
+    The progression contains always first index but
+    not the ending index; this is denoted by the
+    enclosing brackets that must strictly be <txt>[)</txt>.
+    Indexes start from zero and can be given as
+    hard numbers or sums:
+    <listD>
+        <it><txt>[0:100)</txt> count from 0 to 99 (0,1,2,...99)</it>
+        <it><txt>[6:2:13)</txt> count from 6 to 12 with step 2 (6,8,10,12)</it>
+        <it><txt>[4-1:2+1:10+3)</txt> count from 3 to 12 with step 3 (3,6,9,12)</it>
+    </listD>
+
+    Particular importance has the maximum index,
+    representing the size of data to which indexes
+    are referred.
+    Resample indexes are automatically rescaled
+    (except step) when applied to columns having
+    a different size, so choose wisely the resample
+    argument size to avoid rounding errors.
+
+    The best way to understand how this
+    directive works is to see some examples.
+    Let's see how to reorder some rows:
+
+<notepad caption="Reorder example">
+#resample [3:6)[0:3)[6:10)
+   00  10  20  30
+   01  11  21  31
+   02  12  22  32
+   03  13  23  33
+   04  14  24  34
+   05  15  25  35
+   06  16  26  36
+   07  17  27  37
+   08  18  28  38
+   09  19  29  39
+</notepad>
+
+    Is equivalent to:
+
+<notepad caption="Reordered">
+   03  13  23  33
+   04  14  24  34
+   05  15  25  35
+   00  10  20  30
+   01  11  21  31
+   02  12  22  32
+   06  16  26  36
+   07  17  27  37
+   08  18  28  38
+   09  19  29  39
+</notepad>
+
+    Now let's see what happens with different
+    columns size:
+<notepad caption="Reorder with different sizes">
+#resample [2:5)[0:2)[5:8)
+   100  200  300
+   101  201  301
+   102  202  302
+   103  203  303
+   104  204  304
+   105  205  305
+   106  206  306
+   107  207  307
+   108  208  
+   109  209  
+   110  210  
+   111  211  
+   112  212  
+   113  213  
+   114  214  
+   115  215  
+   116       
+   117       
+   118       
+   119       
+   120       
+   121       
+   122       
+   123       
+   124      
+   125       
+   126
+   127
+   128       
+   129       
+   130       
+   131
+</notepad>
+
+    In this case only the third column
+    match the resample argument size; the other
+    columns are reordered rescaling resample
+    indexes (except step equal to 1); the previous
+    text file is equivalent to:
+
+<notepad caption="Reordered">
+   108  204  302
+   109  205  303
+   110  206  304
+   111  207  300
+   112  208  301
+   113  209  305
+   114  210  306
+   115  211  307
+   116  212
+   117  213
+   118  214
+   119  215
+   100  200
+   101  201
+   102  202
+   103  203
+   104
+   105
+   106
+   107
+   120
+   121
+   122
+   123
+   124
+   125
+   126
+   127
+   128
+   129
+   130
+   131
+</notepad>
+
+    Note that in the previous example no
+    rounding errors on rescaled indexes are
+    occurred:
+    in fact avoid these errors you must refer
+    indexes of resample argument to the
+    greatest common divisor of column sizes.
+    <br/>
+    The <txt>resample</txt> argument notation
+    supports also a <dfn>step</dfn> value; the
+    following example tells &mp; to skip
+    odd rows:
+
+<notepad caption="Undersample example">
+#resample [0:2:10)
+   00  10  20  30
+   01  11  21  31
+   02  12  22  32
+   03  13  23  33
+   04  14  24  34
+   05  15  25  35
+   06  16  26  36
+   07  17  27  37
+   08  18  28  38
+   09  19  29  39
+</notepad>
+
+    Is equivalent to:
+
+<notepad caption="Undersampled">
+   00  10  20  30
+   02  12  22  32
+   04  14  24  34
+   06  16  26  36
+   08  18  28  38
+</notepad>
+
+    The resample feature does not (yet)
+    support fractional steps (this would
+    involve an interpolation function), so
+    at present only undersampling is allowed.
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="StrictDelimiters"
+             title="Strictdelimiters directive"
+             keywords="strict delimiters,rigid delimiters,fussy delimiters"
+             description="indicating a rigid data structure">
+
+    Sometimes you may want a parser more
+    fussy on data delimiters, consider for
+    example the following data:
+
+<notepad caption="a strange acquisition">
+  00  10  20
+  01  11  21
+  02  12  22
+  03  13  23
+      14  24
+      15  25
+      16  26
+          27
+          28
+          29
+</notepad>
+
+    With the default sloppy delimiters policy
+    the file would be actually interpreted as:
+
+<notepad caption="equivocation">
+  00  10  20
+  01  11  21
+  02  12  22
+  03  13  23
+  14  24
+  15  25
+  16  26
+  27
+  28
+  29
+</notepad>
+
+    This is a consequence of the ambiguous
+    delimiter definition, which does not
+    provide any knowledge on columns position.
+    It is possible overcome this problem in two
+    ways: the first trivial workaround is
+    rearranging columns in this way:
+
+<notepad caption="rearranged">
+  20   10   00
+  21   11   01
+  22   12   02
+  23   13   03
+  24   14
+  25   15
+  26   16
+  27
+  28          
+  29
+</notepad>
+
+    The second solution is declare a precise
+    column delimiter, telling the parser to
+    strictly expect a rigid data structure:
+
+<notepad caption="forcing a rigid format">
+ #strictdelimiter ;
+ 00 ; 10 ; 20
+ 01 ; 11 ; 21
+ 02 ; 12 ; 22
+ 03 ; 13 ; 23
+ ; 14 ; 24
+ ; 15 ; 25
+ ; 16 ; 26
+ ; ; 27
+ ; ; 28
+ ; ; 29
+</notepad>
+
+    Now parser is aware of empty columns, so
+    column <ex>0</ex> will contain only four
+    numbers.
+    Note that spaces between delimiters
+    and numbers are still allowed, while spaces
+    between numbers will result in an
+    invalid number error.
+
+    As explicit developer choice the declared
+    data delimiter must strictly be one
+    <cpp>char</cpp>: a <cpp>string</cpp>
+    delimiter would be a useless waste of space
+    and parsing complexity.
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="CommandlineDirectives"
+             title="Directives in command line arguments"
+             keywords="directives as arguments"
+             description="passing directives as command line argument">
+
+    Directives can be embedded directly in the
+    data file or, in case of need, temporarily
+    appended using program arguments passed through
+    command line.
+    You can append additional lines at the top
+    of a file that is going to be opened passing
+    them before the file path argument, for
+    example, given a file:
+
+<notepad caption="data.dat">
+ 00  10  20  30
+ 02  12  22  32
+</notepad>
+
+    Calling program in this way:
+
+<cmdline>
+C:\> MattPlot "+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" "+#tolerant true" data.dat
+</cmdline>
+
+    Has the same effect of opening this file:
+
+<notepad caption="data.dat">
+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;
+#tolerant true
+ 00  10  20  30
+ 02  12  22  32
+</notepad>
+
+    <!--....................................-->
+    <subsection name="CmdDirsTypicalErrs"
+	            title="Typical errors"
+	            keywords="command line directives typical errors">
+
+    Now a survey of typical errors.
+    Sequence error:
+<cmdline>
+C:\> MattPlot data.dat "+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" "+#tolerant true"
+C:\> ??ERROR: no file to append directives
+
+C:\> MattPlot "+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" "+#tolerant true" data.dat
+C:\> Ok
+</cmdline>
+
+    Space in arguments error:
+<cmdline>
+C:\> MattPlot +#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt; +#tolerant true data.dat
+C:\> ??ERROR: what are `&lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;´ and `true´?
+
+C:\> MattPlot +"#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" +"#tolerant true" data.dat
+C:\> Ok
+</cmdline>
+
+    <HHseealso>
+        <target title="Spaces in program arguments" href="ProgramArguments.html#SpaceInArgs"/>
+    </HHseealso>
+    
+    </subsection>
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

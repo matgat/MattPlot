@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Customizing"
+         title="Customizing"
+         keywords="customization, program options"
+         description="about program customization, options description"
+         version="0.6" date="nov2008">
+
+    <intro toc="yes">
+        This chapter describes the way you
+        can customize &mp; program.
+    </intro>
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="HowCustomize"
+             title="How it works"
+             keywords="customizing (how it works)"
+             description="about the way this program manage its options">
+
+    Informations that must last over one execution
+    time (you can call them options) are stored in
+    <dir>.ini</dir> files.
+
+    <scrap name="DragOptions" title="Reading options">
+        You can force &mp; to read an option
+        <dir>.ini</dir> file opening it with
+        <action name="Open"/> action
+        or by drag-and-drop on program window.
+    </scrap>
+
+    As you will see in the
+    <a href="OptionFile.html">next section</a>,
+    there is a special <dir>.ini</dir> file
+    placed in program directory having the
+    fixed name <dir>MattPlot.ini</dir>, read
+    at each program execution.
+    
+    <scrap name="EditingOptions" title="Inspect options">
+        The best way to get familiar with
+        &mp; costumization is inspecting
+        and editing manually the option file:
+        trigger the <action name="EditOptions"/> action.
+    </scrap>
+
+    Initally no option file is present: &mp;
+    tries to read it but fails, and in the end it
+    uses its embedded default values.
+    User can create the option file triggering
+    <action name="StoreOptions"/> or
+    <action name="EditOptions"/> actions;
+    the obtained file can then be edited,
+    customizing program.
+    Refer to <a href="OptionsDescription.html">options table</a>
+    to see available options.
+
+    <scrap name="CustomizationExamples" title="Customization examples">
+        You can try some customization examples choosing
+        <a href="ActionsTable.html"><img src="./files/images/actions/Style.gif"/>&nbsp;style actions</a>;
+        <listD>
+            <it>Change style triggering for example <action name="SetStylePSpice"/></it>
+            <it>Overwrite the <a href="OptionFile.html">option file</a> triggering <action name="StoreOptions"/></it>
+            <it>Now analyze and edit <dir>MattPlot.ini</dir></it>
+        </listD>
+    </scrap>
+
+    <scrap name="RestoringOptions" title="Restoring a default option file">
+        In case of damaged or incomplete option file
+        you can restore it following these steps:
+        <listD>
+            <it>Close all instances of &mp;</it>
+            <it>Launch &mp;</it>
+            <it>Delete current <dir>MattPlot.ini</dir> file</it>
+            <it>Activate <action name="StoreOptions"/> action</it>
+            <it><dir>MattPlot.ini</dir> is restored</it>
+        </listD>
+
+        If you want to recreate a default option
+        repeat the previous steps removing the file
+        <dir>MattPlot.ini</dir> before launching
+        program, or alternatively use <action name="SetDefaults"/>
+        and <action name="StoreOptions"/> actions.
+    </scrap>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="OptionFile"
+             title="The option file"
+             keywords="option file"
+             description="on option file">
+
+    At each execution &mp; searches in
+    its directory the options <dir>ini</dir> file
+    having the fixed name <dir>MattPlot.ini</dir>;
+    this file allows user to customize the program.
+    When the option file is missing, the program will
+    use default values (the log warns about this
+    occurrence).
+    To read again the <dir>ini</dir> file use
+    <action name="ReadOptions"/> action, or drag
+    it in the program form.
+    Note that some settings may apply only at
+    next program run.
+
+
+    <!--....................................-->
+    <subsection name="IniFormat"
+	            title="The ini file format"
+	            keywords="ini format">
+
+    Initialization file, or <dfn>ini</dfn> file, is a
+    text file format introduced by &microsoft; to store
+    configuration data in a flexible way.
+    This format is constituted by three elements:
+    sections, parameters and comments; each parameter
+    definition comprises name and value.
+
+<notepad>
+[section1]
+
+; a comment
+name1=value1
+
+[section2]
+
+name2=value2
+name3=value3
+</notepad>
+
+    <scrap name="escapesequencesinini">
+        &mp; has an its own <dfn>ini</dfn> parser
+        implementation that may differ from standard
+        behaviour; depending on types, sometimes value strings
+        are trimmed (removing of leading-trailing spaces and
+        control characters).
+        In such cases you must use quoted strings and escape
+        sequences to specify special strings like:
+<notepad caption="an entry with ctrl chars">
+somedelims="\ \t\n\r"
+</notepad>
+    </scrap>
+
+    </subsection>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="OptionsDescription"
+             title="Options description"
+             keywords="options description"
+             description="description of available options">
+
+
+        <table>
+
+            <thead> <c>Name</c> <c>Description</c> <c>Notes</c> </thead>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">General</c></row>
+
+            <row>
+                <c><a name="optDefaultDir">DefaultDir</a></c>
+                <c>Default directory</c>
+                <c>`usr´ for user dir (home), `exe´ for exe dir, or an explicit path</c>
+            </row>
+
+            <row>
+                <c><a name="optTempDir">TempDir</a></c>
+                <c>Temporary files directory</c>
+                <c>`sys´ to set system temp dir <dir>%TEMP%\~MattPlot\</dir>,
+                   `exe´ for exe dir <dir>.\~MattPlot\</dir>, or an explicit path;
+                   requires program restart</c>
+            </row>
+
+            <row>
+                <c><a name="optPromptOverwrite">PromptOverwrite</a></c>
+                <c>Ask when writing on an existing file</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+            
+            <row>
+                <c><a name="optDeleteTemp">DeleteTemp</a></c>
+                <c>Delete temp files on enter and exit</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optPlaySound">PlaySound</a></c>
+                <c>Enable/disable sound effects</c>
+                <c>Not always available, "noisy" releases only</c>
+            </row>
+            
+            <row>
+                <c><a name="optFloatPrecision">FloatPrecision</a></c>
+                <c>Precision of displayed numbers</c>
+                <c>An idea on precision of numbers, when no
+                   other criterion can be applied</c>
+            </row>
+
+            <row>
+                <c><a name="optFloatDigits">FloatDigits</a></c>
+                <c>Digits of displayed numbers</c>
+                <c>Actually used for minimum digit of exponential part</c>
+            </row>
+            
+            <row>
+                <c><a name="optMacro">Macro</a></c>
+                <c>A predefined macro</c>
+                <c>See also <action name="ExecMacro"/></c>
+            </row>
+
+            <row>
+                <c><a name="optDevelopMode">DevelopMode</a></c>
+                <c>Enable work-in-progress features</c>
+                <c>Like logarithmic scales...</c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">MainForm</c></row>
+
+            <row>
+                <c><a name="optFormColor">FormColor</a></c>
+                <c>Background color of main form</c>
+                <c></c>
+            </row>
+            
+            <row>
+                <c><a name="optToolsColor">ToolsColor</a></c>
+                <c>Background color of tools</c>
+                <c>Like <a href="PlotTree.html">Plot tree</a> or <a href="PaneGrid.html">Pane grid</a> </c>
+            </row>
+
+            <row>
+                <c><a name="optEnableMainMenu">EnableMainMenu</a></c>
+                <c>Application main menu visible or not</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+            
+            <row>
+                <c><a name="optEnableToolbar">EnableToolbar</a></c>
+                <c>Application toolbar visible or not</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optToolbar">Toolbar</a></c>
+                <c>Toobar buttons</c>
+                <c>A comma delimited sequence of strings: get action names
+                   from <a href="ActionsTable.html">actions table</a> or
+                   from hints in the statusbar; use <txt>SEP</txt> or <txt>DIV</txt>
+                   to put separators</c>
+            </row>
+
+            <row>
+                <c><a name="optObjectMenu">ObjectMenu</a></c>
+                <c>General object contextual menu</c>
+                <c>Put comma separated <a href="ActionsTable.html">action</a>
+                   names, use `SEP´ or `DIV´ to create button groups</c>
+            </row>
+            
+            <row>
+                <c><a name="optFrameMenu">FrameMenu</a></c>
+                <c>Frame contextual menu</c>
+                <c>Put comma separated <a href="ActionsTable.html">action</a>
+                   names, use `SEP´ or `DIV´ to create button groups</c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackMenu">TrackMenu</a></c>
+                <c>Track contextual menu</c>
+                <c>Put comma separated <a href="ActionsTable.html">action</a>
+                   names, use `SEP´ or `DIV´ to create button groups</c>
+            </row>
+
+            <row>
+                <c><a name="optLogSite">LogSite</a></c>
+                <c>Initial position of Log</c>
+                <c>Docked `Bottom´,`Right´ or `Floating´;
+                   you can then drag and dock it</c>
+            </row>
+            
+            <row>
+                <c><a name="optPaneSite">PaneSite</a></c>
+                <c>Initial position of <a name="PaneGrid.html">pane grid</a></c>
+                <c>Docked `Bottom´,`Right´ or `Floating´;
+                   you can then drag and dock it</c>
+            </row>
+
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header"><a name="optImporter">Importer</a></c></row>
+
+            <row>
+                <c><a name="optDecimalSeparator">DecimalSeparator</a></c>
+                <c>Decimal separator char in float strings</c>
+                <c>Type `?´ for locale settings</c>
+            </row>
+            
+            <row>
+                <c><a name="optThousandSeparator">ThousandSeparator</a></c>
+                <c>Thousand separator char in float strings</c>
+                <c>Type `?´ for locale settings, or an improbable char
+                   to throw errors even if local thousand separator
+                   is encountered</c>
+            </row>
+
+            <row>
+                <c><a name="optExpectedDelimiters">ExpectedDelimiters</a></c>
+                <c>Expected data delimiter characters (other than space chars)</c>
+                <c>Used to detect invalid numbers</c>
+            </row>
+            
+            <row>
+                <c><a name="optExcludePattern">ExcludePattern</a></c>
+                <c>A file mask that identifies ignored files</c>
+                <c>Used when analyzing files contained in a directory</c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Exporter</c></row>
+
+            <row>
+                <c><a name="optDataDelimiter">DataDelimiter</a></c>
+                <c>Columns delimiter when exporting to text</c>
+                <c>A character</c>
+            </row>
+
+            <row>
+                <c><a name="optPrintInfoText">PrintInfoText</a></c>
+                <c>Print also an info string in page header</c>
+                <c>The string should include program name and current date-time</c>
+            </row>
+            
+            <row>
+                <c><a name="optPrintMargin">PrintMargin</a></c>
+                <c>Print page margin</c>
+                <c>An integer percentage (%) of page size</c>
+            </row>
+
+            <row>
+                <c><a name="optMetafileMagnification">MetafileMagnification</a></c>
+                <c>Metafile canvas dimension magnification
+                   respect screen canvas</c>
+                <c>Augment this integer value to enhance metafile
+                   resolution, but beware: this increases its
+                   size and processing time</c>
+            </row>
+            
+            <row>
+                <c><a name="optSnapshotAction">SnapshotAction</a></c>
+                <c><action name="Snapshot"/> action effects</c>
+                <c>Choose between `1´=save as gif, `2´=copy emf to clipboard, `3´=both</c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Plot</c></row>
+
+            <row>
+                <c><a name="optFirstMode">FirstMode</a></c>
+                <c>Initial plot mode</c>
+                <c>Choose between `SelectMode´, `EditMode´,
+                   `PanMode´, `ZoomMode´, `MeasureMode´ or `PenMode´</c>
+            </row>
+            
+            <row>
+                <c><a name="optSampPerPix">SampPerPix</a></c>
+                <c>Maximum rendered samples per screen pixel</c>
+                <c>Decrease it to enhance plot performance;
+                   may decrease data sampling frequency,
+                   so pay attention to aliasing</c>
+            </row>
+            
+            <row>
+                <c><a name="optTimeout">Timeout</a></c>
+                <c>Plot draw operation timeout [s]</c>
+                <c>If draw takes too much time, abort</c>
+            </row>
+
+            <row>
+                <c><a name="optLagThreshold">LagThreshold</a></c>
+                <c>Plot Canvas repainting time slowness threshold</c>
+                <c>When exceeded countermeasures can be taken,
+                   like tracks undersampling</c>
+            </row>
+
+            <row>
+                <c><a name="optPlotMargin">PlotMargin</a></c>
+                <c>Margin between frames</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optPlotFont">PlotFont</a></c>
+                <c>Font for title, legend, etc</c>
+                <c>String format is: family,size,color(hex),style
+                   example: <txt>Verdana,12,0x0,b</txt></c>
+            </row>
+            
+            <row>
+                <c><a name="optMarkCurrentFrame">MarkCurrentFrame</a></c>
+                <c>Make current frame recognizable in plot area</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Frames</c></row>
+
+            <row>
+                <c><a name="optPlotAlsoOnMargins">PlotAlsoOnMargins</a></c>
+                <c>Extend plot area to frame lateral margins</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optCenterTitle">CenterTitle</a></c>
+                <c>Center frame title</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optTitleMag">TitleMag</a></c>
+                <c>Frame title font magnification</c>
+                <c>A percentage</c>
+            </row>
+
+            <row>
+                <c><a name="optFrameBorder">FrameBorder</a></c>
+                <c>Border width of frames</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optFrameMarginX">FrameMarginX</a></c>
+                <c>Frames internal horizontal margin</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optFrameMarginY">FrameMarginY</a></c>
+                <c>Frames internal vertical margin</c>
+                <c>A value in pixels</c>
+            </row>
+
+            <row>
+                <c><a name="optFrameColor">FrameColor</a></c>
+                <c>Default background color of new frames</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´
+                   To have a transparent background put the
+                   same color of <txt>PlotFont</txt></c>
+            </row>
+
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Axes</c></row>
+            
+            <row>
+                <c><a name="optAxesColor">AxesColor</a></c>
+                <c>Color of axes</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+            
+            <row>
+                <c><a name="optCenterAxesLabels">CenterAxesLabels</a></c>
+                <c>Center x y labels</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+            
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Legend</c></row>
+
+            <row>
+                <c><a name="optLegendSpacing">LegendSpacing</a></c>
+                <c>Lines and border spacing</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optLegendStrokeLength">LegendStrokeLength</a></c>
+                <c>Length of track stroke</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optLegendColor">LegendColor</a></c>
+                <c>Legend background</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´
+                   To have a transparent background put the
+                   same color of <txt>PlotFont</txt></c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Grid</c></row>
+
+            <row>
+                <c><a name="optVGridDist">VGridDist</a></c>
+                <c>Desired vertical grid lines distance</c>
+                <c>A value in pixels</c>
+            </row>
+
+            <row>
+                <c><a name="optHGridDist">HGridDist</a></c>
+                <c>Desired horizontal grid lines distance</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optVGridDivs">VGridDivs</a></c>
+                <c>Vertical grid divisions (increasing order)</c>
+                <c>A sequence of numbers</c>
+            </row>
+
+            <row>
+                <c><a name="optHGridDivs">HGridDivs</a></c>
+                <c>Horizontal grid divisions (increasing order)</c>
+                <c>A sequence of numbers</c>
+            </row>
+
+            <row>
+                <c><a name="optGridLinesStyle">GridLinesStyle</a></c>
+                <c>Style of grid lines</c>
+                <c>A string between `___´, `_&nbsp;_´, `...´, `_._´, `_..´</c>
+            </row>
+
+            <row>
+                <c><a name="optGridColor">GridColor</a></c>
+                <c>Color of grid lines</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+            
+            <row>
+                <c><a name="optLabelFont">LabelFont</a></c>
+                <c>Font of grid labels</c>
+                <c>String format is: family,size,color(hex),style
+                   example: <txt>Small Fonts,6,0x0</txt></c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Tracks</c></row>
+            
+            <row>
+                <c><a name="optTrackLineWeight">TrackLineWeight</a></c>
+                <c>Track lines default width [pix]</c>
+                <c>Generally a value grater than one
+                   causes performance worsening and
+                   force solid style</c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackLineColorSeed">TrackLineColorSeed</a></c>
+                <c>Line color of first track</c>
+                <c>Used by automatic track color generator;
+                   following colors depend on this value</c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackLineStyle">TrackLineStyle</a></c>
+                <c>Style of tracks lines</c>
+                <c>A string between `___´, `_&nbsp;_´, `...´, `_._´, `_..´</c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackPointStyle">TrackPointStyle</a></c>
+                <c>Shape of tracks point marks</c>
+                <c>A char between `x´, `o´, `+´, `q´</c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackPointSize">TrackPointSize</a></c>
+                <c>Size of tracks point marks</c>
+                <c>Point marks half size [pix] is given by:
+                   <txt>TrackPointSize ·TrackLineWeight +2</txt></c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackMarkPoints">TrackMarkPoints</a></c>
+                <c>Mark each track point</c>
+                <c>Choose between `true´ or `false´; see also <action name="MarkPoints"/></c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackShowCoords">TrackShowCoords</a></c>
+                <c>Show point coordinates</c>
+                <c>Choose between `true´ or `false´; see also <action name="ShowCoords"/></c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackCoordsDist">TrackCoordsDist</a></c>
+                <c>Show point coordinates minimum dinstance</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackStrokeLines">TrackStrokeLines</a></c>
+                <c>Draw lines between track points</c>
+                <c>Choose between `true´ or `false´; see also <action name="StrokeLines"/></c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackFillArea">TrackFillArea</a></c>
+                <c>Fill track subtended area</c>
+                <c>Choose between `true´ or `false´; see also <action name="FillArea"/></c>
+            </row>
+            
+            <row>
+                <c><a name="optTrackDrawHistograms">TrackDrawHistograms</a></c>
+                <c>Draw a rectangle for each point</c>
+                <c>Choose between `true´ or `false´; see also <action name="DrawHistograms"/></c>
+            </row>
+
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">Markers</c></row>
+            
+            <row>
+                <c><a name="optMarkerLineWeight">MarkerLineWeight</a></c>
+                <c>Marker line thickness [pix]</c>
+                <c>Markers are vertical or horizontal lines
+                   passing through a fixed value</c>
+            </row>
+            
+            <row>
+                <c><a name="optMarkerLineColor">MarkerLineColor</a></c>
+                <c>Line color of markers</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+            
+            <row>
+                <c><a name="optMarkerLineStyle">MarkerLineStyle</a></c>
+                <c>Style of marker lines</c>
+                <c>A string between `___´, `_&nbsp;_´, `...´, `_._´, `_..´</c>
+            </row>
+
+            
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">SelectMode</c></row>
+
+            <row>
+                <c><a name="optMarkColor">MarkColor</a></c>
+                <c>Color of zone marker</c>
+                <c>When you drag a frame</c>
+            </row>
+
+            <row>
+                <c><a name="optMarkZoneStyle">MarkZoneStyle</a></c>
+                <c>How filling zones while dragging frames</c>
+                <c>A string between `##´, `´, `//´, `\\´, `xx´, `==´, `||´, `++´</c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">PanMode</c></row>
+
+            <row>
+                <c><a name="optDefaultPan">DefaultPan</a></c>
+                <c>Default pan when using cursor keys</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optCoastingTau">CoastingTau</a></c>
+                <c>Frame coasting motion time constant (inertia/friction) in [ms]</c>
+                <c>An integer; put 0 to disable coasting motion</c>
+            </row>
+            
+            <row>
+                <c><a name="optContinuousPan">ContinuousPan</a></c>
+                <c>Pan speed vs displacement</c>
+                <c>An integer representing the ratio between
+                   the pixel shift done in one second respect the
+                   cursor displacement</c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header"><a name="optZoomMode">ZoomMode</a></c></row>
+
+            <row>
+                <c><a name="optSuddenZoom">SuddenZoom</a></c>
+                <c>Zoom immediately after dragging rectangle
+                   without wait the further click inside</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optZoomPerc">ZoomPerc</a></c>
+                <c>Default zoom in/out percentage ratio [%]</c>
+                <c>A number</c>
+            </row>
+
+            <row>
+                <c><a name="optSelRectLineStyle">SelRectLineStyle</a></c>
+                <c>Style of selection rectangle lines</c>
+                <c>These are used for zoom/crop rectangle and continuous pan direction</c>
+            </row>
+            
+            <row>
+                <c><a name="optSelRectLineColor">SelRectLineColor</a></c>
+                <c>Color of selection rectangle lines</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+            
+            <row>
+                <c><a name="optSelRectAreaColor">SelRectAreaColor</a></c>
+                <c>Color of selection rectangle area</c>
+                <c>Put the same value of <txt>SelRectLineColor</txt> to have a transparent area</c>
+            </row>
+
+
+            
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">MeasureMode</c></row>
+
+            <row>
+                <c><a name="optViewAbscissaLine">ViewAbscissaLine</a></c>
+                <c>View measuring abscissa line</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optViewOrdinateLine">ViewOrdinateLine</a></c>
+                <c>View measuring ordinate line</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optViewSlopeLine">ViewSlopeLine</a></c>
+                <c>View measuring slope line</c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+
+            <row>
+                <c><a name="optMeasureLinesStyle">MeasureLinesStyle</a></c>
+                <c>Style of measuring lines</c>
+                <c>A string between `___´, `_&nbsp;_´, `...´, `_._´, `_..´</c>
+            </row>
+            
+            <row>
+                <c><a name="optMeasureLinesColor">MeasureLinesColor</a></c>
+                <c>Color of measure lines</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+
+            <row>
+                <c><a name="optMeasureMarkers">MeasureMarkers</a></c>
+                <c>Quantities linked to measure markers
+                   enabled with <action name="ViewMeasureMarkers"/></c>
+                <c>Put a list of strings of
+                   <a href="PaneGrid.html">measured quantities</a></c>
+            </row>
+            
+            <row>
+                <c><a name="optAutoPane">AutoPane</a></c>
+                <c>Auto show/hide <a href="PaneGrid.html">pane grid</a>
+                   (<action name="ShowPane"/>) at <action name="MeasureMode"/></c>
+                <c>Choose between `true´ or `false´</c>
+            </row>
+            
+            <row>
+                <c><a name="optPaneQuantities">PaneQuantities</a></c>
+                <c>Set here initial configuration of
+                   displayed quantities in <a href="PaneGrid.html">pane grid</a></c>
+                <c>Choose between the strings listed in
+                   <a href="PaneGrid.html">measure quantities description</a></c>
+            </row>
+
+            
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header">PenMode</c></row>
+
+            <row>
+                <c><a name="optPencilSize">PencilSize</a></c>
+                <c>Pencil line weight</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optPencilColor">PencilColor</a></c>
+                <c>Color of pencil</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+            
+            <row>
+                <c><a name="optHighlighterSize">HighlighterSize</a></c>
+                <c>Highlighter size</c>
+                <c>A value in pixels</c>
+            </row>
+            
+            <row>
+                <c><a name="optHighlighterColor">HighlighterColor</a></c>
+                <c>Color of highlighter</c>
+                <c>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</c>
+            </row>
+
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header"><a name="optPlotKeys">PlotKeys</a></c></row>
+
+            <row>
+                <c>PanToggle, ... , Right</c>
+                <c>Plot actions keys</c>
+                <c>Put a single-key identificative string.
+                   See <a href="PlotActions.html">plot keys table</a>
+                   for a detailed description</c>
+            </row>
+
+            <!-- ************************************************ -->
+            <row><c colspan="3" class="header"><a name="optShortCuts">ShortCuts</a></c></row>
+
+            <row>
+                <c>EditOptions, ... , Exit</c>
+                <c>Main interface actions shortcuts</c>
+                <c>Put a shortcut identificative string
+                   (example: ALT+d); note that those strings
+                   depend on locale settings; see
+                   <a href="_KeyCodes.html">virtual key codes table</a></c>
+            </row>
+
+        </table>
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

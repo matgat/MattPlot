@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE chapter SYSTEM "./sty/xhelp.dtd">
+<?xml-stylesheet type="text/xml" media="screen" href="./sty/xhelp2html.xsl"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *    encoding is windows-1252 instead of ISO-8859-1
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<help title="MattPlot help"
+      description="this is the MattPlot program help source"
+      version="0.61" date="nov2008"
+      default="Welcome"
+      xmlns="/mattplot/xhelp">
+
+      <!-- Chapters (set here sequence) -->
+      &Welcome;
+      &ReleaseNotes;
+      &GeneralInfo;
+      &Interface;
+      &Running;
+      &Importing;
+      &Directives;
+      &Viewing;
+      &Editing;
+      &Exporting;
+      &Customizing;
+      &UserTips;
+      &Examples;
+      &Development;
+
+      <!-- Scraps -->
+      &_MainForm;
+      &_Layouts;
+      &_KeyCodes;
+</help>
+<!--_______________________End_of_file______________________-->

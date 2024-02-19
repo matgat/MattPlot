@@ -1,0 +1,709 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Main actions</title>
+      <meta name="keywords" content="actions (main interface)" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="PlotObjects.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Interface.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="PlotActions.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="PlotObjects.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="PlotActions.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Interface" href="Interface.html">Interface</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="PlotObjects.html"><span>Plot objects</span></a></li>
+                        <li id="current"><a href="ActionsTable.html"><span>Main actions</span></a></li>
+                        <li><a href="PlotActions.html"><span>Plot actions</span></a></li>
+                        <li><a href="MainForm.html"><span>The main form</span></a></li>
+                        <li><a href="KeyBindings.html"><span>Default key bindings</span></a></li>
+                        <li><a href="PaneGrid.html"><span>The pane grid</span></a></li>
+                        <li><a href="Log.html"><span>The activity log</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ActionsTable" title="services provided by main interface">Main actions</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="actions (main interface)" /></object>
+                  
+                  
+                  An <code class="txt">action</code> is an implementation-useful concept
+                  indicating a generic service provided by the program,
+                  like <code class="txt">save</code> or <code class="txt">quit</code>.
+                  Users can request an action interacting with program
+                  interface (menu,toolbar,keyboard shortcuts).
+                  Note that we will distinguish between actions provided
+                  by main program interface and actions provided by the
+                  plot subsystem.
+                  
+                  The following table collects the services provided by
+                  the main interface.
+                  Most actions require an argument: a target <dfn title="tracks container">Frame</dfn> or
+                  <dfn title="set of points">Track</dfn>.
+                  To view actual shortcuts associated to plot actions
+                  look in your
+                  	<a href="OptionFile.html" title="OptionFile.html"><var title="">MattPlot.ini</var></a>
+                  	file.
+                  	The following table collects all user available
+                  actions.
+                  
+                  
+                  <table class="actions">
+                     <thead>
+                        <tr>
+                           <td></td>
+                           <td>Name</td>
+                           <td>Description</td>
+                           <td>Note</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="header" colspan="4">File</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actOpen" title="actOpen"><img src="./files/images/actions/Open.gif" title="" style=""
+                                      alt="[./files/images/actions/Open.gif]" /></a></td>
+                           <td><code class="txt">Open</code></td>
+                           <td>Open a plot or data file</td>
+                           <td>You can also drag the files into the form</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/Save.gif" title="" style=""
+                                   alt="[./files/images/actions/Save.gif]" /></td>
+                           <td><code class="txt">Save</code></td>
+                           <td>Save current plot as <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> file
+                           </td>
+                           <td>Current data and plot layout will be saved</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actExport" title="actExport"><img src="./files/images/actions/Export.gif" title="" style=""
+                                      alt="[./files/images/actions/Export.gif]" /></a></td>
+                           <td><code class="txt">Export</code></td>
+                           <td>Export current plot to a given format</td>
+                           <td>This is generally a lossy, irreversible transformation,
+                              see <a href="Exporting.html" title="Exporting.html">Exporting section</a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actExportFrameToText" title="actExportFrameToText"><img src="./files/images/actions/ExportFrameToText.gif" title="" style=""
+                                      alt="[./files/images/actions/ExportFrameToText.gif]" /></a></td>
+                           <td><code class="txt">ExportFrameToText</code></td>
+                           <td>Export current <dfn title="tracks container">Frame</dfn> tracks to a text file
+                           </td>
+                           <td>This is a shortcut of the more general <code class="txt">ExportFrame</code></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actExportFrameToMatlab" title="actExportFrameToMatlab"><img src="./files/images/actions/ExportFrameToMatlab.gif" title="" style=""
+                                      alt="[./files/images/actions/ExportFrameToMatlab.gif]" /></a></td>
+                           <td><code class="txt">ExportFrameToMatlab</code></td>
+                           <td>Export data to <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> workspace via <var title="">m-file</var></td>
+                           <td>This is a shortcut of the more general <code class="txt">ExportFrame</code></td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/Print.gif" title="" style=""
+                                   alt="[./files/images/actions/Print.gif]" /></td>
+                           <td><code class="txt">Print</code></td>
+                           <td>Print current plot bitmap</td>
+                           <td>See <a href="Printing.html" title="Printing.html">printing section</a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actEditOptions" title="actEditOptions"><img src="./files/images/actions/EditOptions.gif" title="" style=""
+                                      alt="[./files/images/actions/EditOptions.gif]" /></a></td>
+                           <td><code class="txt">EditOptions</code></td>
+                           <td>Edit the <var title="">ini</var> file containing the non volatile application settings
+                           </td>
+                           <td>Avoid to put this action in the toolbar, since
+                              it calls <code class="txt">ReadOptions</code></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actReadOptions" title="actReadOptions"><img src="./files/images/actions/ReadOptions.gif" title="" style=""
+                                      alt="[./files/images/actions/ReadOptions.gif]" /></a></td>
+                           <td><code class="txt">ReadOptions</code></td>
+                           <td>Parse the <var title="">ini</var> file
+                           </td>
+                           <td>Useful when you change the ini file with an external
+                              editor; it rebuilds toolbar, so cannot be launched
+                              from there
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actStoreOptions" title="actStoreOptions"><img src="./files/images/actions/StoreOptions.gif" title="" style=""
+                                      alt="[./files/images/actions/StoreOptions.gif]" /></a></td>
+                           <td><code class="txt">StoreOptions</code></td>
+                           <td>Save current options in the <var title="">ini</var> file
+                           </td>
+                           <td>Useful to recreate a default <a href="OptionFile.html" title="OptionFile.html"><var title="">MattPlot.ini</var></a>
+                              when missing
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actSetDefaults" title="actSetDefaults"><img src="./files/images/actions/SetDefaults.gif" title="" style=""
+                                      alt="[./files/images/actions/SetDefaults.gif]" /></a></td>
+                           <td><code class="txt">SetDefaults</code></td>
+                           <td>Reset options to default values</td>
+                           <td>Has the same effect of restarting program without <a href="OptionFile.html" title="OptionFile.html"><var title="">MattPlot.ini</var></a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actSetStylePlain" title="actSetStylePlain"><img src="./files/images/actions/SetStylePlain.gif" title="" style=""
+                                      alt="[./files/images/actions/SetStylePlain.gif]" /></a></td>
+                           <td><code class="txt">SetStylePlain</code></td>
+                           <td>A style example; this style is good for printing</td>
+                           <td>Use <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a> and see <a href="OptionFile.html" title="OptionFile.html"><var title="">MattPlot.ini</var></a> to view these customizations
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actSetStylePSpice" title="actSetStylePSpice"><img src="./files/images/actions/SetStylePSpice.gif" title="" style=""
+                                      alt="[./files/images/actions/SetStylePSpice.gif]" /></a></td>
+                           <td><code class="txt">SetStylePSpice</code></td>
+                           <td>A style example</td>
+                           <td>Use <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a> and see <a href="OptionFile.html" title="OptionFile.html"><var title="">MattPlot.ini</var></a> to view these customizations
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actExit" title="actExit"><img src="./files/images/actions/Exit.gif" title="" style=""
+                                      alt="[./files/images/actions/Exit.gif]" /></a></td>
+                           <td><code class="txt">Exit</code></td>
+                           <td>Quit program</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Plot</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/SelectMode.gif" title="" style=""
+                                   alt="[./files/images/actions/SelectMode.gif]" /></td>
+                           <td><a href="SelectMode.html" name="actSelectMode" title="SelectMode.html"><code class="txt">SelectMode</code></a></td>
+                           <td>Switch to select mode</td>
+                           <td>
+                              In this mode you can modify plot layout by
+                              dragging, adding or deleting frames and tracks
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/EditMode.gif" title="" style=""
+                                   alt="[./files/images/actions/EditMode.gif]" /></td>
+                           <td><a href="EditMode.html" name="actEditMode" title="EditMode.html"><code class="txt">EditMode</code></a></td>
+                           <td>Switch to edit mode</td>
+                           <td>
+                              In this mode you can modify tracks;
+                              currently it includes only a crop tool
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/PanMode.gif" title="" style=""
+                                   alt="[./files/images/actions/PanMode.gif]" /></td>
+                           <td><a href="PanMode.html" name="actPanMode" title="PanMode.html"><code class="txt">PanMode</code></a></td>
+                           <td>Switch to pan mode</td>
+                           <td>In this mode you can modify <dfn title="tracks container">Frame</dfn> mapped space offset
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/ZoomMode.gif" title="" style=""
+                                   alt="[./files/images/actions/ZoomMode.gif]" /></td>
+                           <td><a href="ZoomMode.html" name="actZoomMode" title="ZoomMode.html"><code class="txt">ZoomMode</code></a></td>
+                           <td>Switch to zoom mode</td>
+                           <td>In this mode you can modify <dfn title="tracks container">Frame</dfn> mapped space scale
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/MeasureMode.gif" title="" style=""
+                                   alt="[./files/images/actions/MeasureMode.gif]" /></td>
+                           <td><a href="MeasureMode.html" name="actMeasureMode" title="MeasureMode.html"><code class="txt">MeasureMode</code></a></td>
+                           <td>Switch to measure mode</td>
+                           <td>In this mode you can perform simple measures on tracks</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/PenMode.gif" title="" style=""
+                                   alt="[./files/images/actions/PenMode.gif]" /></td>
+                           <td><a href="PenMode.html" name="actPenMode" title="PenMode.html"><code class="txt">PenMode</code></a></td>
+                           <td>Switch to pen mode</td>
+                           <td>In this mode you can scribble on plot canvas;
+                              those marks will be cleaned at next refresh, however
+                              they remains on prints and snapshoots
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actLockX" title="actLockX"><img src="./files/images/actions/LockX.gif" title="" style=""
+                                      alt="[./files/images/actions/LockX.gif]" /></a></td>
+                           <td><code class="txt">LockX</code></td>
+                           <td>Synchronize frames abscissa scale</td>
+                           <td>Operations on current <dfn title="tracks container">Frame</dfn> are reflected on the others,
+                              useful when comparing more frames
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actLockY" title="actLockY"><img src="./files/images/actions/LockY.gif" title="" style=""
+                                      alt="[./files/images/actions/LockY.gif]" /></a></td>
+                           <td><code class="txt">LockY</code></td>
+                           <td>Synchronize frames ordinate scale</td>
+                           <td>Operations on current <dfn title="tracks container">Frame</dfn> are reflected on the others,
+                              useful when comparing more frames
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actClearAll" title="actClearAll"><img src="./files/images/actions/ClearAll.gif" title="" style=""
+                                      alt="[./files/images/actions/ClearAll.gif]" /></a></td>
+                           <td><code class="txt">ClearAll</code></td>
+                           <td>Remove all frames and <dfn title="set of points">Track</dfn>, emptying the plot
+                           </td>
+                           <td>This action cannot be undone</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actSnapshot" title="actSnapshot"><img src="./files/images/actions/Snapshot.gif" title="" style=""
+                                      alt="[./files/images/actions/Snapshot.gif]" /></a></td>
+                           <td><code class="txt">Snapshot</code></td>
+                           <td>Take a plot bitmap snapshot and save in
+                              current directory with a default name
+                           </td>
+                           <td>This overwrites last snapshot
+                              See also <a href="OptionsDescription.html#optSnapshotAction" title="option SnapshotAction"><code class="txt">SnapshotAction</code></a> option
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actRefresh" title="actRefresh"><img src="./files/images/actions/Refresh.gif" title="" style=""
+                                      alt="[./files/images/actions/Refresh.gif]" /></a></td>
+                           <td><code class="txt">Refresh</code></td>
+                           <td>Force a repaint of plot canvas</td>
+                           <td>Useful when you want to remove volatile scribbles</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actMeasureAbscissa" title="actMeasureAbscissa"><img src="./files/images/actions/MeasureAbscissa.gif" title="" style=""
+                                      alt="[./files/images/actions/MeasureAbscissa.gif]" /></a></td>
+                           <td><code class="txt">MeasureAbscissa</code></td>
+                           <td>Enable instant abscissa measure</td>
+                           <td>Affects only measure mode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actMeasureOrdinate" title="actMeasureOrdinate"><img src="./files/images/actions/MeasureOrdinate.gif" title="" style=""
+                                      alt="[./files/images/actions/MeasureOrdinate.gif]" /></a></td>
+                           <td><code class="txt">MeasureOrdinate</code></td>
+                           <td>Enable instant ordinate measure</td>
+                           <td>Affects only measure mode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actMeasureSlope" title="actMeasureSlope"><img src="./files/images/actions/MeasureSlope.gif" title="" style=""
+                                      alt="[./files/images/actions/MeasureSlope.gif]" /></a></td>
+                           <td><code class="txt">MeasureSlope</code></td>
+                           <td>Enable instant slope measure</td>
+                           <td>Affects only measure mode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actViewMeasureMarkers" title="actViewMeasureMarkers"><img src="./files/images/actions/ViewMeasureMarkers.gif" title="" style=""
+                                      alt="[./files/images/actions/ViewMeasureMarkers.gif]" /></a></td>
+                           <td><code class="txt">ViewMeasureMarkers</code></td>
+                           <td>Display measure markers</td>
+                           <td>See also <a href="MeasureMode.html" title="MeasureMode.html"><code class="txt">measure mode</code></a> and
+                              <a href="OptionsDescription.html#optMeasureMarkers" title="option MeasureMarkers"><code class="txt">MeasureMarkers</code></a> option
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actProperties" title="actProperties"><img src="./files/images/actions/Properties.gif" title="" style=""
+                                      alt="[./files/images/actions/Properties.gif]" /></a></td>
+                           <td><code class="txt">Properties</code></td>
+                           <td>Edit generic object properties</td>
+                           <td>Applies on last clicked object</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actRemove" title="actRemove"><img src="./files/images/actions/Remove.gif" title="" style=""
+                                      alt="[./files/images/actions/Remove.gif]" /></a></td>
+                           <td><code class="txt">Remove</code></td>
+                           <td>Remove the current selected object</td>
+                           <td>Applies on last clicked object</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actStayOnTop" title="actStayOnTop"><img src="./files/images/actions/StayOnTop.gif" title="" style=""
+                                      alt="[./files/images/actions/StayOnTop.gif]" /></a></td>
+                           <td><code class="txt">StayOnTop</code></td>
+                           <td>Keep the program <a href="MainForm" title="MainForm">main form</a> always visible
+                           </td>
+                           <td>Force main form to stay on top (z order) when focusing other forms</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actExecMacro" title="actExecMacro"><img src="./files/images/actions/ExecMacro.gif" title="" style=""
+                                      alt="[./files/images/actions/ExecMacro.gif]" /></a></td>
+                           <td><code class="txt">ExecMacro</code></td>
+                           <td>Execute the macro defined in <a href="OptionsDescription.html#optMacro" title="option Macro"><code class="txt">Macro</code></a> option entry
+                           </td>
+                           <td>Not yet implemented</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Frame</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actAddFrame" title="actAddFrame"><img src="./files/images/actions/AddFrame.gif" title="" style=""
+                                      alt="[./files/images/actions/AddFrame.gif]" /></a></td>
+                           <td><code class="txt">AddFrame</code></td>
+                           <td>Create a new empty <dfn title="tracks container">Frame</dfn></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actRemoveFrame" title="actRemoveFrame"><img src="./files/images/actions/RemoveFrame.gif" title="" style=""
+                                      alt="[./files/images/actions/RemoveFrame.gif]" /></a></td>
+                           <td><code class="txt">RemoveFrame</code></td>
+                           <td>Delete a frame</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn>; same effect of dragging <dfn title="tracks container">Frame</dfn> outside the form
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actFrameProperties" title="actFrameProperties"><img src="./files/images/actions/FrameProperties.gif" title="" style=""
+                                      alt="[./files/images/actions/FrameProperties.gif]" /></a></td>
+                           <td><code class="txt">FrameProperties</code></td>
+                           <td>Edit frame properties</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actClearFrame" title="actClearFrame"><img src="./files/images/actions/ClearFrame.gif" title="" style=""
+                                      alt="[./files/images/actions/ClearFrame.gif]" /></a></td>
+                           <td><code class="txt">ClearFrame</code></td>
+                           <td>Remove all <dfn title="set of points">Track</dfn> in current <dfn title="tracks container">Frame</dfn></td>
+                           <td>This action cannot be undone</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actAddMarker" title="actAddMarker"><img src="./files/images/actions/AddMarker.gif" title="" style=""
+                                      alt="[./files/images/actions/AddMarker.gif]" /></a></td>
+                           <td><code class="txt">AddMarker</code></td>
+                           <td>Insert a vertical/horizontal line at a given value</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actAddText" title="actAddText"><img src="./files/images/actions/AddText.gif" title="" style=""
+                                      alt="[./files/images/actions/AddText.gif]" /></a></td>
+                           <td><code class="txt">AddText</code></td>
+                           <td>Insert a text label at given coordinates</td>
+                           <td>Single line text (no word wrap),
+                              applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actGotoOrigin" title="actGotoOrigin"><img src="./files/images/actions/GotoOrigin.gif" title="" style=""
+                                      alt="[./files/images/actions/GotoOrigin.gif]" /></a></td>
+                           <td><code class="txt">GotoOrigin</code></td>
+                           <td>Force space offset to view frame axes origin</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actFitToAxes" title="actFitToAxes"><img src="./files/images/actions/FitToAxes.gif" title="" style=""
+                                      alt="[./files/images/actions/FitToAxes.gif]" /></a></td>
+                           <td><code class="txt">FitToAxes</code></td>
+                           <td>Change <dfn title="tracks container">Frame</dfn> scale to fit all contained <dfn title="set of points">Track</dfn>s and axes
+                           </td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actFitToTracks" title="actFitToTracks"><img src="./files/images/actions/FitToTracks.gif" title="" style=""
+                                      alt="[./files/images/actions/FitToTracks.gif]" /></a></td>
+                           <td><code class="txt">FitToTracks</code></td>
+                           <td>Change <dfn title="tracks container">Frame</dfn> scale to fit all contained <dfn title="set of points">Track</dfn>s
+                           </td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actFitToTrack" title="actFitToTrack"><img src="./files/images/actions/FitToTrack.gif" title="" style=""
+                                      alt="[./files/images/actions/FitToTrack.gif]" /></a></td>
+                           <td><code class="txt">FitToTrack</code></td>
+                           <td>Change <dfn title="tracks container">Frame</dfn> scale to fit current <dfn title="set of points">Track</dfn></td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actZoomIn" title="actZoomIn"><img src="./files/images/actions/ZoomIn.gif" title="" style=""
+                                      alt="[./files/images/actions/ZoomIn.gif]" /></a></td>
+                           <td><code class="txt">ZoomIn</code></td>
+                           <td>Change scale to map less space (zoom in)</td>
+                           <td>This default zoom is introduced to follow some
+                              users practice; it would be better use the quick
+                              toggle to zoom mode
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actZoomOut" title="actZoomOut"><img src="./files/images/actions/ZoomOut.gif" title="" style=""
+                                      alt="[./files/images/actions/ZoomOut.gif]" /></a></td>
+                           <td><code class="txt">ZoomOut</code></td>
+                           <td>Change scale to map more space (zoom out)</td>
+                           <td>Same as previous</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actToggleScaleX" title="actToggleScaleX"><img src="./files/images/actions/ToggleScaleX.gif" title="" style=""
+                                      alt="[./files/images/actions/ToggleScaleX.gif]" /></a></td>
+                           <td><code class="txt">ToggleScaleX</code></td>
+                           <td>Use linear or logarithmic scale for abscissa axis</td>
+                           <td><code class="cpp">x=KX+X0 / x=KLogX+X1</code></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actToggleScaleY" title="actToggleScaleY"><img src="./files/images/actions/ToggleScaleY.gif" title="" style=""
+                                      alt="[./files/images/actions/ToggleScaleY.gif]" /></a></td>
+                           <td><code class="txt">ToggleScaleY</code></td>
+                           <td>Use linear or logarithmic scale for ordinate axis</td>
+                           <td><code class="cpp">y=KY+Y0 / y=KLogY+Y1</code></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actLegendToggle" title="actLegendToggle"><img src="./files/images/actions/LegendToggle.gif" title="" style=""
+                                      alt="[./files/images/actions/LegendToggle.gif]" /></a></td>
+                           <td><code class="txt">LegendToggle</code></td>
+                           <td>Show/hide legend</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn>; you can also drag legend
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actGridToggle" title="actGridToggle"><img src="./files/images/actions/GridToggle.gif" title="" style=""
+                                      alt="[./files/images/actions/GridToggle.gif]" /></a></td>
+                           <td><code class="txt">GridToggle</code></td>
+                           <td>Show/hide grid</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actGridMore" title="actGridMore"><img src="./files/images/actions/GridMore.gif" title="" style=""
+                                      alt="[./files/images/actions/GridMore.gif]" /></a></td>
+                           <td><code class="txt">GridMore</code></td>
+                           <td>Thicken (shrink) grid lines</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actGridLess" title="actGridLess"><img src="./files/images/actions/GridLess.gif" title="" style=""
+                                      alt="[./files/images/actions/GridLess.gif]" /></a></td>
+                           <td><code class="txt">GridLess</code></td>
+                           <td>Thin (expand) grid lines</td>
+                           <td>Applies on current <dfn title="tracks container">Frame</dfn></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Track</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actAddTrack" title="actAddTrack"><img src="./files/images/actions/AddTrack.gif" title="" style=""
+                                      alt="[./files/images/actions/AddTrack.gif]" /></a></td>
+                           <td><code class="txt">AddTrack</code></td>
+                           <td>Create a new <dfn title="set of points">Track</dfn> in current <dfn title="tracks container">Frame</dfn></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actRemoveTrack" title="actRemoveTrack"><img src="./files/images/actions/RemoveTrack.gif" title="" style=""
+                                      alt="[./files/images/actions/RemoveTrack.gif]" /></a></td>
+                           <td><code class="txt">RemoveTrack</code></td>
+                           <td>Delete current <dfn title="set of points">Track</dfn></td>
+                           <td>Same effect of dragging <dfn title="set of points">Track</dfn> outside the form
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actTrackProperties" title="actTrackProperties"><img src="./files/images/actions/TrackProperties.gif" title="" style=""
+                                      alt="[./files/images/actions/TrackProperties.gif]" /></a></td>
+                           <td><code class="txt">TrackProperties</code></td>
+                           <td>Edit <dfn title="set of points">Track</dfn> properties
+                           </td>
+                           <td>Applies on current <dfn title="set of points">Track</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actMarkPoints" title="actMarkPoints"><img src="./files/images/actions/MarkPoints.gif" title="" style=""
+                                      alt="[./files/images/actions/MarkPoints.gif]" /></a></td>
+                           <td><code class="txt">MarkPoints</code></td>
+                           <td>Plot <dfn title="set of points">Track</dfn> marking its points
+                           </td>
+                           <td>See also <a href="OptionsDescription.html#optTrackPointSize" title="option TrackPointSize"><code class="txt">TrackPointSize</code></a> option
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actShowCoords" title="actShowCoords"><img src="./files/images/actions/ShowCoords.gif" title="" style=""
+                                      alt="[./files/images/actions/ShowCoords.gif]" /></a></td>
+                           <td><code class="txt">ShowCoords</code></td>
+                           <td>Show <dfn title="set of points">Track</dfn> points coordinates
+                           </td>
+                           <td>Coordinates are shown when point distance is greater than
+                              the value set in <a href="OptionsDescription.html#optTrackCoordsDist"
+                                 title="option TrackCoordsDist"><code class="txt">TrackCoordsDist</code></a> option
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actStrokeLines" title="actStrokeLines"><img src="./files/images/actions/StrokeLines.gif" title="" style=""
+                                      alt="[./files/images/actions/StrokeLines.gif]" /></a></td>
+                           <td><code class="txt">StrokeLines</code></td>
+                           <td>Plot <dfn title="set of points">Track</dfn> drawing linear interpolation lines
+                           </td>
+                           <td>Applies on current <dfn title="set of points">Track</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actFillArea" title="actFillArea"><img src="./files/images/actions/FillArea.gif" title="" style=""
+                                      alt="[./files/images/actions/FillArea.gif]" /></a></td>
+                           <td><code class="txt">FillArea</code></td>
+                           <td>Plot <dfn title="set of points">Track</dfn> filling subtended area
+                           </td>
+                           <td>Applies on current <dfn title="set of points">Track</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actDrawHistograms" title="actDrawHistograms"><img src="./files/images/actions/DrawHistograms.gif" title="" style=""
+                                      alt="[./files/images/actions/DrawHistograms.gif]" /></a></td>
+                           <td><code class="txt">DrawHistograms</code></td>
+                           <td>Plot <dfn title="set of points">Track</dfn> painting a rectangle for each point
+                           </td>
+                           <td>Applies on current <dfn title="set of points">Track</dfn></td>
+                        </tr>
+                        <tr>
+                           <td><a name="actTrackData" title="actTrackData"><img src="./files/images/actions/TrackData.gif" title="" style=""
+                                      alt="[./files/images/actions/TrackData.gif]" /></a></td>
+                           <td><code class="txt">TrackData</code></td>
+                           <td>Edit <dfn title="set of points">Track</dfn> data manually
+                           </td>
+                           <td>See <a href="EditTrackData.html#ManualEdit" title="EditTrackData.html#ManualEdit">here</a> for details
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actTrackTransform" title="actTrackTransform"><img src="./files/images/actions/TrackTransform.gif" title="" style=""
+                                      alt="[./files/images/actions/TrackTransform.gif]" /></a></td>
+                           <td><code class="txt">TrackTransform</code></td>
+                           <td>Apply a transformation on current <dfn title="set of points">Track</dfn></td>
+                           <td>For example <a href="EditTrackData.html#UsingEditMode"
+                                 title="EditTrackData.html#UsingEditMode">cropping</a>
+                              or filtering;
+                              see <a href="Transforming.html" title="Transforming.html">Transforming</a> section
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actTrackStatistics" title="actTrackStatistics"><img src="./files/images/actions/TrackStatistics.gif" title="" style=""
+                                      alt="[./files/images/actions/TrackStatistics.gif]" /></a></td>
+                           <td><code class="txt">TrackStatistics</code></td>
+                           <td>Display current <dfn title="set of points">Track</dfn> quantities
+                           </td>
+                           <td>Relative to overall domain, applies on current <dfn title="set of points">Track</dfn></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Tools</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actShowTree" title="actShowTree"><img src="./files/images/actions/ShowTree.gif" title="" style=""
+                                      alt="[./files/images/actions/ShowTree.gif]" /></a></td>
+                           <td><code class="txt">ShowTree</code></td>
+                           <td>Show plot tree of contained frames and tracks</td>
+                           <td>Drag and drop should be enabled; 
+                              remember that you can also modify plot
+                              layout switching to
+                              <a href="SelectMode.html" title="SelectMode.html">Select mode</a>
+                              and drag frames and tracks with mouse
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actShowPane" title="actShowPane"><img src="./files/images/actions/ShowPane.gif" title="" style=""
+                                      alt="[./files/images/actions/ShowPane.gif]" /></a></td>
+                           <td><code class="txt">ShowPane</code></td>
+                           <td>Show/hide a control that displays measured
+                              quantities relative to selected <dfn title="set of points">Track</dfn></td>
+                           <td>Use it with <a href="MeasureMode.html" title="MeasureMode.html">Measure mode</a>.
+                              See also <a href="OptionsDescription.html#optAutoPane" title="option AutoPane"><code class="txt">AutoPane</code></a> option.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actShowLog" title="actShowLog"><img src="./files/images/actions/ShowLog.gif" title="" style=""
+                                      alt="[./files/images/actions/ShowLog.gif]" /></a></td>
+                           <td><code class="txt">ShowLog</code></td>
+                           <td>Toggle log window</td>
+                           <td>Log is useful to know what is happening</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actCompute" title="actCompute"><img src="./files/images/actions/Compute.gif" title="" style=""
+                                      alt="[./files/images/actions/Compute.gif]" /></a></td>
+                           <td><code class="txt">Compute</code></td>
+                           <td>Elaboration tool: perform operations between tracks</td>
+                           <td>Not yet available</td>
+                        </tr>
+                        <tr>
+                           <td><a name="actTextEditor" title="actTextEditor"><img src="./files/images/actions/TextEditor.gif" title="" style=""
+                                      alt="[./files/images/actions/TextEditor.gif]" /></a></td>
+                           <td><code class="txt">TextEditor</code></td>
+                           <td>Run an instance of embedded text editor</td>
+                           <td>Take advantage of syntax highlighting to edit
+                              data or ini files
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="actAbort" title="actAbort"><img src="./files/images/actions/Abort.gif" title="" style=""
+                                      alt="[./files/images/actions/Abort.gif]" /></a></td>
+                           <td><code class="txt">Abort</code></td>
+                           <td>Stop current long-time action</td>
+                           <td>Typically when importing or computing a large
+                              amount of data.
+                              Advice: remember its keyboard shortcut!
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Help</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/Update.gif" title="" style=""
+                                   alt="[./files/images/actions/Update.gif]" /></td>
+                           <td><code class="txt">Update</code></td>
+                           <td>Manually check for updates</td>
+                           <td>This simply opens current <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> web site
+                              address in your default browser
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/Demo.gif" title="" style=""
+                                   alt="[./files/images/actions/Demo.gif]" /></td>
+                           <td><code class="txt">Demo</code></td>
+                           <td>Add some frames and tracks to demonstrate program capabilities</td>
+                           <td>Use this for training purposes</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/ExperimentalStuff.gif" title="" style=""
+                                   alt="[./files/images/actions/ExperimentalStuff.gif]" /></td>
+                           <td><code class="txt">ExperimentalStuff</code></td>
+                           <td>Another demo with ugly stuff</td>
+                           <td>Not recommended features</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/HelpContents.gif" title="" style=""
+                                   alt="[./files/images/actions/HelpContents.gif]" /></td>
+                           <td><code class="txt">HelpContents</code></td>
+                           <td>Opens this file</td>
+                           <td>Shortcut is fixed to <code class="txt">F1</code>.
+                              Uses <cite>HtmlHelp</cite> library
+                              (see <a href="OnHelp.html" title="OnHelp.html">here</a>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/About.gif" title="" style=""
+                                   alt="[./files/images/actions/About.gif]" /></td>
+                           <td><code class="txt">About</code></td>
+                           <td>Display program informations</td>
+                           <td>Also contains a simplified performance indicator</td>
+                        </tr>
+                        <tr>
+                           <td><img src="./files/images/actions/EasterEgg.gif" title="" style=""
+                                   alt="[./files/images/actions/EasterEgg.gif]" /></td>
+                           <td><code class="txt">EasterEgg</code></td>
+                           <td></td>
+                           <td>Ehmm...</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

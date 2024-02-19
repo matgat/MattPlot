@@ -1,0 +1,241 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>On this file and help system</title>
+      <meta name="keywords" content="help file,help authoring details" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Development.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ImplementationDetails.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ImplementationDetails.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Development" href="Development.html">Development</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="OnHelp.html"><span>On this file and help system</span></a></li>
+                        <li><a href="ImplementationDetails.html"><span>Implementation details</span></a></li>
+                        <li><a href="ThirdPartyStuff.html"><span>Third party stuff</span></a></li>
+                        <li><a href="ToolsUsed.html"><span>Tools used</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="OnHelp" title="some details about this help file">On this file and help system</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="help file" />
+                     <param name="Keyword" value="help authoring details" /></object>
+                  
+                  I'm very proud of this help, composed by
+                  <a href="http://www.w3.org/MarkUp/" title="http://www.w3.org/MarkUp/"><acronym title="HyperText Markup Language">HTML</acronym></a> files obtained from a <a href="http://www.w3.org/" title="http://www.w3.org/"><acronym title="eXtensible Markup Language">XML</acronym></a> source,
+                  then archived and put together by <a href="http://msdn.microsoft.com/workshop/author/htmlhelp/download.asp"
+                     title="http://msdn.microsoft.com/workshop/author/htmlhelp/download.asp">Microsoft<sup>®</sup> HtmlHelp Workshop</a>.
+                  The big task was writing the <a href="http://www.w3.org/" title="http://www.w3.org/"><acronym title="eXtensible Stylesheet Language">XSL</acronym></a> transformation
+                  performed by the interpreter <a href="http://sourceforge.net/projects/saxon"
+                     title="http://sourceforge.net/projects/saxon">Saxon</a>.
+                  
+                  About <a href="http://www.w3.org/" title="http://www.w3.org/"><acronym title="eXtensible Stylesheet Language">XSL</acronym></a> transformations I recommend the book
+                  written by the author of <a href="http://sourceforge.net/projects/saxon"
+                     title="http://sourceforge.net/projects/saxon">Saxon</a>; here is its
+                  <a href="http://www.ctan.org" title="http://www.ctan.org">BibTeX</a> entry:
+                  
+                  
+                  <div class="notepad"> recommended.bib<pre class="notepad">
+@BOOK
+    {
+     bib:Kay00,
+     author    = "Michael Kay",
+     title     = "XSLT Programmer's Reference",
+     publisher = "Wrox Press Ltd",
+     address   = "Arden House, 1102 Warwick Road,
+                  Acock's Green,Birmingham B27 6BH,UK",
+     ISBN      = "1-861003-12-9",
+     year      = "2000",
+     note      = "Printed in USA"
+    }
+</pre></div>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="HelpSystem" title="help system">Help system</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="help system" /></object>
+                  
+                  In order to deal with a <cite>HtmlHelp</cite>
+                  file I had directly use the <var title="">hhctrl.ocx</var>
+                  library without take advantage of
+                  <cite>WinHelp</cite> support wrapped in the <a href="http://www.borland.com" title="http://www.borland.com"><acronym title="Visual Components Library">VCL</acronym></a>.
+                  Here is the initial part of the header of
+                  the <cite>HtmlHelp</cite> module:
+                  
+                  
+                  <div class="notepad"> Notepad<pre class="notepad">
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*   unt_HtmlHelp
+*   2008 - Matteo Gattanini
+*
+*   Derived from code by: * Marcel van Brakel
+*                           (brakelm@chello.nl)
+*                         * Hens Zimmerman
+*   Overview
+*   --------------------------------------------
+*   This unit contains a class 'cls_HtmlHelp' to
+*   manage Microsoft&#8482; compiled HTML help files,
+*   using the Microsoft&#8482; HTML Help `hhctrl.ocx´
+*   activeX control.
+*   With the current implementation strategy, when
+*   HH API fails to load each call to HtmlHelp
+*   service is translated in a normal 'ShellExecute'
+*   call on the passed chm file.
+*
+*   Licenses
+*   --------------------------------------------
+*   Use and modify freely
+*
+*   Release history
+*   --------------------------------------------
+*   ver 0.7 (dec.2008)
+*       .Using exceptions
+*   ver: 0.61    (feb.2008)
+*       .First release
+*
+*   Known bugs and todos
+*   --------------------------------------------
+*   *) Cast from pointer to member to pointer to funct
+*
+*   Example of usage:
+*   --------------------------------------------
+*   Example of usage:
+*   #include "unt_HtmlHelp.h"
+*   cls_HtmlHelp HH; // In automatic memory
+*   if ( !HH.Loaded )
+*    ShowMessage("API not loaded, using ShellExecute\n"
+*                "HTML Help not properly installed");
+*   // Now must indicate the help file path
+*   String ChmPath = ::ExtractFilePath(ParamStr(0)) +
+*                    "..\\hlp\\help.chm";
+*   HH.Open(ChmPath,"Topic1.html");
+*   HH.Open(ChmPath,ID_TOPIC_X);
+*
+*   Tips:
+*   --------------------------------------------
+*   MAPPING CONTEXT INTEGERS IN HTMLHELP PROJECTS
+*
+*   Prepare a header file {helptopics.h}
+*
+*   |  #define IDH_TOPICA 1020
+*   |  #define IDH_TOPICB 1030
+*   |  #define IDH_TOPICC 1040
+*
+*   Prepare an alias file {helptopics.ali}
+*
+*   |  IDH_TOPICA=html\topicA.html : this is the topic a
+*   |  IDH_TOPICB=html\topicB.html : this is the topic b
+*   |  IDH_TOPICC=html\topicC.html : this is the topic c
+*
+*   Prepare a text popup file {popups.txt}
+*
+*   |  .topic IDH_TOPICA
+*   |  text popup for topic a
+*   |
+*   |  .topic IDH_TOPICB
+*   |  text popup for topic b
+*
+*   Now in the HtmlHelp project add these sections:
+*
+*   |  [FILES]
+*   |
+*   |  html\topicA.html
+*   |  html\topicB.html
+*   |  html\topicC.html
+*   |
+*   |
+*   |  [ALIAS]
+*   |  #include helptopics.ali
+*   |
+*   |  [MAP]
+*   |  #include helptopics.h
+*   |
+*   |  [TEXT POPUPS]
+*   |  helptopics.h
+*   |  popups.txt
+*
+*
+*   HOOKING HELP MESSAGES IN VCL
+*
+*   To divert WinHelp call in a BCB project to
+*   HTML help actions, you can perform translation
+*   using the TApplicationEvents OnHelp event, for
+*   example:
+*   //-----------------------------------------------
+*   bool __fastcall TForm1::AppEventsHelp
+*            (WORD Command,int Data,bool &amp;CallHelp)
+*   {
+*   CallHelp = false; // VCL should not call WinHelp
+*
+*   switch ( Command )
+*   {
+*   case HELP_CONTEXT :
+*       {
+*        HH.Open(Data);
+*        return true;
+*       }
+*   case HELP_CONTEXTPOPUP :
+*       {
+*        HH.Popup(Data);
+*        return true;
+*       }
+*   case ...
+*   default:
+*       {
+*        Application-&gt;HelpContext(HelpContext);
+*        return true;
+*       }
+*   }
+*   }
+*   // To create help message you can use:
+*   Application-&gt;HelpCommand(Command,Data);
+*
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
+</pre></div>
+                  
+                  
+                  
+                  <p title="4321,6688 disabled for compatibility with IE7"
+                     style="width: auto;                       float: right;                       clear: both;"
+                     class="button">Text:WM_TCARD</p>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

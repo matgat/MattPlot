@@ -1,0 +1,237 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>How it works</title>
+      <meta name="keywords" content="customizing (how it works)" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Customizing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="OptionFile.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="OptionFile.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Customizing" href="Customizing.html">Customizing</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="HowCustomize.html"><span>How it works</span></a></li>
+                        <li><a href="OptionFile.html"><span>The option file</span></a></li>
+                        <li><a href="OptionsDescription.html"><span>Options description</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="HowCustomize" title="about the way this program manage its options">How it works</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="customizing (how it works)" /></object>
+                  
+                  Informations that must last over one execution
+                  time (you can call them options) are stored in
+                  <var title="">.ini</var> files.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="DragOptions"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 <h3>Reading options</h3>
+                                 You can force <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> to read an option
+                                 <var title="">.ini</var> file opening it with
+                                 <a href="ActionsTable.html#actOpen" title="action Open" style="margin-left:0.5ex;"><img src="./files/images/actions/Open.gif" alt="[Open]" /> <code class="txt">Open</code></a> action
+                                 or by drag-and-drop on program window.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  As you will see in the
+                  <a href="OptionFile.html" title="OptionFile.html">next section</a>,
+                  there is a special <var title="">.ini</var> file
+                  placed in program directory having the
+                  fixed name <var title="">MattPlot.ini</var>, read
+                  at each program execution.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="EditingOptions"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 <h3>Inspect options</h3>
+                                 The best way to get familiar with
+                                 <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> costumization is inspecting
+                                 and editing manually the option file:
+                                 trigger the <a href="ActionsTable.html#actEditOptions" title="action EditOptions"
+                                    style="margin-left:0.5ex;"><img src="./files/images/actions/EditOptions.gif" alt="[EditOptions]" /> <code class="txt">EditOptions</code></a> action.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Initally no option file is present: <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>
+                  tries to read it but fails, and in the end it
+                  uses its embedded default values.
+                  User can create the option file triggering
+                  <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a> or
+                  <a href="ActionsTable.html#actEditOptions" title="action EditOptions"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/EditOptions.gif" alt="[EditOptions]" /> <code class="txt">EditOptions</code></a> actions;
+                  the obtained file can then be edited,
+                  customizing program.
+                  Refer to <a href="OptionsDescription.html" title="OptionsDescription.html">options table</a>
+                  to see available options.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="CustomizationExamples"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 <h3>Customization examples</h3>
+                                 You can try some customization examples choosing
+                                 <a href="ActionsTable.html" title="ActionsTable.html"><img src="./files/images/actions/Style.gif" title="" style=""
+                                         alt="[./files/images/actions/Style.gif]" /> style actions</a>;
+                                 
+                                 <ul class="listD">
+                                    <li>Change style triggering for example <a href="ActionsTable.html#actSetStylePSpice" title="action SetStylePSpice"
+                                          style="margin-left:0.5ex;"><img src="./files/images/actions/SetStylePSpice.gif" alt="[SetStylePSpice]" /> <code class="txt">SetStylePSpice</code></a></li>
+                                    <li>Overwrite the <a href="OptionFile.html" title="OptionFile.html">option file</a> triggering <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                                          style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a></li>
+                                    <li>Now analyze and edit <var title="">MattPlot.ini</var></li>
+                                 </ul>
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="RestoringOptions"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 <h3>Restoring a default option file</h3>
+                                 In case of damaged or incomplete option file
+                                 you can restore it following these steps:
+                                 
+                                 <ul class="listD">
+                                    <li>Close all instances of <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span></li>
+                                    <li>Launch <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span></li>
+                                    <li>Delete current <var title="">MattPlot.ini</var> file
+                                    </li>
+                                    <li>Activate <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                                          style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a> action
+                                    </li>
+                                    <li><var title="">MattPlot.ini</var> is restored
+                                    </li>
+                                 </ul>
+                                 
+                                 If you want to recreate a default option
+                                 repeat the previous steps removing the file
+                                 <var title="">MattPlot.ini</var> before launching
+                                 program, or alternatively use <a href="ActionsTable.html#actSetDefaults" title="action SetDefaults"
+                                    style="margin-left:0.5ex;"><img src="./files/images/actions/SetDefaults.gif" alt="[SetDefaults]" /> <code class="txt">SetDefaults</code></a>
+                                 and <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                                    style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a> actions.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

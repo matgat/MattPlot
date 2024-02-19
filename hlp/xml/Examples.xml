@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Examples"
+         title="Examples"
+         keywords="examples,common tasks"
+         description="some examples of typical tasks"
+         version="0.5" date="jan2008">
+
+    <intro toc="yes">
+        The purpose of this chapter is to collect
+        ready to use informations that typically
+        users need.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="MemDumpPlot"
+             title="A memory dump plot"
+             keywords="example: memory dump plot"
+             description="importing data from raw ASCII data">
+
+    The &DSP; of a servo drive has stored
+    in its &RAM; an array of words (16bit)
+    encoded as signed integers containing the
+    time history of some internal variables of
+    the control algorithm, sampled with different
+    frequency.
+    The first 4000 words of this array are
+    filled with the measure of quadrature current
+    Iq sampled every 62.5us and scaled respect
+    5A; the following 250 contains the motor
+    speed sampled every 1ms and scaled respect
+    3500rpm, while the remaining 125 are the
+    samples of measured DC bus voltage
+    taken every 2ms and scaled respect 1000V;
+    voltage measures have a known offset of 23.5V.
+    <p>
+    The first chunk of each segment is
+    used as initial buffer to collect a
+    certain amount of samples before
+    trigger event. The size of this chunk
+    is equivalent to 20ms and so is equal to
+    320 samples for the first segment, 20
+    for the second and 10 for the third.
+    The trigger fired at sample 6 of the
+    third segment (the shortest one), corresponding
+    to sample 12 of the second, 192 of the first.
+    </p>
+    After acquisition, data are converted to
+    strings and sent character by character
+    through a RS232 serial line to a PC that
+    saves on hard disk a text file of 4375
+    lines containing a sequence of base 10
+    integer numbers literals reproducing the
+    array of 16bit signed integers:
+
+<notepad caption="FromSerial.txt">
+ 9470
+ 9490
+ 9502
+ 9522
+ 9534
+ ...
+</notepad>
+
+    Ok, we want to plot these acquired three
+    quantities with &mp; in a suitable
+    way without changing the raw data file.
+    To do so we have to provide through
+    command line argument the necessary
+    informations to:
+    <listO>
+        <it>Split the single column in the three parts</it>
+        <it>Reorder samples in each trigger buffer;
+            the reordering sequence will be referred to shortest
+            column to avoid rounding errors
+            (see <a href="Resample.html">resample directive section</a>)</it>
+        <it>Rescale samples to physical units: the signed 16bit
+            integers must be scaled with <txt>Full-Scale&nbsp;Value/32767</txt>
+            and apply an offset to voltage samples</it>
+        <it>Apply the offset to voltage samples</it>
+        <it>Give names and other infos</it>
+    </listO>
+
+    So here is the command to plot these data:
+
+<cmdline>
+C:\> MattPlot +"#header &lt;Iq(t[0.0625ms])[1.526E-4A]&gt;
+&lt;n(t[1ms])[0.1068rpm]&gt;&lt;Vdc(t[2ms])[30.52E-3V-23.5]&gt;"
++"#resample [6:10)[0:6)[10:125)"
+".\Data\FromSerial.txt"
+</cmdline>
+
+    The first argument, the most complex one, is
+    a line added to file containing the
+    <a href="Header.html">header directive</a>:
+    <p><txt>#header &lt;Iq(t[0.0625ms])[1.526E-4A]&gt; &lt;n(t[1ms])[0.1068rpm]&gt; &lt;Vdc(t[2ms])[30.52E-3V-23.5]&gt;</txt></p>
+
+    It tells to &mp; that:
+    <listD>
+        <it>The following data are composed by three columns</it>
+        <it>The first one, named <txt>Iq</txt>,
+            measured in <txt>[A]</txt>, will
+            be rescaled by a factor of <txt>0.0001526=5/32767</txt>.
+            This column is a dependent variable plotted respect
+            an independent variable called
+            <txt>t</txt>, measured in <txt>ms</txt>,
+            not defined in the following
+            data but given by the product of
+            sample index and <txt>0.0625</txt></it>
+        <it>The second one, named <txt>n</txt>,
+            measured in <txt>[rpm]</txt>, will
+            be rescaled by a factor of <txt>0.1068=3500/32767</txt>.
+            This column is a dependent variable plotted respect
+            an independent variable called
+            <txt>t</txt>, measured in <txt>ms</txt>,
+            not defined in the following
+            data but simply given by the sample index</it>
+        <it>The last one, named <txt>Vdc</txt>,
+            measured in <txt>[V]</txt>, will
+            be rescaled by a factor of <txt>0.03052=1000/32767</txt>;
+            furthermore, the constant quantity <txt>-23.5</txt>
+            will be added to each rescaled value.
+            This column is a dependent variable plotted respect
+            an independent variable called
+            <txt>t</txt>, measured in <txt>ms</txt>,
+            not defined in the following
+            data but given by the product of
+            sample index and <txt>2</txt></it>
+    </listD>
+    
+    Actually this directive contains also the
+    crucial information necessary to split properly
+    the unique data column into its three
+    constituent parts: this information is
+    given by the independent variables scale.
+    <p>
+    The second argument is still an added line;
+    it contains the
+    <a href="Resample.html">resample directive</a>:
+    </p>
+    <p><txt>#resample [6:10)[0:6)[10:125)</txt></p>
+    This defines the following sequence of indexes:
+    <p><txt>6,7,8,9,0,1,2,3,4,5,10,11,12,13,...,123,124</txt></p>
+    
+    For each column this sequence is rescaled to
+    fit column size, then the column samples are
+    reordered according to the obtained sequence.
+    Note that we have defined the sequence using
+    the same size of the shortest column:
+    this is a wise choice, because in this way
+    the sequence must not be rescaled for that column,
+    while for the other the index rescaling becomes
+    a simple integer multiplication, without rounding
+    errors.
+    <p>
+    Finally, the last argument is simply the path to file,
+    assuming the file stored in a subfolder called
+    <dir>Data</dir> in the current directory.
+    </p>
+
+      <HHseealso>
+          <target title="Program arguments" href="ProgramArguments.html"/>
+          <target title="Header directive" href="Header.html"/>
+          <target title="Split directive" href="Split.html"/>
+          <target title="Resample directive" href="Resample.html"/>
+          <target title="Directives in command line arguments" href="CommandlineDirectives.html"/>
+      </HHseealso>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ImportFromMatlab"
+             title="Importing from Matlab"
+             keywords="example: import from Matlab"
+             description="importing data from matlab and plot">
+
+    You are working with your math interpreter,
+    in this example &matlab;, and for some reasons
+    you want to plot some data with &mp;.
+    
+    <!--....................................-->
+    <subsection name="ImportFromMatlabSineWave"
+                title="A sine wave"
+                keywords="import from matlab a sine wave">
+
+    An example on how plot a pair of arrays
+    exporting them as a text file.<br/>
+    In &matlab; environment write:
+    
+<verbatim class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» t = (0:0.1:10)';
+» u = sin(t);
+» tu = [t , u];
+» save ('C:\matdats.txt','tu','-ascii','-double','-tabs')
+</verbatim>
+
+    The resulting file will be:
+
+<notepad caption="C:\matdats.txt">
+  0.0000000000000000e+000	  0.0000000000000000e+000
+  1.0000000000000001e-001	  9.9833416646828155e-002
+  2.0000000000000001e-001	  1.9866933079506122e-001	
+  3.0000000000000004e-001	  2.9552020666133960e-001	
+  4.0000000000000002e-001	  3.8941834230865052e-001	
+  5.0000000000000000e-001	  4.7942553860420301e-001
+  ...
+</notepad>
+
+    Now you can open it with &mp; specifying
+    to plot second column respect the first, writing:
+<cmdline>
+C:\> MattPlot +"#header &lt;t&gt;&lt;u(t)&gt;" "C:\matdats.txt"
+</cmdline>
+
+    The chosen columns names <txt>u</txt> and <txt>t</txt>
+    are arbitrary.
+    </subsection>
+
+
+    <!--....................................-->
+    <subsection name="ImportFromMatlabMoreTracks"
+                title="A couple of tracks"
+                keywords="import from matlab a couple of tracks">
+
+    In &matlab; there is a more general
+    way to write files, using file handle
+    and the function <txt>fprintf</txt>.
+    In the following example we write
+    from &matlab; a ready to use file that
+    can be correctly interpreted by &mp;
+    without additional lines.<br/>
+    In &matlab; environment write:
+
+<verbatim class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» N = 1000; % size of tracks
+» t = (0:1/N:1-1/N)'; % an independent variable
+» y1 = wgn(N,1,0); % a white noise
+» y2 = 2*t + 1; % a line
+» T = [t,y1,y2]; % the whole data table
+
+» fid = fopen('C:\matdats2.txt', 'wt');
+» fprintf(fid, '%s\n', '#header &lt;t&gt;&lt;y1(t)&gt;&lt;y2(t)&gt;');
+» fprintf(fid, '%G\t%G\t%G\n', T');
+» fclose(fid);
+</verbatim>
+
+    The resulting file will be:
+
+<notepad caption="C:\matdats2.txt">
+#header &lt;t&gt;&lt;y1(t)&gt;&lt;y2(t)&gt;
+0	-0.0254305	4
+0.001	1.2765	4.002
+0.002	1.33929	4.004
+0.003	-0.0611252	4.006
+0.004	2.33398	4.008
+  ...
+</notepad>
+
+    This file can be opened
+    without adding further informations:
+<cmdline>
+C:\> MattPlot "C:\matdats2.txt"
+</cmdline>
+
+    </subsection>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ExportTextToMatlab"
+             title="Exporting text files to Matlab"
+             keywords="example: exporting text files to Matlab"
+             description="exporting text files to Matlab">
+ 
+    Imagine to export to text the tracks
+    contained in <txt>Frame1</txt> using
+    <action name="Export"/> or <action name="ExportFrameToText"/>
+    action, obtaining the file
+    <dir>C:\Data\Frame1.txt</dir>
+    
+<notepad caption="Frame1.txt">
+#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2(x)&gt;
+1.07E-3   5   0.6
+1.12E-3   2   0.8
+1.23E-3   4   0.9
+1.34E-3   3   1.1
+1.36E-3   1   1.3
+</notepad>
+
+    To import those data in &matlab;
+    open the interpreter and write:
+
+<verbatim class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» T = importdata('C:\Data\Frame1.txt')
+
+T =
+        data: [5x3 double]
+    textdata: {#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2(x)&gt;}
+
+» T.data
+
+ans =
+    0.0011    5.0000    0.6000
+    0.0011    2.0000    0.8000
+    0.0012    4.0000    0.9000
+    0.0013    3.0000    1.1000
+    0.0014    1.0000    1.3000
+
+» T.data(:,2)
+
+ans =
+     5
+     2
+     4
+     3
+     1
+
+»
+
+</verbatim>
+
+    This method works only with
+    columns having the same length.
+    
+    Note that the usual function:
+<verbatim class="matlab">
+» T = load('C:\Data\Frame1.txt')
+</verbatim>
+    gets angry if encounters something else
+    than numbers, so if you want to use it instead
+    of <txt>importdata</txt> you should manually
+    edit the file to delete the first heading line.
+
+    <p>
+    Here is an example of a script
+    that imports two arrays from a
+    text file.
+    </p>
+
+<notepad caption="LoadTwoVectors.m">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% LoadTwoVectors (
+%                 file name
+%                );
+%
+%  Inputs:
+%     . two columns or two rows ASCII data file
+%
+%  Outputs:
+%     . two row vectors
+%
+%  Example :
+%     [x,y] = LoadTwoVectors('xy.txt')
+%
+%  Version : 20071106 - Matteo Gattanini
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function [x,y]=LoadTwoVectors(filename)
+
+
+% -----------------------------------------------------------
+% -- Input arguments
+
+if ( nargin ~= 1 )
+        disp('Usage: [x,y] = LoadTwoVectors(''filename'')')
+        return
+end
+
+
+% -----------------------------------------------------------
+% -- Load file
+disp(['Loading data from ' filename ' ...'])
+
+[T delim hdr] = importdata(filename);
+if ( hdr&gt;0 ) xy = T.data;
+else xy = T;
+end
+
+rows = length(xy(:,1));
+cols = length(xy(1,:));
+
+% -- input check
+disp(['Done: 'num2str(cols)' cols and 'num2str(rows)' rows'])
+if ( cols == 2 )
+    disp('two column vectors')
+    x = xy(:,1);
+    y = xy(:,2);
+elseif ( rows == 2 )
+    disp('two row vectors')
+    % transpose
+    x = xy(1,:)';
+    y = xy(2,:)';
+else
+    error('Something wrong in the file: not two vectors')
+    return
+end
+
+% -- finally
+clear xy; % not needed anymore
+% -----------------------------------------------------------
+</notepad>
+
+    </section>
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ExportToMatlab"
+             title="Exporting to Matlab via m-files"
+             keywords="example: exporting to Matlab"
+             description="exporting to Matlab via m-files">
+    
+    Imagine to have a some tracks in
+    &mp; <txt>Frame1</txt>, for example
+    imported from a file like:
+
+<notepad caption="data.txt">
+#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2([2.5s+2])&gt;
+1	1	5
+2	1	2
+3	2	4
+4	2	3
+5	3	1
+6	3
+7	4
+8	4
+9	4
+</notepad>
+
+    Now you want to import those
+    data in &matlab; workspace
+    (not yet tested in other math interpreters like &freemat;, &octave;, &scilab;)
+    to perform some kind of advanced elaboration.
+    <p>
+    Note that in this case you cannot pass
+    informations between the two programs relying
+    on plain text data files as described
+    <a href="ExportTextToMatlab.html">here</a>,
+    since data columns have not the same size.
+    </p>
+    You must export <txt>Frame1</txt> using
+    <action name="Export"/> or <action name="ExportFrameToMatlab"/>
+    action, obtaining the file
+    <dir>C:\Data\Plots\MattPlot\Frame1.m</dir>
+
+<notepad caption="Frame1.m">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MattPlot auto-generated m-file (04.01.2008 - 18:21:44.671)
+% This function loads in workspace Frame1 tracks data
+% Input: a figure handle, put 0 to disable plot
+% Output: a struct containing data
+%
+% Usage:
+% » Frame1 = LoadFrame1();
+% Specifying an existing figure handle for plot:
+% » Frame1 = LoadFrame1(2);
+% To disable plot:
+% »Frame1 = LoadFrame1(0);
+% Access data through struct syntax 'Frame1.fieldname'
+% » myvar = Frame1.zz;
+% » plot(Frame1.xx, Frame1.yy);
+% To see actual available fields, just type:
+% » Frame1
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function Frame1 = LoadFrame1(figID)
+
+%----------------------------------------------------------
+% -- Input arguments, default values
+if ( nargin &lt; 1 ) figID = 1;
+elseif ( nargin &gt; 1 )
+    disp('Usage: Frame1 = LoadFrame1(figID)');
+    return
+end
+
+%----------------------------------------------------------
+% -- Data section
+disp('Loading MattPlot Frame1 datas...')
+
+% This is the independent variable of Frame1.y1 
+Frame1.y1_x = (1:1:9)';
+% This is the track y1  linked to x
+Frame1.y1 = [1;1;2;2;3;3;4;4;4];
+
+% This is the independent variable of Frame1.y2 [s]
+Frame1.y2_x = (2:2.5:12)';
+% This is the track y2  linked to x2
+Frame1.y2 = [5;2;4;3;1];
+
+disp('...Done')
+
+%----------------------------------------------------------
+% -- Plot section
+if ( figID &gt; 0 )
+    disp('Preparing plots...')
+    figure(figID);
+    grid on;
+    hold on;
+    plot(Frame1.y1_x,Frame1.y1,Frame1.y2_x,Frame1.y2);
+    h = legend('y1','y2');
+    set(h,'Interpreter','none');
+    h = title('Frame1');
+    set(h,'Interpreter','none');
+    hold off;
+    disp('...Done')
+end
+</notepad>
+
+    As you can see the obtained <dir>m-file</dir>
+    defines a function that returns a <cpp>struct</cpp>
+    containing tracks data.
+    You can now execute the <dir>m-file</dir>
+    calling it from math interpreter command line,
+    of course after ensuring the visibility
+    of <dir>Frame1.m</dir> in the interpreter
+    path:
+
+<verbatim class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» addpath('C:\Data\Plots\MattPlot');
+
+» fr1 = Frame1()
+Loading MattPlot Frame1 datas...
+...Done
+Preparing plots...
+...Done
+
+fr1 = 
+
+    y1_x: [9x1 double]
+      y1: [9x1 double]
+    y2_x: [5x1 double]
+      y2: [5x1 double]
+
+» fr1.y2
+
+ans =
+     5
+     2
+     4
+     3
+     1
+
+»
+
+</verbatim>
+
+    </section>
+
+
+</chapter>
+<!--_______________________End_of_file______________________-->

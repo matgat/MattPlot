@@ -1,0 +1,375 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Data sources</title>
+      <meta name="keywords" content="data sources" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Importing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="BinaryFormats.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="BinaryFormats.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Importing" href="Importing.html">Importing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="DataSources.html"><span>Data sources</span></a></li>
+                        <li><a href="BinaryFormats.html"><span>Binary formats</span></a></li>
+                        <li><a href="TextFormat.html"><span>Text format</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="DataSources" title="on data input channels">Data sources</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="data sources" /></object>
+                  
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> uses the concept of stream to interface
+                  with external data sources.
+                  This will allows to treat strings, files,
+                  compressed files, serial line data or any other
+                  source of bytes in the same manner.
+                  
+                  
+                  
+                  <h3><a name="FileSources" title="files (opening), directories (opening)">Files</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="files (opening)" />
+                     <param name="Keyword" value="directories (opening)" /></object>
+                  
+                  The main data source is constituted by
+                  data previously stored in a medium:
+                  the files.
+                  
+                  You can tell <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> to consider a file
+                  (with this term I mean also directories)
+                  using one of the following ways:
+                  
+                  <ul class="listD">
+                     <li>
+                        Pass its path as
+                        <a href="ProgramArguments.html" title="ProgramArguments.html">program parameter</a>
+                        when launching <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>
+                        
+                     </li>
+                     <li>
+                        Drag and drop it in the
+                        <a href="MainForm.html#PlotArea" title="MainForm.html#PlotArea">plot area</a>;
+                        pay attention on the zone you release it:
+                        if you release the file on an existing <dfn title="tracks container">Frame</dfn>,
+                        the tracks will be added in it,
+                        otherwise a new <dfn title="tracks container">Frame</dfn> will be created in the
+                        drop position
+                        
+                     </li>
+                     <li>
+                        Using <a href="ActionsTable.html#actOpen" title="action Open" style="margin-left:0.5ex;"><img src="./files/images/actions/Open.gif" alt="[Open]" /> <code class="txt">Open</code></a> action
+                        
+                     </li>
+                  </ul>
+                  
+                  The following figure roughly depicts
+                  the program behaviour when a file is
+                  considered:
+                  
+                  <p style="text-align: center;"><img src="./files/images/import.gif" title="" style=""
+                          alt="[./files/images/import.gif]" /></p>
+                  
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="FileImportBehaviour"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 
+                                 <p>
+                                    If opened file is a
+                                    <a href="Features.html" title="Features.html">supported archive</a>,
+                                    <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will extract it in the temporary folder
+                                    (<a href="OptionsDescription.html#optTempDir" title="option TempDir"><code class="txt">TempDir</code></a>)
+                                    and then will try to read the resulting directory.
+                                    
+                                 </p>
+                                 
+                                 <p>
+                                    When opened file is a directory
+                                    <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will parse recursively all contained files
+                                    (except those that match <a href="OptionsDescription.html#optExcludePattern" title="option ExcludePattern"><code class="txt">ExcludePattern</code></a>);
+                                    note that in this case eventual
+                                    <a href="ProgramArguments.html#AppendedLinesArgs"
+                                       title="ProgramArguments.html#AppendedLinesArgs">appended lines</a>
+                                    <a href="ProgramArguments.html" title="ProgramArguments.html">argument</a> will be used
+                                    in all these files.
+                                    
+                                 </p>
+                                 Finally, if opened file is a known type,
+                                 it will be digested.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>File extension</td>
+                           <td>Operation</td>
+                           <td>Remarks</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><var title="">*.mpx</var></td>
+                           <td><span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will clear and load <a href="http://www.w3.org/" title="http://www.w3.org/"><acronym title="eXtensible Markup Language">XML</acronym></a> plot
+                           </td>
+                           <td>Not yet supported</td>
+                        </tr>
+                        <tr>
+                           <td><var title="">*.ini</var></td>
+                           <td><span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will try to read its options
+                           </td>
+                           <td>This can be used to manage a set of styles</td>
+                        </tr>
+                        <tr>
+                           <td>Compressed files (<var title="">*.gz</var>)
+                           </td>
+                           <td><span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will try to read compressed stream
+                           </td>
+                           <td>Second extension is important (ex. <var title="">data.txt.gz</var>).
+                              Proper <acronym title="Dynamic Link Libraries">DLL</acronym> must be in path
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Compressed archives (<var title="">*.zip</var>)
+                           </td>
+                           <td><span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will expand compressed archive and read extracted files
+                           </td>
+                           <td>Proper <acronym title="Dynamic Link Libraries">DLL</acronym> must be in path
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>other extensions (<var title="">*.txt</var>, <var title="">*.mpl</var>, ...)
+                           </td>
+                           <td><span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will try to import as <a href="TextFormat.html" title="TextFormat.html">text data file</a></td>
+                           <td></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="AbortFileParsing"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Generally reading files is a time
+                                 consuming task: remember that you can
+                                 use <a href="ActionsTable.html#actAbort" title="action Abort"
+                                    style="margin-left:0.5ex;"><img src="./files/images/actions/Abort.gif" alt="[Abort]" /> <code class="txt">Abort</code></a> if
+                                 it takes too much time.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="MPLExtension"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Note that the extension <var title="">.mpl</var> is
+                                 treated as <var title="">.txt</var>;
+                                 this strange extension is introduced to
+                                 provide a file filter and eventually to
+                                 associate <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> with it (start executable
+                                 by a double click on file).<br />
+                                 "mpl" may stand for: <dfn title="">MattPLot text file</dfn>
+                                 or better: <dfn title="">MultiPLe session text file</dfn>.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="CompressedFiles"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Supported compressed format are:
+                                 
+                                 <ul class="listO">
+                                    <li><var title="">*.zip</var> and <var title="">*.gz</var> with <a href="http://www.zlib.net" title="http://www.zlib.net">zlib</a> <acronym title="Application Program Interface">API</acronym> <acronym title="Dynamic Link Libraries">DLL</acronym> <var title="">zlibwapi.dll</var></li>
+                                 </ul>
+                                 
+                                 
+                                 <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                                    <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                                       <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                                       <tbody>
+                                          <tr>
+                                             <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ThirdPartyStuff.html">Third party stuff</a></td>
+                                          </tr>
+                                          <tr>
+                                             <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Faqs.html#faq.importing.compressedfiles">Compressed files question</a></td>
+                                          </tr>
+                                          <tr>
+                                             <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Troubleshooting.html#faq.problems_files.zipnotsupported">Zip files problem</a></td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </div>
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ToTXT.html">Exporting to text files</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="TextFormat.html">Text files format</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html#FilePathArgs">File paths as arguments</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="RelatedFiles.html">Program related files</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="OtherStreamSources" title="other source streams,streams">Other data streams</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="other source streams" />
+                     <param name="Keyword" value="streams" /></object>
+                  
+                  At the moment file streams are the only
+                  way to retrieve data; in the future other
+                  input streams may be considered.
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ToDo.html">Todos, wishlist</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MatPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<scrap_page name="_MainForm"
+            title="Main form"
+            keywords="main form,interface (main form)"
+            description="program main form interface"
+            xmlns="/mattplot/xhelp">
+
+    <img src="./files/images/MainForm.png"/>
+
+</scrap_page>
+<!--_______________________End_of_file______________________-->

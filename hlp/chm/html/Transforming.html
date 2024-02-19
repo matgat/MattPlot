@@ -1,0 +1,181 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Transforming tracks</title>
+      <meta name="keywords" content="elaborate tracks,transform tracks" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="EditTrackData.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Editing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="EditTrackData.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Editing" href="Editing.html">Editing and transforming data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="EditTrackData.html"><span>Edit data manually</span></a></li>
+                        <li id="current"><a href="Transforming.html"><span>Transforming tracks</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Transforming" title="about track elaboration, operators and tools">Transforming tracks</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="elaborate tracks" />
+                     <param name="Keyword" value="transform tracks" /></object>
+                  
+                  Please that this functionality is evolving
+                  and not yet completed.
+                  This section consists in just some notes...
+                  
+                  <img src="./files/images/underconstruction.gif" style="float:right;margin:1em;"
+                       alt="[Under construction]" />
+                  
+                  The tool <a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a>
+                  gives the user the possibility to
+                  create new tracks from an existing ones.
+                  
+                  
+                  
+                  <h3><a name="TrackOperators" title="track operators">Track operators</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="track operators" /></object>
+                  
+                  A track operator is something that transform one
+                  or more track in another one.
+                  Available operators are classified by their
+                  number of arguments:
+                  
+                  <ul class="listO">
+                     <li><dfn title="">Unary</dfn>: applies on a track only, like square root or filters
+                     </li>
+                     <li><dfn title="">Binary</dfn>: applies on a pair of tracks, like addition operator
+                     </li>
+                  </ul>
+                  
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Operator</td>
+                           <td>Example</td>
+                           <td>Description</td>
+                           <td>Note</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="header" colspan="4">Unary operators</td>
+                        </tr>
+                        <tr>
+                           <td class="header">Product and summation with a scalar</td>
+                           <td>m*y + q,   m,q scalar</td>
+                           <td>Linear transformation</td>
+                           <td>Negate: m=-1,q=0</td>
+                        </tr>
+                        <tr>
+                           <td class="header">Absolute value</td>
+                           <td>|y|</td>
+                           <td>Take the absolute value of each sample</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td class="header">Power elevation</td>
+                           <td>pow(y,n)</td>
+                           <td>Perform n-esimal power elevation of each sample</td>
+                           <td>When n&lt;0 and y=0, or n not integer and y&lt;0, a <dfn title="Not A Number">NaN</dfn> value is given.
+                              Square root: n=0.5
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header">Natural logarithm</td>
+                           <td>log(y)</td>
+                           <td>Perform logarithm (base e) of each sample</td>
+                           <td>When argument is null or negative, a <dfn title="Not A Number">NaN</dfn> value is given
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header">Low pass filter</td>
+                           <td>filt(y,0.5)</td>
+                           <td>Apply a low pass filter (which? order?)</td>
+                           <td>Second argument (0÷1) is the cut-off frequency normalized respect Nyquist freq</td>
+                        </tr>
+                        <tr>
+                           <td class="header">Derivative</td>
+                           <td>D(y)</td>
+                           <td>Calculate the incremental ratios for each pair of samples</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td class="header">Integration</td>
+                           <td>S(y,0)</td>
+                           <td>Sum the samples area</td>
+                           <td>Second argument is the integration constant</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Binary operators</td>
+                        </tr>
+                        <tr>
+                           <td class="header">Addition</td>
+                           <td>y1 + y2</td>
+                           <td>Sample to sample addition</td>
+                           <td>Not commutative: resulting track has
+                              the first track domain; values of second track
+                              corresponding to abscissa of first track are
+                              obtained by linear interpolation
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header">Subtraction</td>
+                           <td>y1 - y2</td>
+                           <td>Sample to sample subtraction</td>
+                           <td>Same</td>
+                        </tr>
+                        <tr>
+                           <td class="header">Multiplication</td>
+                           <td>y1 * y2</td>
+                           <td>Sample to sample multiplication</td>
+                           <td>Same; has precedence respect addition and subtraction</td>
+                        </tr>
+                        <tr>
+                           <td class="header">Division</td>
+                           <td>y1 / y2</td>
+                           <td>Sample to sample division</td>
+                           <td>Same</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

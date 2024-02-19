@@ -1,0 +1,141 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Implementation details</title>
+      <meta name="keywords" content="implementation details" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="OnHelp.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Development.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ThirdPartyStuff.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="OnHelp.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ThirdPartyStuff.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Development" href="Development.html">Development</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="OnHelp.html"><span>On this file and help system</span></a></li>
+                        <li id="current"><a href="ImplementationDetails.html"><span>Implementation details</span></a></li>
+                        <li><a href="ThirdPartyStuff.html"><span>Third party stuff</span></a></li>
+                        <li><a href="ToolsUsed.html"><span>Tools used</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ImplementationDetails"
+                        title="some note on program source and implementation choices">Implementation details</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="implementation details" /></object>
+                  
+                  
+                  
+                  
+                  <h3><a name="BuildDetails" title="build details">Build details</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="build details" /></object>
+                  
+                  The program is written in <a href="http://www.research.att.com/~bs/homepage.html"
+                     title="http://www.research.att.com/~bs/homepage.html">C++</a> language
+                  and compiled for the <a href="http://www.microsoft.com" title="http://www.microsoft.com">Windows<sup>®</sup></a> platform;
+                  more specifically the executable was compiled
+                  and tested on a <a href="http://www.microsoft.com" title="http://www.microsoft.com">Windows<sup>®</sup></a> NT platform;
+                  compilation target is the 32bit
+                  <cite>PentiumPro</cite> class of processors.
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="CodeStructure" title="code structure">Code structure</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="code structure" /></object>
+                  
+                  <img src="./files/images/underconstruction.gif" style="float:right;margin:1em;"
+                       alt="[Under construction]" />
+                  
+                  <div class="notepad"> Notepad<pre class="notepad">
+    Ehmm...
+    </pre></div>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="Portability" title="code portability">Code portability</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="code portability" /></object>
+                  
+                  Although my attempts to write good code in a clean
+                  and consistent structure, a trade-off between
+                  elegance, comfort and time has to be reached.
+                  
+                  <p>
+                     It's a very difficult task writing portable code
+                     resisting the temptation of the handy facilities
+                     provided by the specific compiler.
+                     
+                  </p>
+                  
+                  The <a href="http://www.borland.com" title="http://www.borland.com">Borland C++ Builder<sup>®</sup></a> 5 graphical application development
+                  is heavily based on the Delphi Visual Component Library
+                  <a href="http://www.borland.com" title="http://www.borland.com"><acronym title="Visual Components Library">VCL</acronym></a>, which wraps most of the <a href="http://www.microsoft.com" title="http://www.microsoft.com">Windows<sup>®</sup></a> <acronym title="Application Program Interface">API</acronym>s.
+                  In <a href="http://www.borland.com" title="http://www.borland.com"><acronym title="Visual Components Library">VCL</acronym></a> programming are willingly used things like:
+                  
+                  <ul class="listO">
+                     <li>
+                        Global variables like <code class="cpp">TApplication Application</code>
+                        
+                     </li>
+                     <li>
+                        Global functions like <code class="cpp">::FloatToStr</code> of <var title="">SysUtils.h</var>
+                        
+                     </li>
+                  </ul>
+                  
+                  Moreover Borland's <a href="http://www.research.att.com/~bs/homepage.html"
+                     title="http://www.research.att.com/~bs/homepage.html">C++</a> implementation contains
+                  nonstandard keywords like <code class="cpp">__property</code>;
+                  this one is so tempting that induced me to the
+                  dark side.
+                  
+                  
+                  <p>
+                     Regarding <a href="http://www.microsoft.com" title="http://www.microsoft.com">Windows<sup>®</sup></a> <acronym title="Application Program Interface">API</acronym>, they are normally
+                     wrapped into <a href="http://www.borland.com" title="http://www.borland.com"><acronym title="Visual Components Library">VCL</acronym></a>; however, I'm considering
+                     for performance reasons to bypass the wrapper
+                     during track rendering.
+                     
+                  </p>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Header directive</title>
+      <meta name="keywords" content="headers, columns header" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="DirectiveList.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Directives.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="Split.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="DirectiveList.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="Split.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Directives" href="Directives.html">Parser directives</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="DirectiveList.html"><span>Available directives</span></a></li>
+                        <li id="current"><a href="Header.html"><span>Header directive</span></a></li>
+                        <li><a href="Split.html"><span>Split directive</span></a></li>
+                        <li><a href="Resample.html"><span>Resample directive</span></a></li>
+                        <li><a href="StrictDelimiters.html"><span>Strictdelimiters directive</span></a></li>
+                        <li><a href="CommandlineDirectives.html"><span>Directives in command line arguments</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Header" title="declaring tracks names, scales, units, links">Header directive</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="headers" />
+                     <param name="Keyword" value="columns header" /></object>
+                  
+                  Numbers are not the only information for a plot:
+                  generally it is necessary to know who is plotted
+                  respect who, and some other facultative things
+                  like <dfn title="set of points">Track</dfn> names, units, etc...
+                  These informations are passed with a data header;
+                  the syntax adopted by <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> privileges briefness
+                  over standardization (like <a href="http://www.w3.org/" title="http://www.w3.org/"><acronym title="eXtensible Markup Language">XML</acronym></a> format).
+                  <br />
+                  With the <code class="txt">header</code> directive the
+                  following information can be specified:
+                  
+                  
+                  <ul class="listQ">
+                     <li>Expected data columns number</li>
+                     <li>Strings specifying column names, units of measure and data type</li>
+                     <li>Columns relationship (dependent and independent variables, real and imaginary part of a complex <dfn title="set of points">Track</dfn> -not yet ready-)
+                     </li>
+                     <li>Linear transformations (scale and offset) on columns</li>
+                  </ul>
+                  
+                  The header argument consists of a string composed
+                  by a sequence of data columns delcaration; each
+                  declaration is composed by a string enclosed by
+                  <kbd title="U+003C">&lt;</kbd><kbd title="U+003E">&gt;</kbd>
+                  organized as follows:
+                  
+                  <p><code class="txt">&lt;column_name(plotted_respect)[unit of measure and scaling]&gt;</code></p>
+                  The first string assigns an unique identifier
+                  (among the whole file) to the associated
+                  data column.
+                  Rounded brackets enclose informations about
+                  the independent variable; it could be another
+                  column name or a rescaled index
+                  (self declared independent variable).
+                  Squared brackets enclose information about
+                  units, scaling and data type.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="label_escape_char"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 If you desire a column name including
+                                 brackets, use the escape character
+                                 <code class="txt">\</code> as in this example.
+                                 
+                                 <div class="notepad"> escape character<pre class="notepad">
+#header   &lt;z&gt;  &lt;y\(x\)(z)&gt;
+</pre></div>
+                                 This declares a first column named
+                                 <code class="txt">z</code> and a second column named
+                                 <code class="txt">y(x)</code> plotted respect column
+                                 <code class="txt">z</code>.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  I think the best way to introduce header
+                  syntax is by examples:
+                  
+                  
+                  <div class="notepad"> Basic examples<pre class="notepad">
+
+
+/* In this header example will be specified that
+   the following data are composed by three
+   columns; the first column is a motor torque
+   that must be plotted respect the second column,
+   a speed, and the third is a current that must be
+   plotted simply respect its samples index, so:
+   .declare three data columns, giving names
+   .plot the first respect the second
+   .plot the third simply by its index            */
+#header &lt;T(w)&gt;&lt;w&gt;&lt;i()&gt;
+0     0    0
+6.32  2    1.24
+...
+
+/* In the following example some information
+   were added:
+   .Torque is measured in tenth of Nm
+   .Speed is measured in rpm
+   .Current is measured in tens of A every 0.5ms  */
+#header &lt;T(w)[0.1Nm]&gt;&lt;w[rpm]&gt;&lt;i([0.5ms])[10A]&gt;
+0     0    0
+6.32  2    1.24
+...
+
+/* In the following example some information
+   were added:
+   .Fix a current offset of -0.7A
+   .The current independent variable is now labeled  't'
+   .Current's measure time 't' starts at 100ms  */
+#header &lt;T(w)[0.1Nm]&gt;&lt;w[rpm]&gt;&lt;i(t[0.5ms+100])[10A-0.7]&gt;
+0     0    0
+6.32  2    1.24
+...
+
+/* There is actually another information you can
+   embed in the data column declaration, its data
+   type: */
+#header &lt;time [4E-3s]&gt;&lt;AnOut[0.1V+0.01|u16|]&gt;
+1  -32768
+2  -32768
+...
+/* The u16 tells that the column is composed by
+   16bit unsigned integers, so -1 will be casted
+   to 65535, -32768 to 32768 and so on */
+</pre></div>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="one_column_split"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 The number of declared column must
+                                 exactly match the actual number of
+                                 data columns; the only exception is
+                                 when there is only one column of data,
+                                 which will be splitted according to
+                                 header declaration
+                                 (see <a href="Split.html" title="Split.html">Split directive</a>).
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Here some specifications:
+                  
+                  <ul class="listO">
+                     <li>Column declarations are enclosed by &lt;&gt;; characters
+                        outside are ignored
+                     </li>
+                     <li>(not ready) Declaration string can be prefixed and enclosed by {}.
+                        <code class="txt">Re</code> prefix indicates that column is a real part
+                        of a complex number, while <code class="txt">Im</code> indicates the
+                        imaginary part (prefixes are case sensitive)
+                     </li>
+                     <li>A single column declaration is composed by three
+                        consecutive parts (spaces are ignored):
+                        
+                        <ul class="listD">
+                           <li>Column name (mandatory): an unambiguous label
+                              starting with an alphabetic character
+                           </li>
+                           <li>Abscissa data (optional): a string enclosed by <code class="txt">()</code>
+                              indicating that column is an ordinate;
+                              the string can be empty, an existing column label,
+                              or an index scale composed by a rescaling
+                              factor, unit label and offset
+                           </li>
+                           <li>Unit data (optional): a string composed by
+                              rescaling factor, unit label and an offset
+                              enclosed by <code class="txt">[]</code> (spaces are ignored).
+                              Here you can append also a data type declaration
+                              such as <code class="txt">|u16|</code>; <code class="txt">u</code> stands for
+                              unsigned integer, <code class="txt">i</code> for signed integer;
+                              this prefix is followed by a bit number.
+                              The effect is that each data is casted to type and
+                              then a bit mask is applied.
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li>Names and units are case sensitive</li>
+                     <li>If all columns corresponds to abscissa, they
+                        will be converted as indexed ordinates
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="chars"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body"> 
+                                 The default characters that identify a column field in
+                                 header are same characters of <a href="http://www.w3.org/" title="http://www.w3.org/"><acronym title="eXtensible Markup Language">XML</acronym></a> tags:
+                                 <kbd title="U+003C">&lt;</kbd><kbd title="U+003E">&gt;</kbd>.
+                                 As explicit developer choice, user cannot modify this default.
+                                 Note that initially were adopted the 'guillemet' or french
+                                 quotation marks
+                                 <kbd title="U+00AB">«</kbd> (Alt+0171)
+                                 <kbd title="U+00BB">»</kbd> (Alt+0187),
+                                 but finally this choice was discarded to avoid <a href="http://www.ascii.org/" title="http://www.ascii.org/"><acronym title="American Standard Code for Information Interchange">ASCII</acronym></a> extension
+                                 chars.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  <div class="notepad"> More headers<pre class="notepad">
+// Note that extra-spaces are simply ignored
+// by the parser.
+
+// plot 'y1' vs 'x' and 'y2' vs 'z'
+#header &lt;x&gt; &lt;y1(x)&gt; &lt;z&gt; &lt;y2(z)&gt;
+
+// plot all vs their ordinal index
+// 'c' is rescaled and measured in 'mm'
+#header &lt; t()&gt; &lt; a() &gt; &lt;b()&gt; &lt;c() [0.1mm]&gt;
+// or in a more concise form:
+#header &lt; t&gt; &lt; a &gt; &lt;b&gt; &lt;c [0.1mm]&gt;
+// Note that the following plots only 'a' vs
+// its idx, because the remaining columns are
+// taken as unused abscissas:
+#header &lt; t&gt; &lt; a() &gt; &lt;b&gt; &lt;c [0.1mm]&gt;
+
+// plot 'a','c' vs 't'; 'b1' vs its index
+#header &lt;t [ms]&gt; &lt;a(t) [cm]&gt; &lt;b1() &gt; &lt;c(t)[Km]&gt;
+
+// plot 'I','v' vs 'r'
+// 'I' is measured in A, rescaled respect 10A,
+// with an offset correction of -0.43A
+#header &lt; I(r)[10A-0.43]&gt; &lt;r [ohm]&gt; &lt;v(r) [V]&gt;
+
+// Different abscissas: a power (acquired in
+// watt) vs current and a voltage vs a
+// different current 'i2'
+#header &lt;i1 [A]&gt; &lt;i2 [A]&gt; &lt; P(i1) [.001KW]&gt;  &lt;v(i2) [V]&gt;
+
+// Index rescaling
+// plot 'x' vs its idx measured in newton,
+// 'y' vs 'csi'
+// 'z' vs its idx multiplied by '0.2 m'
+#header &lt;x([1N])&gt; &lt;y(csi)&gt; &lt;csi [m]&gt; &lt;z([.2m])&gt;
+
+// A synchronized time acquisition of three quantities:
+// 'x' with a sample frequency of 2KHz,
+// 'y' with a sample frequency of 1KHz,
+// 'z' with a sample frequency of 0.5KHz
+#header &lt;x([.5ms])&gt; &lt;y([1ms])&gt; &lt;z([2ms])&gt;
+
+// A feature yet to come: polar plot of complex datas
+// A space vector current (Id,Iq) measured at time 't'
+#header &lt;t[ms]&gt;&lt;Re{I(t)[A]}&gt;&lt;Im{I(t)[A]}&gt;
+
+</pre></div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

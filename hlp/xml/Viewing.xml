@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2008 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Viewing"
+         title="Viewing data"
+         keywords="viewing plots"
+         description="plot navigation tools and facilities"
+         version="0.6" date="nov2008">
+
+    <intro toc="yes">
+        Analyzing a &track; graphically involve the
+        capability to change physical space representation
+        on screen (the scale) and then retrieving from
+        represented points some useful quantities.
+        Here are the tools &mp; provides.
+    </intro>
+
+
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="OnRenderedTracks"
+             title="Viewed data"
+             keywords="on viewing data"
+             description="on the difference between rendered
+                          and measured data">
+    
+    With this program you can see your data
+    as colored pixels in the screen,
+    namely as rendered tracks.
+    This representation often involves
+    a further quantization of your data
+    (the more your screen resolution [pix/cm]
+    is high, the higher is the Nyquist frequency
+    of the quantization).
+    This means that you must always consider
+    carefully what you see (read: aliasing);
+    for example, do you believe that a current
+    can really have the following behaviour?
+    <p><img src="./files/images/aliasing.gif"/></p>
+
+    We can experiment this fact resizing
+    plot window (this alters the pixels physical
+    dimensions) or playing with the
+    <option name="SampPerPix"/> option.
+    Consider for example this track:
+
+    <p><img src="./files/images/ViewMoreSamples.gif"/></p>
+    In this case the data sampling interval is
+    much less the pixels width, so the rendered
+    track appears as a filled band.
+    Now set <option name="SampPerPix"/>
+    to <txt>1</txt>, forcing &mp; to render only
+    one sample per pixel:
+    <p><img src="./files/images/ViewLessSamples.gif"/></p>
+    This undersampling decreases data
+    sampling frequency, and so can cause
+    aliasing.
+
+    <p>
+    Remember that &mp; computations and
+    <a href="MeasureMode.html">measures</a>
+    are always performed on internal data
+    and not on their screen representation.
+    </p>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="SelectMode"
+             title="Select mode"
+             keywords="select mode"
+             description="change selection and plot layout">
+
+    During <action name="SelectMode"/> you can:
+    <listO>
+      <it>Change current selected
+          <a href="PlotObjects.html#ProgramState">&frame; and &track;</a>
+      </it>
+      <it>Edit &frame;s, &track;s and other
+          <a href="PlotObjects.html">objects</a>
+          <action name="Properties"/> and style
+      </it>
+      <it>Modify plot <a href="_Layouts.html">layout</a>,
+          namely change &frame;s position, and move
+          &track;s between &frame;s.
+      </it>
+    </listO>
+    These operations have generally a change
+    selection effect.
+
+    <!--....................................-->
+    <subsection name="EditingProperties"
+                title="Editing object properties"
+                keywords="editing properties">
+
+    To access object properties form:
+    <listO>
+      <it>Double click on object</it>
+      <it>Right click to access context menu</it>
+      <it>Select object and then trigger <action name="Properties"/>
+          action (for example using the relative
+          <a href="MainForm.html#Mainmenu">main menu</a> entry)</it>
+    </listO>
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="EditingLayout"
+                title="Editing Layout"
+                keywords="editing layout">
+
+    To drag an object simply left click on it,
+    then move mouse holding left button down.
+    Draggable objects are &frame;s,
+    &track;s, <dfn>legends</dfn>,
+    <dfn>markers</dfn> (see <action name="AddMarker"/>),
+    <dfn>text labels</dfn>  (see <action name="AddText"/>).
+
+    <p>With this operation you can:</p>
+    
+    <listO>
+        <it>Change current selected &frame; or &track;</it>
+        <it>Move <dfn>frames</dfn> to a new position</it>
+        <it>Swap or merge <dfn>frames</dfn></it>
+        <it>Delete <dfn>frames</dfn> releasing them out of plot</it>
+        <it>Move <dfn>tracks</dfn> to other frames</it>
+        <it>Delete <dfn>tracks</dfn> releasing them out of plot</it>
+        <it>Change <dfn>legends</dfn> position</it>
+    </listO>
+
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="SelectMouseCommands"
+                title="Mouse effects"
+                keywords="mouse commands in SelectMode">
+
+    <action name="SelectMode"/> supports the following
+    mouse operations:
+      <table>
+          <thead> <c>Mouse operation</c> <c>Target</c> <c>Effect</c> </thead>
+          <row>
+              <c>Left click</c>
+              <c>&frame;, &track; or Legend</c>
+              <c>Object selection; tracks can be selected also on legend</c>
+          </row>
+          <row>
+              <c>Left double click</c>
+              <c>foil object</c>
+              <c>Edit object properties</c>
+          </row>
+          <row>
+              <c>Right click</c>
+              <c>&frame; or &track;</c>
+              <c>Object contextual menu</c>
+          </row>
+          <row>
+              <c>Wheel</c>
+              <c>&frame;</c>
+              <c>Cycle current &track;</c>
+          </row>
+          <row>
+              <c>Left button drag</c>
+              <c>&frame;, &track;, <dfn>legend</dfn>, <dfn>marker</dfn>, <dfn>text label</dfn></c>
+              <c>Object dragging</c>
+          </row>
+      </table>
+      
+      <HHseealso>
+          <target title="Plot actions" href="PlotActions.html"/>
+      </HHseealso>
+
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="EditMode"
+             title="Edit mode"
+             keywords="edit mode"
+             description="modifying data and crop tool">
+
+    During <action name="EditMode"/> you can:
+    
+    <listO>
+      <it>Crop &track;s
+      </it>
+      <it>This mode is under development...
+      </it>
+    </listO>
+
+    <!--....................................-->
+    <subsection name="EditMouseCommands"
+                title="Mouse effects"
+                keywords="mouse commands in EditMode">
+
+    <action name="EditMode"/> supports the following
+    mouse operations:
+      <table>
+          <thead> <c>Mouse operation</c> <c>Target</c> <c>Effect</c> </thead>
+          <row>
+              <c>Left button drag</c>
+              <c>&frame;</c>
+              <c>Build a crop rectangle</c>
+          </row>
+          <row>
+              <c>Left double click</c>
+              <c>crop rectangle</c>
+              <c>Crop all tracks contained in current frame;
+                 applies also to other frames if <action name="LockX"/>
+                 is checked</c>
+          </row>
+          <row>
+              <c>Left click</c>
+              <c>&frame;</c>
+              <c>boh</c>
+          </row>
+          <row>
+              <c>Right click</c>
+              <c>&frame;</c>
+              <c>boh</c>
+          </row>
+      </table>
+
+      <HHseealso>
+          <target title="Plot actions" href="PlotActions.html"/>
+          <target title="Editing data" href="Editing.html"/>
+      </HHseealso>
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="PanMode"
+             title="Pan mode"
+             keywords="pan mode"
+             description="drag domain offset">
+
+    During <action name="PanMode"/> you can
+    modify &frame; mapped space
+    offset, in other words you can shift plots
+    moving along plane directions.
+    Use <action name="LockX"/> or <action name="LockY"/>
+    actions to involve all frames.
+    
+
+    <!--....................................-->
+    <subsection name="PanMouseCommands"
+                title="Mouse effects"
+                keywords="mouse commands in PanMode">
+
+    <action name="PanMode"/> supports the following
+    mouse operations:
+      <table>
+          <thead> <c>Mouse operation</c> <c>Target</c> <c>Effect</c> </thead>
+          <row>
+              <c>Left button drag</c>
+              <c>&frame;</c>
+              <c>Frame space dragging</c>
+          </row>
+          <row>
+              <c>Right button drag</c>
+              <c>&frame;</c>
+              <c>Continuous Pan feature</c>
+          </row>
+          <row>
+              <c>Left double click or middle click</c>
+              <c>&frame;</c>
+              <c>Reset position returning to axes origin</c>
+          </row>
+          <row>
+              <c>Wheel</c>
+              <c>&frame;</c>
+              <c>Horizontal Pan (default increment)</c>
+          </row>
+          <row>
+              <c>Wheel + Right button</c>
+              <c>&frame;</c>
+              <c>Vertical Pan (default increment)</c>
+          </row>
+          <row>
+              <c>Left-Right click</c>
+              <c>&frame;</c>
+              <c>Selects frame</c>
+          </row>
+      </table>
+
+      <HHseealso>
+          <target title="Plot actions" href="PlotActions.html"/>
+      </HHseealso>
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ZoomMode"
+             title="Zoom mode"
+             keywords="zoom mode"
+             description="magnify or dwindle frame view">
+
+    During <action name="ZoomMode"/> you can
+    modify &frame; mapped space scale.
+    Use <action name="LockX"/> or <action name="LockY"/>
+    actions to involve all frames.
+
+    You can zoom in two ways:
+    <listO>
+      <it>Zoom drawing a zoom rectangle (see the <option name="SuddenZoom"/> option)</it>
+      <it>Default zoom respect current cursor point (see <option name="ZoomPerc"/> option)</it>
+    </listO>
+    Some customizations pertaining zoom mode are
+    described in <option name="ZoomMode"/> options.
+
+
+    <!--....................................-->
+    <subsection name="ZoomMouseCommands"
+                title="Mouse effects"
+                keywords="mouse commands in ZoomMode">
+
+    <action name="ZoomMode"/> supports the following
+    mouse operations:
+      <table>
+          <thead> <c>Mouse operation</c> <c>Target</c> <c>Effect</c> </thead>
+          <row>
+              <c>Left button drag</c>
+              <c>&frame;</c>
+              <c>Build a zoom rectangle</c>
+          </row>
+          <row>
+              <c>Left click</c>
+              <c>&frame;</c>
+              <c>Selects frame;
+                 if inside zoom rectangle perform zoom in, if outside
+                 delete it; if no rectangle perform default zoom in:
+                 hold right button to zoom out abscissa only
+                 see also the <option name="SuddenZoom"/> option</c>
+          </row>
+          <row>
+              <c>Right click</c>
+              <c>&frame;</c>
+              <c>Default zoom out (respect cursor pos);
+                 hold left button to zoom out abscissa only</c>
+          </row>
+          <row>
+              <c>Left double click</c>
+              <c>&frame;</c>
+              <c>Reset scale to fit all tracks</c>
+          </row>
+          <row>
+              <c>Middle click</c>
+              <c>&frame;</c>
+              <c>Default zoom in (respect cursor pos)</c>
+          </row>
+          <row>
+              <c>Wheel</c>
+              <c>&frame;</c>
+              <c>Default zoom in-out; hold left or
+                 right mouse buttons to zoom only ordinate
+                 or abscissa (respect cursor pos)</c>
+          </row>
+      </table>
+
+      <HHseealso>
+          <target title="Plot actions" href="PlotActions.html"/>
+      </HHseealso>
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="PixelPhysicalSize"
+                title="Pixel size in physical space"
+                keywords="pixel size in physical space">
+    <p>
+    Zoom operation lead to a change of
+    proportion between screen representation
+    and represented physical space, that is
+    the pixel size in physical space units.
+    </p>
+    This quantity is quite important because
+    affects all measures depending on mouse
+    position (current point, interval average, etc...).
+
+    It is worth to observe that to increase
+    the accuracy of these measures there are
+    two ways:
+    <listO>
+      <it>Zoom in as possible the region of interest</it>
+      <it>Increase your media pixel resolution</it>
+    </listO>
+
+    The output numbers reflect this granularity,
+    however in this mode you can get exact values
+    of pixel size in the statusbar (in place of
+    current point) holding left click on the frame
+    of interest.
+
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="MeasureMode"
+             title="Measure mode"
+             keywords="measure mode"
+             description="retrieve frame points and track quantities">
+
+    During <action name="MeasureMode"/> you can
+    perform simple measures on current selected &track;
+    (see <a href="SelectMode.html"><txt>Select mode</txt></a>).
+    Moving mouse cursor over a &frame;, some basic measure
+    quantities will be automatically shown; you can choose
+    which one using right click contextual menu to enable
+    current point abscissa
+    (<img src="./files/images/actions/MeasureAbscissa.gif"/>),
+    current &track; ordinate
+    (<img src="./files/images/actions/MeasureOrdinate.gif"/>)
+    and slope
+    (<img src="./files/images/actions/MeasureSlope.gif"/>).
+    
+    <scrap name="SwitchCurrTrack">
+        You can quickly change the selected track
+        using either the mouse wheel,
+        or the <a href="PlotActions.html">plotkeys</a>,
+        or the Legend.
+    </scrap>
+
+    A set of measured quantities, selected with
+    <option name="PaneQuantities"/> option, are
+    shown in the <a href="PaneGrid.html">Pane grid</a>.
+    To view the <a href="PaneGrid.html">Pane grid</a>
+    use <action name="ShowPane"/> action or set
+    <option name="AutoPane"/> option to show it
+    automatically when switching to this mode.
+    
+    <scrap name="MeasurePoint">
+        The punctual measures are related to actual
+        &track; point next to current mouse position,
+        no interpolation is done.
+    </scrap>
+
+    Some measured quantities can be graphically shown
+    through markers using <action name="ViewMeasureMarkers"/>;
+    you can customize them editing the
+    <option name="MeasureMarkers"/> option.
+
+    <HHseealso>
+        <target title="List of measured quantities" href="PaneGrid.html"/>
+        <target title="AutoPane option" href="OptionsDescription.html#optAutoPane"/>
+        <target title="MeasureMarkers option" href="OptionsDescription.html#optMeasureMarkers"/>
+    </HHseealso>
+    
+    <!--....................................-->
+    <subsection name="MeasureMouseCommands"
+                title="Mouse effects"
+                keywords="mouse commands in MeasureMode">
+
+    <action name="MeasureMode"/> supports the following
+    mouse operations:
+      <table>
+          <thead> <c>Mouse operation</c> <c>Target</c> <c>Effect</c> </thead>
+          <row>
+              <c>Moving over</c>
+              <c>&frame;</c>
+              <c>Selects frame; change current measure point</c>
+          </row>
+          <row>
+              <c>Moving over Legend</c>
+              <c>&frame; Legend</c>
+              <c>Temporarily toggle to <action name="SelectMode"/>,
+                 click on tracks to select</c>
+          </row>
+          <row>
+              <c>Left click</c>
+              <c>&frame;</c>
+              <c>Set interval starting point and
+                 enable interval measures</c>
+          </row>
+          <row>
+              <c>Left double click</c>
+              <c>&frame;</c>
+              <c>Collect point in <a href="Log.html">Log</a></c>
+          </row>
+          <row>
+              <c>Left button drag</c>
+              <c>&frame;</c>
+              <c>Change interval final point</c>
+          </row>
+          <row>
+              <c>Middle click</c>
+              <c>&frame;</c>
+              <c>Set persistent measure lines</c>
+          </row>
+          <row>
+              <c>Wheel</c>
+              <c>&frame;</c>
+              <c>Cycle between contained tracks</c>
+          </row>
+      </table>
+
+      <HHseealso>
+          <target title="Plot actions" href="PlotActions.html"/>
+          <target title="The pane grid" href="PaneGrid.html"/>
+      </HHseealso>
+
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="PenMode"
+             title="Pen mode"
+             keywords="pen mode,scribble,highlighter"
+             description="scribble and highlight plot">
+
+    During <action name="PenMode"/> you can
+    scribble on plot canvas;
+    this tool is meant to be used in combination with
+    <action name="Snapshot"/> action and works only
+    with <a href="ToBMP.html">bitmap output</a>.
+    You have two customizable tools: pen and highlighter;
+    hold down respectively left or right mouse button
+    to use them.
+    Customize them modifying the option entries:
+    <option name="PencilSize"/>,
+    <option name="PencilColor"/>,
+    <option name="HighlighterSize"/>,
+    <option name="HighlighterColor"/>.
+    
+    <scrap name="VolatileTextWarn">
+        <span style="color: red; font-weight: bolder;">Warning</span>: the scribbles drawn in this way are
+        ephemeral, and will be cleaned at next repaint;
+        however they are freezed when Canvas is
+        transformed in a bitmap, when using
+        <action name="Export"/> or
+        <action name="Snapshot"/> action,
+        in this case setting properly the
+        <option name="SnapshotAction"/> option.
+    </scrap>
+
+
+    <!--....................................-->
+    <subsection name="PenMouseCommands"
+                title="Mouse effects"
+                keywords="mouse commands in PenMode">
+
+    <action name="PenMode"/> supports the following
+    mouse operations:
+      <table>
+          <thead> <c>Mouse operation</c> <c>Target</c> <c>Effect</c> </thead>
+          <row>
+              <c>Left button drag</c>
+              <c>&frame;</c>
+              <c>Draw with pencil</c>
+          </row>
+          <row>
+              <c>Right button drag</c>
+              <c>&frame;</c>
+              <c>Draw with highlighter</c>
+          </row>
+          <row>
+              <c>Middle click</c>
+              <c>&frame;</c>
+              <c>Refresh erasing all scribbles</c>
+          </row>
+          <row>
+              <c>Wheel</c>
+              <c>&frame;</c>
+              <c>Default horizontal Pan</c>
+          </row>
+          <row>
+              <c>Wheel + Right button</c>
+              <c>&frame;</c>
+              <c>Default vertical Pan</c>
+          </row>
+      </table>
+
+      <HHseealso>
+          <target title="Plot actions" href="PlotActions.html"/>
+      </HHseealso>
+
+    </subsection>
+
+    </section>
+
+
+</chapter>
+<!--_______________________End_of_file______________________-->

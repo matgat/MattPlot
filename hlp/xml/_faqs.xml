@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *   MattPlot help xml source FAQs
+    *   2006 Matteo Gattanini
+    *                                                       -->
+<faqs title="Help FAQs"
+      maintainer="Matteo Gattanini"
+      lang="en"  version="0.6"  date="nov2008">
+<!--*
+    *   Note:
+    *       `name' is like an id in the current tag scope
+    *       link to faqs using faq.<topicname>.<faqname>
+    *       ex: faq.arguments.nofurtherinstances
+    *   History:
+    *       19aug2006 (MG) document structure
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="arguments"
+       title="Program arguments"
+       description="On arguments passed via command line">
+
+    <!--................................................-->
+    <faq name="nofurtherinstances"
+         keywords="preventing further instances">
+    <que>
+        How can I prevent the creation of
+        further program instances when I open
+        other files from command line?
+    </que>
+    <ans>
+        Prefix program arguments string with
+        the special character <txt>@</txt>.
+        See related
+        <a href="ProgramArguments.html#NoFurtherInstances">section</a>.
+    </ans>
+    </faq>
+    
+    <!--................................................-->
+    <faq name="sameframe"
+         keywords="load files in the same frame">
+    <que>
+        How can I load two files in the same
+        plot frame?
+    </que>
+    <ans>
+        By mouse: drag the first file in
+        plot area, then the second in the
+        same frame of first file<br/>
+        By command line: specify
+        the option <txt>-f</txt>
+        (see <a href="ProgramArguments.html#OptionArgs">here</a>)
+        as in the following example:
+<cmdline>
+C:\> MattPlot -f file1.txt file2.txt
+</cmdline>
+    </ans>
+    </faq>
+
+</topic>
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="importing"
+       title="Importing data"
+       description="When importing data from external files">
+
+    <!--................................................-->
+    <faq name="rescaling"
+         keywords="rescaling example">
+    <que>
+        Can I rescale (multiplication by a constant)
+        my input data?
+    </que>
+    <ans>
+        You can do it at parsing time using
+        <a href="TextFormat.html">text data file</a>
+        format, in particular the parser's
+        <a href="Header.html">Header</a>
+        <a href="Directives.html">directive</a>, for example:
+<notepad caption="an acquisition">
+#header &lt;y [0.5]&gt;
+// following data will be
+// multiplied by 0.5
+1
+2
+3
+</notepad>
+        A more complex example:
+<notepad caption="an acquisition">
+#header &lt;t[1E-3s]&gt;&lt;V(t)[10V]&gt;&lt;i(t)[0.1A-2]&gt;
+0.0   142.21   8.1
+0.1   134.65   8.7
+0.2   117.32   9.1
+</notepad>
+        In this example we have three measures
+        taken every <ex>100us</ex> of a voltage
+        and a current, the first expressed in
+        tens of volt, the second in tenths of
+        ampère; to the current is also applied
+        an offset of <ex>-2</ex> after
+        rescaling (so this means <ex>-2A</ex>).
+        <p>
+        Remember that you can rescale tracks or
+        perform other elaborations using the
+        <action name="TrackTransform"/> tool
+        (see <a href="Transforming.html">Transforming</a>
+        section).
+        </p>
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="compressedfiles"
+         keywords="compressed files,zip,gz">
+    <que>
+        Can &mp; open or save as compressed files?
+    </que>
+    <ans>
+        &mp; can handle some compression formats,
+        see <a href="DataSources.html#FileSources">here</a>.
+    </ans>
+    </faq>
+
+</topic>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="viewing"
+       title="Viewing plots"
+       description="When using graphical interface">
+
+    <!--................................................-->
+    <faq name="togglemode"
+         keywords="temporary toggle mode">
+    <que>
+        Can I temporary toggle to <kbd>pan</kbd>
+        or <kbd>zoom</kbd> mode while measuring track?
+    </que>
+    <ans>
+        Yes, use the <txt>PanToggle</txt> and
+        <txt>ZoomToggle</txt>
+        <a href="PlotActions.html">plot actions</a>
+        whose key shortcuts are defined in
+        <a href="OptionFile.html">options file</a>.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="fitview"
+         keywords="reset view">
+    <que>
+        I zoomed too much, how can I reset plot view?
+    </que>
+    <ans>
+        Use one of the following actions:
+        <action name="FitToAxes"/>,
+        <action name="FitToTracks"/>,
+        <action name="FitToTrack"/>;
+        set the shortcuts using
+        <option name ="ShortCuts"/> option entries.
+        Note that also some
+        <a href="PlotActions.html">plot keys</a>
+        like <txt>cycle</txt> may perform fit operations;
+        furthermore remember that during
+        <a href="ZoomMode.html">zoom mode</a> you can
+        reset scale with a mouse middle click.
+    </ans>
+    </faq>
+
+
+    <!--................................................-->
+    <faq name="trackproperties"
+         keywords="edit properties without mouse selection">
+    <que>
+        I want to edit the properties of a track,
+        but selection with mouse is difficult.
+        Is there another way?
+    </que>
+    <ans>
+        Select the track using
+        <a href="PlotActions.html">plot keys</a>
+        and then fire the <action name="TrackProperties"/>
+        action.
+    </ans>
+    </faq>
+    
+    <!--................................................-->
+    <faq name="capturingmeasurelines"
+         keywords="capturing measure lines">
+    <que>
+        Can I get a plot image comprising the
+        current measure lines?
+    </que>
+    <ans>
+        Yes, see
+        <a href="Tips.html#Snapshots">this tip</a>.
+    </ans>
+    </faq>
+    
+    <!--................................................-->
+    <faq name="loggingcoords"
+         keywords="recording point coordinates">
+    <que>
+        How can I record some point coordinates
+        of a displayed track?
+    </que>
+    <ans>
+        In <a href="MeasureMode.html">measure mode</a>
+        you can record track points in the
+        <a href="Log.html">log</a>;
+        see <a href="MeasureMode.html">related section</a>.
+    </ans>
+    </faq>
+
+</topic>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="customizing"
+       title="Customizing"
+       description="Customizing program">
+
+    <!--................................................-->
+    <faq name="customshortcuts"
+         keywords="customizing shortcuts">
+    <que>
+        There is an <a href="ActionsTable.html">action</a>
+        that I use often; is there a way to call it
+        quickly avoiding the
+        <a href="MainForm.html#Mainmenu">main menu</a>?
+    </que>
+    <ans>
+        Check if there is an available keyboard shortcut
+        set in <option name="ShortCuts"/> section of the
+        <a href="OptionFile.html">option file</a>, refer
+        to <a href="_KeyCodes.html">string-key table</a>
+        to customize them.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="customtoolbar"
+         keywords="customizing toolbar">
+    <que>
+        No shortcut available for my
+        beloved <a href="ActionsTable.html">action</a>,
+        Am I condemned to access it through the slow
+        <a href="MainForm.html#Mainmenu">main menu</a>
+        for the rest of my life?
+    </que>
+    <ans>
+        You can add a button on the
+        <a href="MainForm.html#Toolbar">toolbar</a>.
+        Edit the action names sequence in
+        <option name="Toolbar"/> option.
+        Get action names from the
+        <a href="ActionsTable.html">actions table</a>
+        or navigating main menu and looking at the
+        <a href="MainForm.html#Statusbar">statusbar</a>
+        hints.
+    </ans>
+    </faq>
+
+
+</topic>
+
+
+</faqs><!--~~~~~~~~~~~~~~~~~ End of file ~~~~~~~~~~~~~~~~~~~-->

@@ -1,0 +1,13 @@
+#title Filter test
+#header <x> <y()[]> <z(x)[]>
+#text (0.2;4) ciao test
+#text (3;3) +ueillahhh
+0.0 9 3
+0.1 8 3
+0.2 4 3
+0.3 4 2
+0.4 7 2
+0.5 6 2
+0.6 5 2
+0.7 4 1
+0.8 3 1

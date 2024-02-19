@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<scrap_page name="_KeyCodes"
+            title="Virtual key codes"
+            keywords="virtual key codes"
+            description="table of virtual key codes"
+            xmlns="/mattplot/xhelp">
+
+    The following table lists the strings
+    (italian locale settings) that represent
+    key shortcuts in <option name="ShortCuts"/>
+    options.
+
+    <table hcol="1">
+        <thead> <c>String (it)</c> <c>Description</c> <c>Code</c> </thead>
+
+        <row><c>BLOC SCORR</c><c>Control+Break</c><c>VK_CANCEL (3)</c></row>
+        <row><c>BkSp</c><c>Backspace key</c><c>VK_BACK (8)</c></row>
+        <row><c>Tab</c><c>Tab key</c><c>VK_TAB (9)</c></row>
+        <row><c>5 (Tn)</c><c>Clear key</c><c>VK_CLEAR (12)</c></row>
+        <row><c>Enter</c><c>Enter key</c><c>VK_RETURN (13)</c></row>
+        <row><c>MAIUSC</c><c>Shift key</c><c>VK_SHIFT (16)</c></row>
+        <row><c>CTRL</c><c>Ctrl key</c><c>VK_CONTROL (17)</c></row>
+        <row><c>ALT</c><c>Alt key</c><c>VK_MENU (18)</c></row>
+        <row><c>BLOC MAIUS</c><c>Caps Lock key</c><c>VK_CAPITAL (20)</c></row>
+        <row><c>Esc</c><c>Esc key</c><c>VK_ESCAPE (27)</c></row>
+        <row><c>Space</c><c>Space bar</c><c>VK_SPACE (32)</c></row>
+        <row><c>PgUp</c><c>Page Up key</c><c>VK_PRIOR (33)</c></row>
+        <row><c>PgDn</c><c>Page Down key</c><c>VK_NEXT (34)</c></row>
+        <row><c>End</c><c>End key</c><c>VK_END (35)</c></row>
+        <row><c>Home</c><c>Home key</c><c>VK_HOME (36)</c></row>
+        <row><c>Left</c><c>Left Arrow key</c><c>VK_LEFT (37)</c></row>
+        <row><c>Up</c><c>Up Arrow key</c><c>VK_UP (38)</c></row>
+        <row><c>Right</c><c>Right Arrow key</c><c>VK_RIGHT (39)</c></row>
+        <row><c>Down</c><c>Down Arrow key</c><c>VK_DOWN (40)</c></row>
+        <row><c>Ins</c><c>Insert key</c><c>VK_INSERT (45)</c></row>
+        <row><c>Del</c><c>Delete key</c><c>VK_DELETE (46)</c></row>
+        <row><c>0</c><c>0 key (numeric keypad)</c><c>VK_NUMPAD0 (96)</c></row>
+        <row><c>1</c><c>1 key (numeric keypad)</c><c>VK_NUMPAD1 (97)</c></row>
+        <row><c>2</c><c>2 key (numeric keypad)</c><c>VK_NUMPAD2 (98)</c></row>
+        <row><c>3</c><c>3 key (numeric keypad)</c><c>VK_NUMPAD3 (99)</c></row>
+        <row><c>4</c><c>4 key (numeric keypad)</c><c>VK_NUMPAD4 (100)</c></row>
+        <row><c>5</c><c>5 key (numeric keypad)</c><c>VK_NUMPAD5 (101)</c></row>
+        <row><c>6</c><c>6 key (numeric keypad)</c><c>VK_NUMPAD6 (102)</c></row>
+        <row><c>7</c><c>7 key (numeric keypad)</c><c>VK_NUMPAD7 (103)</c></row>
+        <row><c>8</c><c>8 key (numeric keypad)</c><c>VK_NUMPAD8 (104)</c></row>
+        <row><c>9</c><c>9 key (numeric keypad)</c><c>VK_NUMPAD9 (105)</c></row>
+        <row><c>* (Tn)</c><c>Multiply key (numeric keypad)</c><c>VK_MULTIPLY (106)</c></row>
+        <row><c>PIÙ (Tn)</c><c>Add key (numeric keypad)</c><c>VK_ADD (107)</c></row>
+        <row><c>- (Tn)</c><c>Subtract key (numeric keypad)</c><c>VK_SUBTRACT (109)</c></row>
+        <row><c>. (Tn)</c><c>Decimal key (numeric keypad)</c><c>VK_DECIMAL (110)</c></row>
+        <row><c>-</c><c>Divide key (numeric keypad)</c><c>VK_DIVIDE (111)</c></row>
+        <row><c>F1</c><c>F1 key</c><c>VK_F1 (112)</c></row>
+        <row><c>F2</c><c>F2 key</c><c>VK_F2 (113)</c></row>
+        <row><c>F3</c><c>F3 key</c><c>VK_F3 (114)</c></row>
+        <row><c>F4</c><c>F4 key</c><c>VK_F4 (115)</c></row>
+        <row><c>F5</c><c>F5 key</c><c>VK_F5 (116)</c></row>
+        <row><c>F6</c><c>F6 key</c><c>VK_F6 (117)</c></row>
+        <row><c>F7</c><c>F7 key</c><c>VK_F7 (118)</c></row>
+        <row><c>F8</c><c>F8 key</c><c>VK_F8 (119)</c></row>
+        <row><c>F9</c><c>F9 key</c><c>VK_F9 (120)</c></row>
+        <row><c>F10</c><c>F10 key</c><c>VK_F10 (121)</c></row>
+        <row><c>F11</c><c>F11 key</c><c>VK_F11 (122)</c></row>
+        <row><c>F12</c><c>F12 key</c><c>VK_F12 (123)</c></row>
+        <row><c>F13</c><c>F13 key</c><c>VK_F13 (124)</c></row>
+        <row><c>F14</c><c>F14 key</c><c>VK_F14 (125)</c></row>
+        <row><c>F15</c><c>F15 key</c><c>VK_F15 (126)</c></row>
+        <row><c>F16</c><c>F16 key</c><c>VK_F16 (127)</c></row>
+        <row><c>F17</c><c>F17 key</c><c>VK_F17 (128)</c></row>
+        <row><c>F18</c><c>F18 key</c><c>VK_F18 (129)</c></row>
+        <row><c>F19</c><c>F19 key</c><c>VK_F19 (130)</c></row>
+        <row><c>F20</c><c>F20 key</c><c>VK_F20 (131)</c></row>
+        <row><c>F21</c><c>F21 key</c><c>VK_F21 (132)</c></row>
+        <row><c>F22</c><c>F22 key</c><c>VK_F22 (133)</c></row>
+        <row><c>F23</c><c>F23 key</c><c>VK_F23 (134)</c></row>
+        <row><c>F24</c><c>F24 key</c><c>VK_F24 (135)</c></row>
+        <row><c>PAUSA</c><c>Num Lock key</c><c>VK_NUMLOCK (144)</c></row>
+        <row><c>BLOC SCORR</c><c>Scroll Lock key</c><c>VK_SCROLL (145)</c></row>
+        <row><c>MAIUSC</c><c>Left Shift key (only used with GetAsyncKeyState and GetKeyState)</c><c>VK_LSHIFT (160)</c></row>
+        <row><c>MAIUSC (DESTRA)</c><c>Right Shift key  (only used with GetAsyncKeyState and GetKeyState)</c><c>VK_RSHIFT (161)</c></row>
+        <row><c>CTRL</c><c>Left Ctrl key  (only used with GetAsyncKeyState and GetKeyState)</c><c>VK_LCONTROL (162)</c></row>
+        <row><c>CTRL</c><c>Right Ctrl key  (only used with GetAsyncKeyState and GetKeyState)</c><c>VK_RCONTROL (163)</c></row>
+        <row><c>ALT</c><c>Left Alt key  (only used with GetAsyncKeyState and GetKeyState)</c><c>VK_LMENU (164)</c></row>
+        <row><c>ALT</c><c>Right Alt key  (only used with GetAsyncKeyState and GetKeyState)</c><c>VK_RMENU (165)</c></row>
+        
+        <row><c>Shift+A</c><c>Shift key combination: 'A' key plus shift key</c><c>shift key + A (65)</c></row>
+        <row><c>Alt+A</c><c>Shift key combination: 'A' key plus alt key</c><c>alt key + A (65)</c></row>
+        <row><c>Ctrl+A</c><c>Shift key combination: 'A' key plus control key</c><c>control key + A (65)</c></row>
+    </table>
+
+    Use '+' character to obtain combination
+    with shift keys, ex 'CTRL+K'.
+    
+    <HHseealso>
+        <target title="Key bindings" href="KeyBindings.html"/>
+        <target title="Related option entries" href="OptionsDescription.html#optShortCuts"/>
+        <target title="Plot keys" href="PlotActions.html"/>
+    </HHseealso>
+
+</scrap_page>
+<!--_______________________End_of_file______________________-->

@@ -1,0 +1,193 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Exporting text files to Matlab</title>
+      <meta name="keywords" content="example: exporting text files to Matlab" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="ImportFromMatlab.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Examples.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ExportToMatlab.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="ImportFromMatlab.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ExportToMatlab.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Examples" href="Examples.html">Examples</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="MemDumpPlot.html"><span>A memory dump plot</span></a></li>
+                        <li><a href="ImportFromMatlab.html"><span>Importing from Matlab</span></a></li>
+                        <li id="current"><a href="ExportTextToMatlab.html"><span>Exporting text files to Matlab</span></a></li>
+                        <li><a href="ExportToMatlab.html"><span>Exporting to Matlab via m-files</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ExportTextToMatlab" title="exporting text files to Matlab">Exporting text files to Matlab</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: exporting text files to Matlab" /></object>
+                  
+                  Imagine to export to text the tracks
+                  contained in <code class="txt">Frame1</code> using
+                  <a href="ActionsTable.html#actExport" title="action Export"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/Export.gif" alt="[Export]" /> <code class="txt">Export</code></a> or <a href="ActionsTable.html#actExportFrameToText" title="action ExportFrameToText"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/ExportFrameToText.gif" alt="[ExportFrameToText]" /> <code class="txt">ExportFrameToText</code></a>
+                  action, obtaining the file
+                  <var title="">C:\Data\Frame1.txt</var>
+                  
+                  
+                  <div class="notepad"> Frame1.txt<pre class="notepad">
+#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2(x)&gt;
+1.07E-3   5   0.6
+1.12E-3   2   0.8
+1.23E-3   4   0.9
+1.34E-3   3   1.1
+1.36E-3   1   1.3
+</pre></div>
+                  
+                  To import those data in <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a>
+                  open the interpreter and write:
+                  
+                  <pre class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» T = importdata('C:\Data\Frame1.txt')
+
+T =
+        data: [5x3 double]
+    textdata: {#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2(x)&gt;}
+
+» T.data
+
+ans =
+    0.0011    5.0000    0.6000
+    0.0011    2.0000    0.8000
+    0.0012    4.0000    0.9000
+    0.0013    3.0000    1.1000
+    0.0014    1.0000    1.3000
+
+» T.data(:,2)
+
+ans =
+     5
+     2
+     4
+     3
+     1
+
+»
+
+</pre>
+                  
+                  This method works only with
+                  columns having the same length.
+                  
+                  Note that the usual function:
+                  <pre class="matlab">
+» T = load('C:\Data\Frame1.txt')
+</pre>
+                  gets angry if encounters something else
+                  than numbers, so if you want to use it instead
+                  of <code class="txt">importdata</code> you should manually
+                  edit the file to delete the first heading line.
+                  
+                  
+                  <p>
+                     Here is an example of a script
+                     that imports two arrays from a
+                     text file.
+                     
+                  </p>
+                  
+                  
+                  <div class="notepad"> LoadTwoVectors.m<pre class="notepad">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% LoadTwoVectors (
+%                 file name
+%                );
+%
+%  Inputs:
+%     . two columns or two rows ASCII data file
+%
+%  Outputs:
+%     . two row vectors
+%
+%  Example :
+%     [x,y] = LoadTwoVectors('xy.txt')
+%
+%  Version : 20071106 - Matteo Gattanini
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function [x,y]=LoadTwoVectors(filename)
+
+
+% -----------------------------------------------------------
+% -- Input arguments
+
+if ( nargin ~= 1 )
+        disp('Usage: [x,y] = LoadTwoVectors(''filename'')')
+        return
+end
+
+
+% -----------------------------------------------------------
+% -- Load file
+disp(['Loading data from ' filename ' ...'])
+
+[T delim hdr] = importdata(filename);
+if ( hdr&gt;0 ) xy = T.data;
+else xy = T;
+end
+
+rows = length(xy(:,1));
+cols = length(xy(1,:));
+
+% -- input check
+disp(['Done: 'num2str(cols)' cols and 'num2str(rows)' rows'])
+if ( cols == 2 )
+    disp('two column vectors')
+    x = xy(:,1);
+    y = xy(:,2);
+elseif ( rows == 2 )
+    disp('two row vectors')
+    % transpose
+    x = xy(1,:)';
+    y = xy(2,:)';
+else
+    error('Something wrong in the file: not two vectors')
+    return
+end
+
+% -- finally
+clear xy; % not needed anymore
+% -----------------------------------------------------------
+</pre></div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

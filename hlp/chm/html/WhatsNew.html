@@ -1,0 +1,275 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>What's new</title>
+      <meta name="keywords" content="what's new,versions" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="ReleaseNotes.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="KnownBugs.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="KnownBugs.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="ReleaseNotes" href="ReleaseNotes.html">Release notes</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="WhatsNew.html"><span>What's new</span></a></li>
+                        <li><a href="KnownBugs.html"><span>Known bugs</span></a></li>
+                        <li><a href="ToDo.html"><span>ToDo</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="WhatsNew" title="list of fixes and added features in released versions">What's new</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="what's new" />
+                     <param name="Keyword" value="versions" /></object>
+                  
+                  
+                  <ul class="listQ">
+                     <li><strong>Next to come</strong>
+                        
+                        <ul class="listQ">
+                           <li>Complex tracks, complex operators (fft, ifft, Re, Im)</li>
+                           <li>synEditor: simpler (and working) interface</li>
+                           <li><a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a>: different interface, handle errors, abort and progress
+                           </li>
+                           <li>Better measure markers <a href="ActionsTable.html#actViewMeasureMarkers"
+                                 title="action ViewMeasureMarkers"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ViewMeasureMarkers.gif" alt="[ViewMeasureMarkers]" /> <code class="txt">ViewMeasureMarkers</code></a></li>
+                           <li>New action <a href="ActionsTable.html#actExecMacro" title="action ExecMacro"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ExecMacro.gif" alt="[ExecMacro]" /> <code class="txt">ExecMacro</code></a>: shortcut to custom operation
+                           </li>
+                           <li>Read generated <var title="">*.m</var> files (<code class="cpp">TStreamParser</code> descendant)
+                           </li>
+                           <li>Embed <a href="http://www.bzip.org" title="http://www.bzip.org">bzip2</a> compressor
+                           </li>
+                           <li>Support for <var title="">*.gz</var> files and <var title="">*.zip</var> archives with <var title="">zlibwapi.dll</var></li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.3 build 5</strong>
+                        
+                        <ul class="listD">
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> exception on crop with tracks outside cropping rectangle
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.3 build 2</strong>
+                        
+                        <ul class="listD">
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> track binary transformation: NaN of result last sample
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.3 build 1</strong>
+                        
+                        <ul class="listD">
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> Points and coords does not scale when printing (drawing in larger canvas)
+                           </li>
+                           <li>Added column data type declaration (ex. <code class="txt">|u16|</code>) in <a href="Header.html" title="Header.html">header</a></li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.2 build 28</strong>
+                        
+                        <ul class="listD">
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> Syneditor focus and error pane at file parsing error
+                           </li>
+                           <li><a href="KeyBindings.html" title="KeyBindings.html">Shortcuts</a> to <a href="ActionsTable.html#actAddText" title="action AddText"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddText.gif" alt="[AddText]" /> <code class="txt">AddText</code></a> and <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a> actions, default changed
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> <a href="ActionsTable.html#actStayOnTop" title="action StayOnTop"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/StayOnTop.gif" alt="[StayOnTop]" /> <code class="txt">StayOnTop</code></a> issue (failing minimize window)
+                           </li>
+                           <li>New measured quantity: <code class="txt">std%</code> standard percentual variation around mean (99%)
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> directories were (again!) not processed
+                           </li>
+                           <li>Note on refresh time (speed) issue: previous versions appear faster because refresh time was computed differently</li>
+                           <li>Action <a href="ActionsTable.html#actRemove" title="action Remove"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/Remove.gif" alt="[Remove]" /> <code class="txt">Remove</code></a> for generic object, but not yet completed
+                           </li>
+                           <li>Renamed some actions and changed some default <a href="KeyBindings.html" title="KeyBindings.html">shortcuts</a></li>
+                           <li><a href="ActionsTable.html#actShowTree" title="action ShowTree"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowTree.gif" alt="[ShowTree]" /> <code class="txt">ShowTree</code></a>: dockable, <span style="font:italic bold 120% Arial;">fix:</span> exception when selecting root node
+                           </li>
+                           <li>Some changes in selected object mechanism and tools drag and dock</li>
+                           <li>Introduced histograms width percentage to draw stems</li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> Fit frame + logarithmic scale failed with tracks with negative range
+                           </li>
+                           <li>Option <a href="OptionsDescription.html#optDefaultDir" title="option DefaultDir"><code class="txt">DefaultDir</code></a>: new default value <code class="txt">usr</code></li>
+                           <li>Some changes to compile also with <a href="http://www.codegear.com" title="http://www.codegear.com">Borland Developer Studio<sup>®</sup></a> 2006; however output is larger and slower
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> unreachable modal child under main form when restoring focus to application
+                           </li>
+                           <li>Crop operation now applies also on ordinates</li>
+                           <li><a href="ActionsTable.html#actShowTree" title="action ShowTree"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowTree.gif" alt="[ShowTree]" /> <code class="txt">ShowTree</code></a>: plot's tree drag and drop, manage context menus
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.1 build 05</strong>
+                        
+                        <ul class="listD">
+                           <li><a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a>: new track <a href="Transforming.html" title="Transforming.html">transforming</a> <a href="Transforming.html#TrackOperators"
+                                 title="Transforming.html#TrackOperators">operators</a>: derivative, integral
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> <a href="OptionsDescription.html" title="OptionsDescription.html">option entries</a> organization in <a href="OptionFile.html" title="OptionFile.html">option file</a></li>
+                           <li>Rendered measured values: using an alternate way</li>
+                           <li>The left-right <a href="PlotActions.html" title="PlotActions.html">keys</a> now move the cursor in <a href="ActionsTable.html#actMeasureMode" title="action MeasureMode"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/MeasureMode.gif" alt="[MeasureMode]" /> <code class="txt">MeasureMode</code></a></li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> <a href="PaneGrid.html" title="PaneGrid.html">Pane grid</a> captured mouse wheel
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> tracks rendering: no lines with <a href="ActionsTable.html#actFillArea" title="action FillArea"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/FillArea.gif" alt="[FillArea]" /> <code class="txt">FillArea</code></a></li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> <a href="PaneGrid.html" title="PaneGrid.html">Pane grid</a> quantities should now be synchronized with rendered text in <a href="MeasureMode.html" title="MeasureMode.html">Measure mode</a></li>
+                           <li>Worked on help file, removed chm activex objects to avoid IE7 issue</li>
+                           <li>Changed some default <a href="KeyBindings.html" title="KeyBindings.html">key bindings</a></li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.0 build 21</strong>
+                        
+                        <ul class="listD">
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> export overall plot fails
+                           </li>
+                           <li>Show track's points coordinates: new action <a href="ActionsTable.html#actShowCoords" title="action ShowCoords"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowCoords.gif" alt="[ShowCoords]" /> <code class="txt">ShowCoords</code></a>
+                              and options <a href="OptionsDescription.html#optTrackShowCoords"
+                                 title="option TrackShowCoords"><code class="txt">TrackShowCoords</code></a> and <a href="OptionsDescription.html#optTrackCoordsDist"
+                                 title="option TrackCoordsDist"><code class="txt">TrackCoordsDist</code></a></li>
+                           <li>Dialogs for <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a> and <a href="ActionsTable.html#actAddText" title="action AddText"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddText.gif" alt="[AddText]" /> <code class="txt">AddText</code></a></li>
+                           <li>Now you can hide <dfn title="">Legend</dfn> dragging it outside
+                           </li>
+                           <li>New quantity in <a href="PaneGrid.html" title="PaneGrid.html">Pane grid</a>: incremental ratio <code class="txt">DyDt</code></li>
+                           <li>Working on rendered text <a href="MeasureMode.html" title="MeasureMode.html">Measure mode</a>, removed <code>VolatileFont</code> option
+                           </li>
+                           <li>Some general improvements</li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.6.0 build 11</strong>
+                        
+                        <ul class="listD">
+                           <li>(!) Renamed exe name to avoid clashes with existing software</li>
+                           <li>Improved <a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a>, binary operators, spectrum
+                           </li>
+                           <li>A new <a href="ProgramArguments.html" title="ProgramArguments.html">program argument</a> 'Clear all' <code class="txt">-x</code></li>
+                           <li>Working on import/export module and archives support, some unfinished things</li>
+                           <li><code class="cpp">TStreamParser</code> is now an abstract class
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> repaint time measure fails when only one frame
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.5.0 build 50</strong>
+                        
+                        <ul class="listD">
+                           <li>Customizable context menus (new options <a href="OptionsDescription.html#optObjectMenu" title="option ObjectMenu"><code class="txt">ObjectMenu</code></a>, <a href="OptionsDescription.html#optFrameMenu" title="option FrameMenu"><code class="txt">FrameMenu</code></a>, <a href="OptionsDescription.html#optTrackMenu" title="option TrackMenu"><code class="txt">TrackMenu</code></a>)
+                           </li>
+                           <li><a href="ZoomMode.html" title="ZoomMode.html">Zoom mode</a>: zoom only abscissa or ordinate selectively
+                           </li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> infinite loop when opening file as argument with parsing error
+                           </li>
+                           <li>Logarithmic scales <a href="ActionsTable.html#actToggleScaleX" title="action ToggleScaleX"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ToggleScaleX.gif" alt="[ToggleScaleX]" /> <code class="txt">ToggleScaleX</code></a> <a href="ActionsTable.html#actToggleScaleY" title="action ToggleScaleY"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ToggleScaleY.gif" alt="[ToggleScaleY]" /> <code class="txt">ToggleScaleY</code></a></li>
+                           <li>Worked on <code class="txt">cls_Track</code> hierarchy, track operators
+                           </li>
+                           <li>Text parser: tolerate unknown directives</li>
+                           <li>Point labels: <code class="txt">#text</code> directive ex.: #text (3.14;1) +high peak
+                           </li>
+                           <li><a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a> and <a href="ActionsTable.html#actAddText" title="action AddText"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddText.gif" alt="[AddText]" /> <code class="txt">AddText</code></a> now add a default object
+                           </li>
+                           <li>General improvements, a new <a href="ActionsTable.html#actDemo" title="action Demo" style="margin-left:0.5ex;"><img src="./files/images/actions/Demo.gif" alt="[Demo]" /> <code class="txt">Demo</code></a>, other minor changes
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.5.0 build 47</strong>
+                        
+                        <ul class="listD">
+                           <li>Object properties: distinguish <code class="txt">MarginX</code> and <code class="txt">MarginY</code></li>
+                           <li>New measured quantity: <code class="txt">var%</code> maximum percentual variation around mean
+                           </li>
+                           <li>Measured quantities: renamed ordinate sweep <code class="txt">Dymax</code> to <code class="txt">DY</code></li>
+                           <li>Track transform: nonlinear group, absolute value</li>
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> directories were not processed
+                           </li>
+                           <li>Some minor changes of about form</li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.5.0 build 43</strong>
+                        
+                        <ul class="listD">
+                           <li><span style="font:italic bold 120% Arial;">fix:</span> better crop, draw line from visible point to next non visible point
+                           </li>
+                           <li>When dropping a directory, process all contained files</li>
+                           <li>Some minor changes of about form</li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.5.0 build 34</strong>
+                        
+                        <ul class="listD">
+                           <li><a href="ActionsTable.html#actShowPane" title="action ShowPane"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowPane.gif" alt="[ShowPane]" /> <code class="txt">ShowPane</code></a> Pane grid (measure quantities) change only by options, copy to clipboard
+                           </li>
+                           <li><code class="txt">WM_COPYDATA</code> mechanism: renamed main form to avoid ambiguities in passing arguments from one instance to another
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><strong>0.5.0 build 24</strong>
+                        
+                        <ul class="listD">
+                           <li>Export to <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> m file
+                           </li>
+                        </ul>
+                        
+                     </li>
+                  </ul>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

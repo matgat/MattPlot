@@ -1,0 +1,54 @@
+[Config]
+Compilator.FileName=compile.bat
+Compilator.DefaultDir=.
+Compilator.SaveAll=0
+Compilator.Capture=1
+Compilator.ParsLog=Error * on line %L *of file:/%F*
+Compilator.HideOutput=0
+Compilator.LogType=0
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+[Project tree]
+prj_Help
+	+bat
+		info.txt
+		generate_gifs.bat
+		compile.bat
+		clean.bat
+	+sty
+		xml\sty\xhelp2html.xsl
+		xml\sty\xhelp.dtd
+		chm\html\files\hlp_style.css
+	+xml
+		xml\main.xml
+		xml\Welcome.xml
+		xml\GeneralInfo.xml
+		xml\Viewing.xml
+		xml\Running.xml
+		xml\ReleaseNotes.xml
+		xml\Interface.xml
+		xml\Importing.xml
+		xml\Directives.xml
+		xml\Exporting.xml
+		xml\Editing.xml
+		xml\Customizing.xml
+		xml\UserTips.xml
+		xml\Examples.xml
+		xml\Development.xml
+		xml\_MainForm.xml
+		xml\_Layouts.xml
+		xml\_KeyCodes.xml
+		xml\_faqs.xml
+		xml\_problems.xml
+[Open project files]
+0=xml\ReleaseNotes.xml
+[Selected Project Files]
+Main=xml\main.xml
+Selected=xml\ReleaseNotes.xml
+[xml\ReleaseNotes.xml]
+TopLine=21
+Caret=35,42

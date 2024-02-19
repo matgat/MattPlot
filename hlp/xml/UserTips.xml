@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="UserTips"
+         title="Questions and tips"
+         keywords="usage info"
+         description="tips, how-to do common tasks, questions and anwers"
+         version="0.61" date="apr2009">
+
+    <intro toc="yes">
+        The purpose of this chapter is to collect
+        ready to use informations for users.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Tips"
+             title="Tips"
+             keywords="tips,hints"
+             description="A list of tips">
+    <listO>
+      <it>You can move, merge and swap frames switching to <action name="SelectMode"/> and dragging them to the new position; alternatively use <action name="ShowTree"/></it>
+      <it>You can move a track to another frame switching to <action name="SelectMode"/> and dragging it; alternatively use <action name="ShowTree"/></it>
+      <it>You can import file dragging them in program main form; if the drop point is outside a frame, a new one will be created in that position</it>
+      <it>To quickly switch to <action name="PanMode"/> or <action name="ZoomMode"/>, use the <txt>PanToggle</txt> or <txt>ZoomToggle</txt> <a href="PlotActions.html">keys</a> defined in <option name="PlotKeys"/> options</it>
+      <it><action name="Snapshot"/> action is meant to be used with its key shortcut</it>
+      <it>Plot style is customizable: see some examples trying <a href="ActionsTable.html"><img src="./files/images/actions/Style.gif"/>&nbsp;style actions</a> you can then use <action name="StoreOptions"/> to create the related <a href="OptionFile.html">option file</a></it>
+      <it>When you don't see nothing, press <a href="PlotActions.html"><txt>Cycle</txt> plot key</a> (default: <kbd>TAB</kbd>) to select a track and fit frame scale to it</it>
+      <it>You can easily import plot images in your &WYSIWYG; editor pasting from clipboard after <action name="Snapshot"/> action</it>
+      <it>You can quickly view/hide tracks points using the shortcut to <action name="MarkPoints"/> action</it>
+      <it>You can customize <a href="MainForm.html#Toolbar">Toolbar</a> buttons editing the <option name="Toolbar"/> option</it>
+      <it>To scroll a track, try the continuous pan function (right mouse button during <a href="PanMode.html">pan mode</a>)</it>
+      <it>Press <kbd>F1</kbd> to open context sensitive help</it>
+      <it><action name="Abort"/> action is meant to be used to break long tasks (for example, when reading a file)</it>
+      <it>During <action name="MeasureMode"/> you can quickly change the selected track using either the mouse wheel, or the <a href="PlotActions.html">plotkeys</a>, or the Legend</it>
+      <it>If during <action name="MeasureMode"/> the numbers rendered on screen are not visible, use <action name="ShowPane"/> to see them in the <a href="PaneGrid.html">Pane grid</a></it>
+      <it>You can drag and dock the <a href="Log.html">Log</a> and the <a href="PaneGrid.html">Pane grid</a></it>
+      <it>Use selection highlighting to spot quickly a certain quantity in the <a href="PaneGrid.html">Pane grid</a> during <a href="MeasureMode.html">Measure mode</a></it>
+    </listO>
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="HowTo"
+             title="How to..."
+             keywords="howtos,examples,tutorials"
+             description="use examples, tutorials on some particular useful features">
+    <underconstruction/>
+
+    <!--....................................-->
+    <subsection name="PlacingMarkers"
+                title="Placing markers"
+                keywords="placing markers">
+    
+    Try <action name="AddMarker"/> action; you
+    can then drag the marker during
+    <a href="SelectMode.html">select mode</a>.
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="AnalyzeSpectrum"
+                title="Analyze spectrum"
+                keywords="example: analyze spectrum">
+
+    To understand how it works,
+    try to follow these steps:
+    <listO>
+      <it>Open &mp; (see <a href="Launching.html">here</a>)</it>
+      <it>Start <action name="Demo"/>, you'll see a &frame;
+          containing a &track; named <txt>Sum</txt>, given by
+          the sum of three harmonics</it>
+      <it>You may want remove unusued &frame;s switching
+          to <action name="SelectMode"/> and dragging them
+          out of plot area or using <action name="RemoveFrame"/></it>
+      <it>Start <action name="TrackTransform"/></it>
+      <it>Select the &track; <txt>Sum</txt> and then the
+          unary operation <txt>Spectrum</txt>, <txt>fft</txt> 
+          or <txt>dft</txt>, then press <txt>Do</txt></it>
+      <it>A new &frame; appeared containing the spectrum of <txt>Sum</txt></it>
+      <it>Close the <action name="TrackTransform"/> window and
+          inspect the spectrum, which should contain the proper
+          harmonic components</it>
+    </listO>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="AttachInDocuments"
+                title="Paste plot image in documents"
+                keywords="example: paste plot in external documents">
+    
+    You can easily paste plots as vectorial
+    image in your &WYSIWYG; editor:
+    <listO>
+      <it>Check <option name="SnapshotAction"/> option</it>
+      <it>Do <action name="Snapshot"/> action to copy the plot &EMF; image in the clipboard</it>
+      <it>Switch to your editor and place cursor in the desired position</it>
+      <it>Paste the &EMF; file (<kbd>CTRL+V</kbd>)</it>
+    </listO>
+    </subsection>
+    
+
+
+    <!--....................................-->
+    <subsection name="Snapshots"
+                title="Taking snapshot with volatile text"
+                keywords="taking snapshots">
+    
+    User can take a snapshot of plot
+    with volatile text (like pen comments and
+    measure lines) triggering the
+    <action name="Snapshot"/>
+    action, after setting properly the
+    <option name="SnapshotAction"/>
+    option to generate a bitmap.
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="Comparing"
+                title="Comparing two acquisitions"
+                keywords="comparing two acquisitions">
+    
+    &mp; provides functions to ease data comparison.
+    Suppose you want compare two set of data,
+    for example two oscilloscope acquisition of the
+    same quantities done at different conditions,
+    stored in the two files <dir>data1.txt</dir>
+    and <dir>data2.txt</dir>.
+    To compare them, first load these data in two
+    different frames; you can do that either by drag and
+    drop, or by <action name="Open"/> action,
+    or by command line typing:
+<cmdline>
+C:\> MattPlot data1.txt
+C:\> MattPlot @data2.txt
+</cmdline>
+
+    The prefix <txt>@</txt> in the second call
+    prevents a further instance of &mp;.
+    <HHseealso>
+        <target title="No further instances" href="ProgramArguments.html#NoFurtherInstances"/>
+        <target title="No further instances question" href="Faqs.html#faq.arguments.nofurtherinstances"/>
+    </HHseealso>
+
+    Now we have two frames each containing a data set;
+    we can synchronize frames physical space using
+    <action name="LockX"/> or <action name="LockY"/>
+    actions.
+    <p>
+    At this point operations on frames like
+    <action name="PanMode"/> or <action name="ZoomMode"/>
+    are spread on all frames.
+    </p>
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="ManualSample"
+                title="Manually sampling a track"
+                keywords="example: manual sample">
+                
+    You can extract some points from a track using
+    mouse following these steps:
+    <listO>
+      <it>Open the <a href="Log.html">log</a> with <action name="ShowLog"/>;
+          if you desire, you may dock it on the form right border</it>
+      <it>Zoom your track properly</it>
+      <it>Switch to <action name="MeasureMode"/> and select track</it>
+      <it>It is handy enable <action name="MeasureAbscissa"/> and <action name="MeasureOrdinate"/></it>
+      <it>Move mouse and double click on desired points</it>
+      <it>When you finished, select and copy the coordinates in <a href="Log.html">log</a>
+          and paste in your text file; you can then import it back in &mp;,
+          eventually adding an header like <txt>#header&lt;X&gt;&lt;MySamples(X)&gt;</txt></it>
+    </listO>
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="CompleteUse"
+                title="Complete use example"
+                keywords="example: complete use">
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Faqs"
+             title="Questions and answers"
+             keywords="faqs,questions,answers,common questions"
+             description="common questions answered">
+    &faqs;
+    </section>
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Troubleshooting"
+             title="Troubleshooting"
+             keywords="troubleshooting,problems"
+             description="Troubleshoot typical problems">
+    &problems;
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

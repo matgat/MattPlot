@@ -1,0 +1,190 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Exporting to text files</title>
+      <meta name="keywords" content="exporting to text" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="ToVectorialImage.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Exporting.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ToMfile.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="ToVectorialImage.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ToMfile.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Exporting" href="Exporting.html">Exporting data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="Printing.html"><span>Printing plot</span></a></li>
+                        <li><a href="ToBMP.html"><span>Exporting to bitmap</span></a></li>
+                        <li><a href="ToVectorialImage.html"><span>Exporting to vectorial image</span></a></li>
+                        <li id="current"><a href="ToTXT.html"><span>Exporting to text files</span></a></li>
+                        <li><a href="ToMfile.html"><span>Exporting to m-file</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ToTXT" title="exporting to text files">Exporting to text files</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="exporting to text" /></object>
+                  
+                  You can export the <dfn title="set of points">Track</dfn> set contained in
+                  a <dfn title="tracks container">Frame</dfn> in a <a href="http://www.ascii.org/" title="http://www.ascii.org/"><acronym title="American Standard Code for Information Interchange">ASCII</acronym></a> text files whose
+                  format is described <a href="TextFormat.html" title="TextFormat.html">here</a>.
+                  
+                  
+                  
+                  
+                  <h3><a name="ToTxtTable" title="exporting to text table">Text table</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="exporting to text table" /></object>
+                  
+                  Exported text files can be organized
+                  as a table like this:
+                  
+                  
+                  <div class="notepad"> exported.txt<pre class="notepad">
+#header &lt;x&gt; &lt;y1(x)&gt; &lt;y2(x)&gt;
+0    12.13  0
+0.1  11.93  1.34
+0.2  10.54  2.28
+0.3   9.93  3.27
+0.4   7.72  5.56
+</pre></div>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="MatlabImport"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Note that you can import this kind of file
+                                 in <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> using <code class="txt">importdata</code> function
+                                 (see <a href="ExportTextToMatlab.html" title="ExportTextToMatlab.html">examples section</a>)
+                                 or the less powerful <code class="txt">load</code> function
+                                 (in that case is necessary a manual deletion of non-data parts).
+                                 Note that, as far I know, both these functions does not support
+                                 columns having different lengths.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="ToMPL" title="exporting to text single column">One column text</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="exporting to text single column" /></object>
+                  
+                  You can organize exported text
+                  file as a single column
+                  (multisession syntax)
+                  choosing the extension <var title="">.mpl</var>:
+                  
+                  
+                  <div class="notepad"> exported.mpl<pre class="notepad">
+#header &lt;x&gt;
+ 0
+ 0.1
+ 0.2
+ 0.3
+ 0.4
+
+#header &lt;y1(x)&gt;
+ 12.13
+ 11.93
+ 10.54
+  9.93
+  7.72
+
+#header &lt;y2(x)&gt;
+ 0
+ 1.34
+ 2.28
+ 3.27
+ 5.56
+</pre></div>
+                  
+                  This kind of format is less standard than
+                  <a href="ToTXT.html#ToTxtTable" title="ToTXT.html#ToTxtTable">table format</a>,
+                  but is sometimes preferred because is
+                  simpler to parse.
+                  
+                  
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="DataSources.html#FileSources">File sources</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="TextFormat.html">Text files format</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ExportTextToMatlab.html">Export to Matlab by txt file example</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Directives.html">Directives</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="CommandlineDirectives.html">Directives as program arguments</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html#FilePathArgs">File paths as arguments</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html">Program arguments</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Printing plot</title>
+      <meta name="keywords" content="printing" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Exporting.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ToBMP.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ToBMP.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Exporting" href="Exporting.html">Exporting data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="Printing.html"><span>Printing plot</span></a></li>
+                        <li><a href="ToBMP.html"><span>Exporting to bitmap</span></a></li>
+                        <li><a href="ToVectorialImage.html"><span>Exporting to vectorial image</span></a></li>
+                        <li><a href="ToTXT.html"><span>Exporting to text files</span></a></li>
+                        <li><a href="ToMfile.html"><span>Exporting to m-file</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Printing" title="on printing plot">Printing plot</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="printing" /></object>
+                  
+                  You can print plots in two ways:
+                  
+                  <ul class="listO">
+                     <li><a href="ActionsTable.html#actExport" title="action Export"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/Export.gif" alt="[Export]" /> <code class="txt">Export</code></a> plot
+                        as image and then print it
+                        with an external program;
+                        this can be useful to include also
+                        measure lines and other volatile
+                        stuff.
+                     </li>
+                     <li>Use embedded <a href="ActionsTable.html#actPrint" title="action Print"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/Print.gif" alt="[Print]" /> <code class="txt">Print</code></a>
+                        function.
+                     </li>
+                  </ul>
+                  
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> printing function can work in two ways:
+                  
+                  
+                  <ul class="listO">
+                     <li>Print screen bitmap -
+                        takes what you see on the screen
+                        and stretches it in paper area
+                        
+                        <ul class="listD">
+                           <li>feature: preserve plot aspect ratio,
+                              so paper area may not be optimally filled
+                           </li>
+                           <li>advantage: should includes also temporary scribbles
+                              of <a href="PenMode.html" title="PenMode.html">pen mode</a></li>
+                           <li>drawback: low image resolution</li>
+                        </ul>
+                        
+                     </li>
+                     <li>Redraw on print paper - 
+                        redraws plot in the
+                        printed page canvas
+                        
+                        <ul class="listD">
+                           <li>feature: changes plot aspect ratio
+                              to fill paper area
+                           </li>
+                           <li>advantage: best resolution</li>
+                           <li>drawback: temporary objects like scribbles
+                              are lost
+                           </li>
+                        </ul>
+                        
+                     </li>
+                  </ul>
+                  
+                  In both cases you can set the paper margin
+                  percentage editing the <a href="OptionsDescription.html#optPrintMargin" title="option PrintMargin"><code class="txt">PrintMargin</code></a>
+                  option.
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

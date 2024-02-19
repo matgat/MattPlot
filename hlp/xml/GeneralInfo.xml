@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="GeneralInfo"
+         title="General informations"
+         keywords="general informations,informations"
+         description="purpose of the program and distribution policy"
+         version="0.6" date="nov2008">
+
+    <intro toc="yes">
+        Some generic informations on this
+        program and its distribution policy.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="WhatIs"
+             title="What is"
+             keywords="purpose,aim,what is"
+             description="what is the goal of this program?">
+
+        &mp; is a simple program whose primary aim
+        is to plot data, more precisely to render an
+        interactive 2-d graphical representation of a set of
+        arrays of numbers.
+        It comes to facilitate a typical task of engineering:
+        view and analyze of a set of collected values.
+        <br/>
+        This program is meant to:
+        <listO>
+            <it>Plot data contained in a text file</it>
+            <it>Allow user to inspect data and perform simple measurements</it>
+            <it>Perform some simple postprocessing and data elaboration</it>
+            <it>Export plot to text and image (ex, to include in &WYSIWYG; editors)</it>
+        </listO>
+        
+    <!--....................................-->
+    <subsection name="Why"
+                title="Why another data plotting tool?"
+                keywords="why">
+
+    For the usual reason: haven't found what I wanted.
+    I missed a simple, fast and complete tool
+    to visualize the measures collected in a servo
+    drive, so I decided to write from scratch a new
+    one for me.
+
+    </subsection>
+
+    </section>
+    
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Warnings"
+             title="Warnings"
+             keywords="warnings,cautions"
+             description="things to remember when reading
+                          this document and using this program">
+
+
+    Before reading this help and using &mp;,
+    you should be aware of the following points:
+
+    <listO>
+      <it>
+          If you see a zero preceding the
+          program version number, it means
+          that you're dealing with an
+          incomplete and not fully tested
+          program
+      </it>
+      <it>
+          A large part of this help was written
+          before program itself, so some described
+          features may behave in different manner or
+          may not be actually (yet) implemented
+      </it>
+      <it>
+          This program is developed during author's
+          spare time, and is not (yet) properly tested
+      </it>
+      <it>
+          This help may contain gross grammatical
+          and orthographic errors
+      </it>
+    </listO>
+
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Features"
+             title="Program Features"
+             keywords="features"
+             description="a brief list of program functions and capabilities">
+
+    Some program features are:
+
+    <listD>
+        <it>
+            Installer not required: all is comprised
+            in a single executable, don't need a
+            setup nor particular third party stuff
+        </it>
+        <it>
+            Does not write anything on &windows;
+            registry, so does not require an
+            uninstaller
+        </it>
+        <it>
+            Supports
+            <a href="ProgramArguments.html">command line arguments</a>,
+            user can choose if create a new instance or
+            use an existing one
+        </it>
+        <it>
+            Graphic <a href="Interface.html">interface</a> includes
+            <a href="SelectMode.html">Select</a>,
+            <a href="EditMode.html">Edit</a>,
+            <a href="PanMode.html">Pan</a>,
+            <a href="ZoomMode.html">Zoom</a>,
+            <a href="MeasureMode.html">Measure</a> and
+            <a href="PenMode.html">Pen</a> tools
+        </it>
+        <it>Plots can be organized in more &frame;s,
+            allowing <a href="Comparing.html">data comparison</a>
+            <listO>
+                <it>Frames can have different scales</it>
+                <it>Frames <a href="_Layouts.html">layout</a> is adjustable with drag and drop</it>
+                <it>Frames visualization can be synchronized (<action name="LockX"/>, <action name="LockY"/>)</it>
+            </listO>
+        </it>
+        <it>Plots can be <a href="Exporting.html">exported</a> to:
+            <listO>
+                <it><a href="ToTXT.html">Text format</a></it>
+                <it>&matlab; <a href="ToMfile.html">m-file</a></it>
+                <it><a href="ToBMP.html">Bitmap formats</a> (&gif;, &bmp;)</it>
+                <it><a href="ToVectorialImage.html">Vectorial image</a> (&emf;, &svg;)</it>
+            </listO>
+        </it>
+        <it>Supported compression formats
+            (see <a href="ThirdPartyStuff.html">here</a> <a href="ThirdPartyStuff.html">here</a> for more info
+             and required &DLL;s):
+            <listO>
+                <it>zip archives (<dir>*.zip</dir>)</it>
+                <it>&sqx; archives (<dir>*.sqx</dir>)</it>
+                <it><a href="http://www.gzip.org">gzipped</a> files (<dir>*.gz</dir>)</it>
+            </listO>
+        </it>
+        <it>
+            Flexible <a href="TextFormat.html">text data parser</a>
+            <listO>
+                <it>can handle columns having different size</it>
+                <it>can perform some data processing like
+                    <a href="Header.html">rescale/offset</a>,
+                    <a href="Split.html">split</a>,
+                    <a href="Resample.html">reorder/resample</a></it>
+            </listO>
+        </it>
+        <it>
+            Ehmm, see <a href="ToDo.html">todo list</a>
+        </it>
+    </listD>
+
+    <!--....................................-->
+    <subsection name="Limitations"
+                title="Limitations"
+                keywords="limitations,restrictions">
+    
+    Some program limitations are:
+    <listQ>
+        <it>
+            Only 2-d graphs
+        </it>
+        <it>
+            Values are internally represented by
+            &IEEE;&nbsp;754 double precision (64bit,15-digit
+            precision) floating point numbers, whose range is
+            about <ex>2.23E-308&lt;|X|&lt;1.79E308</ex>;
+            exceeding this range causes math errors
+        </it>
+        <it>
+            Indexes are represented by 32bit signed
+            integers, so data files larger than
+            <ex>2Gb</ex> are not supported
+        </it>
+        <it>
+            Does not support <cite>Unicode</cite>
+            (using <cpp>char</cpp>)
+        </it>
+    </listQ>
+
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="SystemPerturbation"
+                title="On system perturbation"
+                keywords="what happens when you run program?">
+    
+    As any program, &mp; interacts
+    with your system; here's a list of
+    what could happen when you run it.
+
+    <listQ>
+        <it>Clipboard overwrite, typically when requesting <action name="Snapshot"/></it>
+        <it>Media write requests, as specified in the next section</it>
+    </listQ>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="MediaAccess"
+                title="Further notes on storage media access"
+                keywords="storage media access">
+
+    By developer choice, &mp; does not write
+    anything in &windows; registry, so handy things
+    like shell integration or file type association
+    are up to users.
+    The program may request to write temporary data
+    in the temporary directory set in
+    <option name="TempDir"/> option
+    (the default should be in the system temporary
+    directory <dir>%TEMP%\~MattPlot\</dir>);
+    generally the deletion of these files is up to
+    system maintainance.
+    Informations that must last over one execution
+    time are stored in <dir>MattPlot.ini</dir> file,
+    placed in program directory.
+    
+    Summarizing, the reasons that lead &mp; to
+    request write access to storage media are:
+
+    <listO>
+        <it>On request to edit or store options</it>
+        <it>On request of help file, creation of
+            <dir>MattPlot.chm</dir>, if missing, in
+            the temporary directory</it>
+        <it>On opening compressed data, to decompress them
+            in temporary directory</it>
+        <it>On crash, creation of a <dir>*.log</dir> files in
+            the working directory</it>
+        <it>On <action name="Snapshot"/> action</it>
+        <it>On file save user request</it>
+        <it>On starting and on closing, &mp; may
+            try to delete some temporary files</it>
+    </listO>
+
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Requirements"
+             title="System requirements"
+             keywords="system requirements,requirements"
+             description="on requested platform: processor, memory, execution environment">
+
+    <listO>
+        <it>A <cite>PentiumPro</cite> compatible platform</it>
+        <it>A suitable amount of &RAM; (see below)</it>
+        <it>A storage media with R/W rights where put executable file</it>
+        <it>A &windows; environment</it>
+    </listO>
+
+
+    <!--....................................-->
+    <subsection name="MemoryOccupation"
+                title="On memory occupation"
+                keywords="memory occupation">
+    
+    During program execution plotted data are
+    permanently buffered in &RAM;;
+    this imply a dependency of memory occupation
+    on the amount of handled data.
+
+    To describe how much memory is consumed by
+    data, consider this typical use:
+    <listO>
+      <it>
+          <action name="Open"/> a text file containing
+          ten thousands pairs of numbers; assuming
+          string literals of 34 characters per number,
+          in the worst case of file complete buffering,
+          are needed about <ex>700&nbsp;Kbyte</ex> of &RAM;
+          (once parser had done its work, this memory can be freed).
+          </it>
+      <it>
+          Next we need to store numbers: using <ex>64&nbsp;bit</ex>
+          floating point type we need about <ex>160&nbsp;Kbyte</ex> for
+          the data binary representation, which may increase to
+          <ex>240&nbsp;Kbyte</ex> if stored as complex.</it>
+      <it>
+          Finally, when performing calculations,
+          data container may be temporarily copied
+          doubling the actual used &RAM;.</it>
+    </listO>
+
+    <p>
+    Now let's talk about the memory needed by the program
+    itself.
+    The actual code is probably a negligible part respect
+    linked libraries (&VCL; classes, standard library, etc...);
+    total code will easily reach few <ex>Mbyte</ex>.
+    Moreover, for performance reasons, the graphic
+    interface is buffered: for example, considering a
+    800x600 form, we require <ex>800x600x3&nbsp;byte ~= 1.4&nbsp;Mbyte</ex>
+    of space for the bitmap buffer used to
+    avoid flicker during the repaint.
+    </p>
+    
+    <p>
+    The conclusion is that the data size become
+    comparable with program size when we deal with
+    at least <ex>100000÷200000 points</ex>
+    (pairs of <cpp>double</cpp>).
+    </p>
+
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="RelatedFiles"
+             title="Program related files"
+             keywords="program files,related files,files"
+             description="a brief description of program related files">
+
+    A brief description of program related files.
+
+    <table>
+        <thead><c>File name</c><c>Description</c><c>Note</c></thead>
+        <row>
+            <c><dir>MattPlot.exe</dir></c>
+            <c>&windows; 32 bit executable</c>
+            <c>The program itself (no other files neeeded)</c>
+        </row>
+        <row>
+            <c><dir>DefaultDir</dir></c>
+            <c>The working directory</c>
+            <c>Set in <option name="DefaultDir"/> option entry</c>
+        </row>
+        <row>
+            <c><dir>TempDir</dir></c>
+            <c>The temporary directory (<dir>\~MattPlot\</dir>)</c>
+            <c>Set in <option name="TempDir"/> option entry</c>
+        </row>
+        <row>
+            <c><dir>MattPlot.chm</dir></c>
+            <c>&microsoft; compiled &HTML; help</c>
+            <c>Generated in <dir>TempDir</dir> at request.
+               Requires a <cite>HtmlHelp</cite> viewer (<dir>hh.exe</dir>,
+               generally present in all &windows; systems)</c>
+        </row>
+        <row>
+            <c><dir>MattPlot.ini</dir></c>
+            <c>Program <a href="OptionFile.html">options file</a></c>
+            <c>Fixed name and position (same <dir>exe</dir> directory);
+               initially not present, create with <action name="StoreOptions"/></c>
+        </row>
+        <row>
+            <c><dir>*.mpl</dir></c>
+            <c>&mp;`s text data file</c>
+            <c>Plot data in text format; this is a fake
+               extension that provide the possibility
+               to filter files and associate &mp; with them</c>
+        </row>
+        <row>
+            <c><dir>*.mpx</dir></c>
+            <c>&mp;`s &XML; plot description format</c>
+            <c>Plot complete description in &XML; format</c>
+        </row>
+        <row>
+            <c><dir>*.log</dir></c>
+            <c>&mp;`s crash <a href="Log.html">log</a> files</c>
+            <c>A text file containing the program <a href="Log.html">log</a>
+               lines, autosaved in case of critical errors</c>
+        </row>
+    </table>
+        
+    <!-- <listD>
+            <it><dir>MattPlot.exe</dir> (&windows; 32 bit executable)</it>
+            <it><dir>MattPlot.chm</dir> (&microsoft; compiled &HTML; help)</it>
+            <it><dir>MattPlot.ini</dir> (Program options file)</it>
+        </listD> -->
+        
+    <HHseealso>
+        <target title="The options file" href="OptionFile.html"/>
+        <target title="File sources" href="DataSources.html#FileSources"/>
+        <target title="Text files format" href="TextFormat.html"/>
+    </HHseealso>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Distribution"
+             title="Distribution"
+             keywords="distribution"
+             description="on program distribution form">
+
+    The &mp; <dfn>win32</dfn> binary
+    distribution consists in a single executable
+    file named <dir>MattPlot.exe</dir>.
+    All related files and documentation is contained
+    in that file.
+    </section>
+    
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="License"
+             title="License"
+             keywords="license,conditions of use"
+             description="conditions of use and license terms">
+
+
+    &mp; is free, and distributed under these terms:
+    <!--
+    This software, including documentation, source code, object code and/or additional materials is owned by me (the Author)
+    Third party <a href="Libraries.html">libraries</a>
+    -->
+
+    <listO>
+      <it>
+        This program is free and comes with
+        no warranty of any type
+      </it>
+      <it>
+        You can redistribute freely the binary form and
+        include it with your commercial or non-commercial
+        stuff, but with the following restrictions:
+        <listD>
+          <it>
+            You cannot become the owner of this
+            software and related material (!)
+          </it>
+          <it>
+            You cannot modify the binary name
+            and its embedded content
+          </it>
+          <it>
+            You cannot sell &mp; or charge your
+            product for the value of its add
+          </it>
+        </listD>
+      </it>
+    </listO>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Contact"
+             title="Contact"
+             keywords="contact,feedback"
+             description="on ways to contact and send feedback to author">
+
+    <p>
+    This project is free and simple:
+    I won't give support for it.
+    Check for latest updates on:
+    </p>
+    <p style="text-align:center; margin-bottom:2em;">&site;</p>
+    
+    <p>
+    If you desire, give me feedback to:
+    </p>
+    <p style="text-align:center; margin-bottom:2em;">&me;</p>
+
+    </section>
+
+
+</chapter>
+<!--_______________________End_of_file______________________-->

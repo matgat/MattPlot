@@ -1,0 +1,126 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>ToDo</title>
+      <meta name="keywords" content="todo,future work,wishlist" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="KnownBugs.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="ReleaseNotes.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="KnownBugs.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="ReleaseNotes" href="ReleaseNotes.html">Release notes</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="WhatsNew.html"><span>What's new</span></a></li>
+                        <li><a href="KnownBugs.html"><span>Known bugs</span></a></li>
+                        <li id="current"><a href="ToDo.html"><span>ToDo</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ToDo" title="things to be implemented, future work, wishlist">ToDo</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="todo" />
+                     <param name="Keyword" value="future work" />
+                     <param name="Keyword" value="wishlist" /></object>
+                  
+                  The project is quite inactive now.
+                  However here is a wishlist and some planned features:
+                  
+                  
+                  <ul class="listQ">
+                     <li><span style="font:italic bold 120% Arial;">fix:</span> known bugs
+                     </li>
+                     <li>Track classes hierarchy, support complex tracks, polar plots, calculus operators</li>
+                     <li>Markers: intelligent from measured quantities, set from clipboard</li>
+                     <li>Renderer
+                        
+                        <ul class="listD">
+                           <li>Improve performance using directly winAPI bypassing <a href="http://www.borland.com" title="http://www.borland.com"><acronym title="Visual Components Library">VCL</acronym></a> wrapper
+                           </li>
+                           <li>Improve legend</li>
+                        </ul>
+                        
+                     </li>
+                     <li>Exporter
+                        
+                        <ul class="listD">
+                           <li>Saved <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> file format (<var title="MPLot Xml format">mpx</var> file format)
+                           </li>
+                           <li>Save dialog: Checkbox "current frame only"</li>
+                           <li>compressed archives</li>
+                           <li>Exporting plot to <a href="http://www.w3.org/Graphics/SVG/" title="http://www.w3.org/Graphics/SVG/"><acronym title="Scalable Vector Graphics">SVG</acronym></a> file
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li>Importer  
+                        
+                        <ul class="listD">
+                           <li>Import data from mfile,xml,csv; fill columns or directly frames? (cls_StreamParser hierarchy)</li>
+                           <li>Import from clipboard (excel)</li>
+                           <li>Improve file read speed by buffering (TStream hierarchy)</li>
+                           <li>Import from compressed files (TStream hierarchy)</li>
+                           <li>Import data from other sources than files: serial line, etc (TStream hierarchy)</li>
+                           <li>Import data from binary files (see some popular formats)</li>
+                           <li>Introduce directives for frames and track style?</li>
+                        </ul>
+                        
+                     </li>
+                     <li>Elaborations
+                        
+                        <ul class="listD">
+                           <li>Better tracks elaboration forms (math operators,resampling,filters), undo</li>
+                           <li>real tracks: convolution; complex tracks: fft, rotation</li>
+                           <li>apply only to abscissa selection (EditMode)</li>
+                           <li>A parser to execute tracks elaboration of expression like <samp>track3=track1+track2^2</samp></li>
+                           <li>Plugin framework to implement tracks operators (filters, etc) and importers/exporters</li>
+                           <li>Integrate and use <a href="http://www.lua.org/" title="http://www.lua.org/">LUA</a> language
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li>Other
+                        
+                        <ul class="listD">
+                           <li>Intelligent rescale of abscissa time values</li>
+                           <li>Detect track click on legend, smart legend placing</li>
+                           <li>OLE drag and drop of frames between multiple program instances</li>
+                           <li>Identify calling shell instance and print messages there</li>
+                           <li>Training tutorial</li>
+                        </ul>
+                        
+                     </li>
+                  </ul>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

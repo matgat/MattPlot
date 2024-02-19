@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2009 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Development"
+           title="Development"
+           keywords="development"
+           description="some advanced topics regarding project development"
+           version="0.46" date="apr2009">
+
+    <intro toc="yes">
+        Some advanced topics regarding
+        project development.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="OnHelp"
+             title="On this file and help system"
+             keywords="help file,help authoring details"
+             description="some details about this help file">
+
+        I'm very proud of this help, composed by
+        &HTML; files obtained from a &XML; source,
+        then archived and put together by &hhw;.
+        The big task was writing the &XSL; transformation
+        performed by the interpreter &saxon;.
+
+        About &XSL; transformations I recommend the book
+        written by the author of &saxon;; here is its
+        &bibtex; entry:
+
+<notepad caption="recommended.bib">
+@BOOK
+    {
+     bib:Kay00,
+     author    = "Michael Kay",
+     title     = "XSLT Programmer's Reference",
+     publisher = "Wrox Press Ltd",
+     address   = "Arden House, 1102 Warwick Road,
+                  Acock's Green,Birmingham B27 6BH,UK",
+     ISBN      = "1-861003-12-9",
+     year      = "2000",
+     note      = "Printed in USA"
+    }
+</notepad>
+
+        <!--
+        Probably you are reading those words in form
+        of chm file.
+        In this case &hhlib; is installed in your system:
+        you can check its version by pressing the following button.
+        <div style="text-align:right;">
+        <HHbutton id="HHver" caption="Text: hhctrl.ocx version" command="HH Version"/>
+        </div>
+        -->
+
+    <!--....................................-->
+    <subsection name="HelpSystem"
+                title="Help system"
+                keywords="help system">
+
+    In order to deal with a <cite>HtmlHelp</cite>
+    file I had directly use the <dir>hhctrl.ocx</dir>
+    library without take advantage of
+    <cite>WinHelp</cite> support wrapped in the &VCL;.
+    Here is the initial part of the header of
+    the <cite>HtmlHelp</cite> module:
+
+<cppsource style="font-size:smaller;">
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
+*
+*   unt_HtmlHelp
+*   2008 - Matteo Gattanini
+*
+*   Derived from code by: * Marcel van Brakel
+*                           (brakelm@chello.nl)
+*                         * Hens Zimmerman
+*   Overview
+*   --------------------------------------------
+*   This unit contains a class 'cls_HtmlHelp' to
+*   manage Microsoft™ compiled HTML help files,
+*   using the Microsoft™ HTML Help `hhctrl.ocx´
+*   activeX control.
+*   With the current implementation strategy, when
+*   HH API fails to load each call to HtmlHelp
+*   service is translated in a normal 'ShellExecute'
+*   call on the passed chm file.
+*
+*   Licenses
+*   --------------------------------------------
+*   Use and modify freely
+*
+*   Release history
+*   --------------------------------------------
+*   ver 0.7 (dec.2008)
+*       .Using exceptions
+*   ver: 0.61    (feb.2008)
+*       .First release
+*
+*   Known bugs and todos
+*   --------------------------------------------
+*   *) Cast from pointer to member to pointer to funct
+*
+*   Example of usage:
+*   --------------------------------------------
+*   Example of usage:
+*   #include "unt_HtmlHelp.h"
+*   cls_HtmlHelp HH; // In automatic memory
+*   if ( !HH.Loaded )
+*    ShowMessage("API not loaded, using ShellExecute\n"
+*                "HTML Help not properly installed");
+*   // Now must indicate the help file path
+*   String ChmPath = ::ExtractFilePath(ParamStr(0)) +
+*                    "..\\hlp\\help.chm";
+*   HH.Open(ChmPath,"Topic1.html");
+*   HH.Open(ChmPath,ID_TOPIC_X);
+*
+*   Tips:
+*   --------------------------------------------
+*   MAPPING CONTEXT INTEGERS IN HTMLHELP PROJECTS
+*
+*   Prepare a header file {helptopics.h}
+*
+*   |  #define IDH_TOPICA 1020
+*   |  #define IDH_TOPICB 1030
+*   |  #define IDH_TOPICC 1040
+*
+*   Prepare an alias file {helptopics.ali}
+*
+*   |  IDH_TOPICA=html\topicA.html : this is the topic a
+*   |  IDH_TOPICB=html\topicB.html : this is the topic b
+*   |  IDH_TOPICC=html\topicC.html : this is the topic c
+*
+*   Prepare a text popup file {popups.txt}
+*
+*   |  .topic IDH_TOPICA
+*   |  text popup for topic a
+*   |
+*   |  .topic IDH_TOPICB
+*   |  text popup for topic b
+*
+*   Now in the HtmlHelp project add these sections:
+*
+*   |  [FILES]
+*   |
+*   |  html\topicA.html
+*   |  html\topicB.html
+*   |  html\topicC.html
+*   |
+*   |
+*   |  [ALIAS]
+*   |  #include helptopics.ali
+*   |
+*   |  [MAP]
+*   |  #include helptopics.h
+*   |
+*   |  [TEXT POPUPS]
+*   |  helptopics.h
+*   |  popups.txt
+*
+*
+*   HOOKING HELP MESSAGES IN VCL
+*
+*   To divert WinHelp call in a BCB project to
+*   HTML help actions, you can perform translation
+*   using the TApplicationEvents OnHelp event, for
+*   example:
+*   //-----------------------------------------------
+*   bool __fastcall TForm1::AppEventsHelp
+*            (WORD Command,int Data,bool &amp;CallHelp)
+*   {
+*   CallHelp = false; // VCL should not call WinHelp
+*
+*   switch ( Command )
+*   {
+*   case HELP_CONTEXT :
+*       {
+*        HH.Open(Data);
+*        return true;
+*       }
+*   case HELP_CONTEXTPOPUP :
+*       {
+*        HH.Popup(Data);
+*        return true;
+*       }
+*   case ...
+*   default:
+*       {
+*        Application->HelpContext(HelpContext);
+*        return true;
+*       }
+*   }
+*   }
+*   // To create help message you can use:
+*   Application->HelpCommand(Command,Data);
+*
+* * * * * * * * * * * * * * * * * * * * * * * * * * */
+</cppsource>
+
+
+    <HHbutton caption="Text:WM_TCARD"
+              command="TCard"
+              item1="4321,6688"/>
+
+    </subsection>
+
+    </section>
+
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ImplementationDetails"
+             title="Implementation details"
+             keywords="implementation details"
+             description="some note on program source and implementation choices">
+
+
+    <!--....................................-->
+    <subsection name="BuildDetails"
+                title="Build details"
+                keywords="build details">
+
+    The program is written in &cpp; language
+    and compiled for the &windows; platform;
+    more specifically the executable was compiled
+    and tested on a &windows;&nbsp;NT platform;
+    compilation target is the 32bit
+    <cite>PentiumPro</cite> class of processors.
+
+    </subsection>
+
+
+    <!--....................................-->
+    <subsection name="CodeStructure"
+                title="Code structure"
+                keywords="code structure">
+
+    <underconstruction/>
+    <cppsource style="font-size:smaller;">
+    Ehmm...
+    </cppsource>
+    </subsection>
+
+
+
+    <!--....................................-->
+    <subsection name="Portability"
+                title="Code portability"
+                keywords="code portability">
+
+    Although my attempts to write good code in a clean
+    and consistent structure, a trade-off between
+    elegance, comfort and time has to be reached.
+    <p>
+    It's a very difficult task writing portable code
+    resisting the temptation of the handy facilities
+    provided by the specific compiler.
+    </p>
+    
+    The &bcb;&nbsp;5 graphical application development
+    is heavily based on the Delphi Visual Component Library
+    &VCL;, which wraps most of the &windows; &API;s.
+    In &VCL; programming are willingly used things like:
+    <listO>
+        <it>
+            Global variables like <cpp>TApplication Application</cpp>
+        </it>
+        <it>
+            Global functions like <cpp>::FloatToStr</cpp> of <dir>SysUtils.h</dir>
+        </it>
+    </listO>
+    
+    Moreover Borland's &cpp; implementation contains
+    nonstandard keywords like <cpp>__property</cpp>;
+    this one is so tempting that induced me to the
+    dark side.
+    
+    <p>
+    Regarding &windows; &API;, they are normally
+    wrapped into &VCL;; however, I'm considering
+    for performance reasons to bypass the wrapper
+    during track rendering.
+    </p>
+
+    </subsection>
+    
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ThirdPartyStuff"
+             title="Third party stuff"
+             keywords="external libraries,dependencies,third party stuff"
+             description="about third party stuff">
+
+	Apart from operating system &API;s
+    and &IDE; libraries, this program
+    uses (or may try to use) the following
+    external libraries:
+    <listQ>
+		<it><cite href="http://synedit.sourceforge.net">SynEdit</cite> for highlighted text editor</it>
+        <it>Anders Melander - Finn Tolderlund <cite href="http://finn.mobilixnet.dk/delphi/">TGIFImage</cite> for saving in &gif; format</it>
+        <it>Planning to add <cite href="http://">(Not found yet)</cite> an &XML; parser</it>
+        <it><dir>hhctrl.ocx</dir>: &hhlib; <cite>HtmlHelp</cite> library</it>
+        <it>Usable compression-decompression dynamic libraries
+          <listO>
+            <it><dir>zlibwapi.dll</dir>: the well known &zlib;, by
+                <cite href="http://gailly.net">Jean-loup Gailly</cite> and
+                <cite href="http://www.alumni.caltech.edu/%7Emadler">Mark Adler</cite>,
+                used to handle zipped archives (<dir>*.zip</dir>) and
+                gzipped file streams (<dir>*.gz</dir>).</it>
+            <!--
+            <it><dir>sqx20.dll</dir>: the <cite href="http://www.sqx-archiver.org">squeeze</cite>
+                archiver library (http://www.sqx-archiver.org), or &sqx;, developed
+                by <cite href="http://www.speedproject.de">Sven Ritter</cite>.
+                This format has characteristics comparable with <cite>Igor Pavlov's</cite>
+                &lzma; but its sdk is much more simpler!</it> -->
+            <it>Planning to add support for other compressed formats
+                <listD>
+                  <it>&bzip2;</it>
+                  <it>&lzma;</it>
+                </listD></it>
+          </listO>
+        </it>
+    </listQ>
+
+    Other contained stuff:
+    <listQ>
+        <it>Images: I plundered some excellent icons
+            from &linux; windows systems (in particular
+            KDE crystalSVG)</it>
+		<it>Sounds: ehmm...</it>
+    </listQ>
+
+	</section>
+	
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ToolsUsed"
+             title="Tools used"
+             keywords="tools used"
+             description="details on development tools">
+
+    During development, the following
+    excellent products were used:
+
+    <listO>
+       <it><img src="./files/images/BCB5.png"/>&nbsp;&bcb;&nbsp;5 - the &cpp; &IDE;</it>
+       <it>&svn; and &tortoise; - versioning system</it>
+       <it>&winmerge; - the best program to compare text files</it>
+       <it>&context; and then &pspad;: nice text editors, mainly used for &XML; files</it>
+       <it>&saxon; - &XSL; interpreter</it>
+       <it><cite href="http://www.imagemagick.org">ImageMagick</cite> - to get the &gif;s in this help</it>
+       <it><cite href="http://upx.sourceforge.net">UPX</cite> - the legendary Ultimate Packer for eXecutables</it>
+       <it>&pdfcreator; - &pdf; printer driver</it>
+       <it><cite href="http://www.7-zip.org">7z</cite> - good archiver</it>
+    </listO>
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

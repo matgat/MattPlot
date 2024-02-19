@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="out\prj_MattPlot.exe"/>
+    <OBJFILES value="tmp\GIFImage.obj tmp\prj_MattPlot.obj tmp\unt_MainForm.obj 
+      tmp\unt_MPlot.obj tmp\unt_Colors.obj tmp\unt_MatCommon.obj tmp\unt_Log.obj 
+      tmp\unt_Tracks.obj tmp\unt_Frames.obj tmp\unt_About.obj 
+      tmp\unt_MatLogo.obj tmp\unt_ThisExeFile.obj tmp\unt_FileMetaData.obj 
+      tmp\unt_IniFile.obj tmp\unt_OptionValues.obj tmp\unt_Options.obj 
+      tmp\unt_OptionsSet.obj tmp\unt_HtmlHelp.obj tmp\unt_FileDialog.obj 
+      tmp\unt_GraphicFile.obj tmp\unt_Quantities.obj tmp\unt_TimeCounter.obj 
+      tmp\unt_MPlotClasses.obj tmp\unt_SynEditor.obj tmp\unt_CreateCtrls.obj 
+      tmp\unt_Printer.obj tmp\unt_DataColumns.obj tmp\unt_StreamParser.obj 
+      tmp\unt_TrackTransform.obj tmp\unt_PropertiesInterface.obj 
+      tmp\unt_Properties.obj tmp\unt_Fourier.obj tmp\unt_StreamDataParser.obj 
+      tmp\unt_ImportExport.obj tmp\unt_AddFoilObject.obj"/>
+    <RESFILES value="prj_MattPlot.res tmp\res_MainForm.res tmp\res_MPlot.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) src\frm\unt_MainForm.dfm src\frm\unt_About.dfm 
+      src\ext\unt_SynEditor.dfm src\frm\unt_Printer.dfm 
+      src\frm\unt_TrackTransform.dfm src\frm\unt_Properties.dfm 
+      src\frm\unt_AddFoilObject.dfm"/>
+    <LIBFILES value="ext\SynEdit\Source\prj_Synedit.lib"/>
+    <LIBRARIES value="VCLX50.lib Vcl50.lib"/>
+    <SPARELIBS value="Vcl50.lib VCLX50.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi"/>
+    <PATHCPP value=".;src\frm;src\spc;src\com;src\msc;src\ext;src\sys;src\vls;src\i-o;src\mth"/>
+    <PATHPAS value=".;ext\GifImage"/>
+    <PATHRC value=".;res"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value=""/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="prj_MattPlot.cpp"/>
+    <INCLUDEPATH value="src\mth;src\i-o;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;ext\SynEdit\Source"/>
+    <LIBPATH value="$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage;ext\SynEdit\Source"/>
+    <WARNINGS value="-w-par -w-8027"/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-Isrc\mth -Isrc\i-o -Isrc\ext -Isrc\vls -Isrc\msc -Isrc\sys -Ires 
+      -Isrc\frm -Isrc\spc -Isrc\com -Isrc\vcl -Isrc -I$(BCB)\include 
+      -I$(BCB)\include\vcl -Iext\GifImage -Iext\SynEdit\Source -src_suffix cpp 
+      -boa"/>
+    <CFLAG1 value="-O2 -H=$(BCB)\lib\vcl50.csm -Hc -Vx -Ve -X- -a8 -6 -b- -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-N2tmp -N0tmp -$Y- -$L- -$D- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-Itmp -D&quot;&quot; -aa -Tpe -x -Gn"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=0
+MinorVer=6
+Release=3
+Build=12
+Debug=0
+PreRelease=1
+Special=0
+Private=0
+DLL=0
+Locale=2057
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=Matteo Gattanini
+FileDescription=A win32 data plotter
+FileVersion=0.6.3.12
+InternalName=MattPlot
+LegalCopyright=2008 Matteo Gattanini
+LegalTrademarks=MattPlot
+OriginalFilename=
+ProductName=MattPlot
+ProductVersion=0.6
+Comments=Free use for good engineers
+
+[Excluded Packages]
+$(BCB)\Bin\bcbsmp50.bpl=Borland C++ Sample Components
+$(BCB)\Bin\mfcwizard.bpl=MFC Wizard
+$(BCB)\Bin\applet50.bpl=Borland Control Panel Applet Package
+$(BCB)\Bin\DCLNMF50.bpl=NetMasters Fastnet Tools
+$(BCB)\Indy10C5\dclIndyCore50.bpl=Indy 10 Core Design Time
+$(BCB)\Indy10C5\dclIndyProtocols50.bpl=Indy 10 Protocols Design Time
+$(BCB)\Bin\dclnet50.bpl=Borland Internet Components
+$(BCB)\Bin\dclwbm50.bpl=Borland InternetExpress Components
+$(BCB)\Bin\dclocx50.bpl=Borland Sample Imported ActiveX Controls
+$(BCB)\Bin\dclite50.bpl=Borland Integrated Translation Environment
+C:\WINDOWS\system32\ibsmp50.bpl=Borland C++ InterBase Alerter Component
+$(BCB)\Bin\dcl31w50.bpl=Delphi 1.0 Compatibility Components
+$(BCB)\Bin\dclqrt50.bpl=QuickReport Components
+$(BCB)\Bin\dcltqr50.bpl=TeeChart 5.0 for QuickReport Components Design Package
+$(BCB)\Bin\dcldb50.bpl=Borland Database Components
+$(BCB)\Bin\DCLIB50.bpl=InterBase Data Access Components
+$(BCB)\Bin\dclmid50.bpl=Borland MIDAS Components
+$(BCB)\Bin\bcbie50.bpl=Borland C++Builder Internet Explorer 5 Components Package
+$(BCB)\Bin\dclbde50.bpl=Borland BDE DB Components
+$(BCB)\Bin\dcltee50.bpl=TeeChart 5.0 Components
+$(BCB)\Bin\dcldss50.bpl=Borland Decision Cube Components
+$(BCB)\Bin\DBWEBXPRT.BPL=Borland Web Wizard Package
+$(BCB)\Bin\dclado50.bpl=Borland ADO DB Components
+$(BCB)\Bin\bcb2kaxserver50.bpl=Borland C++Builder COM Server Components Sample Package
+
+[HistoryLists\hlIncludePath]
+Count=21
+Item0=src\mth;src\i-o;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;ext\SynEdit\Source
+Item1=src\mth;src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;ext\SynEdit\Source
+Item2=src\mth;src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;.\ext\SynEdit\Source
+Item3=src\mth;src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item4=src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item5=..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item6=..;src\old;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item7=..\;src\old;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item8=src\old;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item9=C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item10=C:\Programmi\Borland\CBuilder5\Projects;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item11=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage
+Item12=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\Envision\Include
+Item13=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\Envision\Include
+Item14=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl
+Item15=src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl
+Item16=src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl
+Item17=src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl
+Item18=src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl
+Item19=src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl
+Item20=src;$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=27
+Item0=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage;ext\SynEdit\Source
+Item1=ext\SynEdit\Source;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage
+Item2=$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage
+Item3=src\mth;src\i-o;..;$(BCB)\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages;$(BCB)\Lib\SynEdit\Source
+Item4=src\i-o;..;$(BCB)\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages;$(BCB)\Lib\SynEdit\Source
+Item5=src\i-o;..;$(BCB)\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages
+Item6=src\i-o;..;$(BCB)\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages\
+Item7=src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item8=..;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item9=..;src\old;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item10=..\;src\old;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item11=src\old;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item12=C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item13=C:\Programmi\Borland\CBuilder5\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item14=$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage
+Item15=$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision
+Item16=src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision
+Item17=tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision
+Item18=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision
+Item19=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision
+Item20=src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib
+Item21=src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib
+Item22=src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib
+Item23=src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib
+Item24=src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib
+Item25=src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib
+Item26=src;$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=3
+Item0=$(BCB)\source\vcl;$(BCB)\Lib\SynEdit\Packages\
+Item1=c:\programmi\borland\cbuilder5\source\vcl;C:\Programmi\Borland\CBuilder5\Lib\SynEdit\Packages\
+Item2=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=tmp
+
+[HistoryLists\hlFinalOutputDir]
+Count=4
+Item0=out\
+Item1=out
+Item2=bin\
+Item3=bin
+
+[HistoryLists\hIBPIOutputDir]
+Count=4
+Item0=K:\Utenti\Matteo\Job\MyWork\BCB\BCB5\MatPlot\out\
+Item1=.\out\
+Item2=K:\Utenti\Matteo\Job\MyWork\Projects\BCB5\MatPlot\bin\
+Item3=bin
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl;$(BCB)\Lib\SynEdit\Packages\
+
+[Parameters]
+RunParams=C:\Documents and Settings\matteo.gattanini\Documenti\Macotec\Develop\MacotecComm\src\spc-mcomm\out\2011-11-09 11´34´04 MacotecComm plot.txt
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+  </IDEOPTIONS>
+</PROJECT>

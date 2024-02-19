@@ -1,0 +1,43 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.HideOutput=0
+Compilator.LogType=0
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+[Project tree]
+prj_MattPlot
+	+Main
+		src\frm\unt_MainForm.cpp
+		src\spc\unt_OptionsSet.cpp
+	+Specific
+		src\spc\unt_MPlot.cpp
+		src\spc\unt_MPlot.h
+		src\spc\unt_Frames.cpp
+		src\spc\unt_Frames.h
+		src\spc\unt_Tracks.cpp
+		src\spc\unt_Tracks.h
+		src\spc\unt_MPlotClasses.cpp
+		src\spc\unt_MPlotClasses.h
+		src\frm\unt_TrackTransform.cpp
+		src\frm\unt_TrackTransform.h
+[Open project files]
+0=src\frm\unt_MainForm.cpp
+1=src\frm\unt_TrackTransform.cpp
+2=src\spc\unt_Tracks.cpp
+[Selected Project Files]
+Main=
+Selected=src\spc\unt_Tracks.cpp
+[src\frm\unt_MainForm.cpp]
+TopLine=1
+Caret=1,15
+[src\frm\unt_TrackTransform.cpp]
+TopLine=350
+Caret=28,361
+[src\spc\unt_Tracks.cpp]
+TopLine=996
+Caret=39,1010

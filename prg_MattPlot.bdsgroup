@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <PersonalityInfo>
+    <Option>
+      <Option Name="Personality">Default.Personality</Option>
+      <Option Name="ProjectType"></Option>
+      <Option Name="Version">1.0</Option>
+      <Option Name="GUID">{97B1A4B6-C7D8-4B1E-9AF9-8F2885D6310A}</Option>
+    </Option>
+  </PersonalityInfo>
+  <Default.Personality>
+    
+    <Projects>
+      <Projects Name="prj_Synedit.lib">ext\SynEdit\prj_Synedit.bdsproj</Projects>
+      <Projects Name="prj_MattPlot.exe">prj_MattPlot.bdsproj</Projects>
+      <Projects Name="Targets">prj_Synedit.lib prj_MattPlot.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

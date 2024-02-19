@@ -1,0 +1,249 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Resample directive</title>
+      <meta name="keywords" content="resample" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="Split.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Directives.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="StrictDelimiters.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="Split.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="StrictDelimiters.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Directives" href="Directives.html">Parser directives</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="DirectiveList.html"><span>Available directives</span></a></li>
+                        <li><a href="Header.html"><span>Header directive</span></a></li>
+                        <li><a href="Split.html"><span>Split directive</span></a></li>
+                        <li id="current"><a href="Resample.html"><span>Resample directive</span></a></li>
+                        <li><a href="StrictDelimiters.html"><span>Strictdelimiters directive</span></a></li>
+                        <li><a href="CommandlineDirectives.html"><span>Directives in command line arguments</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Resample" title="undersampling and reordering data">Resample directive</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="resample" /></object>
+                  
+                  The <code class="txt">resample</code> directive applies to all
+                  retrieved data columns proportionally to their
+                  size.
+                  It enables a postprocessing activity to reorder
+                  and undersample data according to a sequence
+                  of indexes provided as argument.
+                  A sequence is composed by a chain of intervals,
+                  each interval is an arithmetic progression of
+                  indexes, characterized by a starting index, a step
+                  (1 if not specified) and an ending index.
+                  The progression contains always first index but
+                  not the ending index; this is denoted by the
+                  enclosing brackets that must strictly be <code class="txt">[)</code>.
+                  Indexes start from zero and can be given as
+                  hard numbers or sums:
+                  
+                  <ul class="listD">
+                     <li><code class="txt">[0:100)</code> count from 0 to 99 (0,1,2,...99)
+                     </li>
+                     <li><code class="txt">[6:2:13)</code> count from 6 to 12 with step 2 (6,8,10,12)
+                     </li>
+                     <li><code class="txt">[4-1:2+1:10+3)</code> count from 3 to 12 with step 3 (3,6,9,12)
+                     </li>
+                  </ul>
+                  
+                  Particular importance has the maximum index,
+                  representing the size of data to which indexes
+                  are referred.
+                  Resample indexes are automatically rescaled
+                  (except step) when applied to columns having
+                  a different size, so choose wisely the resample
+                  argument size to avoid rounding errors.
+                  
+                  The best way to understand how this
+                  directive works is to see some examples.
+                  Let's see how to reorder some rows:
+                  
+                  
+                  <div class="notepad"> Reorder example<pre class="notepad">
+#resample [3:6)[0:3)[6:10)
+   00  10  20  30
+   01  11  21  31
+   02  12  22  32
+   03  13  23  33
+   04  14  24  34
+   05  15  25  35
+   06  16  26  36
+   07  17  27  37
+   08  18  28  38
+   09  19  29  39
+</pre></div>
+                  
+                  Is equivalent to:
+                  
+                  
+                  <div class="notepad"> Reordered<pre class="notepad">
+   03  13  23  33
+   04  14  24  34
+   05  15  25  35
+   00  10  20  30
+   01  11  21  31
+   02  12  22  32
+   06  16  26  36
+   07  17  27  37
+   08  18  28  38
+   09  19  29  39
+</pre></div>
+                  
+                  Now let's see what happens with different
+                  columns size:
+                  
+                  <div class="notepad"> Reorder with different sizes<pre class="notepad">
+#resample [2:5)[0:2)[5:8)
+   100  200  300
+   101  201  301
+   102  202  302
+   103  203  303
+   104  204  304
+   105  205  305
+   106  206  306
+   107  207  307
+   108  208  
+   109  209  
+   110  210  
+   111  211  
+   112  212  
+   113  213  
+   114  214  
+   115  215  
+   116       
+   117       
+   118       
+   119       
+   120       
+   121       
+   122       
+   123       
+   124      
+   125       
+   126
+   127
+   128       
+   129       
+   130       
+   131
+</pre></div>
+                  
+                  In this case only the third column
+                  match the resample argument size; the other
+                  columns are reordered rescaling resample
+                  indexes (except step equal to 1); the previous
+                  text file is equivalent to:
+                  
+                  
+                  <div class="notepad"> Reordered<pre class="notepad">
+   108  204  302
+   109  205  303
+   110  206  304
+   111  207  300
+   112  208  301
+   113  209  305
+   114  210  306
+   115  211  307
+   116  212
+   117  213
+   118  214
+   119  215
+   100  200
+   101  201
+   102  202
+   103  203
+   104
+   105
+   106
+   107
+   120
+   121
+   122
+   123
+   124
+   125
+   126
+   127
+   128
+   129
+   130
+   131
+</pre></div>
+                  
+                  Note that in the previous example no
+                  rounding errors on rescaled indexes are
+                  occurred:
+                  in fact avoid these errors you must refer
+                  indexes of resample argument to the
+                  greatest common divisor of column sizes.
+                  <br />
+                  The <code class="txt">resample</code> argument notation
+                  supports also a <dfn title="">step</dfn> value; the
+                  following example tells <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> to skip
+                  odd rows:
+                  
+                  
+                  <div class="notepad"> Undersample example<pre class="notepad">
+#resample [0:2:10)
+   00  10  20  30
+   01  11  21  31
+   02  12  22  32
+   03  13  23  33
+   04  14  24  34
+   05  15  25  35
+   06  16  26  36
+   07  17  27  37
+   08  18  28  38
+   09  19  29  39
+</pre></div>
+                  
+                  Is equivalent to:
+                  
+                  
+                  <div class="notepad"> Undersampled<pre class="notepad">
+   00  10  20  30
+   02  12  22  32
+   04  14  24  34
+   06  16  26  36
+   08  18  28  38
+</pre></div>
+                  
+                  The resample feature does not (yet)
+                  support fractional steps (this would
+                  involve an interpolation function), so
+                  at present only undersampling is allowed.
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

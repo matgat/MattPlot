@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">CPlusPlusBuilder.Personality</Option>
+			<Option Name="ProjectType">CppVCLApplication</Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{938BFF62-6E41-4F12-AF34-CD74C3469A78}</Option>
+		</Option>
+	</PersonalityInfo>
+	<CPlusPlusBuilder.Personality>
+		<BCBPROJECT>
+      <project version="10.0">
+        <property category="build.config" name="active" value="0"/>
+        <property category="build.config" name="count" value="1"/>
+        <property category="build.config" name="excludedefaultforzero" value="0"/>
+        <property category="build.config.0" name="builddir" value="Debug"/>
+        <property category="build.config.0" name="key" value="Debug_Build"/>
+        <property category="build.config.0" name="name" value="Debug Build"/>
+        <property category="build.config.0" name="settings.win32b" value="default"/>
+        <property category="build.config.0" name="type" value="Toolset"/>
+        <property category="build.config.0" name="win32.win32b.builddir" value="Debug_Build"/>
+        <property category="build.config.1" name="key" value="Release_Build"/>
+        <property category="build.config.1" name="name" value="Release Build"/>
+        <property category="build.config.1" name="settings.win32b" value="default"/>
+        <property category="build.config.1" name="type" value="Toolset"/>
+        <property category="build.config.1" name="win32.win32b.builddir" value="Release_Build"/>
+        <property category="build.node" name="libraries" value="bcbsmp.lib vcldb.lib dbrtl.lib vclx.lib vcl.lib rtl.lib"/>
+        <property category="build.node" name="name" value="prj_MattPlot.exe"/>
+        <property category="build.node" name="packages" value="rtl;vcl;vclx;bcbsmp;dbrtl;vcldb;adortl;ibsmp;bdertl;vcldbx;teeui;teedb;tee;dss;ibxpress;dsnap;vclie;inetdb;inet;webdsnap;bcbie;bcboffice2k"/>
+        <property category="build.node" name="sparelibs" value="rtl.lib vcl.lib vclx.lib dbrtl.lib vcldb.lib bcbsmp.lib"/>
+        <property category="build.node" name="use_packages" value="0"/>
+        <property category="build.platform" name="active" value="win32"/>
+        <property category="build.platform" name="win32.Debug_Build.toolset" value="win32b"/>
+        <property category="build.platform" name="win32.Release_Build.toolset" value="win32b"/>
+        <property category="build.platform" name="win32.default" value="win32b"/>
+        <property category="build.platform" name="win32.enabled" value="1"/>
+        <property category="build.platform" name="win32.win32b.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.arg.1" value="_DEBUG"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.bcc32" name="option.r.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.$D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.arg.1" value="DEBUG"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.dcc32" name="param.filenames.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.D.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib\debug"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+        <property category="win32.Debug_Build.win32b.ilink32" name="option.L.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.z.enabled" value="1"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.zd.enabled" value="0"/>
+        <property category="win32.Debug_Build.win32b.tasm32" name="option.zi.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.arg.1" value="NDEBUG"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.D.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.O2.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.k.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.r.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.bcc32" name="option.vi.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.$D.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.$O.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.dcc32" name="option.V.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib\release"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+        <property category="win32.Release_Build.win32b.ilink32" name="option.L.enabled" value="1"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.z.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zd.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zi.enabled" value="0"/>
+        <property category="win32.Release_Build.win32b.tasm32" name="option.zn.enabled" value="1"/>
+        <optionset name="all_configurations">
+          <property category="node" name="displayname" value="All Configurations"/>
+          <property category="win32.*.win32b.bcc32" name="option.6.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.arg.1" value="$(BDS)\lib\vcl100.csm"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.arg.merge" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.H=.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Hc.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.1" value="src\mth"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.10" value="src\com"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.11" value="src\vcl"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.12" value="src"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.13" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.14" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.15" value="ext\GifImage"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.16" value="ext\SynEdit\Source"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.17" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.2" value="src\i-o"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.3" value="src\ext"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.4" value="src\vls"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.5" value="src\msc"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.6" value="src\sys"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.7" value="res"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.8" value="src\frm"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.9" value="src\spc"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Od.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Ve.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.Vx.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.X.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.b.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.k.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.n.arg.1" value="tmp\"/>
+          <property category="win32.*.win32b.bcc32" name="option.n.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.n.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.noregistervars.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.1" value="NO_STRICT"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.arg.merge" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.sysdefines.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.tW.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.tWM.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.v.enabled" value="1"/>
+          <property category="win32.*.win32b.bcc32" name="option.vi.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.winl.enabled" value="0"/>
+          <property category="win32.*.win32b.bcc32" name="option.y.enabled" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.D.arg.1" value="_DEBUG"/>
+          <property category="win32.*.win32b.brcc32" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.D.enabled" value="0"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.1" value="src\mth"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.10" value="src\com"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.11" value="src\vcl"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.12" value="src"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.13" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.14" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.15" value="ext\GifImage"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.16" value="ext\SynEdit\Source"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.17" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.2" value="src\i-o"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.3" value="src\ext"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.4" value="src\vls"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.5" value="src\msc"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.6" value="src\sys"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.7" value="res"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.8" value="src\frm"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.9" value="src\spc"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.arg.merge" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.INCLUDEPATH.enabled" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.outputdir.arg.1" value="tmp\"/>
+          <property category="win32.*.win32b.brcc32" name="option.outputdir.arg.merge" value="1"/>
+          <property category="win32.*.win32b.brcc32" name="option.outputdir.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.arg.1" value="Y+"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.arg.2" value="W"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.$.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.$O.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.1" value="src\frm"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.10" value="src\mth"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.2" value="src\spc"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.3" value="src\com"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.4" value="src\msc"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.5" value="src\sys"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.6" value="src\ext"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.7" value="src\vls"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.8" value="ext\GifImage"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.9" value="src\i-o"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.I.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.M.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.N0.arg.1" value="tmp\"/>
+          <property category="win32.*.win32b.dcc32" name="option.N0.arg.merge" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.N0.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.NO.arg.1" value="tmp\"/>
+          <property category="win32.*.win32b.dcc32" name="option.NO.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.NO.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.1" value="src\frm"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.10" value="src\mth"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.2" value="src\spc"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.3" value="src\com"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.4" value="src\msc"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.5" value="src\sys"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.6" value="src\ext"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.7" value="src\vls"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.8" value="ext\GifImage"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.9" value="src\i-o"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.O.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.1" value="src\frm"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.10" value="src\mth"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.2" value="src\spc"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.3" value="src\com"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.4" value="src\msc"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.5" value="src\sys"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.6" value="src\ext"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.7" value="src\vls"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.8" value="ext\GifImage"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.9" value="src\i-o"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.R.enabled" value="0"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.1" value="src\frm"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.10" value="src\mth"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.11" value=".\"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.12" value="$(BDS)\lib"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.13" value="$(BDS)\lib\obj"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.2" value="src\spc"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.3" value="src\com"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.4" value="src\msc"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.5" value="src\sys"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.6" value="src\ext"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.7" value="src\vls"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.8" value="ext\GifImage"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.9" value="src\i-o"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.arg.merge" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="option.U.enabled" value="1"/>
+          <property category="win32.*.win32b.dcc32" name="param.filenames.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.D.arg.1" value="_DEBUG"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.D.enabled" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.1" value="src\mth"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.10" value="src\com"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.11" value="src\vcl"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.12" value="src"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.13" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.14" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.15" value="ext\GifImage"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.16" value="ext\SynEdit\Source"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.2" value="src\i-o"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.3" value="src\ext"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.4" value="src\vls"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.5" value="src\msc"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.6" value="src\sys"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.7" value="res"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.8" value="src\frm"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.9" value="src\spc"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.boa.enabled" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.srcsuffix.arg" value="cpp"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.srcsuffix.arg.merge" value="1"/>
+          <property category="win32.*.win32b.idl2cpp" name="option.srcsuffix.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.D.arg" value="&quot;&quot;"/>
+          <property category="win32.*.win32b.ilink32" name="option.D.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.D.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.I.arg.1" value="tmp"/>
+          <property category="win32.*.win32b.ilink32" name="option.I.arg.merge" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.I.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.1" value="$(BDS)\lib"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.10" value="src\msc"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.11" value="src\spc"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.12" value="src\com"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.13" value="src\frm"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.14" value="tmp"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.15" value="res"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.16" value="ext\GifImage"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.17" value="ext\SynEdit\Source"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.2" value="$(BDS)\lib\obj"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.3" value="$(BDS)\Projects"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.4" value="$(BDS)\Projects\Lib"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.5" value="src\mth"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.6" value="src\i-o"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.7" value="src\vls"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.8" value="src\ext"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.9" value="src\sys"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.L.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.Tpe.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.aa.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.dynamicrtl.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.1" value="src\frm"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.10" value="src\mth"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.2" value="src\spc"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.3" value="src\com"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.4" value="src\msc"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.5" value="src\sys"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.6" value="src\ext"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.7" value="src\vls"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.8" value="ext\GifImage"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.9" value="src\i-o"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.j.enabled" value="0"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.arg.1" value="out\"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.arg.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.outputdir.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="option.v.enabled" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.1" value="$(LIBRARIES)"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.2" value="import32.lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.3" value="cp32mt.lib"/>
+          <property category="win32.*.win32b.ilink32" name="param.libfiles.merge" value="1"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.1" value="c0w32.obj"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.2" value="sysinit.obj"/>
+          <property category="win32.*.win32b.ilink32" name="param.objfiles.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.d.arg.1" value="_DEBUG"/>
+          <property category="win32.*.win32b.tasm32" name="option.d.arg.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.d.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.1" value="src\mth"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.10" value="src\com"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.11" value="src\vcl"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.12" value="src"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.13" value="$(BDS)\include"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.14" value="$(BDS)\include\vcl"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.15" value="ext\GifImage"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.16" value="ext\SynEdit\Source"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.17" value="$(BDS)\include\dinkumware"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.2" value="src\i-o"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.3" value="src\ext"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.4" value="src\vls"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.5" value="src\msc"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.6" value="src\sys"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.7" value="res"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.8" value="src\frm"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.9" value="src\spc"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.arg.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.i.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.outputdir.arg.1" value="tmp\"/>
+          <property category="win32.*.win32b.tasm32" name="option.outputdir.arg.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.outputdir.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.w2.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="option.zi.enabled" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="param.listfile.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="param.objfile.merge" value="1"/>
+          <property category="win32.*.win32b.tasm32" name="param.xreffile.merge" value="1"/>
+        </optionset>
+      </project>
+      <FILELIST>
+        <FILE FILENAME="prj_MattPlot.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="prj_MattPlot" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="prj_MattPlot.todo" CONTAINERID="ToDo" LOCALCOMMAND="" UNITNAME="prj_MattPlot" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="prj_MattPlot.res" CONTAINERID="ResTool" LOCALCOMMAND="" UNITNAME="prj_MattPlot" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\frm\unt_MainForm.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_MainForm" FORMNAME="frmMplotMain" DESIGNCLASS=""/>
+        <FILE FILENAME="res\res_MainForm.rc" CONTAINERID="RC" LOCALCOMMAND="" UNITNAME="res_MainForm" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="res\res_MainForm.h" CONTAINERID="" LOCALCOMMAND="" UNITNAME="res_MainForm" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\spc\unt_MPlot.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_MPlot" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_Colors.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Colors" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_MatCommon.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_MatCommon" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_Log.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Log" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\spc\unt_Tracks.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Tracks" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\spc\unt_Frames.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Frames" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\frm\unt_About.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_About" FORMNAME="frmAbout" DESIGNCLASS=""/>
+        <FILE FILENAME="src\msc\unt_MatLogo.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_MatLogo" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_ThisExeFile.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_ThisExeFile" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_FileMetaData.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_FileMetaData" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_IniFile.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_IniFile" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_OptionValues.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_OptionValues" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_Options.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Options" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\spc\unt_OptionsSet.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_OptionsSet" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\sys\unt_HtmlHelp.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_HtmlHelp" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\sys\unt_FileDialog.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_FileDialog" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\ext\unt_GraphicFile.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_GraphicFile" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\vls\unt_Quantities.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Quantities" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\sys\unt_TimeCounter.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_TimeCounter" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="ext\GifImage\GIFImage.pas" CONTAINERID="PascalCompiler" LOCALCOMMAND="" UNITNAME="GIFImage" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\spc\unt_MPlotClasses.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_MPlotClasses" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\ext\unt_SynEditor.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_SynEditor" FORMNAME="frmSynEditor" DESIGNCLASS=""/>
+        <FILE FILENAME="src\com\unt_CreateCtrls.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_CreateCtrls" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\frm\unt_Printer.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Printer" FORMNAME="frmChooseExtraPrnOps" DESIGNCLASS=""/>
+        <FILE FILENAME="src\i-o\unt_DataColumns.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_DataColumns" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\i-o\unt_StreamParser.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_StreamParser" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\frm\unt_TrackTransform.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_TrackTransform" FORMNAME="frmTrackTransform" DESIGNCLASS=""/>
+        <FILE FILENAME="src\spc\unt_PropertiesInterface.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_PropertiesInterface" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\frm\unt_Properties.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Properties" FORMNAME="frmProperties" DESIGNCLASS=""/>
+        <FILE FILENAME="src\mth\unt_Fourier.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_Fourier" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="res\res_MPlot.h" CONTAINERID="" LOCALCOMMAND="" UNITNAME="res_MPlot" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="res\res_MPlot.rc" CONTAINERID="RC" LOCALCOMMAND="" UNITNAME="res_MPlot" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\i-o\unt_StreamTextTableParser.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_StreamTextTableParser" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\i-o\unt_ImportExport.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_ImportExport" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="ext\SynEdit\Source\prj_Synedit.lib" CONTAINERID="LibTool" LOCALCOMMAND="" UNITNAME="prj_Synedit" FORMNAME="" DESIGNCLASS=""/>
+        <FILE FILENAME="src\frm\unt_AddFoilObject.cpp" CONTAINERID="CCompiler" LOCALCOMMAND="" UNITNAME="unt_AddFoilObject" FORMNAME="frmAddFoilObject" DESIGNCLASS=""/>
+      </FILELIST>
+      <IDEOPTIONS>
+        <VersionInfo>
+          <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+          <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+          <VersionInfo Name="MajorVer">0</VersionInfo>
+          <VersionInfo Name="MinorVer">6</VersionInfo>
+          <VersionInfo Name="Release">2</VersionInfo>
+          <VersionInfo Name="Build">12</VersionInfo>
+          <VersionInfo Name="Debug">False</VersionInfo>
+          <VersionInfo Name="PreRelease">False</VersionInfo>
+          <VersionInfo Name="Special">False</VersionInfo>
+          <VersionInfo Name="Private">False</VersionInfo>
+          <VersionInfo Name="DLL">False</VersionInfo>
+          <VersionInfo Name="Locale">1040</VersionInfo>
+          <VersionInfo Name="CodePage">1252</VersionInfo>
+        </VersionInfo>
+        <VersionInfoKeys>
+          <VersionInfoKeys Name="CompanyName">Matteo Gattanini</VersionInfoKeys>
+          <VersionInfoKeys Name="FileDescription">A win32 data plotter</VersionInfoKeys>
+          <VersionInfoKeys Name="FileVersion">0.6.2.12</VersionInfoKeys>
+          <VersionInfoKeys Name="InternalName">MattPlot</VersionInfoKeys>
+          <VersionInfoKeys Name="LegalCopyright">2008 Matteo Gattanini</VersionInfoKeys>
+          <VersionInfoKeys Name="LegalTrademarks">MattPlot</VersionInfoKeys>
+          <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+          <VersionInfoKeys Name="ProductName">MattPlot</VersionInfoKeys>
+          <VersionInfoKeys Name="ProductVersion">0.6</VersionInfoKeys>
+          <VersionInfoKeys Name="Comments">Free use for good engineers</VersionInfoKeys>
+        </VersionInfoKeys>
+        <HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Count">21</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item0">src\mth;src\i-o;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;ext\SynEdit\Source</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item1">src\mth;src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;ext\SynEdit\Source</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item2">src\mth;src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage;.\ext\SynEdit\Source</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item3">src\mth;src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item4">src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item5">..;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item6">..;src\old;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item7">..\;src\old;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item8">src\old;C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item9">C:\Programmi\Borland\CBuilder5\Projects\;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item10">C:\Programmi\Borland\CBuilder5\Projects;src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item11">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\GifImage</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item12">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\Envision\Include</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item13">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl;ext\Envision\Include</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item14">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item15">src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item16">src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item17">src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item18">src\spc;src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item19">src\com;src\vcl;src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+          <HistoryLists_hlIncludePath Name="Item20">src;$(BCB)\include;$(BCB)\include\vcl</HistoryLists_hlIncludePath>
+        </HistoryLists_hlIncludePath>
+        <HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Count">27</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item0">$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage;ext\SynEdit\Source</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item1">ext\SynEdit\Source;$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item2">$(BCB)\lib;$(BCB)\lib\obj;$(BCB)\Projects;$(BCB)\Projects\Lib;src\mth;src\i-o;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item3">src\mth;src\i-o;..;$(BCB)\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages;$(BCB)\Lib\SynEdit\Source</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item4">src\i-o;..;$(BCB)\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages;$(BCB)\Lib\SynEdit\Source</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item5">src\i-o;..;$(BCB)\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item6">src\i-o;..;$(BCB)\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage;$(BCB)\Lib\SynEdit\Packages\</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item7">src\i-o;..;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item8">..;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item9">..;src\old;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item10">..\;src\old;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item11">src\old;C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item12">C:\Programmi\Borland\CBuilder5\Projects\;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item13">C:\Programmi\Borland\CBuilder5\Projects;$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item14">$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\GifImage</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item15">$(BCB)\Projects\Lib;src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item16">src\vls;src\ext;src\sys;src\msc;src\spc;src\com;src\frm;tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item17">tmp;res;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item18">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item19">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib;ext\Envision</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item20">src\ext;src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item21">src\vls;src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item22">src\msc;src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item23">src\sys;res;src\frm;src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item24">src\spc;src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item25">src\com;src\vcl;src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+          <HistoryLists_hlLibraryPath Name="Item26">src;$(BCB)\lib\obj;$(BCB)\lib</HistoryLists_hlLibraryPath>
+        </HistoryLists_hlLibraryPath>
+        <HistoryLists_hlDebugSourcePath>
+          <HistoryLists_hlDebugSourcePath Name="Count">3</HistoryLists_hlDebugSourcePath>
+          <HistoryLists_hlDebugSourcePath Name="Item0">$(BCB)\source\vcl;$(BCB)\Lib\SynEdit\Packages\</HistoryLists_hlDebugSourcePath>
+          <HistoryLists_hlDebugSourcePath Name="Item1">c:\programmi\borland\cbuilder5\source\vcl;C:\Programmi\Borland\CBuilder5\Lib\SynEdit\Packages\</HistoryLists_hlDebugSourcePath>
+          <HistoryLists_hlDebugSourcePath Name="Item2">$(BCB)\source\vcl</HistoryLists_hlDebugSourcePath>
+        </HistoryLists_hlDebugSourcePath>
+        <HistoryLists_hlConditionals>
+          <HistoryLists_hlConditionals Name="Count">1</HistoryLists_hlConditionals>
+          <HistoryLists_hlConditionals Name="Item0">_DEBUG</HistoryLists_hlConditionals>
+        </HistoryLists_hlConditionals>
+        <HistoryLists_hlIntOutputDir>
+          <HistoryLists_hlIntOutputDir Name="Count">1</HistoryLists_hlIntOutputDir>
+          <HistoryLists_hlIntOutputDir Name="Item0">tmp</HistoryLists_hlIntOutputDir>
+        </HistoryLists_hlIntOutputDir>
+        <HistoryLists_hlFinalOutputDir>
+          <HistoryLists_hlFinalOutputDir Name="Count">4</HistoryLists_hlFinalOutputDir>
+          <HistoryLists_hlFinalOutputDir Name="Item0">out\</HistoryLists_hlFinalOutputDir>
+          <HistoryLists_hlFinalOutputDir Name="Item1">out</HistoryLists_hlFinalOutputDir>
+          <HistoryLists_hlFinalOutputDir Name="Item2">bin\</HistoryLists_hlFinalOutputDir>
+          <HistoryLists_hlFinalOutputDir Name="Item3">bin</HistoryLists_hlFinalOutputDir>
+        </HistoryLists_hlFinalOutputDir>
+        <HistoryLists_hIBPIOutputDir>
+          <HistoryLists_hIBPIOutputDir Name="Count">4</HistoryLists_hIBPIOutputDir>
+          <HistoryLists_hIBPIOutputDir Name="Item0">K:\Utenti\Matteo\Job\MyWork\BCB\BCB5\MatPlot\out\</HistoryLists_hIBPIOutputDir>
+          <HistoryLists_hIBPIOutputDir Name="Item1">.\out\</HistoryLists_hIBPIOutputDir>
+          <HistoryLists_hIBPIOutputDir Name="Item2">K:\Utenti\Matteo\Job\MyWork\Projects\BCB5\MatPlot\bin\</HistoryLists_hIBPIOutputDir>
+          <HistoryLists_hIBPIOutputDir Name="Item3">bin</HistoryLists_hIBPIOutputDir>
+        </HistoryLists_hIBPIOutputDir>
+        <Debugging>
+          <Debugging Name="DebugSourceDirs">$(BCB)\source\vcl;$(BCB)\Lib\SynEdit\Packages\</Debugging>
+        </Debugging>
+        <Parameters>
+          <Parameters Name="RunParams">openasargerror.mpl</Parameters>
+          <Parameters Name="Launcher"></Parameters>
+          <Parameters Name="UseLauncher">False</Parameters>
+          <Parameters Name="DebugCWD"></Parameters>
+          <Parameters Name="HostApplication"></Parameters>
+          <Parameters Name="RemoteHost"></Parameters>
+          <Parameters Name="RemotePath"></Parameters>
+          <Parameters Name="RemoteParams"></Parameters>
+          <Parameters Name="RemoteLauncher"></Parameters>
+          <Parameters Name="UseRemoteLauncher">False</Parameters>
+          <Parameters Name="RemoteCWD"></Parameters>
+          <Parameters Name="RemoteDebug">False</Parameters>
+          <Parameters Name="Debug Symbols Search Path"></Parameters>
+          <Parameters Name="LoadAllSymbols">True</Parameters>
+          <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+        </Parameters>
+        <Language>
+          <Language Name="ActiveLang"></Language>
+          <Language Name="ProjectLang">$00000000</Language>
+          <Language Name="RootDir"></Language>
+        </Language>
+        <Linker>
+          <Linker Name="LibPrefix"></Linker>
+          <Linker Name="LibSuffix"></Linker>
+          <Linker Name="LibVersion"></Linker>
+        </Linker>
+      </IDEOPTIONS>
+    </BCBPROJECT>
+		<Source>
+			<Source Name="MainSource">prj_MattPlot.cpp</Source>
+		</Source>  <buildevents/>
+  </CPlusPlusBuilder.Personality>
+</BorlandProject>

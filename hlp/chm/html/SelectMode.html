@@ -1,0 +1,199 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Select mode</title>
+      <meta name="keywords" content="select mode" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="OnRenderedTracks.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Viewing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="EditMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="OnRenderedTracks.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="EditMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Viewing" href="Viewing.html">Viewing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="OnRenderedTracks.html"><span>Viewed data</span></a></li>
+                        <li id="current"><a href="SelectMode.html"><span>Select mode</span></a></li>
+                        <li><a href="EditMode.html"><span>Edit mode</span></a></li>
+                        <li><a href="PanMode.html"><span>Pan mode</span></a></li>
+                        <li><a href="ZoomMode.html"><span>Zoom mode</span></a></li>
+                        <li><a href="MeasureMode.html"><span>Measure mode</span></a></li>
+                        <li><a href="PenMode.html"><span>Pen mode</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="SelectMode" title="change selection and plot layout">Select mode</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="select mode" /></object>
+                  
+                  During <a href="ActionsTable.html#actSelectMode" title="action SelectMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/SelectMode.gif" alt="[SelectMode]" /> <code class="txt">SelectMode</code></a> you can:
+                  
+                  <ul class="listO">
+                     <li>Change current selected
+                        <a href="PlotObjects.html#ProgramState" title="PlotObjects.html#ProgramState"><dfn title="tracks container">Frame</dfn> and <dfn title="set of points">Track</dfn></a>
+                        
+                     </li>
+                     <li>Edit <dfn title="tracks container">Frame</dfn>s, <dfn title="set of points">Track</dfn>s and other
+                        <a href="PlotObjects.html" title="PlotObjects.html">objects</a>
+                        <a href="ActionsTable.html#actProperties" title="action Properties"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/Properties.gif" alt="[Properties]" /> <code class="txt">Properties</code></a> and style
+                        
+                     </li>
+                     <li>Modify plot <a href="_Layouts.html" title="_Layouts.html">layout</a>,
+                        namely change <dfn title="tracks container">Frame</dfn>s position, and move
+                        <dfn title="set of points">Track</dfn>s between <dfn title="tracks container">Frame</dfn>s.
+                        
+                     </li>
+                  </ul>
+                  These operations have generally a change
+                  selection effect.
+                  
+                  
+                  
+                  <h3><a name="EditingProperties" title="editing properties">Editing object properties</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="editing properties" /></object>
+                  
+                  To access object properties form:
+                  
+                  <ul class="listO">
+                     <li>Double click on object</li>
+                     <li>Right click to access context menu</li>
+                     <li>Select object and then trigger <a href="ActionsTable.html#actProperties" title="action Properties"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/Properties.gif" alt="[Properties]" /> <code class="txt">Properties</code></a>
+                        action (for example using the relative
+                        <a href="MainForm.html#Mainmenu" title="MainForm.html#Mainmenu">main menu</a> entry)
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  <h3><a name="EditingLayout" title="editing layout">Editing Layout</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="editing layout" /></object>
+                  
+                  To drag an object simply left click on it,
+                  then move mouse holding left button down.
+                  Draggable objects are <dfn title="tracks container">Frame</dfn>s,
+                  <dfn title="set of points">Track</dfn>s, <dfn title="">legends</dfn>,
+                  <dfn title="">markers</dfn> (see <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a>),
+                  <dfn title="">text labels</dfn>  (see <a href="ActionsTable.html#actAddText" title="action AddText"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/AddText.gif" alt="[AddText]" /> <code class="txt">AddText</code></a>).
+                  
+                  
+                  <p>With this operation you can:</p>
+                  
+                  
+                  <ul class="listO">
+                     <li>Change current selected <dfn title="tracks container">Frame</dfn> or <dfn title="set of points">Track</dfn></li>
+                     <li>Move <dfn title="">frames</dfn> to a new position
+                     </li>
+                     <li>Swap or merge <dfn title="">frames</dfn></li>
+                     <li>Delete <dfn title="">frames</dfn> releasing them out of plot
+                     </li>
+                     <li>Move <dfn title="">tracks</dfn> to other frames
+                     </li>
+                     <li>Delete <dfn title="">tracks</dfn> releasing them out of plot
+                     </li>
+                     <li>Change <dfn title="">legends</dfn> position
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="SelectMouseCommands" title="mouse commands in SelectMode">Mouse effects</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="mouse commands in SelectMode" /></object>
+                  
+                  <a href="ActionsTable.html#actSelectMode" title="action SelectMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/SelectMode.gif" alt="[SelectMode]" /> <code class="txt">SelectMode</code></a> supports the following
+                  mouse operations:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Mouse operation</td>
+                           <td>Target</td>
+                           <td>Effect</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Left click</td>
+                           <td><dfn title="tracks container">Frame</dfn>, <dfn title="set of points">Track</dfn> or Legend
+                           </td>
+                           <td>Object selection; tracks can be selected also on legend</td>
+                        </tr>
+                        <tr>
+                           <td>Left double click</td>
+                           <td>foil object</td>
+                           <td>Edit object properties</td>
+                        </tr>
+                        <tr>
+                           <td>Right click</td>
+                           <td><dfn title="tracks container">Frame</dfn> or <dfn title="set of points">Track</dfn></td>
+                           <td>Object contextual menu</td>
+                        </tr>
+                        <tr>
+                           <td>Wheel</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Cycle current <dfn title="set of points">Track</dfn></td>
+                        </tr>
+                        <tr>
+                           <td>Left button drag</td>
+                           <td><dfn title="tracks container">Frame</dfn>, <dfn title="set of points">Track</dfn>, <dfn title="">legend</dfn>, <dfn title="">marker</dfn>, <dfn title="">text label</dfn></td>
+                           <td>Object dragging</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="PlotActions.html">Plot actions</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

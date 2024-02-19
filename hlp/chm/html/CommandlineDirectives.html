@@ -1,0 +1,127 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Directives in command line arguments</title>
+      <meta name="keywords" content="directives as arguments" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="StrictDelimiters.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Directives.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="StrictDelimiters.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Directives" href="Directives.html">Parser directives</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="DirectiveList.html"><span>Available directives</span></a></li>
+                        <li><a href="Header.html"><span>Header directive</span></a></li>
+                        <li><a href="Split.html"><span>Split directive</span></a></li>
+                        <li><a href="Resample.html"><span>Resample directive</span></a></li>
+                        <li><a href="StrictDelimiters.html"><span>Strictdelimiters directive</span></a></li>
+                        <li id="current"><a href="CommandlineDirectives.html"><span>Directives in command line arguments</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="CommandlineDirectives"
+                        title="passing directives as command line argument">Directives in command line arguments</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="directives as arguments" /></object>
+                  
+                  Directives can be embedded directly in the
+                  data file or, in case of need, temporarily
+                  appended using program arguments passed through
+                  command line.
+                  You can append additional lines at the top
+                  of a file that is going to be opened passing
+                  them before the file path argument, for
+                  example, given a file:
+                  
+                  
+                  <div class="notepad"> data.dat<pre class="notepad">
+ 00  10  20  30
+ 02  12  22  32
+</pre></div>
+                  
+                  Calling program in this way:
+                  
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot "+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" "+#tolerant true" data.dat
+</pre>
+                  
+                  Has the same effect of opening this file:
+                  
+                  <div class="notepad"> data.dat<pre class="notepad">
+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;
+#tolerant true
+ 00  10  20  30
+ 02  12  22  32
+</pre></div>
+                  
+                  
+                  
+                  <h3><a name="CmdDirsTypicalErrs" title="command line directives typical errors">Typical errors</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="command line directives typical errors" /></object>
+                  
+                  Now a survey of typical errors.
+                  Sequence error:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot data.dat "+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" "+#tolerant true"
+C:\&gt; ??ERROR: no file to append directives
+
+C:\&gt; MattPlot "+#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" "+#tolerant true" data.dat
+C:\&gt; Ok
+</pre>
+                  
+                  Space in arguments error:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt; +#tolerant true data.dat
+C:\&gt; ??ERROR: what are `&lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;´ and `true´?
+
+C:\&gt; MattPlot +"#header &lt;a&gt;&lt;b&gt;&lt;c&gt;&lt;d&gt;" +"#tolerant true" data.dat
+C:\&gt; Ok
+</pre>
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html#SpaceInArgs">Spaces in program arguments</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

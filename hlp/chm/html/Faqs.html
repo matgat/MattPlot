@@ -1,0 +1,819 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Questions and answers</title>
+      <meta name="keywords" content="faqs,questions,answers,common questions" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="HowTo.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="UserTips.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="Troubleshooting.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="HowTo.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="Troubleshooting.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="UserTips" href="UserTips.html">Questions and tips</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="Tips.html"><span>Tips</span></a></li>
+                        <li><a href="HowTo.html"><span>How to...</span></a></li>
+                        <li id="current"><a href="Faqs.html"><span>Questions and answers</span></a></li>
+                        <li><a href="Troubleshooting.html"><span>Troubleshooting</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Faqs" title="common questions answered">Questions and answers</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="faqs" />
+                     <param name="Keyword" value="questions" />
+                     <param name="Keyword" value="answers" />
+                     <param name="Keyword" value="common questions" /></object>
+                  
+                  
+                  <br /><br /><h3>Index</h3>
+                  <table class="faqs">
+                     <col class="leftcol" />
+                     <col class="middlecol" />
+                     <col class="rightcol" />
+                     <tbody>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.arguments" title="On arguments passed via command line"
+                                 href="#faq.arguments"><span class="faqs_topic">1) Program arguments</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.arguments.nofurtherinstances"
+                                 title="preventing further instances"
+                                 href="#faq.arguments.nofurtherinstances">1.1) </a>
+                              How can I prevent the creation of
+                              further program instances when I open
+                              other files from command line?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.arguments.sameframe" title="load files in the same frame"
+                                 href="#faq.arguments.sameframe">1.2) </a>
+                              How can I load two files in the same
+                              plot frame?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.importing" title="When importing data from external files"
+                                 href="#faq.importing"><span class="faqs_topic">2) Importing data</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.importing.rescaling" title="rescaling example"
+                                 href="#faq.importing.rescaling">2.1) </a>
+                              Can I rescale (multiplication by a constant)
+                              my input data?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.importing.compressedfiles" title="compressed files,zip,gz"
+                                 href="#faq.importing.compressedfiles">2.2) </a>
+                              Can <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> open or save as compressed files?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.viewing" title="When using graphical interface"
+                                 href="#faq.viewing"><span class="faqs_topic">3) Viewing plots</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.viewing.togglemode" title="temporary toggle mode"
+                                 href="#faq.viewing.togglemode">3.1) </a>
+                              Can I temporary toggle to <kbd title="">pan</kbd>
+                              or <kbd title="">zoom</kbd> mode while measuring track?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.viewing.fitview" title="reset view" href="#faq.viewing.fitview">3.2) </a>
+                              I zoomed too much, how can I reset plot view?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.viewing.trackproperties"
+                                 title="edit properties without mouse selection"
+                                 href="#faq.viewing.trackproperties">3.3) </a>
+                              I want to edit the properties of a track,
+                              but selection with mouse is difficult.
+                              Is there another way?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.viewing.capturingmeasurelines" title="capturing measure lines"
+                                 href="#faq.viewing.capturingmeasurelines">3.4) </a>
+                              Can I get a plot image comprising the
+                              current measure lines?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.viewing.loggingcoords" title="recording point coordinates"
+                                 href="#faq.viewing.loggingcoords">3.5) </a>
+                              How can I record some point coordinates
+                              of a displayed track?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.customizing" title="Customizing program" href="#faq.customizing"><span class="faqs_topic">4) Customizing</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.customizing.customshortcuts" title="customizing shortcuts"
+                                 href="#faq.customizing.customshortcuts">4.1) </a>
+                              There is an <a href="ActionsTable.html" title="ActionsTable.html">action</a>
+                              that I use often; is there a way to call it
+                              quickly avoiding the
+                              <a href="MainForm.html#Mainmenu" title="MainForm.html#Mainmenu">main menu</a>?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.customizing.customtoolbar" title="customizing toolbar"
+                                 href="#faq.customizing.customtoolbar">4.2) </a>
+                              No shortcut available for my
+                              beloved <a href="ActionsTable.html" title="ActionsTable.html">action</a>,
+                              Am I condemned to access it through the slow
+                              <a href="MainForm.html#Mainmenu" title="MainForm.html#Mainmenu">main menu</a>
+                              for the rest of my life?
+                              
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table><br /><br /><table class="faqs">
+                     <col class="leftcol" />
+                     <col class="middlecol" />
+                     <col class="rightcol" />
+                     <tbody>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.arguments" title="On arguments passed via command line"
+                                 href="#idx.faq.arguments"><span class="faqs_topic">1) Program arguments</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="preventing further instances" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.arguments.nofurtherinstances" title="preventing further instances"
+                                 href="#idx.faq.arguments.nofurtherinstances">1.1) </a>
+                              How can I prevent the creation of
+                              further program instances when I open
+                              other files from command line?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="nofurtherinstances"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Prefix program arguments string with
+                                          the special character <code class="txt">@</code>.
+                                          See related
+                                          <a href="ProgramArguments.html#NoFurtherInstances"
+                                             title="ProgramArguments.html#NoFurtherInstances">section</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="load files in the same frame" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.arguments.sameframe" title="load files in the same frame"
+                                 href="#idx.faq.arguments.sameframe">1.2) </a>
+                              How can I load two files in the same
+                              plot frame?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="sameframe"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          By mouse: drag the first file in
+                                          plot area, then the second in the
+                                          same frame of first file<br />
+                                          By command line: specify
+                                          the option <code class="txt">-f</code>
+                                          (see <a href="ProgramArguments.html#OptionArgs"
+                                             title="ProgramArguments.html#OptionArgs">here</a>)
+                                          as in the following example:
+                                          <pre class="cmdline" style="">
+C:\&gt; MattPlot -f file1.txt file2.txt
+</pre>
+                                          </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.importing" title="When importing data from external files"
+                                 href="#idx.faq.importing"><span class="faqs_topic">2) Importing data</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="rescaling example" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.importing.rescaling" title="rescaling example"
+                                 href="#idx.faq.importing.rescaling">2.1) </a>
+                              Can I rescale (multiplication by a constant)
+                              my input data?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="rescaling"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          You can do it at parsing time using
+                                          <a href="TextFormat.html" title="TextFormat.html">text data file</a>
+                                          format, in particular the parser's
+                                          <a href="Header.html" title="Header.html">Header</a>
+                                          <a href="Directives.html" title="Directives.html">directive</a>, for example:
+                                          
+                                          <div class="notepad"> an acquisition<pre class="notepad">
+#header &lt;y [0.5]&gt;
+// following data will be
+// multiplied by 0.5
+1
+2
+3
+</pre></div>
+                                          A more complex example:
+                                          
+                                          <div class="notepad"> an acquisition<pre class="notepad">
+#header &lt;t[1E-3s]&gt;&lt;V(t)[10V]&gt;&lt;i(t)[0.1A-2]&gt;
+0.0   142.21   8.1
+0.1   134.65   8.7
+0.2   117.32   9.1
+</pre></div>
+                                          In this example we have three measures
+                                          taken every <samp>100us</samp> of a voltage
+                                          and a current, the first expressed in
+                                          tens of volt, the second in tenths of
+                                          ampère; to the current is also applied
+                                          an offset of <samp>-2</samp> after
+                                          rescaling (so this means <samp>-2A</samp>).
+                                          
+                                          <p>
+                                             Remember that you can rescale tracks or
+                                             perform other elaborations using the
+                                             <a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                                                style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a> tool
+                                             (see <a href="Transforming.html" title="Transforming.html">Transforming</a>
+                                             section).
+                                             
+                                          </p>
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="compressed files" />
+                                 <param name="Keyword" value="zip" />
+                                 <param name="Keyword" value="gz" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.importing.compressedfiles" title="compressed files,zip,gz"
+                                 href="#idx.faq.importing.compressedfiles">2.2) </a>
+                              Can <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> open or save as compressed files?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="compressedfiles"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> can handle some compression formats,
+                                          see <a href="DataSources.html#FileSources" title="DataSources.html#FileSources">here</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.viewing" title="When using graphical interface"
+                                 href="#idx.faq.viewing"><span class="faqs_topic">3) Viewing plots</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="temporary toggle mode" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.viewing.togglemode" title="temporary toggle mode"
+                                 href="#idx.faq.viewing.togglemode">3.1) </a>
+                              Can I temporary toggle to <kbd title="">pan</kbd>
+                              or <kbd title="">zoom</kbd> mode while measuring track?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="togglemode"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Yes, use the <code class="txt">PanToggle</code> and
+                                          <code class="txt">ZoomToggle</code>
+                                          <a href="PlotActions.html" title="PlotActions.html">plot actions</a>
+                                          whose key shortcuts are defined in
+                                          <a href="OptionFile.html" title="OptionFile.html">options file</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="reset view" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.viewing.fitview" title="reset view" href="#idx.faq.viewing.fitview">3.2) </a>
+                              I zoomed too much, how can I reset plot view?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="fitview"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Use one of the following actions:
+                                          <a href="ActionsTable.html#actFitToAxes" title="action FitToAxes"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/FitToAxes.gif" alt="[FitToAxes]" /> <code class="txt">FitToAxes</code></a>,
+                                          <a href="ActionsTable.html#actFitToTracks" title="action FitToTracks"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/FitToTracks.gif" alt="[FitToTracks]" /> <code class="txt">FitToTracks</code></a>,
+                                          <a href="ActionsTable.html#actFitToTrack" title="action FitToTrack"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/FitToTrack.gif" alt="[FitToTrack]" /> <code class="txt">FitToTrack</code></a>;
+                                          set the shortcuts using
+                                          <a href="OptionsDescription.html#optShortCuts" title="option ShortCuts"><code class="txt">ShortCuts</code></a> option entries.
+                                          Note that also some
+                                          <a href="PlotActions.html" title="PlotActions.html">plot keys</a>
+                                          like <code class="txt">cycle</code> may perform fit operations;
+                                          furthermore remember that during
+                                          <a href="ZoomMode.html" title="ZoomMode.html">zoom mode</a> you can
+                                          reset scale with a mouse middle click.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="edit properties without mouse selection" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.viewing.trackproperties"
+                                 title="edit properties without mouse selection"
+                                 href="#idx.faq.viewing.trackproperties">3.3) </a>
+                              I want to edit the properties of a track,
+                              but selection with mouse is difficult.
+                              Is there another way?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="trackproperties"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Select the track using
+                                          <a href="PlotActions.html" title="PlotActions.html">plot keys</a>
+                                          and then fire the <a href="ActionsTable.html#actTrackProperties" title="action TrackProperties"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/TrackProperties.gif" alt="[TrackProperties]" /> <code class="txt">TrackProperties</code></a>
+                                          action.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="capturing measure lines" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.viewing.capturingmeasurelines" title="capturing measure lines"
+                                 href="#idx.faq.viewing.capturingmeasurelines">3.4) </a>
+                              Can I get a plot image comprising the
+                              current measure lines?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="capturingmeasurelines"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Yes, see
+                                          <a href="Tips.html#Snapshots" title="Tips.html#Snapshots">this tip</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="recording point coordinates" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.viewing.loggingcoords" title="recording point coordinates"
+                                 href="#idx.faq.viewing.loggingcoords">3.5) </a>
+                              How can I record some point coordinates
+                              of a displayed track?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="loggingcoords"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          In <a href="MeasureMode.html" title="MeasureMode.html">measure mode</a>
+                                          you can record track points in the
+                                          <a href="Log.html" title="Log.html">log</a>;
+                                          see <a href="MeasureMode.html" title="MeasureMode.html">related section</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.customizing" title="Customizing program" href="#idx.faq.customizing"><span class="faqs_topic">4) Customizing</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="customizing shortcuts" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.customizing.customshortcuts" title="customizing shortcuts"
+                                 href="#idx.faq.customizing.customshortcuts">4.1) </a>
+                              There is an <a href="ActionsTable.html" title="ActionsTable.html">action</a>
+                              that I use often; is there a way to call it
+                              quickly avoiding the
+                              <a href="MainForm.html#Mainmenu" title="MainForm.html#Mainmenu">main menu</a>?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="customshortcuts"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Check if there is an available keyboard shortcut
+                                          set in <a href="OptionsDescription.html#optShortCuts" title="option ShortCuts"><code class="txt">ShortCuts</code></a> section of the
+                                          <a href="OptionFile.html" title="OptionFile.html">option file</a>, refer
+                                          to <a href="_KeyCodes.html" title="_KeyCodes.html">string-key table</a>
+                                          to customize them.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="customizing toolbar" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.customizing.customtoolbar" title="customizing toolbar"
+                                 href="#idx.faq.customizing.customtoolbar">4.2) </a>
+                              No shortcut available for my
+                              beloved <a href="ActionsTable.html" title="ActionsTable.html">action</a>,
+                              Am I condemned to access it through the slow
+                              <a href="MainForm.html#Mainmenu" title="MainForm.html#Mainmenu">main menu</a>
+                              for the rest of my life?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="customtoolbar"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          You can add a button on the
+                                          <a href="MainForm.html#Toolbar" title="MainForm.html#Toolbar">toolbar</a>.
+                                          Edit the action names sequence in
+                                          <a href="OptionsDescription.html#optToolbar" title="option Toolbar"><code class="txt">Toolbar</code></a> option.
+                                          Get action names from the
+                                          <a href="ActionsTable.html" title="ActionsTable.html">actions table</a>
+                                          or navigating main menu and looking at the
+                                          <a href="MainForm.html#Statusbar" title="MainForm.html#Statusbar">statusbar</a>
+                                          hints.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

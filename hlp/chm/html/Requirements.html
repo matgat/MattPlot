@@ -1,0 +1,137 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>System requirements</title>
+      <meta name="keywords" content="system requirements,requirements" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="Features.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="GeneralInfo.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="RelatedFiles.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="Features.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="RelatedFiles.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="GeneralInfo" href="GeneralInfo.html">General informations</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="WhatIs.html"><span>What is</span></a></li>
+                        <li><a href="Warnings.html"><span>Warnings</span></a></li>
+                        <li><a href="Features.html"><span>Program Features</span></a></li>
+                        <li id="current"><a href="Requirements.html"><span>System requirements</span></a></li>
+                        <li><a href="RelatedFiles.html"><span>Program related files</span></a></li>
+                        <li><a href="Distribution.html"><span>Distribution</span></a></li>
+                        <li><a href="License.html"><span>License</span></a></li>
+                        <li><a href="Contact.html"><span>Contact</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Requirements"
+                        title="on requested platform: processor, memory, execution environment">System requirements</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="system requirements" />
+                     <param name="Keyword" value="requirements" /></object>
+                  
+                  
+                  <ul class="listO">
+                     <li>A <cite>PentiumPro</cite> compatible platform
+                     </li>
+                     <li>A suitable amount of <acronym title="Random Access Memory">RAM</acronym> (see below)
+                     </li>
+                     <li>A storage media with R/W rights where put executable file</li>
+                     <li>A <a href="http://www.microsoft.com" title="http://www.microsoft.com">Windows<sup>®</sup></a> environment
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  <h3><a name="MemoryOccupation" title="memory occupation">On memory occupation</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="memory occupation" /></object>
+                  
+                  During program execution plotted data are
+                  permanently buffered in <acronym title="Random Access Memory">RAM</acronym>;
+                  this imply a dependency of memory occupation
+                  on the amount of handled data.
+                  
+                  To describe how much memory is consumed by
+                  data, consider this typical use:
+                  
+                  <ul class="listO">
+                     <li>
+                        <a href="ActionsTable.html#actOpen" title="action Open" style="margin-left:0.5ex;"><img src="./files/images/actions/Open.gif" alt="[Open]" /> <code class="txt">Open</code></a> a text file containing
+                        ten thousands pairs of numbers; assuming
+                        string literals of 34 characters per number,
+                        in the worst case of file complete buffering,
+                        are needed about <samp>700 Kbyte</samp> of <acronym title="Random Access Memory">RAM</acronym>
+                        (once parser had done its work, this memory can be freed).
+                        
+                     </li>
+                     <li>
+                        Next we need to store numbers: using <samp>64 bit</samp>
+                        floating point type we need about <samp>160 Kbyte</samp> for
+                        the data binary representation, which may increase to
+                        <samp>240 Kbyte</samp> if stored as complex.
+                     </li>
+                     <li>
+                        Finally, when performing calculations,
+                        data container may be temporarily copied
+                        doubling the actual used <acronym title="Random Access Memory">RAM</acronym>.
+                     </li>
+                  </ul>
+                  
+                  
+                  <p>
+                     Now let's talk about the memory needed by the program
+                     itself.
+                     The actual code is probably a negligible part respect
+                     linked libraries (<a href="http://www.borland.com" title="http://www.borland.com"><acronym title="Visual Components Library">VCL</acronym></a> classes, standard library, etc...);
+                     total code will easily reach few <samp>Mbyte</samp>.
+                     Moreover, for performance reasons, the graphic
+                     interface is buffered: for example, considering a
+                     800x600 form, we require <samp>800x600x3 byte ~= 1.4 Mbyte</samp>
+                     of space for the bitmap buffer used to
+                     avoid flicker during the repaint.
+                     
+                  </p>
+                  
+                  
+                  <p>
+                     The conclusion is that the data size become
+                     comparable with program size when we deal with
+                     at least <samp>100000÷200000 points</samp>
+                     (pairs of <code class="cpp">double</code>).
+                     
+                  </p>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,1 @@
+MattPlot.exe @+"#ymarker 50" +"#xmarker 4" "..\tst\dat\dat_few.dat"

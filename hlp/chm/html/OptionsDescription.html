@@ -1,0 +1,661 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Options description</title>
+      <meta name="keywords" content="options description" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="OptionFile.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Customizing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="OptionFile.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Customizing" href="Customizing.html">Customizing</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="HowCustomize.html"><span>How it works</span></a></li>
+                        <li><a href="OptionFile.html"><span>The option file</span></a></li>
+                        <li id="current"><a href="OptionsDescription.html"><span>Options description</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="OptionsDescription" title="description of available options">Options description</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="options description" /></object>
+                  
+                  
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Name</td>
+                           <td>Description</td>
+                           <td>Notes</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="header" colspan="3">General</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optDefaultDir" title="optDefaultDir">DefaultDir</a></td>
+                           <td>Default directory</td>
+                           <td>`usr´ for user dir (home), `exe´ for exe dir, or an explicit path</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTempDir" title="optTempDir">TempDir</a></td>
+                           <td>Temporary files directory</td>
+                           <td>`sys´ to set system temp dir <var title="">%TEMP%\~MattPlot\</var>,
+                              `exe´ for exe dir <var title="">.\~MattPlot\</var>, or an explicit path;
+                              requires program restart
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPromptOverwrite" title="optPromptOverwrite">PromptOverwrite</a></td>
+                           <td>Ask when writing on an existing file</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optDeleteTemp" title="optDeleteTemp">DeleteTemp</a></td>
+                           <td>Delete temp files on enter and exit</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPlaySound" title="optPlaySound">PlaySound</a></td>
+                           <td>Enable/disable sound effects</td>
+                           <td>Not always available, "noisy" releases only</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFloatPrecision" title="optFloatPrecision">FloatPrecision</a></td>
+                           <td>Precision of displayed numbers</td>
+                           <td>An idea on precision of numbers, when no
+                              other criterion can be applied
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFloatDigits" title="optFloatDigits">FloatDigits</a></td>
+                           <td>Digits of displayed numbers</td>
+                           <td>Actually used for minimum digit of exponential part</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMacro" title="optMacro">Macro</a></td>
+                           <td>A predefined macro</td>
+                           <td>See also <a href="ActionsTable.html#actExecMacro" title="action ExecMacro"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ExecMacro.gif" alt="[ExecMacro]" /> <code class="txt">ExecMacro</code></a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optDevelopMode" title="optDevelopMode">DevelopMode</a></td>
+                           <td>Enable work-in-progress features</td>
+                           <td>Like logarithmic scales...</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">MainForm</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFormColor" title="optFormColor">FormColor</a></td>
+                           <td>Background color of main form</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optToolsColor" title="optToolsColor">ToolsColor</a></td>
+                           <td>Background color of tools</td>
+                           <td>Like <a href="PlotTree.html" title="PlotTree.html">Plot tree</a> or <a href="PaneGrid.html" title="PaneGrid.html">Pane grid</a> 
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optEnableMainMenu" title="optEnableMainMenu">EnableMainMenu</a></td>
+                           <td>Application main menu visible or not</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optEnableToolbar" title="optEnableToolbar">EnableToolbar</a></td>
+                           <td>Application toolbar visible or not</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optToolbar" title="optToolbar">Toolbar</a></td>
+                           <td>Toobar buttons</td>
+                           <td>A comma delimited sequence of strings: get action names
+                              from <a href="ActionsTable.html" title="ActionsTable.html">actions table</a> or
+                              from hints in the statusbar; use <code class="txt">SEP</code> or <code class="txt">DIV</code>
+                              to put separators
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optObjectMenu" title="optObjectMenu">ObjectMenu</a></td>
+                           <td>General object contextual menu</td>
+                           <td>Put comma separated <a href="ActionsTable.html" title="ActionsTable.html">action</a>
+                              names, use `SEP´ or `DIV´ to create button groups
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFrameMenu" title="optFrameMenu">FrameMenu</a></td>
+                           <td>Frame contextual menu</td>
+                           <td>Put comma separated <a href="ActionsTable.html" title="ActionsTable.html">action</a>
+                              names, use `SEP´ or `DIV´ to create button groups
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackMenu" title="optTrackMenu">TrackMenu</a></td>
+                           <td>Track contextual menu</td>
+                           <td>Put comma separated <a href="ActionsTable.html" title="ActionsTable.html">action</a>
+                              names, use `SEP´ or `DIV´ to create button groups
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optLogSite" title="optLogSite">LogSite</a></td>
+                           <td>Initial position of Log</td>
+                           <td>Docked `Bottom´,`Right´ or `Floating´;
+                              you can then drag and dock it
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPaneSite" title="optPaneSite">PaneSite</a></td>
+                           <td>Initial position of <a name="PaneGrid.html" title="PaneGrid.html">pane grid</a></td>
+                           <td>Docked `Bottom´,`Right´ or `Floating´;
+                              you can then drag and dock it
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3"><a name="optImporter" title="optImporter">Importer</a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optDecimalSeparator" title="optDecimalSeparator">DecimalSeparator</a></td>
+                           <td>Decimal separator char in float strings</td>
+                           <td>Type `?´ for locale settings</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optThousandSeparator" title="optThousandSeparator">ThousandSeparator</a></td>
+                           <td>Thousand separator char in float strings</td>
+                           <td>Type `?´ for locale settings, or an improbable char
+                              to throw errors even if local thousand separator
+                              is encountered
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optExpectedDelimiters" title="optExpectedDelimiters">ExpectedDelimiters</a></td>
+                           <td>Expected data delimiter characters (other than space chars)</td>
+                           <td>Used to detect invalid numbers</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optExcludePattern" title="optExcludePattern">ExcludePattern</a></td>
+                           <td>A file mask that identifies ignored files</td>
+                           <td>Used when analyzing files contained in a directory</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Exporter</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optDataDelimiter" title="optDataDelimiter">DataDelimiter</a></td>
+                           <td>Columns delimiter when exporting to text</td>
+                           <td>A character</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPrintInfoText" title="optPrintInfoText">PrintInfoText</a></td>
+                           <td>Print also an info string in page header</td>
+                           <td>The string should include program name and current date-time</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPrintMargin" title="optPrintMargin">PrintMargin</a></td>
+                           <td>Print page margin</td>
+                           <td>An integer percentage (%) of page size</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMetafileMagnification" title="optMetafileMagnification">MetafileMagnification</a></td>
+                           <td>Metafile canvas dimension magnification
+                              respect screen canvas
+                           </td>
+                           <td>Augment this integer value to enhance metafile
+                              resolution, but beware: this increases its
+                              size and processing time
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optSnapshotAction" title="optSnapshotAction">SnapshotAction</a></td>
+                           <td><a href="ActionsTable.html#actSnapshot" title="action Snapshot"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/Snapshot.gif" alt="[Snapshot]" /> <code class="txt">Snapshot</code></a> action effects
+                           </td>
+                           <td>Choose between `1´=save as gif, `2´=copy emf to clipboard, `3´=both</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Plot</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFirstMode" title="optFirstMode">FirstMode</a></td>
+                           <td>Initial plot mode</td>
+                           <td>Choose between `SelectMode´, `EditMode´,
+                              `PanMode´, `ZoomMode´, `MeasureMode´ or `PenMode´
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optSampPerPix" title="optSampPerPix">SampPerPix</a></td>
+                           <td>Maximum rendered samples per screen pixel</td>
+                           <td>Decrease it to enhance plot performance;
+                              may decrease data sampling frequency,
+                              so pay attention to aliasing
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTimeout" title="optTimeout">Timeout</a></td>
+                           <td>Plot draw operation timeout [s]</td>
+                           <td>If draw takes too much time, abort</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optLagThreshold" title="optLagThreshold">LagThreshold</a></td>
+                           <td>Plot Canvas repainting time slowness threshold</td>
+                           <td>When exceeded countermeasures can be taken,
+                              like tracks undersampling
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPlotMargin" title="optPlotMargin">PlotMargin</a></td>
+                           <td>Margin between frames</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPlotFont" title="optPlotFont">PlotFont</a></td>
+                           <td>Font for title, legend, etc</td>
+                           <td>String format is: family,size,color(hex),style
+                              example: <code class="txt">Verdana,12,0x0,b</code></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMarkCurrentFrame" title="optMarkCurrentFrame">MarkCurrentFrame</a></td>
+                           <td>Make current frame recognizable in plot area</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Frames</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPlotAlsoOnMargins" title="optPlotAlsoOnMargins">PlotAlsoOnMargins</a></td>
+                           <td>Extend plot area to frame lateral margins</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optCenterTitle" title="optCenterTitle">CenterTitle</a></td>
+                           <td>Center frame title</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTitleMag" title="optTitleMag">TitleMag</a></td>
+                           <td>Frame title font magnification</td>
+                           <td>A percentage</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFrameBorder" title="optFrameBorder">FrameBorder</a></td>
+                           <td>Border width of frames</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFrameMarginX" title="optFrameMarginX">FrameMarginX</a></td>
+                           <td>Frames internal horizontal margin</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFrameMarginY" title="optFrameMarginY">FrameMarginY</a></td>
+                           <td>Frames internal vertical margin</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optFrameColor" title="optFrameColor">FrameColor</a></td>
+                           <td>Default background color of new frames</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´
+                              To have a transparent background put the
+                              same color of <code class="txt">PlotFont</code></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Axes</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optAxesColor" title="optAxesColor">AxesColor</a></td>
+                           <td>Color of axes</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optCenterAxesLabels" title="optCenterAxesLabels">CenterAxesLabels</a></td>
+                           <td>Center x y labels</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Legend</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optLegendSpacing" title="optLegendSpacing">LegendSpacing</a></td>
+                           <td>Lines and border spacing</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optLegendStrokeLength" title="optLegendStrokeLength">LegendStrokeLength</a></td>
+                           <td>Length of track stroke</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optLegendColor" title="optLegendColor">LegendColor</a></td>
+                           <td>Legend background</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´
+                              To have a transparent background put the
+                              same color of <code class="txt">PlotFont</code></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Grid</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optVGridDist" title="optVGridDist">VGridDist</a></td>
+                           <td>Desired vertical grid lines distance</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optHGridDist" title="optHGridDist">HGridDist</a></td>
+                           <td>Desired horizontal grid lines distance</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optVGridDivs" title="optVGridDivs">VGridDivs</a></td>
+                           <td>Vertical grid divisions (increasing order)</td>
+                           <td>A sequence of numbers</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optHGridDivs" title="optHGridDivs">HGridDivs</a></td>
+                           <td>Horizontal grid divisions (increasing order)</td>
+                           <td>A sequence of numbers</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optGridLinesStyle" title="optGridLinesStyle">GridLinesStyle</a></td>
+                           <td>Style of grid lines</td>
+                           <td>A string between `___´, `_ _´, `...´, `_._´, `_..´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optGridColor" title="optGridColor">GridColor</a></td>
+                           <td>Color of grid lines</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optLabelFont" title="optLabelFont">LabelFont</a></td>
+                           <td>Font of grid labels</td>
+                           <td>String format is: family,size,color(hex),style
+                              example: <code class="txt">Small Fonts,6,0x0</code></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Tracks</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackLineWeight" title="optTrackLineWeight">TrackLineWeight</a></td>
+                           <td>Track lines default width [pix]</td>
+                           <td>Generally a value grater than one
+                              causes performance worsening and
+                              force solid style
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackLineColorSeed" title="optTrackLineColorSeed">TrackLineColorSeed</a></td>
+                           <td>Line color of first track</td>
+                           <td>Used by automatic track color generator;
+                              following colors depend on this value
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackLineStyle" title="optTrackLineStyle">TrackLineStyle</a></td>
+                           <td>Style of tracks lines</td>
+                           <td>A string between `___´, `_ _´, `...´, `_._´, `_..´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackPointStyle" title="optTrackPointStyle">TrackPointStyle</a></td>
+                           <td>Shape of tracks point marks</td>
+                           <td>A char between `x´, `o´, `+´, `q´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackPointSize" title="optTrackPointSize">TrackPointSize</a></td>
+                           <td>Size of tracks point marks</td>
+                           <td>Point marks half size [pix] is given by:
+                              <code class="txt">TrackPointSize ·TrackLineWeight +2</code></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackMarkPoints" title="optTrackMarkPoints">TrackMarkPoints</a></td>
+                           <td>Mark each track point</td>
+                           <td>Choose between `true´ or `false´; see also <a href="ActionsTable.html#actMarkPoints" title="action MarkPoints"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/MarkPoints.gif" alt="[MarkPoints]" /> <code class="txt">MarkPoints</code></a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackShowCoords" title="optTrackShowCoords">TrackShowCoords</a></td>
+                           <td>Show point coordinates</td>
+                           <td>Choose between `true´ or `false´; see also <a href="ActionsTable.html#actShowCoords" title="action ShowCoords"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowCoords.gif" alt="[ShowCoords]" /> <code class="txt">ShowCoords</code></a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackCoordsDist" title="optTrackCoordsDist">TrackCoordsDist</a></td>
+                           <td>Show point coordinates minimum dinstance</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackStrokeLines" title="optTrackStrokeLines">TrackStrokeLines</a></td>
+                           <td>Draw lines between track points</td>
+                           <td>Choose between `true´ or `false´; see also <a href="ActionsTable.html#actStrokeLines" title="action StrokeLines"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/StrokeLines.gif" alt="[StrokeLines]" /> <code class="txt">StrokeLines</code></a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackFillArea" title="optTrackFillArea">TrackFillArea</a></td>
+                           <td>Fill track subtended area</td>
+                           <td>Choose between `true´ or `false´; see also <a href="ActionsTable.html#actFillArea" title="action FillArea"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/FillArea.gif" alt="[FillArea]" /> <code class="txt">FillArea</code></a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optTrackDrawHistograms" title="optTrackDrawHistograms">TrackDrawHistograms</a></td>
+                           <td>Draw a rectangle for each point</td>
+                           <td>Choose between `true´ or `false´; see also <a href="ActionsTable.html#actDrawHistograms" title="action DrawHistograms"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/DrawHistograms.gif" alt="[DrawHistograms]" /> <code class="txt">DrawHistograms</code></a></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Markers</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMarkerLineWeight" title="optMarkerLineWeight">MarkerLineWeight</a></td>
+                           <td>Marker line thickness [pix]</td>
+                           <td>Markers are vertical or horizontal lines
+                              passing through a fixed value
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMarkerLineColor" title="optMarkerLineColor">MarkerLineColor</a></td>
+                           <td>Line color of markers</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMarkerLineStyle" title="optMarkerLineStyle">MarkerLineStyle</a></td>
+                           <td>Style of marker lines</td>
+                           <td>A string between `___´, `_ _´, `...´, `_._´, `_..´</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">SelectMode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMarkColor" title="optMarkColor">MarkColor</a></td>
+                           <td>Color of zone marker</td>
+                           <td>When you drag a frame</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMarkZoneStyle" title="optMarkZoneStyle">MarkZoneStyle</a></td>
+                           <td>How filling zones while dragging frames</td>
+                           <td>A string between `##´, `´, `//´, `\\´, `xx´, `==´, `||´, `++´</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">PanMode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optDefaultPan" title="optDefaultPan">DefaultPan</a></td>
+                           <td>Default pan when using cursor keys</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optCoastingTau" title="optCoastingTau">CoastingTau</a></td>
+                           <td>Frame coasting motion time constant (inertia/friction) in [ms]</td>
+                           <td>An integer; put 0 to disable coasting motion</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optContinuousPan" title="optContinuousPan">ContinuousPan</a></td>
+                           <td>Pan speed vs displacement</td>
+                           <td>An integer representing the ratio between
+                              the pixel shift done in one second respect the
+                              cursor displacement
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3"><a name="optZoomMode" title="optZoomMode">ZoomMode</a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optSuddenZoom" title="optSuddenZoom">SuddenZoom</a></td>
+                           <td>Zoom immediately after dragging rectangle
+                              without wait the further click inside
+                           </td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optZoomPerc" title="optZoomPerc">ZoomPerc</a></td>
+                           <td>Default zoom in/out percentage ratio [%]</td>
+                           <td>A number</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optSelRectLineStyle" title="optSelRectLineStyle">SelRectLineStyle</a></td>
+                           <td>Style of selection rectangle lines</td>
+                           <td>These are used for zoom/crop rectangle and continuous pan direction</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optSelRectLineColor" title="optSelRectLineColor">SelRectLineColor</a></td>
+                           <td>Color of selection rectangle lines</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optSelRectAreaColor" title="optSelRectAreaColor">SelRectAreaColor</a></td>
+                           <td>Color of selection rectangle area</td>
+                           <td>Put the same value of <code class="txt">SelRectLineColor</code> to have a transparent area
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">MeasureMode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optViewAbscissaLine" title="optViewAbscissaLine">ViewAbscissaLine</a></td>
+                           <td>View measuring abscissa line</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optViewOrdinateLine" title="optViewOrdinateLine">ViewOrdinateLine</a></td>
+                           <td>View measuring ordinate line</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optViewSlopeLine" title="optViewSlopeLine">ViewSlopeLine</a></td>
+                           <td>View measuring slope line</td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMeasureLinesStyle" title="optMeasureLinesStyle">MeasureLinesStyle</a></td>
+                           <td>Style of measuring lines</td>
+                           <td>A string between `___´, `_ _´, `...´, `_._´, `_..´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMeasureLinesColor" title="optMeasureLinesColor">MeasureLinesColor</a></td>
+                           <td>Color of measure lines</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optMeasureMarkers" title="optMeasureMarkers">MeasureMarkers</a></td>
+                           <td>Quantities linked to measure markers
+                              enabled with <a href="ActionsTable.html#actViewMeasureMarkers"
+                                 title="action ViewMeasureMarkers"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ViewMeasureMarkers.gif" alt="[ViewMeasureMarkers]" /> <code class="txt">ViewMeasureMarkers</code></a></td>
+                           <td>Put a list of strings of
+                              <a href="PaneGrid.html" title="PaneGrid.html">measured quantities</a></td>
+                        </tr>
+                        <tr>
+                           <td><a name="optAutoPane" title="optAutoPane">AutoPane</a></td>
+                           <td>Auto show/hide <a href="PaneGrid.html" title="PaneGrid.html">pane grid</a>
+                              (<a href="ActionsTable.html#actShowPane" title="action ShowPane"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowPane.gif" alt="[ShowPane]" /> <code class="txt">ShowPane</code></a>) at <a href="ActionsTable.html#actMeasureMode" title="action MeasureMode"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/MeasureMode.gif" alt="[MeasureMode]" /> <code class="txt">MeasureMode</code></a></td>
+                           <td>Choose between `true´ or `false´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPaneQuantities" title="optPaneQuantities">PaneQuantities</a></td>
+                           <td>Set here initial configuration of
+                              displayed quantities in <a href="PaneGrid.html" title="PaneGrid.html">pane grid</a></td>
+                           <td>Choose between the strings listed in
+                              <a href="PaneGrid.html" title="PaneGrid.html">measure quantities description</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">PenMode</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPencilSize" title="optPencilSize">PencilSize</a></td>
+                           <td>Pencil line weight</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optPencilColor" title="optPencilColor">PencilColor</a></td>
+                           <td>Color of pencil</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optHighlighterSize" title="optHighlighterSize">HighlighterSize</a></td>
+                           <td>Highlighter size</td>
+                           <td>A value in pixels</td>
+                        </tr>
+                        <tr>
+                           <td><a name="optHighlighterColor" title="optHighlighterColor">HighlighterColor</a></td>
+                           <td>Color of highlighter</td>
+                           <td>Use an integer number or a RGB set: `16397483´, `0xFA34AB´, `(171,52,250)´</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3"><a name="optPlotKeys" title="optPlotKeys">PlotKeys</a></td>
+                        </tr>
+                        <tr>
+                           <td>PanToggle, ... , Right</td>
+                           <td>Plot actions keys</td>
+                           <td>Put a single-key identificative string.
+                              See <a href="PlotActions.html" title="PlotActions.html">plot keys table</a>
+                              for a detailed description
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3"><a name="optShortCuts" title="optShortCuts">ShortCuts</a></td>
+                        </tr>
+                        <tr>
+                           <td>EditOptions, ... , Exit</td>
+                           <td>Main interface actions shortcuts</td>
+                           <td>Put a shortcut identificative string
+                              (example: ALT+d); note that those strings
+                              depend on locale settings; see
+                              <a href="_KeyCodes.html" title="_KeyCodes.html">virtual key codes table</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

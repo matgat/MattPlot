@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg
+[
+ <!ENTITY W '400'>
+ <!ENTITY H '200'>
+]>
+<svg version="1.1"
+     width="&W;" height="&H;"
+     viewBox="0 0 400 200"
+     preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <desc>Plot graphics - 2006 Matteo Gattanini</desc>
+
+<!--
+	CSS styles
+-->
+    <style type="text/css">
+	.Border
+	    {
+	     fill:none;
+	     stroke:blue;
+	     stroke-width:1
+	    }
+	.Connect
+	    {
+	     fill:none;
+	     stroke:#888888;
+	     stroke-width:2 
+	    }
+	.Label
+	    {
+	     font-size:22;
+	     font-family:Verdana
+	    }
+    </style>
+
+<!--
+	Definitions
+-->
+     <defs>
+	<g id="Axes"
+	   fill="none"
+	   stroke="black" stroke-width="5"
+	   text-anchor="middle"
+	   font-family="sans-serif" font-size="10">
+	    <rect id="FrameRect"
+		  x="0" y="0"
+		  width="&W;" height="&H;"
+		  stroke="rgb(200,200,200)" stroke-width="4"
+		  fill="rgb(240,240,240)"/>
+	    <line x1="0" y1="&H;" x2="&W;" y2="&H;"/>
+	    <line x1="0" y1="0" x2="0" y2="&H;"/>
+	    <text x="5" y="5">Y</text>
+	    <text x="&W;" y="&H;">X</text>
+	</g>
+     </defs>
+
+<!--
+	Frame and axes
+-->
+    <use xlink:href="#Axes"/> 
+
+<!--
+	Plot
+-->
+    <g transform="translate(0,&H;) scale(5e4 -.1)">
+	<polyline fill="none"
+		  stroke="blue" stroke-width="0.0001"
+		  points="0 800 2.3e-3 1500 4.5e-3 1100 5.4e-3 900 6.2e-3 1600"/>
+    </g>
+
+</svg>
+<!-- End of File -->

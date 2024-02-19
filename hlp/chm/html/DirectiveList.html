@@ -1,0 +1,261 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Available directives</title>
+      <meta name="keywords" content="available directives" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Directives.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="Header.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="Header.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Directives" href="Directives.html">Parser directives</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="DirectiveList.html"><span>Available directives</span></a></li>
+                        <li><a href="Header.html"><span>Header directive</span></a></li>
+                        <li><a href="Split.html"><span>Split directive</span></a></li>
+                        <li><a href="Resample.html"><span>Resample directive</span></a></li>
+                        <li><a href="StrictDelimiters.html"><span>Strictdelimiters directive</span></a></li>
+                        <li><a href="CommandlineDirectives.html"><span>Directives in command line arguments</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="DirectiveList" title="about available parser directives">Available directives</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="available directives" /></object>
+                  
+                  In text file you can embed other informations
+                  than just numbers: <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> parser supports a
+                  syntax to specify parsing options and additional
+                  informations on stored data.
+                  User can specify informations like:
+                  
+                  
+                  <ul class="listO">
+                     <li>track organization, names, units of measure</li>
+                     <li>coding information like decimal separator char or column delimiters</li>
+                     <li>parser behaviour: error tolerancy, end of parsing</li>
+                     <li>postprocessing on retrieved data (resampling,reordering,rescaling,splitting)</li>
+                  </ul>
+                  
+                  Those informations take the form of parser
+                  <dfn title="">directives</dfn> that can be directly embedded
+                  in the text stream by the producer itself or
+                  passed as command-line argument when launching
+                  program (see below and
+                  <a href="CommandlineArguments.html" title="CommandlineArguments.html">related section</a>).
+                  
+                  Directives syntax is similar to those of <code class="cpp">C</code>
+                  preprocessor: they consist of a specific keyword
+                  prefixed by the special character <code class="txt">#</code>;
+                  they can be eventually followed by a string argument,
+                  which consist of the
+                  <dfn title="stripped of starting and ending space chars">trimmed</dfn>
+                  string between directive keyword and end of line.
+                  Directives must not follow a particular sequence;
+                  see below for some examples.
+                  
+                  Supported directives are:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Keyword</td>
+                           <td>Argument</td>
+                           <td>Description</td>
+                           <td>Remarks</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="header"><a href="Header.html" title="Header.html"><code class="txt">#header</code></a></td>
+                           <td>string</td>
+                           <td>columns informations</td>
+                           <td>ordinate-abscissa relations, names, scales, units, delimiters</td>
+                        </tr>
+                        <tr>
+                           <td class="header"><a href="Resample.html" title="Resample.html"><code class="txt">#resample</code></a></td>
+                           <td>index sequence definition</td>
+                           <td>resample and reorder</td>
+                           <td>modify samples sequence after
+                              parsing; indexes are referred respect
+                              shorter column and rescaled for the
+                              others; the scope is in the current
+                              <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data session</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><a href="Split.html" title="Split.html"><code class="txt">#split</code></a></td>
+                           <td>sequence of numbers</td>
+                           <td>split columns</td>
+                           <td>slice proportionally data columns;
+                              the scope is in the current
+                              <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data session</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#title</code></td>
+                           <td>string</td>
+                           <td>title of plot frame</td>
+                           <td>shown in plot area;
+                              persists between <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data sessions</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#xlabel</code></td>
+                           <td>string</td>
+                           <td>abscissa axis label in plot frame</td>
+                           <td>shown in plot area in place of current
+                              track abscissa label, persists between
+                              <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data sessions</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#ylabel</code></td>
+                           <td>string</td>
+                           <td>ordinate axis label in plot frame</td>
+                           <td>shown in plot area in place of current
+                              track ordinate label, persists between
+                              <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data sessions</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#xmarker</code></td>
+                           <td>number</td>
+                           <td>a vertical line in plot frame
+                              at a given abscissa
+                           </td>
+                           <td>persists between <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data sessions</a>.
+                              See <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#ymarker</code></td>
+                           <td>number</td>
+                           <td>a horizontal line in plot frame at
+                              a given ordinate
+                           </td>
+                           <td>persists between data sessions.
+                              See <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#text</code></td>
+                           <td>(number;number) string</td>
+                           <td>a text label in plot frame</td>
+                           <td>shown in plot area at given coordinate,
+                              persists between <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data sessions</a>.
+                              See <a href="ActionsTable.html#actAddText" title="action AddText"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/AddText.gif" alt="[AddText]" /> <code class="txt">AddText</code></a>.
+                              Prefix text string with <code class="txt">+</code>
+                              to show point coordinates.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#tolerant</code></td>
+                           <td>bool</td>
+                           <td>accept strange numbers</td>
+                           <td>like <code class="txt">-.</code> or <code class="txt">E+</code> etc...;
+                              persists between <a href="TextFormat.html#DataSessionDef" title="TextFormat.html#DataSessionDef">data sessions</a></td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#decimalseparator</code></td>
+                           <td>char</td>
+                           <td>declaration of decimal separator char</td>
+                           <td>(ex. 1.2 or 1,2) override the global one defined in
+                              <a href="OptionsDescription.html#optDecimalSeparator"
+                                 title="option DecimalSeparator"><code class="txt">DecimalSeparator</code></a> option;
+                              persists between data sessions.
+                              This directive neutralizes the curse of infamous
+                              <q title="">locale settings</q>
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#thousandseparator</code></td>
+                           <td>char</td>
+                           <td>skipped character in number literals integer part</td>
+                           <td>used to ignore the thousand grouping character when
+                              converting number literals; use an empty argument
+                              to disable; persists between data sessions
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#strictdelimiter</code></td>
+                           <td>char</td>
+                           <td>declare and pretend a rigid data delimiter</td>
+                           <td>with empty argument will be taken into account
+                              delimiters in header;
+                              persists between data sessions
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#maxlines</code></td>
+                           <td>unsigned int</td>
+                           <td>maximum parsed lines</td>
+                           <td>parsing will end when line number exceeds
+                              this value; external appended lines are not
+                              taken into account;
+                              persists between data sessions
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="header"><code class="txt">#end</code></td>
+                           <td></td>
+                           <td>force end parsing</td>
+                           <td></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div class="notepad"> Directives example<pre class="notepad">
+#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2(z)&gt;
+#title  Plot1
+#xlabel angles [rad]
+#resample [20:30)[0:20)[30:2:100)
+#split 1|2|1
+#decimalseparator  .
+#thousandseparator  ,
+#tolerant  false
+#strictdelimiter ;
+#xmarker 3.14
+#ymarker 1.5
+/* The following is a text label;
+   prefixing text with + shows
+   point coordinates */
+#text (6.28;1) +Here ends period
+
+// data start here
+1;2;3
+4;5;6
+//...
+</pre></div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

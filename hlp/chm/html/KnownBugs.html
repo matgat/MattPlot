@@ -1,0 +1,92 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Known bugs</title>
+      <meta name="keywords" content="bugs,issues,known bugs" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="WhatsNew.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="ReleaseNotes.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ToDo.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="WhatsNew.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ToDo.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="ReleaseNotes" href="ReleaseNotes.html">Release notes</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="WhatsNew.html"><span>What's new</span></a></li>
+                        <li id="current"><a href="KnownBugs.html"><span>Known bugs</span></a></li>
+                        <li><a href="ToDo.html"><span>ToDo</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="KnownBugs" title="list of known bugs">Known bugs</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="bugs" />
+                     <param name="Keyword" value="issues" />
+                     <param name="Keyword" value="known bugs" /></object>
+                  
+                  Here a list of known bugs/issues:
+                  
+                  
+                  <ul class="listQ">
+                     <li>math errors
+                        
+                        <ul class="listD">
+                           <li>Avoidable math errors when exceeding track values range</li>
+                           <li>Frame scale: zooming too much lead to numeric errors</li>
+                           <li>Grid (<a href="ActionsTable.html#actGridToggle" title="action GridToggle"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/GridToggle.gif" alt="[GridToggle]" /> <code class="txt">GridToggle</code></a>): in some conditions fails, imprecise values (log scale)
+                           </li>
+                        </ul>
+                        
+                     </li>
+                     <li><a href="DirectiveList.html" title="DirectiveList.html">Directive</a> <code class="txt">#end</code> does not work
+                     </li>
+                     <li>Main form captures keydown event of child forms, for example <a href="ActionsTable.html#actTextEditor" title="action TextEditor"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/TextEditor.gif" alt="[TextEditor]" /> <code class="txt">TextEditor</code></a> keystrokes trigger plot <a href="ActionsTable.html" title="ActionsTable.html">actions</a></li>
+                     <li><a href="ActionsTable.html#actPanMode" title="action PanMode"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/PanMode.gif" alt="[PanMode]" /> <code class="txt">PanMode</code></a>: rare wrong time measures for kinetic pan
+                     </li>
+                     <li>Switching between modes: improper behaviour involving <a href="ActionsTable.html#actMeasureMode" title="action MeasureMode"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/MeasureMode.gif" alt="[MeasureMode]" /> <code class="txt">MeasureMode</code></a></li>
+                     <li>Legend (<a href="ActionsTable.html#actLegendToggle" title="action LegendToggle"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/LegendToggle.gif" alt="[LegendToggle]" /> <code class="txt">LegendToggle</code></a>): ehmm, is somewhat rough, sometimes its position is reset
+                     </li>
+                     <li><a href="ActionsTable.html#actPrint" title="action Print"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/Print.gif" alt="[Print]" /> <code class="txt">Print</code></a> function is an incomplete draft
+                     </li>
+                     <li><a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a> is an incomplete draft
+                     </li>
+                  </ul>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

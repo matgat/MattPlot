@@ -1,0 +1,304 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>The pane grid</title>
+      <meta name="keywords" content="grid (pane),pane grid" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="KeyBindings.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Interface.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="Log.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="KeyBindings.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="Log.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Interface" href="Interface.html">Interface</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="PlotObjects.html"><span>Plot objects</span></a></li>
+                        <li><a href="ActionsTable.html"><span>Main actions</span></a></li>
+                        <li><a href="PlotActions.html"><span>Plot actions</span></a></li>
+                        <li><a href="MainForm.html"><span>The main form</span></a></li>
+                        <li><a href="KeyBindings.html"><span>Default key bindings</span></a></li>
+                        <li id="current"><a href="PaneGrid.html"><span>The pane grid</span></a></li>
+                        <li><a href="Log.html"><span>The activity log</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="PaneGrid" title="a way to monitor some chosen quantities">The pane grid</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="grid (pane)" />
+                     <param name="Keyword" value="pane grid" /></object>
+                  
+                  
+                  <div style="float: right; margin-left: 1em;"><img src="./files/images/GridPane.gif" title="" style=""
+                          alt="[./files/images/GridPane.gif]" /></div>
+                  With this control you can view some quantities
+                  measured on current selected track during
+                  <a href="MeasureMode.html" title="MeasureMode.html">Measure mode</a>.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="CopyPaneToClipboard"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 
+                                 You can copy these values in the clipboard
+                                 selecting them and using
+                                 <img src="./files/images/actions/EditCopyAll.gif" title="" style=""
+                                      alt="[./files/images/actions/EditCopyAll.gif]" /> <code class="txt">Copy cells</code>
+                                 in right click menu.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Put the following strings in the
+                  <a href="OptionsDescription.html#optPaneQuantities" title="option PaneQuantities"><code class="txt">PaneQuantities</code></a> option
+                  to customize displayed quantities.
+                  
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Label</td>
+                           <td>Description</td>
+                           <td>Note</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="header" colspan="3">Point quantities</td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">y</code></td>
+                           <td>Measure point ordinate</td>
+                           <td>Is the screen coordinate in physical space</td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">x</code></td>
+                           <td>Measure point abscissa</td>
+                           <td>Is the screen coordinate in physical space</td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">dy</code></td>
+                           <td>Ordinate difference with contiguous point</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">dx</code></td>
+                           <td>Abscissa difference with contiguous point</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">dydx</code></td>
+                           <td>Derivative (dy/dx)</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="3">Interval quantities</td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">n</code></td>
+                           <td>Number of embraced samples in selected interval</td>
+                           <td>All the following interval quantities
+                              are commputed using this set of samples
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">Dt</code></td>
+                           <td>Independent variable interval</td>
+                           <td>Equal to <code class="txt">tmax-tmin</code></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">tmin</code></td>
+                           <td>First value of independent variable interval</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">tmax</code></td>
+                           <td>Last value of independent variable interval</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">Dy</code></td>
+                           <td>Dependent variable variation</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">DY</code></td>
+                           <td>Overall dependent variable sweep</td>
+                           <td>Equal to <code class="txt">ymax-ymin</code></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">ymin</code></td>
+                           <td>Minimum ordinate value</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">ymax</code></td>
+                           <td>Maximum ordinate value</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">DyDt</code></td>
+                           <td>Incremental ratio</td>
+                           <td>Equal to <code class="txt">Dy/Dt</code></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">Sy</code></td>
+                           <td>Partial sum of y·dt</td>
+                           <td>This approximates the integral between <code class="txt">tmin</code> and <code class="txt">tmax</code></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">avg</code></td>
+                           <td>Mean value, average</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">rms</code></td>
+                           <td>Root Mean Square</td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">std</code></td>
+                           <td>Standard deviation</td>
+                           <td>A way to represent the fluctuation of a signal
+                              around its average value.
+                              Defined as the square-root of the average of the
+                              deviations squared, where the deviation is the
+                              difference between a sample and the mean.
+                              If the data distribution is approximately normal then about
+                              68% of the values are within <samp>(avg±std)</samp>,
+                              about 95% of the values are within <samp>(avg±2·std)</samp> and
+                              about 99.7% lie within <samp>(avg±3·std)</samp>.
+                              For general distribution consider the Chebyshev's inequality:
+                              no more than <samp>1/k²</samp> of the values are more than
+                              <samp>k·std</samp> away from the mean.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">std%</code></td>
+                           <td>Deviation percentage respect mean</td>
+                           <td>Defined as <code class="txt">100·2.576·std/avg</code>,
+                              represent the half band in which falls
+                              at least the 85% of samples
+                              (99% for normal distributions).
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">mad</code></td>
+                           <td>Mean Absolute Deviation (unavailable)</td>
+                           <td>Another way to express how much the signal
+                              vary rexpect its average value.
+                              Defined as the average difference respect
+                              mean value. This quantity should be unavailable
+                              because requires two passes.
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><code class="txt">var%</code></td>
+                           <td>Maximum percentual variation respect mean</td>
+                           <td>Defined as <code class="txt">100 * max(ymax-avg,avg-ymin)/avg</code></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="AbscissaAndIndepVar"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Note the symbols I'm using:
+                                 in general the abscissa <code class="txt">x</code> and
+                                 the independent variable <code class="txt">t</code> have
+                                 a different meaning: they coincide for real
+                                 tracks, but not for complex (parametric) ones.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="MeasureMode.html">The measure mode</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="OptionsDescription.html#optAutoPane">AutoPane option</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="OptionsDescription.html#optMeasureMarkers">MeasureMarkers option</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

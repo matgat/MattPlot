@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2009 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="ReleaseNotes"
+         title="Release notes"
+         keywords="release notes"
+         description="about current release, what's new, issues and todos"
+         version="0.7" date="oct2010">
+
+    <intro toc="yes">
+        List of fixes and added features in released
+        versions, next efforts.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="WhatsNew"
+             title="What's new"
+             keywords="what's new,versions"
+             description="list of fixes and added features in released versions">
+
+    <listQ>
+       <it><strong>Next to come</strong>
+          <listQ>
+            <it>Complex tracks, complex operators (fft, ifft, Re, Im)</it>
+            <it>synEditor: simpler (and working) interface</it>
+            <it><action name="TrackTransform"/>: different interface, handle errors, abort and progress</it>
+            <it>Better measure markers <action name="ViewMeasureMarkers"/></it>
+            <it>New action <action name="ExecMacro"/>: shortcut to custom operation</it>
+            <it>Read generated <dir>*.m</dir> files (<cpp>TStreamParser</cpp> descendant)</it>
+            <it>Embed &bzip2; compressor</it>
+            <it>Support for <dir>*.gz</dir> files and <dir>*.zip</dir> archives with <dir>zlibwapi.dll</dir></it>
+          </listQ>
+        </it>
+        <it><strong>0.6.3 build 5</strong>
+          <listD>
+            <it>&fix; exception on crop with tracks outside cropping rectangle</it>
+          </listD>
+        </it>
+        <it><strong>0.6.3 build 2</strong>
+          <listD>
+            <it>&fix; track binary transformation: NaN of result last sample</it>
+          </listD>
+        </it>
+        <it><strong>0.6.3 build 1</strong>
+          <listD>
+            <it>&fix; Points and coords does not scale when printing (drawing in larger canvas)</it>
+            <it>Added column data type declaration (ex. <txt>|u16|</txt>) in <a href="Header.html">header</a></it>
+          </listD>
+        </it>
+        <it><strong>0.6.2 build 28</strong>
+          <listD>
+            <it>&fix; Syneditor focus and error pane at file parsing error</it>
+            <it><a href="KeyBindings.html">Shortcuts</a> to <action name="AddText"/> and <action name="AddMarker"/> actions, default changed</it>
+            <it>&fix; <action name="StayOnTop"/> issue (failing minimize window)</it>
+            <it>New measured quantity: <txt>std%</txt> standard percentual variation around mean (99%)</it>
+            <it>&fix; directories were (again!) not processed</it>
+            <it>Note on refresh time (speed) issue: previous versions appear faster because refresh time was computed differently</it>
+            <it>Action <action name="Remove"/> for generic object, but not yet completed</it>
+            <it>Renamed some actions and changed some default <a href="KeyBindings.html">shortcuts</a></it>
+            <it><action name="ShowTree"/>: dockable, &fix; exception when selecting root node</it>
+            <it>Some changes in selected object mechanism and tools drag and dock</it>
+            <it>Introduced histograms width percentage to draw stems</it>
+            <it>&fix; Fit frame + logarithmic scale failed with tracks with negative range</it>
+            <it>Option <option name="DefaultDir"/>: new default value <txt>usr</txt></it>
+            <it>Some changes to compile also with &bds;&nbsp;2006; however output is larger and slower</it>
+            <it>&fix; unreachable modal child under main form when restoring focus to application</it>
+            <it>Crop operation now applies also on ordinates</it>
+            <it><action name="ShowTree"/>: plot's tree drag and drop, manage context menus</it>
+          </listD>
+        </it>
+        <it><strong>0.6.1 build 05</strong>
+          <listD>
+            <it><action name="TrackTransform"/>: new track <a href="Transforming.html">transforming</a> <a href="Transforming.html#TrackOperators">operators</a>: derivative, integral</it>
+            <it>&fix; <a href="OptionsDescription.html">option entries</a> organization in <a href="OptionFile.html">option file</a></it>
+            <it>Rendered measured values: using an alternate way</it>
+            <it>The left-right <a href="PlotActions.html">keys</a> now move the cursor in <action name="MeasureMode"/></it>
+            <it>&fix; <a href="PaneGrid.html">Pane grid</a> captured mouse wheel</it>
+            <it>&fix; tracks rendering: no lines with <action name="FillArea"/></it>
+            <it>&fix; <a href="PaneGrid.html">Pane grid</a> quantities should now be synchronized with rendered text in <a href="MeasureMode.html">Measure mode</a></it>
+            <it>Worked on help file, removed chm activex objects to avoid IE7 issue</it>
+            <it>Changed some default <a href="KeyBindings.html">key bindings</a></it>
+          </listD>
+        </it>
+        <it><strong>0.6.0 build 21</strong>
+          <listD>
+            <it>&fix; export overall plot fails</it>
+            <it>Show track's points coordinates: new action <action name="ShowCoords"/>
+                and options <option name="TrackShowCoords"/> and <option name="TrackCoordsDist"/></it>
+            <it>Dialogs for <action name="AddMarker"/> and <action name="AddText"/></it>
+            <it>Now you can hide <dfn>Legend</dfn> dragging it outside</it>
+            <it>New quantity in <a href="PaneGrid.html">Pane grid</a>: incremental ratio <txt>DyDt</txt></it>
+            <it>Working on rendered text <a href="MeasureMode.html">Measure mode</a>, removed <code>VolatileFont</code> option</it>
+            <it>Some general improvements</it>
+          </listD>
+        </it>
+       <it><strong>0.6.0 build 11</strong>
+          <listD>
+            <it>(!) Renamed exe name to avoid clashes with existing software</it>
+            <it>Improved <action name="TrackTransform"/>, binary operators, spectrum</it>
+            <it>A new <a href="ProgramArguments.html">program argument</a> &apos;Clear all&apos; <txt>-x</txt></it>
+            <it>Working on import/export module and archives support, some unfinished things</it>
+            <it><cpp>TStreamParser</cpp> is now an abstract class</it>
+            <it>&fix; repaint time measure fails when only one frame</it>
+          </listD>
+        </it>
+       <it><strong>0.5.0 build 50</strong>
+          <listD>
+            <it>Customizable context menus (new options <option name="ObjectMenu"/>, <option name="FrameMenu"/>, <option name="TrackMenu"/>)</it>
+            <it><a href="ZoomMode.html">Zoom mode</a>: zoom only abscissa or ordinate selectively</it>
+            <it>&fix; infinite loop when opening file as argument with parsing error</it>
+            <it>Logarithmic scales <action name="ToggleScaleX"/> <action name="ToggleScaleY"/></it>
+            <it>Worked on <txt>cls_Track</txt> hierarchy, track operators</it>
+            <it>Text parser: tolerate unknown directives</it>
+            <it>Point labels: <txt>#text</txt> directive ex.: #text (3.14;1) +high peak</it>
+            <it><action name="AddMarker"/> and <action name="AddText"/> now add a default object</it>
+            <it>General improvements, a new <action name="Demo"/>, other minor changes</it>
+          </listD>
+        </it>
+       <it><strong>0.5.0 build 47</strong>
+          <listD>
+            <it>Object properties: distinguish <txt>MarginX</txt> and <txt>MarginY</txt></it>
+            <it>New measured quantity: <txt>var%</txt> maximum percentual variation around mean</it>
+            <it>Measured quantities: renamed ordinate sweep <txt>Dymax</txt> to <txt>DY</txt></it>
+            <it>Track transform: nonlinear group, absolute value</it>
+            <it>&fix; directories were not processed</it>
+            <it>Some minor changes of about form</it>
+          </listD>
+        </it>
+        <it><strong>0.5.0 build 43</strong>
+          <listD>
+            <it>&fix; better crop, draw line from visible point to next non visible point</it>
+            <it>When dropping a directory, process all contained files</it>
+            <it>Some minor changes of about form</it>
+          </listD>
+        </it>
+        <it><strong>0.5.0 build 34</strong>
+          <listD>
+            <it><action name="ShowPane"/> Pane grid (measure quantities) change only by options, copy to clipboard</it>
+            <it><txt>WM_COPYDATA</txt> mechanism: renamed main form to avoid ambiguities in passing arguments from one instance to another</it>
+          </listD>
+        </it>
+        <it><strong>0.5.0 build 24</strong>
+          <listD>
+            <it>Export to &matlab; m file</it>
+          </listD>
+        </it>
+    </listQ>
+
+    </section>
+    
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="KnownBugs"
+             title="Known bugs"
+             keywords="bugs,issues,known bugs"
+             description="list of known bugs">
+
+    Here a list of known bugs/issues:
+
+    <listQ>
+       <it>math errors
+          <listD>
+            <it>Avoidable math errors when exceeding track values range</it>
+            <it>Frame scale: zooming too much lead to numeric errors</it>
+            <it>Grid (<action name="GridToggle"/>): in some conditions fails, imprecise values (log scale)</it>
+          </listD>
+       </it>
+       <it><a href="DirectiveList.html">Directive</a> <txt>#end</txt> does not work</it>
+       <it>Main form captures keydown event of child forms, for example <action name="TextEditor"/> keystrokes trigger plot <a href="ActionsTable.html">actions</a></it>
+       <it><action name="PanMode"/>: rare wrong time measures for kinetic pan</it>
+       <it>Switching between modes: improper behaviour involving <action name="MeasureMode"/></it>
+       <it>Legend (<action name="LegendToggle"/>): ehmm, is somewhat rough, sometimes its position is reset</it>
+       <it><action name="Print"/> function is an incomplete draft</it>
+       <it><action name="TrackTransform"/> is an incomplete draft</it>
+    </listQ>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ToDo"
+             title="ToDo"
+             keywords="todo,future work,wishlist"
+             description="things to be implemented, future work, wishlist">
+
+    The project is quite inactive now.
+    However here is a wishlist and some planned features:
+
+    <listQ>
+       <it>&fix; known bugs</it>
+       <it>Track classes hierarchy, support complex tracks, polar plots, calculus operators</it>
+       <it>Markers: intelligent from measured quantities, set from clipboard</it>
+
+       <it>Renderer
+          <listD>
+             <it>Improve performance using directly winAPI bypassing &VCL; wrapper</it>
+             <it>Improve legend</it>
+          </listD>
+       </it>
+       <it>Exporter
+          <listD>
+             <it>Saved &mp; file format (<dir hint="MPLot Xml format">mpx</dir> file format)</it>
+             <it>Save dialog: Checkbox "current frame only"</it>
+             <it>compressed archives</it>
+             <it>Exporting plot to &SVG; file</it>
+          </listD>
+       </it>
+       <it>Importer  
+          <listD>
+            <it>Import data from mfile,xml,csv; fill columns or directly frames? (cls_StreamParser hierarchy)</it>
+            <it>Import from clipboard (excel)</it>
+            <it>Improve file read speed by buffering (TStream hierarchy)</it>
+            <it>Import from compressed files (TStream hierarchy)</it>
+            <it>Import data from other sources than files: serial line, etc (TStream hierarchy)</it>
+            <it>Import data from binary files (see some popular formats)</it>
+            <it>Introduce directives for frames and track style?</it>
+          </listD>
+       </it>
+       <it>Elaborations
+          <listD>
+            <it>Better tracks elaboration forms (math operators,resampling,filters), undo</it>
+            <it>real tracks: convolution; complex tracks: fft, rotation</it>
+            <it>apply only to abscissa selection (EditMode)</it>
+            <it>A parser to execute tracks elaboration of expression like <ex>track3=track1+track2^2</ex></it>
+            <it>Plugin framework to implement tracks operators (filters, etc) and importers/exporters</it>
+            <it>Integrate and use &lua; language</it>
+          </listD>
+       </it>
+       <it>Other
+          <listD>
+            <it>Intelligent rescale of abscissa time values</it>
+            <it>Detect track click on legend, smart legend placing</it>
+            <it>OLE drag and drop of frames between multiple program instances</it>
+            <it>Identify calling shell instance and print messages there</it>
+            <it>Training tutorial</it>
+          </listD>
+       </it>
+    </listQ>
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

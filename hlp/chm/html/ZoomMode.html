@@ -1,0 +1,188 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Zoom mode</title>
+      <meta name="keywords" content="zoom mode" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="PanMode.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Viewing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="MeasureMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="PanMode.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="MeasureMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Viewing" href="Viewing.html">Viewing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="OnRenderedTracks.html"><span>Viewed data</span></a></li>
+                        <li><a href="SelectMode.html"><span>Select mode</span></a></li>
+                        <li><a href="EditMode.html"><span>Edit mode</span></a></li>
+                        <li><a href="PanMode.html"><span>Pan mode</span></a></li>
+                        <li id="current"><a href="ZoomMode.html"><span>Zoom mode</span></a></li>
+                        <li><a href="MeasureMode.html"><span>Measure mode</span></a></li>
+                        <li><a href="PenMode.html"><span>Pen mode</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ZoomMode" title="magnify or dwindle frame view">Zoom mode</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="zoom mode" /></object>
+                  
+                  During <a href="ActionsTable.html#actZoomMode" title="action ZoomMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/ZoomMode.gif" alt="[ZoomMode]" /> <code class="txt">ZoomMode</code></a> you can
+                  modify <dfn title="tracks container">Frame</dfn> mapped space scale.
+                  Use <a href="ActionsTable.html#actLockX" title="action LockX"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LockX.gif" alt="[LockX]" /> <code class="txt">LockX</code></a> or <a href="ActionsTable.html#actLockY" title="action LockY"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LockY.gif" alt="[LockY]" /> <code class="txt">LockY</code></a>
+                  actions to involve all frames.
+                  
+                  You can zoom in two ways:
+                  
+                  <ul class="listO">
+                     <li>Zoom drawing a zoom rectangle (see the <a href="OptionsDescription.html#optSuddenZoom" title="option SuddenZoom"><code class="txt">SuddenZoom</code></a> option)
+                     </li>
+                     <li>Default zoom respect current cursor point (see <a href="OptionsDescription.html#optZoomPerc" title="option ZoomPerc"><code class="txt">ZoomPerc</code></a> option)
+                     </li>
+                  </ul>
+                  Some customizations pertaining zoom mode are
+                  described in <a href="OptionsDescription.html#optZoomMode" title="option ZoomMode"><code class="txt">ZoomMode</code></a> options.
+                  
+                  
+                  
+                  
+                  <h3><a name="ZoomMouseCommands" title="mouse commands in ZoomMode">Mouse effects</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="mouse commands in ZoomMode" /></object>
+                  
+                  <a href="ActionsTable.html#actZoomMode" title="action ZoomMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/ZoomMode.gif" alt="[ZoomMode]" /> <code class="txt">ZoomMode</code></a> supports the following
+                  mouse operations:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Mouse operation</td>
+                           <td>Target</td>
+                           <td>Effect</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Left button drag</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Build a zoom rectangle</td>
+                        </tr>
+                        <tr>
+                           <td>Left click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Selects frame;
+                              if inside zoom rectangle perform zoom in, if outside
+                              delete it; if no rectangle perform default zoom in:
+                              hold right button to zoom out abscissa only
+                              see also the <a href="OptionsDescription.html#optSuddenZoom" title="option SuddenZoom"><code class="txt">SuddenZoom</code></a> option
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Right click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Default zoom out (respect cursor pos);
+                              hold left button to zoom out abscissa only
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Left double click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Reset scale to fit all tracks</td>
+                        </tr>
+                        <tr>
+                           <td>Middle click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Default zoom in (respect cursor pos)</td>
+                        </tr>
+                        <tr>
+                           <td>Wheel</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Default zoom in-out; hold left or
+                              right mouse buttons to zoom only ordinate
+                              or abscissa (respect cursor pos)
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="PlotActions.html">Plot actions</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  <h3><a name="PixelPhysicalSize" title="pixel size in physical space">Pixel size in physical space</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="pixel size in physical space" /></object>
+                  
+                  <p>
+                     Zoom operation lead to a change of
+                     proportion between screen representation
+                     and represented physical space, that is
+                     the pixel size in physical space units.
+                     
+                  </p>
+                  This quantity is quite important because
+                  affects all measures depending on mouse
+                  position (current point, interval average, etc...).
+                  
+                  It is worth to observe that to increase
+                  the accuracy of these measures there are
+                  two ways:
+                  
+                  <ul class="listO">
+                     <li>Zoom in as possible the region of interest</li>
+                     <li>Increase your media pixel resolution</li>
+                  </ul>
+                  
+                  The output numbers reflect this granularity,
+                  however in this mode you can get exact values
+                  of pixel size in the statusbar (in place of
+                  current point) holding left click on the frame
+                  of interest.
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

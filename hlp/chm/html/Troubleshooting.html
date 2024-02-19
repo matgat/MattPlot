@@ -1,0 +1,1174 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Troubleshooting</title>
+      <meta name="keywords" content="troubleshooting,problems" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="Faqs.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="UserTips.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="Faqs.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="UserTips" href="UserTips.html">Questions and tips</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="Tips.html"><span>Tips</span></a></li>
+                        <li><a href="HowTo.html"><span>How to...</span></a></li>
+                        <li><a href="Faqs.html"><span>Questions and answers</span></a></li>
+                        <li id="current"><a href="Troubleshooting.html"><span>Troubleshooting</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="Troubleshooting" title="Troubleshoot typical problems">Troubleshooting</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="troubleshooting" />
+                     <param name="Keyword" value="problems" /></object>
+                  
+                  
+                  <br /><br /><h3>Index</h3>
+                  <table class="faqs">
+                     <col class="leftcol" />
+                     <col class="middlecol" />
+                     <col class="rightcol" />
+                     <tbody>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_general" title="On general problems"
+                                 href="#faq.problems_general"><span class="faqs_topic">1) General problems</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_general.criticalerror" title="critical errors"
+                                 href="#faq.problems_general.criticalerror">1.1) </a>
+                              When running <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> appear a lot of message errors,
+                              or program crashes.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_general.somethingwrong" title="something wrong"
+                                 href="#faq.problems_general.somethingwrong">1.2) </a>
+                              Something is wrong, the program does
+                              not work: what happened?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_general.nohelp" title="problems with help"
+                                 href="#faq.problems_general.nohelp">1.3) </a>
+                              In my system the <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> help doesn't work.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_arguments" title="On arguments passed via command line"
+                                 href="#faq.problems_arguments"><span class="faqs_topic">2) Program arguments</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_arguments.commandlineerrors"
+                                 title="command line arguments errors"
+                                 href="#faq.problems_arguments.commandlineerrors">2.1) </a>
+                              When using program passing arguments
+                              by command line something goes wrong;
+                              inspecting the <a href="Log.html" title="Log.html"><code class="txt">Log</code></a>
+                              the program complains.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_files" title="Problems with program related files"
+                                 href="#faq.problems_files"><span class="faqs_topic">3) Files</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_files.readonlyoptions" title="cannot modify options"
+                                 href="#faq.problems_files.readonlyoptions">3.1) </a>
+                              I can't modify the option file, or my
+                              changes are ignored.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_files.fixplotfiles" title="cannot open a plot file"
+                                 href="#faq.problems_files.fixplotfiles">3.2) </a>
+                              I can't open a plot file.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_files.zipnotsupported"
+                                 title="cannot open or save a compressed file,zip,gz"
+                                 href="#faq.problems_files.zipnotsupported">3.3) </a>
+                              I can't open a compressed file, nor
+                              save plot as compressed archive!
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_importing" title="When importing data"
+                                 href="#faq.problems_importing"><span class="faqs_topic">4) Importing issues</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_importing.droppingzone"
+                                 title="dropping zone in plot area"
+                                 href="#faq.problems_importing.droppingzone">4.1) </a>
+                              To open a file I drag and drop it
+                              in the plot area; why am I experience
+                              a different behaviour every time?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_importing.indexunit" title="how to set index unit"
+                                 href="#faq.problems_importing.indexunit">4.2) </a>
+                              In <kbd title="">header</kbd> directive I can
+                              set index unit, but when I declare for
+                              example <code class="txt">y(cm)</code>, the parser thinks
+                              that I want to plot <code class="txt">y</code> respect the
+                              missing column <code class="txt">cm</code> instead that
+                              <code class="txt">y</code> must be plotted respect line
+                              index measured in <code class="txt">cm</code>.
+                              What's the trick?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_exporting" title="When exporting data"
+                                 href="#faq.problems_exporting"><span class="faqs_topic">5) Exporting issues</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_exporting.mfilenotwork"
+                                 title="launching mfile from matlab"
+                                 href="#faq.problems_exporting.mfilenotwork">5.1) </a>
+                              Launching from <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> an exported m-file
+                              named <code class="txt">x</code> it complains telling:
+                              <code class="txt">??? Undefined function or variable 'x'.</code>
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_viewing" title="Problems when viewing plots"
+                                 href="#faq.problems_viewing"><span class="faqs_topic">6) Viewing plots</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_viewing.losescale" title="unwanted scale fit"
+                                 href="#faq.problems_viewing.losescale">6.1) </a>
+                              The plot sometimes change its scale
+                              forcing to manually restore the
+                              desired scale.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_viewing.zoomreset" title="unwanted zoom reset"
+                                 href="#faq.problems_viewing.zoomreset">6.2) </a>
+                              Sometimes, when zooming with mouse left
+                              single clicks, the scale resets.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_viewing.nocoords" title="showcoords fails"
+                                 href="#faq.problems_viewing.nocoords">6.3) </a>
+                              I would like to see point coordinates
+                              using <a href="ActionsTable.html#actShowCoords" title="action ShowCoords"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowCoords.gif" alt="[ShowCoords]" /> <code class="txt">ShowCoords</code></a>, but
+                              it does not work.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td colspan="2" style="border:none; font-size:larger;"><a name="idx.faq.problems_options" title="on program customization"
+                                 href="#faq.problems_options"><span class="faqs_topic">7) Options</span></a></td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_options.optionmissing" title="missing options"
+                                 href="#faq.problems_options.optionmissing">7.1) </a>
+                              After program startup I see in the
+                              <a href="Log.html" title="Log.html">log</a>
+                              a lot of lines like:
+                              <code class="txt">Value `xxx´ in section `yyy´ is missing, using default: `zzz´</code>.
+                              Is there something wrong in my system?
+                              How can I fix this?
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_options.shortcutnotworking" title="shortcut not working"
+                                 href="#faq.problems_options.shortcutnotworking">7.2) </a>
+                              The keyboard shortcut set in
+                              <a href="OptionsDescription.html#optShortcuts.html" title="option Shortcuts.html"><code class="txt">Shortcuts.html</code></a> option
+                              entries does not seem to work.
+                              
+                           </td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td colspan="2" class="faqs_que"><a name="idx.faq.problems_options.fontignored" title="font setting ignored"
+                                 href="#faq.problems_options.fontignored">7.3) </a>
+                              Modifying a Font in the
+                              <a href="OptionFile.html" title="OptionFile.html">option file</a>
+                              my changes are ignored.
+                              
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table><br /><br /><table class="faqs">
+                     <col class="leftcol" />
+                     <col class="middlecol" />
+                     <col class="rightcol" />
+                     <tbody>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_general" title="On general problems"
+                                 href="#idx.faq.problems_general"><span class="faqs_topic">1) General problems</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="critical errors" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_general.criticalerror" title="critical errors"
+                                 href="#idx.faq.problems_general.criticalerror">1.1) </a>
+                              When running <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> appear a lot of message errors,
+                              or program crashes.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="criticalerror"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Wrong option values may cause errors, try to
+                                          run program with the default options
+                                          deleting the <a href="OptionFile.html" title="OptionFile.html">option file</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="something wrong" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_general.somethingwrong" title="something wrong"
+                                 href="#idx.faq.problems_general.somethingwrong">1.2) </a>
+                              Something is wrong, the program does
+                              not work: what happened?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="somethingwrong"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> keeps a log of his activity:
+                                          trigger <a href="ActionsTable.html#actShowLog" title="action ShowLog"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/ShowLog.gif" alt="[ShowLog]" /> <code class="txt">ShowLog</code></a> action
+                                          and read its lines to understand what happened.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="problems with help" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_general.nohelp" title="problems with help"
+                                 href="#idx.faq.problems_general.nohelp">1.3) </a>
+                              In my system the <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> help doesn't work.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="nohelp"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Maybe something is wrong with your HtmlHelp
+                                          installation.
+                                          The related files are:
+                                          
+                                          <ul class="listD">
+                                             <li><var title="not registered">%windir%\hh.exe</var></li>
+                                             <li><var title="registered">%windir%\system32\hhctrl.ocx</var></li>
+                                             <li><var title="registered">%windir%\system32\itss.dll</var></li>
+                                             <li><var title="registered">%windir%\system32\itircl.dll</var></li>
+                                          </ul>
+                                          These files are considered as system files, so
+                                          is not easy dealing with them.
+                                          You can try to remove and reinstall <a href="http://msdn.microsoft.com/library/en-us/htmlhelp/html/vsconHH1Start.asp"
+                                             title="http://msdn.microsoft.com/library/en-us/htmlhelp/html/vsconHH1Start.asp">Microsoft<sup>®</sup> HtmlHelp library</a> doing
+                                          something like:
+                                          
+                                          <div class="notepad"> reinstall.bat<pre class="notepad">
+@echo off
+title Remove and reinstall HH library
+rem download the HtmlHelp library distribution
+rem 'hhupd.exe' from http://msdn.microsoft.com
+rem and place it in the same dir of this file
+set prevdir=%CD%
+cd %windir%\system32
+rem regsvr32 -u itcc.dll
+regsvr32 -u hhctrl.ocx
+del hhctrl.ocx
+del itss.dll
+del itircl.dll
+cd %prevdir%
+hhupd.exe
+</pre></div>
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_arguments" title="On arguments passed via command line"
+                                 href="#idx.faq.problems_arguments"><span class="faqs_topic">2) Program arguments</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="command line arguments errors" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_arguments.commandlineerrors"
+                                 title="command line arguments errors"
+                                 href="#idx.faq.problems_arguments.commandlineerrors">2.1) </a>
+                              When using program passing arguments
+                              by command line something goes wrong;
+                              inspecting the <a href="Log.html" title="Log.html"><code class="txt">Log</code></a>
+                              the program complains.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="commandlineerrors"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          See typical errors in
+                                          <a href="CommandlineDirectives.html#CmdDirsTypicalErrs"
+                                             title="CommandlineDirectives.html#CmdDirsTypicalErrs">directive section</a>
+                                          and the notes in
+                                          <a href="ProgramArguments.html#SpaceInArgs"
+                                             title="ProgramArguments.html#SpaceInArgs">program arguments section</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_files" title="Problems with program related files"
+                                 href="#idx.faq.problems_files"><span class="faqs_topic">3) Files</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="cannot modify options" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_files.readonlyoptions" title="cannot modify options"
+                                 href="#idx.faq.problems_files.readonlyoptions">3.1) </a>
+                              I can't modify the option file, or my
+                              changes are ignored.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="readonlyoptions"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Check the read-only flag and to use a
+                                          support that allows writing.
+                                          Remember that the option file has a fixed
+                                          name and must be in the same directory of
+                                          the executable; see
+                                          <a href="OptionFile.html" title="OptionFile.html">option file section</a>
+                                          for further informations.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="cannot open a plot file" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_files.fixplotfiles" title="cannot open a plot file"
+                                 href="#idx.faq.problems_files.fixplotfiles">3.2) </a>
+                              I can't open a plot file.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="fixplotfiles"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Maybe the file is corrupted,
+                                          see the log to view the specific cause.
+                                          The plot files are simply text files,
+                                          so you can try to perform manual corrections.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="cannot open or save a compressed file" />
+                                 <param name="Keyword" value="zip" />
+                                 <param name="Keyword" value="gz" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_files.zipnotsupported"
+                                 title="cannot open or save a compressed file,zip,gz"
+                                 href="#idx.faq.problems_files.zipnotsupported">3.3) </a>
+                              I can't open a compressed file, nor
+                              save plot as compressed archive!
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="zipnotsupported"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Make sure the <a href="http://www.zlib.net" title="http://www.zlib.net">zlib</a> <acronym title="Application Program Interface">API</acronym> <acronym title="Dynamic Link Libraries">DLL</acronym>
+                                          <var title="">zlibwapi.dll</var> is in path
+                                          or at least in the <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> directory.
+                                          To see your path:
+                                          <pre class="cmdline" style="">
+C:\&gt; path
+
+C:\WINDOWS;C:\WINDOWS\system32;C:\PROGRA~1\
+Borland\CBUILD~1\Projects\Bpl;C:\PROGRA~1\B
+orland\CBUILD~1\Bin;C:\Programmi\Subversion
+\bin;C:\Programmi\TortoiseSVN\bin
+</pre>
+                                          </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_importing" title="When importing data"
+                                 href="#idx.faq.problems_importing"><span class="faqs_topic">4) Importing issues</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="dropping zone in plot area" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_importing.droppingzone" title="dropping zone in plot area"
+                                 href="#idx.faq.problems_importing.droppingzone">4.1) </a>
+                              To open a file I drag and drop it
+                              in the plot area; why am I experience
+                              a different behaviour every time?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="droppingzone"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Pay attention on the zone you are
+                                          releasing the file: if you release it
+                                          on an existing <dfn title="tracks container">Frame</dfn>, tracks will be
+                                          added to it, otherwise a new frame will
+                                          be created in the drop position.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="how to set index unit" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_importing.indexunit" title="how to set index unit"
+                                 href="#idx.faq.problems_importing.indexunit">4.2) </a>
+                              In <kbd title="">header</kbd> directive I can
+                              set index unit, but when I declare for
+                              example <code class="txt">y(cm)</code>, the parser thinks
+                              that I want to plot <code class="txt">y</code> respect the
+                              missing column <code class="txt">cm</code> instead that
+                              <code class="txt">y</code> must be plotted respect line
+                              index measured in <code class="txt">cm</code>.
+                              What's the trick?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="indexunit"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          To declare a self contained independent
+                                          variable you must use the unit braces:
+                                          <code class="txt">y([cm])</code>.
+                                          Remember that you can declare also a
+                                          label: <code class="txt">y(L[cm])</code>.
+                                          Take a look at the examples in
+                                          <a href="Header.html" title="Header.html">the related section</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_exporting" title="When exporting data"
+                                 href="#idx.faq.problems_exporting"><span class="faqs_topic">5) Exporting issues</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="launching mfile from matlab" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_exporting.mfilenotwork" title="launching mfile from matlab"
+                                 href="#idx.faq.problems_exporting.mfilenotwork">5.1) </a>
+                              Launching from <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> an exported m-file
+                              named <code class="txt">x</code> it complains telling:
+                              <code class="txt">??? Undefined function or variable 'x'.</code>
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="mfilenotwork"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Check <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> help about m-file valid
+                                          names; avoid characters like +-*/ in the
+                                          file name.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_viewing" title="Problems when viewing plots"
+                                 href="#idx.faq.problems_viewing"><span class="faqs_topic">6) Viewing plots</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="unwanted scale fit" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_viewing.losescale" title="unwanted scale fit"
+                                 href="#idx.faq.problems_viewing.losescale">6.1) </a>
+                              The plot sometimes change its scale
+                              forcing to manually restore the
+                              desired scale.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="losescale"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Take a look at
+                                          <a href="PlotActions.html" title="PlotActions.html">plot keys description table</a>:
+                                          some of them involve a fit to current track,
+                                          so to keep current scale you should avoid them.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="unwanted zoom reset" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_viewing.zoomreset" title="unwanted zoom reset"
+                                 href="#idx.faq.problems_viewing.zoomreset">6.2) </a>
+                              Sometimes, when zooming with mouse left
+                              single clicks, the scale resets.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="zoomreset"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Check the
+                                          <a href="ZoomMode.html" title="ZoomMode.html">zoom mode</a>
+                                          mouse clicks events, maybe
+                                          left button double click cause frame
+                                          to fit scale respect current track.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="showcoords fails" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_viewing.nocoords" title="showcoords fails"
+                                 href="#idx.faq.problems_viewing.nocoords">6.3) </a>
+                              I would like to see point coordinates
+                              using <a href="ActionsTable.html#actShowCoords" title="action ShowCoords"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/ShowCoords.gif" alt="[ShowCoords]" /> <code class="txt">ShowCoords</code></a>, but
+                              it does not work.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="nocoords"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          First ensure to select the correct
+                                          <dfn title="set of points">Track</dfn> (see <a href="SelectMode.html" title="SelectMode.html">select mode</a>
+                                          and <a href="PlotActions.html" title="PlotActions.html">plot keys</a>).
+                                          Then try to <a href="ZoomMode.html" title="ZoomMode.html">zoom</a> points:
+                                          the coordinates are shown only when point distance
+                                          is greater than the value set in
+                                          <a href="OptionsDescription.html#optTrackCoordsDist"
+                                             title="option TrackCoordsDist"><code class="txt">TrackCoordsDist</code></a> option entry.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_topic" colspan="3"><a name="faq.problems_options" title="on program customization"
+                                 href="#idx.faq.problems_options"><span class="faqs_topic">7) Options</span></a></td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="missing options" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_options.optionmissing" title="missing options"
+                                 href="#idx.faq.problems_options.optionmissing">7.1) </a>
+                              After program startup I see in the
+                              <a href="Log.html" title="Log.html">log</a>
+                              a lot of lines like:
+                              <code class="txt">Value `xxx´ in section `yyy´ is missing, using default: `zzz´</code>.
+                              Is there something wrong in my system?
+                              How can I fix this?
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="optionmissing"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          It is normal: as described in
+                                          <a href="HowCustomize.html" title="HowCustomize.html">related section</a>,
+                                          initially no
+                                          <a href="OptionFile.html" title="OptionFile.html">option file</a>
+                                          <var title="">MattPlot.ini</var> is present, so defaults
+                                          are used.
+                                          You can create a new one triggering
+                                          <a href="ActionsTable.html#actStoreOptions" title="action StoreOptions"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/StoreOptions.gif" alt="[StoreOptions]" /> <code class="txt">StoreOptions</code></a>
+                                          or <a href="ActionsTable.html#actEditOptions" title="action EditOptions"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/EditOptions.gif" alt="[EditOptions]" /> <code class="txt">EditOptions</code></a> actions.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="shortcut not working" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_options.shortcutnotworking" title="shortcut not working"
+                                 href="#idx.faq.problems_options.shortcutnotworking">7.2) </a>
+                              The keyboard shortcut set in
+                              <a href="OptionsDescription.html#optShortcuts.html" title="option Shortcuts.html"><code class="txt">Shortcuts.html</code></a> option
+                              entries does not seem to work.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="shortcutnotworking"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Be sure that the string represent a
+                                          valid shortcut; refer to
+                                          <a href="_KeyCodes.html" title="_KeyCodes.html">key codes table</a>
+                                          to see the correct key strings.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td class="spacer"><object type="application/x-oleobject"
+                                      classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                                 <param name="Keyword" value="font setting ignored" /></object></td>
+                        </tr>
+                        <tr>
+                           <td class="faqs_que" colspan="2"><a name="faq.problems_options.fontignored" title="font setting ignored"
+                                 href="#idx.faq.problems_options.fontignored">7.3) </a>
+                              Modifying a Font in the
+                              <a href="OptionFile.html" title="OptionFile.html">option file</a>
+                              my changes are ignored.
+                              
+                           </td>
+                           <td></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td class="faqs_ans" colspan="2"><a name="fontignored"></a><table class="page" border="0">
+                                 <thead class="page">
+                                    <tr>
+                                       <td class="scrap_TL"></td>
+                                       <td class="scrap_T"></td>
+                                       <td class="scrap_TR"></td>
+                                    </tr>
+                                 </thead>
+                                 <tfoot class="page">
+                                    <tr>
+                                       <td class="scrap_BL"></td>
+                                       <td class="scrap_B"></td>
+                                       <td class="scrap_BR"></td>
+                                    </tr>
+                                 </tfoot>
+                                 <tbody>
+                                    <tr>
+                                       <td class="scrap_L"></td>
+                                       <td class="scrap_Body">
+                                          Ensure to read options using
+                                          <a href="ActionsTable.html#actReadOptions" title="action ReadOptions"
+                                             style="margin-left:0.5ex;"><img src="./files/images/actions/ReadOptions.gif" alt="[ReadOptions]" /> <code class="txt">ReadOptions</code></a>.
+                                          If the Font family is not recognized,
+                                          windows substitutes it with a
+                                          default; check your
+                                          <a href="OptionsDescription.html" title="OptionsDescription.html">option entry</a>
+                                          in the <a href="OptionFile.html" title="OptionFile.html">option file</a>.
+                                          
+                                       </td>
+                                       <td class="scrap_R"></td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

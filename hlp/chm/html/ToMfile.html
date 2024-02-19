@@ -1,0 +1,126 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Exporting to m-file</title>
+      <meta name="keywords" content="exporting to m-file" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="ToTXT.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Exporting.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="ToTXT.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Exporting" href="Exporting.html">Exporting data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="Printing.html"><span>Printing plot</span></a></li>
+                        <li><a href="ToBMP.html"><span>Exporting to bitmap</span></a></li>
+                        <li><a href="ToVectorialImage.html"><span>Exporting to vectorial image</span></a></li>
+                        <li><a href="ToTXT.html"><span>Exporting to text files</span></a></li>
+                        <li id="current"><a href="ToMfile.html"><span>Exporting to m-file</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ToMfile" title="exporting to Matlab workspace via m-file">Exporting to m-file</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="exporting to m-file" /></object>
+                  
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> can generate a <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> <var title="">m-file</var>
+                  (seems to work in <a href="http://freemat.sf.net/" title="http://freemat.sf.net/">FreeMat</a>, may work with minor changes
+                  also in <a href="http://www.octave.org" title="http://www.octave.org">Octave</a> and <a href="http://scilabsoft.inria.fr" title="http://scilabsoft.inria.fr">Scilab</a>)
+                  containing instruction to import in the
+                  math interpreter workspace the tracks data
+                  contained in current <dfn title="tracks container">Frame</dfn>.
+                  The <var title="">m-file</var> content depends on
+                  program version, for actual usage instructions
+                  open the file with a text editor and read its
+                  comments.
+                  
+                  
+                  <p>
+                     A look to <a href="ExportToMatlab.html" title="ExportToMatlab.html">examples section</a>
+                     may be useful.
+                     
+                  </p>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="MatlabVariableNames"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Variable names are taken from track names,
+                                 converted when necessary to valid identifiers
+                                 (for example, spaces are converted to underscore).
+                                 In rare cases two distinct variables may get
+                                 the same identifier (ex, if a track is named
+                                 <code class="txt">y z</code> and another <code class="txt">y_z</code>);
+                                 when a name clashing occurs the last variable
+                                 overwrites the previous ones.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ExportToMatlab.html">Export to Matlab via m-files example</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ExportTextToMatlab.html">Export to Matlab via txt file example</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

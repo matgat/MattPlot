@@ -1,0 +1,5 @@
+.topic IDH_Welcome
+welcome my text popup
+
+.topic IDH_GeneralInfo
+geninfo popup

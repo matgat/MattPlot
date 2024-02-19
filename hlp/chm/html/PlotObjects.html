@@ -1,0 +1,341 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Plot objects</title>
+      <meta name="keywords"
+            content="plot objects,plot elements,basic concepts,terminology,concepts" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Interface.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ActionsTable.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ActionsTable.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Interface" href="Interface.html">Interface</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="PlotObjects.html"><span>Plot objects</span></a></li>
+                        <li><a href="ActionsTable.html"><span>Main actions</span></a></li>
+                        <li><a href="PlotActions.html"><span>Plot actions</span></a></li>
+                        <li><a href="MainForm.html"><span>The main form</span></a></li>
+                        <li><a href="KeyBindings.html"><span>Default key bindings</span></a></li>
+                        <li><a href="PaneGrid.html"><span>The pane grid</span></a></li>
+                        <li><a href="Log.html"><span>The activity log</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="PlotObjects" title="a brief explanation on used terms">Plot objects</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="plot objects" />
+                     <param name="Keyword" value="plot elements" />
+                     <param name="Keyword" value="basic concepts" />
+                     <param name="Keyword" value="terminology" />
+                     <param name="Keyword" value="concepts" /></object>
+                  
+                  The concepts defined in the following
+                  section are doubtlessly strictly related
+                  to program implementation.
+                  
+                  
+                  
+                  <h3><a name="Frames" title="">Frames</a></h3>
+                  
+                  The main element of program interface is the
+                  <a href="MainForm.html#PlotArea" title="MainForm.html#PlotArea">plot area</a>,
+                  the area in which data are rendered, constituted
+                  by a <dfn title="">PaintBox Canvas</dfn> .
+                  This <dfn title="">Canvas</dfn> contains one or more
+                  <img src="./files/images/actions/PlotLayout.gif" title="" style=""
+                       alt="[./files/images/actions/PlotLayout.gif]" /> <dfn title="tracks container">Frame</dfn>s.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="CanvasDefinition"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 The Canvas is the drawing paper where
+                                 plot graphic objects are rendered.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  The Canvas can contain one or more
+                  <img src="./files/images/actions/PlotLayout.gif" title="" style=""
+                       alt="[./files/images/actions/PlotLayout.gif]" /> <dfn title="tracks container">Frame</dfn>s,
+                  arranged in a defined <a href="_Layouts.html" title="_Layouts.html">layout</a>.
+                  
+                  
+                  <p>
+                     A <img src="./files/images/actions/Frame.gif" title="" style=""
+                          alt="[./files/images/actions/Frame.gif]" /> <dfn title="tracks container">Frame</dfn>
+                     is a rectangular region of a bidimensional
+                     cartesian space characterized by a biunique
+                     transformation that binds data values to screen
+                     positions (the scale, which is normally linear).
+                     
+                  </p>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="FrameDefinition"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 A <img src="./files/images/actions/Frame.gif" title="" style=""
+                                      alt="[./files/images/actions/Frame.gif]" /> <dfn title="tracks container">Frame</dfn>
+                                 is a screen representation of a bidimensional physical space;
+                                 it contains the following graphic objects that enhance
+                                 this representation:
+                                 
+                                 <ul class="listO">
+                                    <li><a href="#GridAndAxes" title="#GridAndAxes"><img src="./files/images/actions/GotoOrigin.gif" title="" style=""
+                                               alt="[./files/images/actions/GotoOrigin.gif]" /> axes</a>,
+                                       <a href="#GridAndAxes" title="#GridAndAxes"><img src="./files/images/actions/GridToggle.gif" title="" style=""
+                                               alt="[./files/images/actions/GridToggle.gif]" /> grid</a>,
+                                       <a href="#Labels" title="#Labels"><img src="./files/images/actions/AddText.gif" title="" style=""
+                                               alt="[./files/images/actions/AddText.gif]" /> text labels</a>,
+                                       <a href="#Markers" title="#Markers"><img src="./files/images/actions/AddMarker.gif" title="" style=""
+                                               alt="[./files/images/actions/AddMarker.gif]" /> markers</a></li>
+                                 </ul>
+                                 
+                                 And, of course, some other objects that represents
+                                 sets of coordinates of the physical plane:
+                                 
+                                 <ul class="listO">
+                                    <li><a href="#Tracks" title="#Tracks"><img src="./files/images/actions/Track.gif" title="" style=""
+                                               alt="[./files/images/actions/Track.gif]" /> <dfn title="set of points">Track</dfn>s</a>,
+                                       <a href="#Legend" title="#Legend"><img src="./files/images/actions/LegendToggle.gif" title="" style=""
+                                               alt="[./files/images/actions/LegendToggle.gif]" /> legend</a></li>
+                                 </ul>
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Each <dfn title="tracks container">Frame</dfn> contains a set of
+                  <img src="./files/images/actions/Track.gif" title="" style=""
+                       alt="[./files/images/actions/Track.gif]" /> <dfn title="set of points">Track</dfn>s.
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="Tracks" title="">Tracks</a></h3>
+                  
+                  The term <img src="./files/images/actions/Track.gif" title="" style=""
+                       alt="[./files/images/actions/Track.gif]" /> <dfn title="set of points">Track</dfn>
+                  indicates a set of ordered pairs of data, univocally
+                  bound with pairs of pixel coordinates.
+                  For example, considering a real function, its
+                  numeric representation will consists of
+                  a set of real numbers ordered respect their
+                  corresponding abscissa values (also real numbers);
+                  in a similar manner a polar function will be represented
+                  by a set of complex numbers ordered respect an independent
+                  parameter.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="TrackDefinition"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 A <img src="./files/images/actions/Track.gif" title="" style=""
+                                      alt="[./files/images/actions/Track.gif]" /> <dfn title="set of points">Track</dfn>
+                                 is an ordered set of data pairs representable on screen.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="Legend" title="">Legend</a></h3>
+                  
+                  The legend lists all <dfn title="set of points">Track</dfn>s contained
+                  in <dfn title="tracks container">Frame</dfn>; you can show/hide legend using
+                  <a href="ActionsTable.html#actLegendToggle" title="action LegendToggle"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LegendToggle.gif" alt="[LegendToggle]" /> <code class="txt">LegendToggle</code></a> action.
+                  During certain <a name="Viewing.html" title="Viewing.html">plot modes</a>
+                  you can use legend to select <dfn title="set of points">Track</dfn>s, and
+                  can change its position by dragging it with mouse.
+                  
+                  
+                  
+                  
+                  <h3><a name="GridAndAxes" title="">Grid and axes</a></h3>
+                  
+                  Grid and axes objects aid user to visualize
+                  the physical space mapped on screen frame.
+                  To modify grid lines use the following actions:
+                  <a href="ActionsTable.html#actGridToggle" title="action GridToggle"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/GridToggle.gif" alt="[GridToggle]" /> <code class="txt">GridToggle</code></a>,
+                  <a href="ActionsTable.html#actGridMore" title="action GridMore"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/GridMore.gif" alt="[GridMore]" /> <code class="txt">GridMore</code></a>,
+                  <a href="ActionsTable.html#actGridLess" title="action GridLess"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/GridLess.gif" alt="[GridLess]" /> <code class="txt">GridLess</code></a>.
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="Markers" title="">Markers</a></h3>
+                  
+                  A marker is a vertical (or horizontal) line
+                  passing through a given value.
+                  You can add a marker in the current frame using
+                  <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a> action, or by the
+                  <a href="DirectiveList.html" title="DirectiveList.html">related directive</a>
+                  placed in the <a href="Importing.html" title="Importing.html">data file</a>.
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="Labels" title="">Text labels</a></h3>
+                  
+                  A text label is a string bound at a certain
+                  position.
+                  You can add text in the current frame using
+                  <a href="ActionsTable.html#actAddText" title="action AddText"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/AddText.gif" alt="[AddText]" /> <code class="txt">AddText</code></a> action, or by the
+                  <a href="DirectiveList.html" title="DirectiveList.html">related directive</a>
+                  placed in the <a href="Importing.html" title="Importing.html">data file</a>.
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="ProgramState" title="states">Program state</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="states" /></object>
+                  
+                  Some <a href="Actions.html" title="Actions.html">actions</a> require
+                  a target object: a lot of them apply on a <dfn title="tracks container">Frame</dfn>
+                  (like <a href="ActionsTable.html#actRemoveFrame" title="action RemoveFrame"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/RemoveFrame.gif" alt="[RemoveFrame]" /> <code class="txt">RemoveFrame</code></a>, <a href="ActionsTable.html#actFitToTracks" title="action FitToTracks"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/FitToTracks.gif" alt="[FitToTracks]" /> <code class="txt">FitToTracks</code></a> etc...),
+                  other on a specific <dfn title="set of points">Track</dfn>
+                  (<a href="ActionsTable.html#actMarkPoints" title="action MarkPoints"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/MarkPoints.gif" alt="[MarkPoints]" /> <code class="txt">MarkPoints</code></a>, <a href="ActionsTable.html#actTrackStatistics" title="action TrackStatistics"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/TrackStatistics.gif" alt="[TrackStatistics]" /> <code class="txt">TrackStatistics</code></a>, etc...);
+                  in order to make easier passing these arguments to
+                  <a href="Actions.html" title="Actions.html">actions</a>,
+                  are introduced the state variables
+                  <dfn title="">current frame</dfn> within plot and
+                  <dfn title="">current track</dfn> within each <dfn title="tracks container">Frame</dfn>,
+                  both visible in the <a href="MainForm.html#Statusbar" title="MainForm.html#Statusbar">Status bar</a>;
+                  these state variables are modified during the
+                  interation with plot area; see <a href="Viewing.html" title="Viewing.html">Viewing</a>
+                  section for detailed informations.
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Viewing.html">Viewing plots</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="SelectMode.html">Plot select mode</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="PlotActions.html">Plot keys</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

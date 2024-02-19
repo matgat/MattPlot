@@ -1,0 +1,106 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Viewed data</title>
+      <meta name="keywords" content="on viewing data" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Viewing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="SelectMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="SelectMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Viewing" href="Viewing.html">Viewing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="OnRenderedTracks.html"><span>Viewed data</span></a></li>
+                        <li><a href="SelectMode.html"><span>Select mode</span></a></li>
+                        <li><a href="EditMode.html"><span>Edit mode</span></a></li>
+                        <li><a href="PanMode.html"><span>Pan mode</span></a></li>
+                        <li><a href="ZoomMode.html"><span>Zoom mode</span></a></li>
+                        <li><a href="MeasureMode.html"><span>Measure mode</span></a></li>
+                        <li><a href="PenMode.html"><span>Pen mode</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="OnRenderedTracks"
+                        title="on the difference between rendered                           and measured data">Viewed data</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="on viewing data" /></object>
+                  
+                  With this program you can see your data
+                  as colored pixels in the screen,
+                  namely as rendered tracks.
+                  This representation often involves
+                  a further quantization of your data
+                  (the more your screen resolution [pix/cm]
+                  is high, the higher is the Nyquist frequency
+                  of the quantization).
+                  This means that you must always consider
+                  carefully what you see (read: aliasing);
+                  for example, do you believe that a current
+                  can really have the following behaviour?
+                  
+                  <p><img src="./files/images/aliasing.gif" title="" style=""
+                          alt="[./files/images/aliasing.gif]" /></p>
+                  
+                  We can experiment this fact resizing
+                  plot window (this alters the pixels physical
+                  dimensions) or playing with the
+                  <a href="OptionsDescription.html#optSampPerPix" title="option SampPerPix"><code class="txt">SampPerPix</code></a> option.
+                  Consider for example this track:
+                  
+                  
+                  <p><img src="./files/images/ViewMoreSamples.gif" title="" style=""
+                          alt="[./files/images/ViewMoreSamples.gif]" /></p>
+                  In this case the data sampling interval is
+                  much less the pixels width, so the rendered
+                  track appears as a filled band.
+                  Now set <a href="OptionsDescription.html#optSampPerPix" title="option SampPerPix"><code class="txt">SampPerPix</code></a>
+                  to <code class="txt">1</code>, forcing <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> to render only
+                  one sample per pixel:
+                  
+                  <p><img src="./files/images/ViewLessSamples.gif" title="" style=""
+                          alt="[./files/images/ViewLessSamples.gif]" /></p>
+                  This undersampling decreases data
+                  sampling frequency, and so can cause
+                  aliasing.
+                  
+                  
+                  <p>
+                     Remember that <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> computations and
+                     <a href="MeasureMode.html" title="MeasureMode.html">measures</a>
+                     are always performed on internal data
+                     and not on their screen representation.
+                     
+                  </p>
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

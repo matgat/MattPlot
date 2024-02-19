@@ -1,0 +1,561 @@
+<!DOCTYPE html
+  PUBLIC "-//IETF//DTD HTML//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+   <HEAD>
+      <meta name="GENERATOR" content="XSL transformation"></meta>
+      <!-- Sitemap 1.0 -->
+   </HEAD>
+   <BODY><OBJECT type="text/site properties">
+         <param name="Auto Generated" value="Yes"></param></OBJECT><UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Table of contents"></param>
+               <param name="Local" value="html/Welcome.html"></param></OBJECT><UL></UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Release notes"></param>
+               <param name="Local" value="html/ReleaseNotes.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="What's new"></param>
+                     <param name="Local" value="html/WhatsNew.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Known bugs"></param>
+                     <param name="Local" value="html/KnownBugs.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="ToDo"></param>
+                     <param name="Local" value="html/ToDo.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="General informations"></param>
+               <param name="Local" value="html/GeneralInfo.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="What is"></param>
+                     <param name="Local" value="html/WhatIs.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Why another data plotting tool?"></param>
+                        <param name="Local" value="html/WhatIs.html#Why"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Warnings"></param>
+                     <param name="Local" value="html/Warnings.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Program Features"></param>
+                     <param name="Local" value="html/Features.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Limitations"></param>
+                        <param name="Local" value="html/Features.html#Limitations"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="On system perturbation"></param>
+                        <param name="Local" value="html/Features.html#SystemPerturbation"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Further notes on storage media access"></param>
+                        <param name="Local" value="html/Features.html#MediaAccess"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="System requirements"></param>
+                     <param name="Local" value="html/Requirements.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="On memory occupation"></param>
+                        <param name="Local" value="html/Requirements.html#MemoryOccupation"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Program related files"></param>
+                     <param name="Local" value="html/RelatedFiles.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Distribution"></param>
+                     <param name="Local" value="html/Distribution.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="License"></param>
+                     <param name="Local" value="html/License.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Contact"></param>
+                     <param name="Local" value="html/Contact.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Interface"></param>
+               <param name="Local" value="html/Interface.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Plot objects"></param>
+                     <param name="Local" value="html/PlotObjects.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Frames"></param>
+                        <param name="Local" value="html/PlotObjects.html#Frames"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Tracks"></param>
+                        <param name="Local" value="html/PlotObjects.html#Tracks"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Legend"></param>
+                        <param name="Local" value="html/PlotObjects.html#Legend"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Grid and axes"></param>
+                        <param name="Local" value="html/PlotObjects.html#GridAndAxes"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Markers"></param>
+                        <param name="Local" value="html/PlotObjects.html#Markers"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Text labels"></param>
+                        <param name="Local" value="html/PlotObjects.html#Labels"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Program state"></param>
+                        <param name="Local" value="html/PlotObjects.html#ProgramState"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Main actions"></param>
+                     <param name="Local" value="html/ActionsTable.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Plot actions"></param>
+                     <param name="Local" value="html/PlotActions.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="The main form"></param>
+                     <param name="Local" value="html/MainForm.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Main menu"></param>
+                        <param name="Local" value="html/MainForm.html#Mainmenu"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Toolbar"></param>
+                        <param name="Local" value="html/MainForm.html#Toolbar"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Plot area"></param>
+                        <param name="Local" value="html/MainForm.html#PlotArea"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Statusbar"></param>
+                        <param name="Local" value="html/MainForm.html#Statusbar"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Keyboard shortcuts"></param>
+                        <param name="Local" value="html/MainForm.html#Shortcuts"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Default key bindings"></param>
+                     <param name="Local" value="html/KeyBindings.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="The pane grid"></param>
+                     <param name="Local" value="html/PaneGrid.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="The activity log"></param>
+                     <param name="Local" value="html/Log.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Running program"></param>
+               <param name="Local" value="html/Running.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Installation"></param>
+                     <param name="Local" value="html/Installation.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Update"></param>
+                     <param name="Local" value="html/Update.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Launching the executable"></param>
+                     <param name="Local" value="html/Launching.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Program arguments"></param>
+                     <param name="Local" value="html/ProgramArguments.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="General option arguments"></param>
+                        <param name="Local" value="html/ProgramArguments.html#OptionArgs"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Appended lines arguments"></param>
+                        <param name="Local" value="html/ProgramArguments.html#AppendedLinesArgs"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="File path arguments"></param>
+                        <param name="Local" value="html/ProgramArguments.html#FilePathArgs"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="A note on spaces in arguments"></param>
+                        <param name="Local" value="html/ProgramArguments.html#SpaceInArgs"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Prevent further instances"></param>
+                        <param name="Local" value="html/ProgramArguments.html#NoFurtherInstances"></param></OBJECT></LI>
+               </UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Importing data"></param>
+               <param name="Local" value="html/Importing.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Data sources"></param>
+                     <param name="Local" value="html/DataSources.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Files"></param>
+                        <param name="Local" value="html/DataSources.html#FileSources"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Other data streams"></param>
+                        <param name="Local" value="html/DataSources.html#OtherStreamSources"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Binary formats"></param>
+                     <param name="Local" value="html/BinaryFormats.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Text format"></param>
+                     <param name="Local" value="html/TextFormat.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Parser characteristics"></param>
+                        <param name="Local" value="html/TextFormat.html#ParserCharacteristics"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Line delimiters"></param>
+                        <param name="Local" value="html/TextFormat.html#LineDelimiters"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Data delimiters"></param>
+                        <param name="Local" value="html/TextFormat.html#DataDelimiters"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Data files structure"></param>
+                        <param name="Local" value="html/TextFormat.html#DataFilesStructure"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Parsing sequence"></param>
+                        <param name="Local" value="html/TextFormat.html#ParserStateMachine"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Examples"></param>
+                        <param name="Local" value="html/TextFormat.html#DataFileExamples"></param></OBJECT></LI>
+               </UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Parser directives"></param>
+               <param name="Local" value="html/Directives.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Available directives"></param>
+                     <param name="Local" value="html/DirectiveList.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Header directive"></param>
+                     <param name="Local" value="html/Header.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Split directive"></param>
+                     <param name="Local" value="html/Split.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Resample directive"></param>
+                     <param name="Local" value="html/Resample.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Strictdelimiters directive"></param>
+                     <param name="Local" value="html/StrictDelimiters.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Directives in command line arguments"></param>
+                     <param name="Local" value="html/CommandlineDirectives.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Typical errors"></param>
+                        <param name="Local" value="html/CommandlineDirectives.html#CmdDirsTypicalErrs"></param></OBJECT></LI>
+               </UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Viewing data"></param>
+               <param name="Local" value="html/Viewing.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Viewed data"></param>
+                     <param name="Local" value="html/OnRenderedTracks.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Select mode"></param>
+                     <param name="Local" value="html/SelectMode.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Editing object properties"></param>
+                        <param name="Local" value="html/SelectMode.html#EditingProperties"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Editing Layout"></param>
+                        <param name="Local" value="html/SelectMode.html#EditingLayout"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Mouse effects"></param>
+                        <param name="Local" value="html/SelectMode.html#SelectMouseCommands"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Edit mode"></param>
+                     <param name="Local" value="html/EditMode.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Mouse effects"></param>
+                        <param name="Local" value="html/EditMode.html#EditMouseCommands"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Pan mode"></param>
+                     <param name="Local" value="html/PanMode.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Mouse effects"></param>
+                        <param name="Local" value="html/PanMode.html#PanMouseCommands"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Zoom mode"></param>
+                     <param name="Local" value="html/ZoomMode.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Mouse effects"></param>
+                        <param name="Local" value="html/ZoomMode.html#ZoomMouseCommands"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Pixel size in physical space"></param>
+                        <param name="Local" value="html/ZoomMode.html#PixelPhysicalSize"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Measure mode"></param>
+                     <param name="Local" value="html/MeasureMode.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Mouse effects"></param>
+                        <param name="Local" value="html/MeasureMode.html#MeasureMouseCommands"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Pen mode"></param>
+                     <param name="Local" value="html/PenMode.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Mouse effects"></param>
+                        <param name="Local" value="html/PenMode.html#PenMouseCommands"></param></OBJECT></LI>
+               </UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Editing and transforming data"></param>
+               <param name="Local" value="html/Editing.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Edit data manually"></param>
+                     <param name="Local" value="html/EditTrackData.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Manual edit"></param>
+                        <param name="Local" value="html/EditTrackData.html#ManualEdit"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Using EditMode"></param>
+                        <param name="Local" value="html/EditTrackData.html#UsingEditMode"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Transforming tracks"></param>
+                     <param name="Local" value="html/Transforming.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Track operators"></param>
+                        <param name="Local" value="html/Transforming.html#TrackOperators"></param></OBJECT></LI>
+               </UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Exporting data"></param>
+               <param name="Local" value="html/Exporting.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Printing plot"></param>
+                     <param name="Local" value="html/Printing.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Exporting to bitmap"></param>
+                     <param name="Local" value="html/ToBMP.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Screen bitmap"></param>
+                        <param name="Local" value="html/ToBMP.html#ScreenBitmap"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="High resolution bitmap"></param>
+                        <param name="Local" value="html/ToBMP.html#HiResBitmap"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Exporting to vectorial image"></param>
+                     <param name="Local" value="html/ToVectorialImage.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Exporting to EMF"></param>
+                        <param name="Local" value="html/ToVectorialImage.html#ToEMF"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Exporting to SVG"></param>
+                        <param name="Local" value="html/ToVectorialImage.html#ToSVG"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Exporting to text files"></param>
+                     <param name="Local" value="html/ToTXT.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Text table"></param>
+                        <param name="Local" value="html/ToTXT.html#ToTxtTable"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="One column text"></param>
+                        <param name="Local" value="html/ToTXT.html#ToMPL"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Exporting to m-file"></param>
+                     <param name="Local" value="html/ToMfile.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Customizing"></param>
+               <param name="Local" value="html/Customizing.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="How it works"></param>
+                     <param name="Local" value="html/HowCustomize.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="The option file"></param>
+                     <param name="Local" value="html/OptionFile.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="The ini file format"></param>
+                        <param name="Local" value="html/OptionFile.html#IniFormat"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Options description"></param>
+                     <param name="Local" value="html/OptionsDescription.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Questions and tips"></param>
+               <param name="Local" value="html/UserTips.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Tips"></param>
+                     <param name="Local" value="html/Tips.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="How to..."></param>
+                     <param name="Local" value="html/HowTo.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Placing markers"></param>
+                        <param name="Local" value="html/HowTo.html#PlacingMarkers"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Analyze spectrum"></param>
+                        <param name="Local" value="html/HowTo.html#AnalyzeSpectrum"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Paste plot image in documents"></param>
+                        <param name="Local" value="html/HowTo.html#AttachInDocuments"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Taking snapshot with volatile text"></param>
+                        <param name="Local" value="html/HowTo.html#Snapshots"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Comparing two acquisitions"></param>
+                        <param name="Local" value="html/HowTo.html#Comparing"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Manually sampling a track"></param>
+                        <param name="Local" value="html/HowTo.html#ManualSample"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Complete use example"></param>
+                        <param name="Local" value="html/HowTo.html#CompleteUse"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Questions and answers"></param>
+                     <param name="Local" value="html/Faqs.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Troubleshooting"></param>
+                     <param name="Local" value="html/Troubleshooting.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Examples"></param>
+               <param name="Local" value="html/Examples.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="A memory dump plot"></param>
+                     <param name="Local" value="html/MemDumpPlot.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Importing from Matlab"></param>
+                     <param name="Local" value="html/ImportFromMatlab.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="A sine wave"></param>
+                        <param name="Local" value="html/ImportFromMatlab.html#ImportFromMatlabSineWave"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="A couple of tracks"></param>
+                        <param name="Local" value="html/ImportFromMatlab.html#ImportFromMatlabMoreTracks"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Exporting text files to Matlab"></param>
+                     <param name="Local" value="html/ExportTextToMatlab.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Exporting to Matlab via m-files"></param>
+                     <param name="Local" value="html/ExportToMatlab.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+      <UL>
+         <LI><OBJECT type="text/sitemap">
+               <param name="Name" value="Development"></param>
+               <param name="Local" value="html/Development.html"></param></OBJECT><UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="On this file and help system"></param>
+                     <param name="Local" value="html/OnHelp.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Help system"></param>
+                        <param name="Local" value="html/OnHelp.html#HelpSystem"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Implementation details"></param>
+                     <param name="Local" value="html/ImplementationDetails.html"></param></OBJECT></LI>
+               <UL>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Build details"></param>
+                        <param name="Local" value="html/ImplementationDetails.html#BuildDetails"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Code structure"></param>
+                        <param name="Local" value="html/ImplementationDetails.html#CodeStructure"></param></OBJECT></LI>
+                  <LI><OBJECT type="text/sitemap">
+                        <param name="Name" value="Code portability"></param>
+                        <param name="Local" value="html/ImplementationDetails.html#Portability"></param></OBJECT></LI>
+               </UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Third party stuff"></param>
+                     <param name="Local" value="html/ThirdPartyStuff.html"></param></OBJECT></LI>
+               <UL></UL>
+               <LI><OBJECT type="text/sitemap">
+                     <param name="Name" value="Tools used"></param>
+                     <param name="Local" value="html/ToolsUsed.html"></param></OBJECT></LI>
+               <UL></UL>
+            </UL>
+         </LI>
+      </UL>
+   </BODY>
+</HTML>

@@ -1,0 +1,52 @@
+
+  /---------------------------------------------------\
+    SynEdit library
+  \---------------------------------------------------/
+
+    To compile MatPlot you need SynEdit source files
+    (currently version 2.0.6).
+
+    . Download SynEdit library from 'http://synedit.sourceforge.net/'
+    . Extract 'Source\' folder in '.\ext\SynEdit'
+	
+	SynEdit components are instanced at runtime, so
+	you don't need to install SynEdit package.
+
+
+  /---------------------------------------------------\
+    Installing package (deprecated)
+  \---------------------------------------------------/
+
+    To install SynEdit library in BCB5 environment
+    follow these steps:
+
+    . Download SynEdit library from 'http://synedit.sourceforge.net/'
+    . Extract 'Source\' and 'Packages\' folders in '%BCB%\Lib\SynEdit'
+    . Double click on '%BCB%\Lib\SynEdit\Packages\SynEdit_BCB5.bpk' (a new res file will be recreated)
+    . A form will appear under the editor, so move it away
+    . Click button 'compile' and then install
+    . 'SynEdit_BCB5.bpl' is created in '%BCB%\Projects\Bpl\'
+    . 'SynEdit_BCB5.bpi' & 'SynEdit_BCB5.lib' are created in '%BCB%\Projects\Lib\'
+    . Move '%BCB%\Lib\SynEdit\Source\Syn*.hpp' to '%BCB%\Include\Vcl\'
+    . Deprecated: move '%BCB%\Lib\SynEdit\Source\Syn*.res' to '%BCB%\Lib\Obj\' better add directory to libs dir
+    . Quit without save 'SynEdit_BCB5.bpk' project modifications (it does not matter)
+
+
+set BCB=C:\Programmi\Borland\CBuilder5
+:INSTALL
+xcopy ".\Source" "%BCB%\Lib\SynEdit"
+xcopy ".\Packages" "%BCB%\Lib\SynEdit"
+rem now manually install
+move "%BCB%\Lib\SynEdit\Source\Syn*.hpp" "%BCB%\Include\Vcl\"
+move "%BCB%\Lib\SynEdit\Source\Syn*.res" "%BCB%\Lib\Obj\"
+goto END
+:UNINSTALL
+remove "%BCB%\Lib\SynEdit"
+del /S "%BCB%\Include\Vcl\Syn*.hpp"
+del /S "%BCB%\Lib\Obj\Syn*.res"
+:END
+
+
+  /---------------------------------------------------\
+    End of file
+  \---------------------------------------------------/

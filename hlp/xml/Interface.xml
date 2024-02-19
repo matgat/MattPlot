@@ -1,0 +1,1319 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Interface"
+         title="Interface"
+         keywords="interface,basic elements"
+         description="program concepts, plot objects, terminology and interface"
+         version="0.6" date="nov2008">
+
+    <intro toc="yes">
+        This chapter shows how program
+        interface is organized and introduces
+        some basic concepts and misused terms
+        within its scope
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="PlotObjects"
+             title="Plot objects"
+             keywords="plot objects,plot elements,basic concepts,terminology,concepts"
+             description="a brief explanation on used terms">
+
+    The concepts defined in the following
+    section are doubtlessly strictly related
+    to program implementation.
+
+    <!--....................................-->
+    <subsection name="Frames"
+                title="Frames">
+
+    The main element of program interface is the
+    <a href="MainForm.html#PlotArea">plot area</a>,
+    the area in which data are rendered, constituted
+    by a <dfn>PaintBox Canvas</dfn>&nbsp;.
+    This <dfn>Canvas</dfn> contains one or more
+    <img src="./files/images/actions/PlotLayout.gif"/>&nbsp;&frame;s.
+
+    <scrap name="CanvasDefinition">
+        The Canvas is the drawing paper where
+        plot graphic objects are rendered.
+    </scrap>
+
+    The Canvas can contain one or more
+    <img src="./files/images/actions/PlotLayout.gif"/>&nbsp;&frame;s,
+    arranged in a defined <a href="_Layouts.html">layout</a>.
+
+    <p>
+        A <img src="./files/images/actions/Frame.gif"/>&nbsp;&frame;
+        is a rectangular region of a bidimensional
+        cartesian space characterized by a biunique
+        transformation that binds data values to screen
+        positions (the scale, which is normally linear).
+    </p>
+
+    <scrap name="FrameDefinition">
+        A <img src="./files/images/actions/Frame.gif"/>&nbsp;&frame;
+        is a screen representation of a bidimensional physical space;
+        it contains the following graphic objects that enhance
+        this representation:
+        <listO>
+          <it><a href="#GridAndAxes"><img src="./files/images/actions/GotoOrigin.gif"/>&nbsp;axes</a>,
+              <a href="#GridAndAxes"><img src="./files/images/actions/GridToggle.gif"/>&nbsp;grid</a>,
+              <a href="#Labels"><img src="./files/images/actions/AddText.gif"/>&nbsp;text labels</a>,
+              <a href="#Markers"><img src="./files/images/actions/AddMarker.gif"/>&nbsp;markers</a></it>
+        </listO>
+        
+        And, of course, some other objects that represents
+        sets of coordinates of the physical plane:
+        <listO>
+          <it><a href="#Tracks"><img src="./files/images/actions/Track.gif"/>&nbsp;&track;s</a>,
+              <a href="#Legend"><img src="./files/images/actions/LegendToggle.gif"/>&nbsp;legend</a></it>
+        </listO>
+    </scrap>
+
+    Each &frame; contains a set of
+    <img src="./files/images/actions/Track.gif"/>&nbsp;&track;s.
+
+    </subsection>
+    
+
+    
+    <!--....................................-->
+    <subsection name="Tracks"
+                title="Tracks">
+
+    The term <img src="./files/images/actions/Track.gif"/>&nbsp;&track;
+    indicates a set of ordered pairs of data, univocally
+    bound with pairs of pixel coordinates.
+    For example, considering a real function, its
+    numeric representation will consists of
+    a set of real numbers ordered respect their
+    corresponding abscissa values (also real numbers);
+    in a similar manner a polar function will be represented
+    by a set of complex numbers ordered respect an independent
+    parameter.
+
+    <scrap name="TrackDefinition">
+        A <img src="./files/images/actions/Track.gif"/>&nbsp;&track;
+        is an ordered set of data pairs representable on screen.
+    </scrap>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="Legend"
+                title="Legend">
+
+        The legend lists all &track;s contained
+        in &frame;; you can show/hide legend using
+        <action name="LegendToggle"/> action.
+        During certain <a name="Viewing.html">plot modes</a>
+        you can use legend to select &track;s, and
+        can change its position by dragging it with mouse.
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="GridAndAxes"
+                title="Grid and axes">
+
+        Grid and axes objects aid user to visualize
+        the physical space mapped on screen frame.
+        To modify grid lines use the following actions:
+        <action name="GridToggle"/>,
+        <action name="GridMore"/>,
+        <action name="GridLess"/>.
+    </subsection>
+
+
+    <!--....................................-->
+    <subsection name="Markers"
+                title="Markers">
+
+        A marker is a vertical (or horizontal) line
+        passing through a given value.
+        You can add a marker in the current frame using
+        <action name="AddMarker"/> action, or by the
+        <a href="DirectiveList.html">related directive</a>
+        placed in the <a href="Importing.html">data file</a>.
+
+    </subsection>
+    
+
+    <!--....................................-->
+    <subsection name="Labels"
+                title="Text labels">
+
+        A text label is a string bound at a certain
+        position.
+        You can add text in the current frame using
+        <action name="AddText"/> action, or by the
+        <a href="DirectiveList.html">related directive</a>
+        placed in the <a href="Importing.html">data file</a>.
+
+    </subsection>
+
+
+    <!--....................................-->
+    <subsection name="ProgramState"
+                title="Program state"
+                keywords="states">
+
+    Some <a href="Actions.html">actions</a> require
+    a target object: a lot of them apply on a &frame;
+    (like <action name="RemoveFrame"/>, <action name="FitToTracks"/> etc...),
+    other on a specific &track;
+    (<action name="MarkPoints"/>, <action name="TrackStatistics"/>, etc...);
+    in order to make easier passing these arguments to
+    <a href="Actions.html">actions</a>,
+    are introduced the state variables
+    <dfn>current frame</dfn> within plot and
+    <dfn>current track</dfn> within each &frame;,
+    both visible in the <a href="MainForm.html#Statusbar">Status bar</a>;
+    these state variables are modified during the
+    interation with plot area; see <a href="Viewing.html">Viewing</a>
+    section for detailed informations.
+
+    <HHseealso>
+        <target title="Viewing plots" href="Viewing.html"/>
+        <target title="Plot select mode" href="SelectMode.html"/>
+        <target title="Plot keys" href="PlotActions.html"/>
+    </HHseealso>
+
+    </subsection>
+
+    </section>
+
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ActionsTable"
+             title="Main actions"
+             keywords="actions (main interface)"
+             description="services provided by main interface">
+
+
+    An <txt>action</txt> is an implementation-useful concept
+    indicating a generic service provided by the program,
+    like <txt>save</txt> or <txt>quit</txt>.
+    Users can request an action interacting with program
+    interface (menu,toolbar,keyboard shortcuts).
+    Note that we will distinguish between actions provided
+    by main program interface and actions provided by the
+    plot subsystem.
+
+    The following table collects the services provided by
+    the main interface.
+    Most actions require an argument: a target &frame; or
+    &track;.
+    To view actual shortcuts associated to plot actions
+    look in your
+	<a href="OptionFile.html"><dir>MattPlot.ini</dir></a>
+	file.
+	The following table collects all user available
+    actions.
+
+    <table class="actions">
+        <thead> <c/> <c>Name</c> <c>Description</c> <c>Note</c> </thead>
+
+        <!-- ************************************************ -->
+        <row><c colspan="4" class="header">File</c></row>
+
+        <row>
+            <c><a name="actOpen"><img src="./files/images/actions/Open.gif"/></a></c>
+            <c><txt>Open</txt></c>
+            <c>Open a plot or data file</c>
+            <c>You can also drag the files into the form</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/Save.gif"/></c>
+            <c><txt>Save</txt></c>
+            <c>Save current plot as &mp; file</c>
+            <c>Current data and plot layout will be saved</c>
+        </row>
+        
+        <row>
+            <c><a name="actExport"><img src="./files/images/actions/Export.gif"/></a></c>
+            <c><txt>Export</txt></c>
+            <c>Export current plot to a given format</c>
+            <c>This is generally a lossy, irreversible transformation,
+               see <a href="Exporting.html">Exporting section</a></c>
+        </row>
+        
+        <!--
+        <row>
+            <c><a name="actExportFrame"><img src="./files/images/actions/ExportFrame.gif"/></a></c>
+            <c><txt>ExportFrame</txt></c>
+            <c>Export current frame as...</c>
+            <c>Choose a format in file dialog;
+               refer to <a href="Exporting.html">Exporting section</a></c>
+        </row> -->
+        
+        <row>
+            <c><a name="actExportFrameToText"><img src="./files/images/actions/ExportFrameToText.gif"/></a></c>
+            <c><txt>ExportFrameToText</txt></c>
+            <c>Export current &frame; tracks to a text file</c>
+            <c>This is a shortcut of the more general <txt>ExportFrame</txt></c>
+        </row>
+
+        <row>
+            <c><a name="actExportFrameToMatlab"><img src="./files/images/actions/ExportFrameToMatlab.gif"/></a></c>
+            <c><txt>ExportFrameToMatlab</txt></c>
+            <c>Export data to &matlab; workspace via <dir>m-file</dir></c>
+            <c>This is a shortcut of the more general <txt>ExportFrame</txt></c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/Print.gif"/></c>
+            <c><txt>Print</txt></c>
+            <c>Print current plot bitmap</c>
+            <c>See <a href="Printing.html">printing section</a></c>
+        </row>
+
+        <row>
+            <c><a name="actEditOptions"><img src="./files/images/actions/EditOptions.gif"/></a></c>
+            <c><txt>EditOptions</txt></c>
+            <c>Edit the <dir>ini</dir> file containing the non volatile application settings</c>
+            <c>Avoid to put this action in the toolbar, since
+               it calls <txt>ReadOptions</txt></c>
+        </row>
+        
+        <row>
+            <c><a name="actReadOptions"><img src="./files/images/actions/ReadOptions.gif"/></a></c>
+            <c><txt>ReadOptions</txt></c>
+            <c>Parse the <dir>ini</dir> file</c>
+            <c>Useful when you change the ini file with an external
+               editor; it rebuilds toolbar, so cannot be launched
+               from there</c>
+        </row>
+
+        <row>
+            <c><a name="actStoreOptions"><img src="./files/images/actions/StoreOptions.gif"/></a></c>
+            <c><txt>StoreOptions</txt></c>
+            <c>Save current options in the <dir>ini</dir> file</c>
+            <c>Useful to recreate a default <a href="OptionFile.html"><dir>MattPlot.ini</dir></a>
+               when missing</c>
+        </row>
+        
+        <row>
+            <c><a name="actSetDefaults"><img src="./files/images/actions/SetDefaults.gif"/></a></c>
+            <c><txt>SetDefaults</txt></c>
+            <c>Reset options to default values</c>
+            <c>Has the same effect of restarting program without <a href="OptionFile.html"><dir>MattPlot.ini</dir></a></c>
+        </row>
+        
+        <row>
+            <c><a name="actSetStylePlain"><img src="./files/images/actions/SetStylePlain.gif"/></a></c>
+            <c><txt>SetStylePlain</txt></c>
+            <c>A style example; this style is good for printing</c>
+            <c>Use <action name="StoreOptions"/> and see <a href="OptionFile.html"><dir>MattPlot.ini</dir></a> to view these customizations</c>
+        </row>
+        
+        <row>
+            <c><a name="actSetStylePSpice"><img src="./files/images/actions/SetStylePSpice.gif"/></a></c>
+            <c><txt>SetStylePSpice</txt></c>
+            <c>A style example</c>
+            <c>Use <action name="StoreOptions"/> and see <a href="OptionFile.html"><dir>MattPlot.ini</dir></a> to view these customizations</c>
+        </row>
+
+        <row>
+            <c><a name="actExit"><img src="./files/images/actions/Exit.gif"/></a></c>
+            <c><txt>Exit</txt></c>
+            <c>Quit program</c>
+            <c></c>
+        </row>
+
+        <!-- ************************************************ -->
+        <row><c colspan="4" class="header">Plot</c></row>
+
+        <row>
+            <c><img src="./files/images/actions/SelectMode.gif"/></c>
+            <c><a name="actSelectMode" href="SelectMode.html"><txt>SelectMode</txt></a></c>
+            <c>Switch to select mode</c>
+            <c>
+               In this mode you can modify plot layout by
+               dragging, adding or deleting frames and tracks
+            </c>
+        </row>
+        
+        <row>
+            <c><img src="./files/images/actions/EditMode.gif"/></c>
+            <c><a name="actEditMode" href="EditMode.html"><txt>EditMode</txt></a></c>
+            <c>Switch to edit mode</c>
+            <c>
+               In this mode you can modify tracks;
+               currently it includes only a crop tool
+            </c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/PanMode.gif"/></c>
+            <c><a name="actPanMode" href="PanMode.html"><txt>PanMode</txt></a></c>
+            <c>Switch to pan mode</c>
+            <c>In this mode you can modify &frame; mapped space offset</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/ZoomMode.gif"/></c>
+            <c><a name="actZoomMode" href="ZoomMode.html"><txt>ZoomMode</txt></a></c>
+            <c>Switch to zoom mode</c>
+            <c>In this mode you can modify &frame; mapped space scale</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/MeasureMode.gif"/></c>
+            <c><a name="actMeasureMode" href="MeasureMode.html"><txt>MeasureMode</txt></a></c>
+            <c>Switch to measure mode</c>
+            <c>In this mode you can perform simple measures on tracks</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/PenMode.gif"/></c>
+            <c><a name="actPenMode" href="PenMode.html"><txt>PenMode</txt></a></c>
+            <c>Switch to pen mode</c>
+            <c>In this mode you can scribble on plot canvas;
+               those marks will be cleaned at next refresh, however
+               they remains on prints and snapshoots</c>
+        </row>
+
+        <row>
+            <c><a name="actLockX"><img src="./files/images/actions/LockX.gif"/></a></c>
+            <c><txt>LockX</txt></c>
+            <c>Synchronize frames abscissa scale</c>
+            <c>Operations on current &frame; are reflected on the others,
+               useful when comparing more frames</c>
+        </row>
+        
+        <row>
+            <c><a name="actLockY"><img src="./files/images/actions/LockY.gif"/></a></c>
+            <c><txt>LockY</txt></c>
+            <c>Synchronize frames ordinate scale</c>
+            <c>Operations on current &frame; are reflected on the others,
+               useful when comparing more frames</c>
+        </row>
+
+        <row>
+            <c><a name="actClearAll"><img src="./files/images/actions/ClearAll.gif"/></a></c>
+            <c><txt>ClearAll</txt></c>
+            <c>Remove all frames and &track;, emptying the plot</c>
+            <c>This action cannot be undone</c>
+        </row>
+        
+        <row>
+            <c><a name="actSnapshot"><img src="./files/images/actions/Snapshot.gif"/></a></c>
+            <c><txt>Snapshot</txt></c>
+            <c>Take a plot bitmap snapshot and save in
+               current directory with a default name</c>
+            <c>This overwrites last snapshot
+               See also <option name="SnapshotAction"/> option</c>
+        </row>
+
+        <row>
+            <c><a name="actRefresh"><img src="./files/images/actions/Refresh.gif"/></a></c>
+            <c><txt>Refresh</txt></c>
+            <c>Force a repaint of plot canvas</c>
+            <c>Useful when you want to remove volatile scribbles</c>
+        </row>
+
+        <row>
+            <c><a name="actMeasureAbscissa"><img src="./files/images/actions/MeasureAbscissa.gif"/></a></c>
+            <c><txt>MeasureAbscissa</txt></c>
+            <c>Enable instant abscissa measure</c>
+            <c>Affects only measure mode</c>
+        </row>
+        
+        <row>
+            <c><a name="actMeasureOrdinate"><img src="./files/images/actions/MeasureOrdinate.gif"/></a></c>
+            <c><txt>MeasureOrdinate</txt></c>
+            <c>Enable instant ordinate measure</c>
+            <c>Affects only measure mode</c>
+        </row>
+        
+        <row>
+            <c><a name="actMeasureSlope"><img src="./files/images/actions/MeasureSlope.gif"/></a></c>
+            <c><txt>MeasureSlope</txt></c>
+            <c>Enable instant slope measure</c>
+            <c>Affects only measure mode</c>
+        </row>
+        
+        <row>
+            <c><a name="actViewMeasureMarkers"><img src="./files/images/actions/ViewMeasureMarkers.gif"/></a></c>
+            <c><txt>ViewMeasureMarkers</txt></c>
+            <c>Display measure markers</c>
+            <c>See also <a href="MeasureMode.html"><txt>measure mode</txt></a> and
+               <option name="MeasureMarkers"/> option</c>
+        </row>
+        
+        <row>
+            <c><a name="actProperties"><img src="./files/images/actions/Properties.gif"/></a></c>
+            <c><txt>Properties</txt></c>
+            <c>Edit generic object properties</c>
+            <c>Applies on last clicked object</c>
+        </row>
+        
+        <row>
+            <c><a name="actRemove"><img src="./files/images/actions/Remove.gif"/></a></c>
+            <c><txt>Remove</txt></c>
+            <c>Remove the current selected object</c>
+            <c>Applies on last clicked object</c>
+        </row>
+        
+
+        
+        <row>
+            <c><a name="actStayOnTop"><img src="./files/images/actions/StayOnTop.gif"/></a></c>
+            <c><txt>StayOnTop</txt></c>
+            <c>Keep the program <a href="MainForm">main form</a> always visible</c>
+            <c>Force main form to stay on top (z order) when focusing other forms</c>
+        </row>
+        
+        <row>
+            <c><a name="actExecMacro"><img src="./files/images/actions/ExecMacro.gif"/></a></c>
+            <c><txt>ExecMacro</txt></c>
+            <c>Execute the macro defined in <option name="Macro"/> option entry</c>
+            <c>Not yet implemented</c>
+        </row>
+
+        <!-- ************************************************ -->
+        <row><c colspan="4" class="header">Frame</c></row>
+        
+        <row>
+            <c><a name="actAddFrame"><img src="./files/images/actions/AddFrame.gif"/></a></c>
+            <c><txt>AddFrame</txt></c>
+            <c>Create a new empty &frame;</c>
+            <c></c>
+        </row>
+
+        <row>
+            <c><a name="actRemoveFrame"><img src="./files/images/actions/RemoveFrame.gif"/></a></c>
+            <c><txt>RemoveFrame</txt></c>
+            <c>Delete a frame</c>
+            <c>Applies on current &frame;; same effect of dragging &frame; outside the form</c>
+        </row>
+
+        <row>
+            <c><a name="actFrameProperties"><img src="./files/images/actions/FrameProperties.gif"/></a></c>
+            <c><txt>FrameProperties</txt></c>
+            <c>Edit frame properties</c>
+            <c>Applies on current &frame;</c>
+        </row>
+        
+        <row>
+            <c><a name="actClearFrame"><img src="./files/images/actions/ClearFrame.gif"/></a></c>
+            <c><txt>ClearFrame</txt></c>
+            <c>Remove all &track; in current &frame;</c>
+            <c>This action cannot be undone</c>
+        </row>
+  
+        <row>
+            <c><a name="actAddMarker"><img src="./files/images/actions/AddMarker.gif"/></a></c>
+            <c><txt>AddMarker</txt></c>
+            <c>Insert a vertical/horizontal line at a given value</c>
+            <c>Applies on current &frame;</c>
+        </row>
+        
+        <row>
+            <c><a name="actAddText"><img src="./files/images/actions/AddText.gif"/></a></c>
+            <c><txt>AddText</txt></c>
+            <c>Insert a text label at given coordinates</c>
+            <c>Single line text (no word wrap),
+               applies on current &frame;</c>
+        </row>
+
+        <row>
+            <c><a name="actGotoOrigin"><img src="./files/images/actions/GotoOrigin.gif"/></a></c>
+            <c><txt>GotoOrigin</txt></c>
+            <c>Force space offset to view frame axes origin</c>
+            <c>Applies on current &frame;</c>
+        </row>
+        
+        <row>
+            <c><a name="actFitToAxes"><img src="./files/images/actions/FitToAxes.gif"/></a></c>
+            <c><txt>FitToAxes</txt></c>
+            <c>Change &frame; scale to fit all contained &track;s and axes</c>
+            <c>Applies on current &frame;</c>
+        </row>
+
+        <row>
+            <c><a name="actFitToTracks"><img src="./files/images/actions/FitToTracks.gif"/></a></c>
+            <c><txt>FitToTracks</txt></c>
+            <c>Change &frame; scale to fit all contained &track;s</c>
+            <c>Applies on current &frame;</c>
+        </row>
+        
+        <row>
+            <c><a name="actFitToTrack"><img src="./files/images/actions/FitToTrack.gif"/></a></c>
+            <c><txt>FitToTrack</txt></c>
+            <c>Change &frame; scale to fit current &track;</c>
+            <c>Applies on current &frame;</c>
+        </row>
+
+        <row>
+            <c><a name="actZoomIn"><img src="./files/images/actions/ZoomIn.gif"/></a></c>
+            <c><txt>ZoomIn</txt></c>
+            <c>Change scale to map less space (zoom in)</c>
+            <c>This default zoom is introduced to follow some
+               users practice; it would be better use the quick
+               toggle to zoom mode</c>
+        </row>
+
+        <row>
+            <c><a name="actZoomOut"><img src="./files/images/actions/ZoomOut.gif"/></a></c>
+            <c><txt>ZoomOut</txt></c>
+            <c>Change scale to map more space (zoom out)</c>
+            <c>Same as previous</c>
+        </row>
+
+        <row>
+            <c><a name="actToggleScaleX"><img src="./files/images/actions/ToggleScaleX.gif"/></a></c>
+            <c><txt>ToggleScaleX</txt></c>
+            <c>Use linear or logarithmic scale for abscissa axis</c>
+            <c><cpp>x=KX+X0 / x=KLogX+X1</cpp></c>
+        </row>
+
+        <row>
+            <c><a name="actToggleScaleY"><img src="./files/images/actions/ToggleScaleY.gif"/></a></c>
+            <c><txt>ToggleScaleY</txt></c>
+            <c>Use linear or logarithmic scale for ordinate axis</c>
+            <c><cpp>y=KY+Y0 / y=KLogY+Y1</cpp></c>
+        </row>
+
+        <row>
+            <c><a name="actLegendToggle"><img src="./files/images/actions/LegendToggle.gif"/></a></c>
+            <c><txt>LegendToggle</txt></c>
+            <c>Show/hide legend</c>
+            <c>Applies on current &frame;; you can also drag legend</c>
+        </row>
+
+        <row>
+            <c><a name="actGridToggle"><img src="./files/images/actions/GridToggle.gif"/></a></c>
+            <c><txt>GridToggle</txt></c>
+            <c>Show/hide grid</c>
+            <c>Applies on current &frame;</c>
+        </row>
+
+        <row>
+            <c><a name="actGridMore"><img src="./files/images/actions/GridMore.gif"/></a></c>
+            <c><txt>GridMore</txt></c>
+            <c>Thicken (shrink) grid lines</c>
+            <c>Applies on current &frame;</c>
+        </row>
+
+        <row>
+            <c><a name="actGridLess"><img src="./files/images/actions/GridLess.gif"/></a></c>
+            <c><txt>GridLess</txt></c>
+            <c>Thin (expand) grid lines</c>
+            <c>Applies on current &frame;</c>
+        </row>
+
+
+        <!-- ************************************************ -->
+        <row><c colspan="4" class="header">Track</c></row>
+
+        <row>
+            <c><a name="actAddTrack"><img src="./files/images/actions/AddTrack.gif"/></a></c>
+            <c><txt>AddTrack</txt></c>
+            <c>Create a new &track; in current &frame;</c>
+            <c></c>
+        </row>
+
+        <row>
+            <c><a name="actRemoveTrack"><img src="./files/images/actions/RemoveTrack.gif"/></a></c>
+            <c><txt>RemoveTrack</txt></c>
+            <c>Delete current &track;</c>
+            <c>Same effect of dragging &track; outside the form</c>
+        </row>
+
+        <row>
+            <c><a name="actTrackProperties"><img src="./files/images/actions/TrackProperties.gif"/></a></c>
+            <c><txt>TrackProperties</txt></c>
+            <c>Edit &track; properties</c>
+            <c>Applies on current &track;</c>
+        </row>
+        
+        <row>
+            <c><a name="actMarkPoints"><img src="./files/images/actions/MarkPoints.gif"/></a></c>
+            <c><txt>MarkPoints</txt></c>
+            <c>Plot &track; marking its points</c>
+            <c>See also <option name ="TrackPointSize"/> option</c>
+        </row>
+
+        <row>
+            <c><a name="actShowCoords"><img src="./files/images/actions/ShowCoords.gif"/></a></c>
+            <c><txt>ShowCoords</txt></c>
+            <c>Show &track; points coordinates</c>
+            <c>Coordinates are shown when point distance is greater than
+               the value set in <option name ="TrackCoordsDist"/> option</c>
+        </row>
+
+        <row>
+            <c><a name="actStrokeLines"><img src="./files/images/actions/StrokeLines.gif"/></a></c>
+            <c><txt>StrokeLines</txt></c>
+            <c>Plot &track; drawing linear interpolation lines</c>
+            <c>Applies on current &track;</c>
+        </row>
+
+        <row>
+            <c><a name="actFillArea"><img src="./files/images/actions/FillArea.gif"/></a></c>
+            <c><txt>FillArea</txt></c>
+            <c>Plot &track; filling subtended area</c>
+            <c>Applies on current &track;</c>
+        </row>
+
+        <row>
+            <c><a name="actDrawHistograms"><img src="./files/images/actions/DrawHistograms.gif"/></a></c>
+            <c><txt>DrawHistograms</txt></c>
+            <c>Plot &track; painting a rectangle for each point</c>
+            <c>Applies on current &track;</c>
+        </row>
+
+        <row>
+            <c><a name="actTrackData"><img src="./files/images/actions/TrackData.gif"/></a></c>
+            <c><txt>TrackData</txt></c>
+            <c>Edit &track; data manually</c>
+            <c>See <a href="EditTrackData.html#ManualEdit">here</a> for details</c>
+        </row>
+        
+        <row>
+            <c><a name="actTrackTransform"><img src="./files/images/actions/TrackTransform.gif"/></a></c>
+            <c><txt>TrackTransform</txt></c>
+            <c>Apply a transformation on current &track;</c>
+            <c>For example <a href="EditTrackData.html#UsingEditMode">cropping</a>
+               or filtering;
+               see <a href="Transforming.html">Transforming</a> section</c>
+        </row>
+
+        <row>
+            <c><a name="actTrackStatistics"><img src="./files/images/actions/TrackStatistics.gif"/></a></c>
+            <c><txt>TrackStatistics</txt></c>
+            <c>Display current &track; quantities</c>
+            <c>Relative to overall domain, applies on current &track;</c>
+        </row>
+
+
+        <!-- ************************************************ -->
+        <row><c colspan="4" class="header">Tools</c></row>
+
+        <row>
+            <c><a name="actShowTree"><img src="./files/images/actions/ShowTree.gif"/></a></c>
+            <c><txt>ShowTree</txt></c>
+            <c>Show plot tree of contained frames and tracks</c>
+            <c>Drag and drop should be enabled; 
+               remember that you can also modify plot
+               layout switching to
+               <a href="SelectMode.html">Select mode</a>
+               and drag frames and tracks with mouse</c>
+        </row>
+        
+        <row>
+            <c><a name="actShowPane"><img src="./files/images/actions/ShowPane.gif"/></a></c>
+            <c><txt>ShowPane</txt></c>
+            <c>Show/hide a control that displays measured
+               quantities relative to selected &track;</c>
+            <c>Use it with <a href="MeasureMode.html">Measure mode</a>.
+               See also <option name="AutoPane"/> option.</c>
+        </row>
+
+        <row>
+            <c><a name="actShowLog"><img src="./files/images/actions/ShowLog.gif"/></a></c>
+            <c><txt>ShowLog</txt></c>
+            <c>Toggle log window</c>
+            <c>Log is useful to know what is happening</c>
+        </row>
+        
+        <row>
+            <c><a name="actCompute"><img src="./files/images/actions/Compute.gif"/></a></c>
+            <c><txt>Compute</txt></c>
+            <c>Elaboration tool: perform operations between tracks</c>
+            <c>Not yet available</c>
+        </row>
+
+        <row>
+            <c><a name="actTextEditor"><img src="./files/images/actions/TextEditor.gif"/></a></c>
+            <c><txt>TextEditor</txt></c>
+            <c>Run an instance of embedded text editor</c>
+            <c>Take advantage of syntax highlighting to edit
+               data or ini files</c>
+        </row>
+
+        <row>
+            <c><a name="actAbort"><img src="./files/images/actions/Abort.gif"/></a></c>
+            <c><txt>Abort</txt></c>
+            <c>Stop current long-time action</c>
+            <c>Typically when importing or computing a large
+               amount of data.
+               Advice: remember its keyboard shortcut!</c>
+        </row>
+
+        <!-- ************************************************ -->
+        <row><c colspan="4" class="header">Help</c></row>
+
+        <row>
+            <c><img src="./files/images/actions/Update.gif"/></c>
+            <c><txt>Update</txt></c>
+            <c>Manually check for updates</c>
+            <c>This simply opens current &mp; web site
+               address in your default browser</c>
+        </row>
+        <row>
+            <c><img src="./files/images/actions/Demo.gif"/></c>
+            <c><txt>Demo</txt></c>
+            <c>Add some frames and tracks to demonstrate program capabilities</c>
+            <c>Use this for training purposes</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/ExperimentalStuff.gif"/></c>
+            <c><txt>ExperimentalStuff</txt></c>
+            <c>Another demo with ugly stuff</c>
+            <c>Not recommended features</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/HelpContents.gif"/></c>
+            <c><txt>HelpContents</txt></c>
+            <c>Opens this file</c>
+            <c>Shortcut is fixed to <txt>F1</txt>.
+               Uses <cite>HtmlHelp</cite> library
+               (see <a href="OnHelp.html">here</a>)</c>
+        </row>
+
+        <row>
+            <c><img src="./files/images/actions/About.gif"/></c>
+            <c><txt>About</txt></c>
+            <c>Display program informations</c>
+            <c>Also contains a simplified performance indicator</c>
+        </row>
+        
+        <row>
+            <c><img src="./files/images/actions/EasterEgg.gif"/></c>
+            <c><txt>EasterEgg</txt></c>
+            <c></c>
+            <c>Ehmm...</c>
+        </row>
+
+    </table>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="PlotActions"
+             title="Plot actions"
+             keywords="actions (plot),plot keys"
+             description="services provided by plot subsystem">
+
+    Beside main interface services actions there are
+    a more specific ones provided by plot subsystem.
+    Plot actions are characterized by having different
+    effects according to current plot state (mode).
+
+    Plot actions are accessible by key shortcuts only;
+	the actual key bindings are contained in
+	<a href="OptionFile.html"><dir>MattPlot.ini</dir></a>
+	file.
+
+        <table hcol="1">
+            <thead> <c>PlotKey</c> <c>Select</c> <c>Edit</c> <c>Pan</c> <c>Zoom</c> <c>Measure</c> <c>Pen</c> </thead>
+
+            <row>
+                <c>PanToggle</c>
+                <c colspan="6">Temporary toggle to Pan mode</c>
+            </row>
+
+            <row>
+                <c>ZoomToggle</c>
+                <c colspan="6">Temporary toggle to Zoom mode</c>
+            </row>
+
+            <row>
+                <c>Cycle</c>
+                <c colspan="6">Select next track, fitting scale and putting in foreground</c>
+            </row>
+
+            <row>
+                <c>Reset</c>
+                <c>Select first track</c>
+                <c></c>
+                <c>Go to axes origin</c>
+                <c>Fit scale to tracks</c>
+                <c>Select first track</c>
+                <c>Go to axes origin</c>
+            </row>
+
+            <row>
+                <c>Do</c>
+                <c>Select next track</c>
+                <c></c>
+                <c>Go to axes origin</c>
+                <c>Default zoom in (respect cursor pos)</c>
+                <c>Select next track</c>
+                <c>Go to axes origin</c>
+            </row>
+
+            <row>
+                <c>Prior</c>
+                <c colspan="6">Select previous track and fit scale</c>
+            </row>
+
+            <row>
+                <c>Next</c>
+                <c colspan="6">Select next track and fit scale</c>
+            </row>
+
+            <row>
+                <c>Minus</c>
+                <c>Select previous track</c>
+                <c></c>
+                <c>Negative horizontal Pan of frame`s width</c>
+                <c>Default zoom out (respect cursor pos)</c>
+                <c>Select previous track</c>
+                <c>Negative horizontal Pan of frame`s width</c>
+            </row>
+
+            <row>
+                <c>Plus</c>
+                <c>Select next track</c>
+                <c></c>
+                <c>Positive horizontal Pan of frame`s width</c>
+                <c>Default zoom in (respect cursor pos)</c>
+                <c>Select next track</c>
+                <c>Positive horizontal Pan of frame`s width</c>
+            </row>
+
+            <row>
+                <c>Start</c>
+                <c>Select first track</c>
+                <c></c>
+                <c>(not yet available) Go to current track start</c>
+                <c>Fit scale to current track</c>
+                <c>Select first track</c>
+                <c>(not yet available) Go to current track start</c>
+            </row>
+
+            <row>
+                <c>End</c>
+                <c>Select last track</c>
+                <c></c>
+                <c>(not yet available) Go to current track end</c>
+                <c>Fit scale to current track</c>
+                <c>Select last track</c>
+                <c>(not yet available) Go to current track end</c>
+            </row>
+
+            <row>
+                <c>Up</c>
+                <c></c>
+                <c>Select previous track</c>
+                <c>Default pan up</c>
+                <c>Default y zoom out (respect cursor pos)</c>
+                <c>Select previous track</c>
+                <c>Default pan up</c>
+            </row>
+
+            <row>
+                <c>Down</c>
+                <c></c>
+                <c>Select next track</c>
+                <c>Default pan down</c>
+                <c>Default y zoom in (respect cursor pos)</c>
+                <c>Select next track</c>
+                <c>Default pan down</c>
+            </row>
+
+            <row>
+                <c>Left</c>
+                <c></c>
+                <c>Select previous track</c>
+                <c>Default pan left</c>
+                <c>Default x zoom out (respect cursor pos)</c>
+                <c>Move cursor left of one pixel</c>
+                <c>Default pan left</c>
+            </row>
+
+            <row>
+                <c>Right</c>
+                <c></c>
+                <c>Select next track</c>
+                <c>Default pan right</c>
+                <c>Default x zoom in (respect cursor pos)</c>
+                <c>Move cursor right of one pixel</c>
+                <c>Default pan right</c>
+            </row>
+
+        </table>
+
+        <HHseealso>
+            <target title="Select mode" href="SelectMode.html"/>
+            <target title="Edit mode" href="EditMode.html"/>
+            <target title="Pan mode" href="PanMode.html"/>
+            <target title="Zoom mode" href="ZoomMode.html"/>
+            <target title="Measure mode" href="MeasureMode.html"/>
+            <target title="Pen mode" href="PenMode.html"/>
+            <target title="Related option entries" href="OptionsDescription.html#optPlotKeys"/>
+            <target title="Key strings table" href="_KeyCodes.html"/>
+            <target title="Key bindings" href="KeyBindings.html"/>
+        </HHseealso>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="MainForm"
+             title="The main form"
+             keywords="main form"
+             description="a glance to program interface">
+
+    The <a href="_MainForm.html">main program window</a>
+    can be divided in the following parts:
+
+    <listO>
+        <it>Main menu: contains all user <a href="ActionsTable.html">actions</a></it>
+        <it>Toolbar: customizable buttons to trigger most used <a href="ActionsTable.html">actions</a></it>
+        <it>Plot area: the Paintbox where frames are rendered</it>
+        <it>Statusbar: contains status informations like current point,
+            action hints, last log entry</it>
+    </listO>
+    
+    <p style="text-align: center;"><img src="./files/images/MainForm.png"/></p>
+
+
+    <!--....................................-->
+    <subsection name="Mainmenu"
+                title="Main menu"
+                keywords="main menu">
+
+    Placed under the program caption there is the
+    main menu.
+    It ha a fixed structure and contains all
+    actions available to user; it can be disabled
+    changing the <option name="EnableMainMenu"/>
+    option entry in the <a href="OptionFile.html">option file</a>.
+    <p style="text-align: center;"><img src="./files/images/MainMenu.gif"/></p>
+    </subsection>
+    
+
+    <!--....................................-->
+    <subsection name="Toolbar"
+                title="Toolbar"
+                keywords="toolbar">
+
+    Placed under the main menu there is the toolbar,
+    a region containing buttons that fire an
+    action subset supposed to contain the
+    most frequently used ones.
+    The toolbar can be disabled with
+    <option name="EnableToolbar"/>
+    option and customized editing the <option name="Toolbar"/>
+    option entry in the <a href="OptionFile.html">option file</a>.
+
+    <HHseealso>
+        <target title="Customizing toolbar question" href="Faqs.html#faq.customizing.customtoolbar"/>
+        <target title="Customizing" href="Customizing.html"/>
+        <target title="Enable toolbar option" href="OptionsDescription.html#optEnableToolbar"/>
+        <target title="Toolbar buttons option" href="OptionsDescription.html#optToolbar"/>
+    </HHseealso>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="PlotArea"
+                title="Plot area"
+                keywords="plot area,plot canvas">
+
+    The inner body of the main form is
+    devoted to &track;s rendering.
+    One or more frames are arranged according
+    to a <a href="_Layouts.html">layout</a>.
+
+    <p style="text-align: center;"><img src="./files/images/Layouts.png"/></p>
+
+    You can interact with plot area in a
+    number of ways; see
+    <a href="Viewing.html">Viewing</a> section
+    for detailed informations.
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="Statusbar"
+                title="Statusbar"
+                keywords="statusbar">
+
+    <underconstruction/>
+    Located at the bottom of the main form,
+    it displays some infos.
+    Clicking on statusbar has the same effect as
+    <action name="ShowLog"/> action.
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="Shortcuts"
+                title="Keyboard shortcuts"
+                keywords="shortcuts,keys">
+
+    The most useful actions are associated
+    to keyboard shortcuts, customizable by
+    editing the option file.
+    Shortcuts are very important for actions like
+    <action name="Abort"/> and <action name="Snapshot"/>.
+    </subsection>
+
+    <HHseealso>
+        <target title="Option file" href="OptionFile.html"/>
+        <target title="Customizing" href="Customizing.html"/>
+        <target title="Key strings" href="_KeyCodes.html"/>
+        <target title="Key bindings" href="KeyBindings.html"/>
+        <target title="Plot keys" href="PlotActions.html"/>
+    </HHseealso>
+
+    </section>
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="KeyBindings"
+             title="Default key bindings"
+             keywords="shortcuts,key associations,key bindings"
+             description="default key associations">
+
+    Action keys are customizable editing the
+    <option name="ShortCuts"/> options;
+    the following figure summarizes the default
+    bindings:
+    <p><img src="./files/images/keyboard.gif"/></p>
+    
+    <HHseealso>
+        <target title="Key strings table" href="_KeyCodes.html"/>
+        <target title="Related option entries" href="OptionsDescription.html#optShortCuts"/>
+        <target title="Plot keys" href="PlotActions.html"/>
+    </HHseealso>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="PaneGrid"
+             title="The pane grid"
+             keywords="grid (pane),pane grid"
+             description="a way to monitor some chosen quantities">
+
+    <div style="float: right; margin-left: 1em;"><img src="./files/images/GridPane.gif"/></div>
+    With this control you can view some quantities
+    measured on current selected track during
+    <a href="MeasureMode.html">Measure mode</a>.
+
+    <scrap name="CopyPaneToClipboard">
+
+        You can copy these values in the clipboard
+        selecting them and using
+        <img src="./files/images/actions/EditCopyAll.gif"/>&nbsp;<txt>Copy cells</txt>
+        in right click menu.
+    </scrap>
+
+    Put the following strings in the
+    <option name="PaneQuantities"/> option
+    to customize displayed quantities.
+
+        <table>
+        <thead> <c>Label</c> <c>Description</c> <c>Note</c> </thead>
+
+        <!-- ************************************************ -->
+        <row><c colspan="3" class="header">Point quantities</c></row>
+
+        <row>
+            <c><txt>y</txt></c>
+            <c>Measure point ordinate</c>
+            <c>Is the screen coordinate in physical space</c>
+        </row>
+        
+        <row>
+            <c><txt>x</txt></c>
+            <c>Measure point abscissa</c>
+            <c>Is the screen coordinate in physical space</c>
+        </row>
+        
+        <row>
+            <c><txt>dy</txt></c>
+            <c>Ordinate difference with contiguous point</c>
+            <c></c>
+        </row>
+
+        <row>
+            <c><txt>dx</txt></c>
+            <c>Abscissa difference with contiguous point</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>dydx</txt></c>
+            <c>Derivative (dy/dx)</c>
+            <c></c>
+        </row>
+        
+        <!-- ************************************************ -->
+        <row><c colspan="3" class="header">Interval quantities</c></row>
+
+        <row>
+            <c><txt>n</txt></c>
+            <c>Number of embraced samples in selected interval</c>
+            <c>All the following interval quantities
+               are commputed using this set of samples</c>
+        </row>
+
+        <row>
+            <c><txt>Dt</txt></c>
+            <c>Independent variable interval</c>
+            <c>Equal to <txt>tmax-tmin</txt></c>
+        </row>
+        
+        <row>
+            <c><txt>tmin</txt></c>
+            <c>First value of independent variable interval</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>tmax</txt></c>
+            <c>Last value of independent variable interval</c>
+            <c></c>
+        </row>
+
+        <row>
+            <c><txt>Dy</txt></c>
+            <c>Dependent variable variation</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>DY</txt></c>
+            <c>Overall dependent variable sweep</c>
+            <c>Equal to <txt>ymax-ymin</txt></c>
+        </row>
+
+        <row>
+            <c><txt>ymin</txt></c>
+            <c>Minimum ordinate value</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>ymax</txt></c>
+            <c>Maximum ordinate value</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>DyDt</txt></c>
+            <c>Incremental ratio</c>
+            <c>Equal to <txt>Dy/Dt</txt></c>
+        </row>
+        
+        <row>
+            <c><txt>Sy</txt></c>
+            <c>Partial sum of y·dt</c>
+            <c>This approximates the integral between <txt>tmin</txt> and <txt>tmax</txt></c>
+        </row>
+        
+        <row>
+            <c><txt>avg</txt></c>
+            <c>Mean value, average</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>rms</txt></c>
+            <c>Root Mean Square</c>
+            <c></c>
+        </row>
+        
+        <row>
+            <c><txt>std</txt></c>
+            <c>Standard deviation</c>
+            <c>A way to represent the fluctuation of a signal
+               around its average value.
+               Defined as the square-root of the average of the
+               deviations squared, where the deviation is the
+               difference between a sample and the mean.
+               If the data distribution is approximately normal then about
+               68% of the values are within <ex>(avg±std)</ex>,
+               about 95% of the values are within <ex>(avg±2·std)</ex> and
+               about 99.7% lie within <ex>(avg±3·std)</ex>.
+               For general distribution consider the Chebyshev's inequality:
+               no more than <ex>1/k²</ex> of the values are more than
+               <ex>k·std</ex> away from the mean.</c>
+        </row>
+        
+        <row>
+            <c><txt>std%</txt></c>
+            <c>Deviation percentage respect mean</c>
+            <c>Defined as <txt>100·2.576·std/avg</txt>,
+               represent the half band in which falls
+               at least the 85% of samples
+               (99% for normal distributions).
+               </c>
+        </row>
+
+        <row>
+            <c><txt>mad</txt></c>
+            <c>Mean Absolute Deviation (unavailable)</c>
+            <c>Another way to express how much the signal
+               vary rexpect its average value.
+               Defined as the average difference respect
+               mean value. This quantity should be unavailable
+               because requires two passes.</c>
+        </row>
+
+        <row>
+            <c><txt>var%</txt></c>
+            <c>Maximum percentual variation respect mean</c>
+            <c>Defined as <txt>100 * max(ymax-avg,avg-ymin)/avg</txt></c>
+        </row>
+        </table>
+        
+    <scrap name="AbscissaAndIndepVar">
+        Note the symbols I'm using:
+        in general the abscissa <txt>x</txt> and
+        the independent variable <txt>t</txt> have
+        a different meaning: they coincide for real
+        tracks, but not for complex (parametric) ones.
+    </scrap>
+
+    <HHseealso>
+        <target title="The measure mode" href="MeasureMode.html"/>
+        <target title="AutoPane option" href="OptionsDescription.html#optAutoPane"/>
+        <target title="MeasureMarkers option" href="OptionsDescription.html#optMeasureMarkers"/>
+    </HHseealso>
+
+    </section>
+    
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Log"
+             title="The activity log"
+             keywords="log"
+             description="about activity log">
+
+    &mp; records meticulously all his
+    activity in a log; when something goes
+    wrong it may be a good idea inspect its
+    lines.
+    <p>
+    The log window can be opened by
+    <action name="ShowLog"/>
+    action or clicking on the statusbar;
+    remember that you can use mouse to drag
+    and dock the log in the place you want,
+    and to select and copy its content.
+    </p>
+    The log can also be useful during
+    <a href="MeasureMode.html">Measure mode</a>
+    to collect point coordinates.
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

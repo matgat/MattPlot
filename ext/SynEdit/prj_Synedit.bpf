@@ -1,0 +1,26 @@
+//---------------------------------------------------------------------------
+#include <vcl.h>
+#pragma hdrstop
+USEUNIT("Source\SynTextDrawer.pas");
+USEUNIT("Source\SynEdit.pas");
+USEUNIT("Source\SynEditHighlighter.pas");
+USEUNIT("Source\SynEditKbdHandler.pas");
+USEUNIT("Source\SynEditKeyCmds.pas");
+USEUNIT("Source\SynEditKeyConst.pas");
+USEUNIT("Source\SynEditMiscClasses.pas");
+USEUNIT("Source\SynEditMiscProcs.pas");
+USEUNIT("Source\SynEditSearch.pas");
+USEUNIT("Source\SynEditStrConst.pas");
+USEUNIT("Source\SynEditTextBuffer.pas");
+USEUNIT("Source\SynEditTypes.pas");
+USEUNIT("Source\SynEditWordWrap.pas");
+USEUNIT("Source\SynHighlighterGeneral.pas");
+USEUNIT("Source\SynHighlighterIni.pas");
+USEUNIT("Source\SynHighlighterMulti.pas");
+USEUNIT("Source\SynHighlighterXML.pas");
+USEUNIT("Source\SynRegExpr.pas");
+//---------------------------------------------------------------------------
+#define Library
+
+
+ 

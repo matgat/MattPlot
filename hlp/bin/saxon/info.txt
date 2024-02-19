@@ -1,0 +1,3 @@
+saxon.exe: instant saxon, requires the old Microsoft virtual machine
+java: java saxon, requires a java runtime
+dnet: .net saxon, requires .net framework 1.1

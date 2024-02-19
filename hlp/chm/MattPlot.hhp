@@ -1,0 +1,58 @@
+[OPTIONS]
+Auto Index=Yes
+Compatibility=1.1 or later
+Compiled file=..\..\res\Other\MattPlot.chm
+Contents file=TOC.hhc
+Default Window=Main
+Default topic=html\Welcome.html
+Display compile progress=Yes
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x409 Inglese (Stati Uniti)
+Title=MattPlot Help
+
+[WINDOWS]
+Main="MattPlot help","TOC.hhc","Index.hhk","html\Welcome.html","html\Welcome.html",,,,,0x40520,220,0x10304e,[10,10,810,810],,0x10000,,,,,0
+Scrap="Scrap","TOC.hhc","Index.hhk","html\Welcome.html","html\Welcome.html",,,,,0x61500,200,0x0,[271,372,593,566],,,,,,,0
+
+[FILES]
+html\files\images\CSS\bkg_Hrules24.gif
+html\files\images\CSS\pad_B.gif
+html\files\images\CSS\pad_BL.gif
+html\files\images\CSS\pad_BR.gif
+html\files\images\CSS\pad_L.gif
+html\files\images\CSS\pad_R.gif
+html\files\images\CSS\pad_T.gif
+html\files\images\CSS\pad_TL.gif
+html\files\images\CSS\pad_TR.gif
+html\files\images\CSS\scrap_B.gif
+html\files\images\CSS\scrap_BL.gif
+html\files\images\CSS\scrap_BR.gif
+html\files\images\CSS\scrap_L.gif
+html\files\images\CSS\scrap_R.gif
+html\files\images\CSS\scrap_T.gif
+html\files\images\CSS\scrap_TL.gif
+html\files\images\CSS\scrap_TR.gif
+html\files\images\CSS\tab_l_active.gif
+html\files\images\CSS\tab_l.gif
+html\files\images\CSS\tab_r_active.gif
+html\files\images\CSS\tab_r.gif
+html\files\images\CSS\tab_b.gif
+html\files\images\CSS\ListQ.gif
+html\files\images\CSS\ListO.gif
+html\files\images\CSS\ListD.gif
+html\files\images\CSS\paper.gif
+html\Welcome.html
+
+[ALIAS]
+#include hlp_MattPlot.ali
+
+[MAP]
+#include hlp_MattPlot.h
+
+[TEXT POPUPS]
+hlp_MattPlot.h
+Popups.txt
+
+[INFOTYPES]
+

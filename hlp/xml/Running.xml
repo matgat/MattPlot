@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Running"
+         title="Running program"
+         keywords="logistic indications"
+         description="setting up things to run program and on program arguments"
+         version="0.6" date="nov2008">
+
+    <intro toc="yes">
+        Some obvious indications on installing, updating and
+        launching the program,
+        some other less obvious about the arguments
+        that can be passed by command line.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Installation"
+             title="Installation"
+             keywords="installation,setup,prepare for running program"
+             description="about pre-executing operations">
+
+    To use the program simply copy the executable
+    file in a directory, then <a href="Launching.html">run</a>
+    it.
+    The program should run correctly also on read only
+    devices, but obiouvsly in this case you cannot store the
+    <a href="OptionFile.html">option file</a>, write a crash log,
+    or request an absent help file.
+
+    <p>
+        All the files other than the executable are not
+        important, except eventual user personalizations
+        stored in the <a href="OptionFile.html">option file</a>
+        <dir>MattPlot.ini</dir>; it is up to user manage them.
+    </p>
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Update"
+             title="Update"
+             keywords="updating"
+             description="on program update">
+
+    To update the program:
+    <listO>
+        <it>Close program if running</it>
+        <it>If the option <option name="DeleteTemp"/> is set to
+            <cpp>false</cpp> delete manually the program
+            temporary directory to assure the creation of
+            the newest help file</it>
+        <it>Overwrite executable with the new one</it>
+        <it>Launch program</it>
+        <it>Activate <action name="StoreOptions"/> action
+            to update <dir>ini</dir> file</it>
+        <it>If you have a customized <dir>MattPlot.ini</dir>,
+            give a look to <a href="Log.html">Log</a>
+            to detect any problems.
+            Infact, in case I had the bad idea to rename
+            some options, you will have to move manually
+            your customizations in the new options structure</it>
+    </listO>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Launching"
+             title="Launching the executable"
+             keywords="launching,running"
+             description="launching the executable">
+
+    You can run &mp; in two ways:
+    <listO>
+      <it>Double clicking on executable file</it>
+      <it>launch it from the command line</it>
+    </listO>
+    
+    In the following example we are supposing
+    to have the executable file named
+    <dir>MattPlot.exe</dir> placed in the
+    shell current directory or in the executables
+    search path list:
+<cmdline>
+C:\> MattPlot
+</cmdline>
+
+    If you don't like its name, you may set an
+    environmental variable:
+<cmdline>
+C:\> set mp="C:\Program files\My uts\MattPlot.exe"
+C:\> %mp%
+</cmdline>
+
+    </section>
+
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ProgramArguments"
+             title="Program arguments"
+             keywords="program arguments,command line arguments,arguments (program)"
+             description="passing informations when starting program">
+
+    &mp; has the following calling convention:
+    <p><txt>MattPlot [@] [-h] [["+appended line"]...["+appended line"] [file]] ... [["+appended line"]...["+appended line"] [file]]</txt></p>
+
+    &mp; supports the following arguments:
+    <table>
+        <thead> <c>argument string</c> <c>argument description</c> </thead>
+        <row><c><dfn>-char</dfn></c> <c>general option</c></row>
+        <row><c><dfn>+&quot;string&quot;</dfn></c> <c>appends `string´ to next file</c></row>
+        <row><c><dfn>&quot;string&quot;</dfn></c> <c>path to a file to be opened</c></row>
+    </table>
+
+    <!--....................................-->
+    <subsection name="OptionArgs"
+				title="General option arguments"
+				keywords="option arguments">
+
+    Options arguments are case insensitive.
+
+    <table>
+        <thead><c>Option</c><c>Effect</c><c>Note</c></thead>
+
+        <row>
+            <c><kbd>-t</kbd></c>
+            <c>stay on top</c>
+            <c>Force the main form in foreground (equivalent to <action name="StayOnTop"/> action)</c>
+        </row>
+
+        <row>
+            <c><kbd>-x</kbd></c>
+            <c>Clear all</c>
+            <c>When open a file, clear all existing plots
+               replacing them with new data</c>
+        </row>
+        
+        <row>
+            <c><kbd>-f</kbd></c>
+            <c>Same frame</c>
+            <c>When open a file, put all in the current frame</c>
+        </row>
+
+        <row>
+            <c><kbd>-h</kbd> or <kbd>-?</kbd></c>
+            <c>help</c>
+            <c>Ehm, quite useless since not redirecting
+               some strings to calling shell</c>
+        </row>
+    </table>
+
+    </subsection>
+
+
+
+    <!--....................................-->
+    <subsection name="AppendedLinesArgs"
+				title="Appended lines arguments"
+				keywords="appended lines arguments">
+				   
+    &mp; accepts another kind of argument:
+    lines appended at the top of text files that
+    are going to be opened.
+    These arguments are preceded by a `+´ character.
+    <br/>
+    For example, if
+    <dir>file.txt</dir> is:
+<notepad caption="file.txt">
+1  2  3  4
+5  6  7  8
+</notepad>
+
+    Calling:
+<cmdline>
+C:\> MattPlot +"a line" +"another one" file.txt
+</cmdline>
+
+    Makes things as if <dir>file.txt</dir>
+    would be:
+<notepad caption="file.txt">
+a line
+another one
+1  2  3  4
+5  6  7  8
+</notepad>
+
+    This is useful to pass directives to parser
+    externally, without embeddeding them in the
+    data file.
+
+    <HHseealso>
+        <target title="Directives as program arguments" href="CommandlineDirectives.html"/>
+        <target title="Directives" href="Directives.html"/>
+        <target title="Examples" href="Examples.html"/>
+        <target title="File sources" href="DataSources.html#FileSources"/>
+    </HHseealso>
+
+    </subsection>
+
+    <!--....................................-->
+    <subsection name="FilePathArgs"
+				title="File path arguments"
+				keywords="path arguments">
+
+    You can open one or more files passing their path
+    as command line argument:
+<cmdline>
+C:\> MattPlot data1.txt
+C:\> MattPlot D:\acq\plot2.mpz "C:\my data\acq.out"
+</cmdline>
+
+    In the first example the text file
+    <dir>data1.dat</dir> is parsed and
+    its data imported, in the second the plot
+    file <dir>plot2.mpz</dir> will be opened
+    and then <dir>acq.out</dir> imported.
+    Note the double quotes surrounding path.
+    
+    <scrap name="AlsoWithDragDrop">
+        Remember that you can open files/directories
+        also dragging them in
+        <a href="MainForm.html#PlotArea">plot area</a>
+        or by <action name="Open"/> action.
+    </scrap>
+
+    <HHseealso>
+        <target title="Examples" href="Examples.html"/>
+        <target title="File sources" href="DataSources.html#FileSources"/>
+        <target title="Exporting to text files" href="ToTXT.html"/>
+    </HHseealso>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="SpaceInArgs"
+				title="A note on spaces in arguments"
+				keywords="spaces in arguments">
+
+    The string containing the arguments passed
+    by <cite>command line shell</cite>
+    are decomposed using
+    <kbd hint="0x20">SPACE</kbd> and
+    <kbd hint="Horizontal tab: 0x09">TAB</kbd>
+    characters as token delimiters, so the line:
+<cmdline>
+C:\> aaa bbb ccc
+</cmdline>
+    is decomposed in three strings,
+    so when you must pass a file path containing
+    spaces, you must enclose it in double quotes:
+<cmdline>
+C:\> MattPlot E:\my data\data.dat
+C:\> ??ERROR: invalid file `E:\my´ and `data\data.dat´
+
+C:\> MattPlot "E:\my data\data.dat"
+C:\> Ok
+</cmdline>
+    Consider now:
+<cmdline>
+C:\> MattPlot +#resample [0:2:100) C:\my dat\data.dat
+</cmdline>
+    Tells the <cite>shell</cite> to run a program
+    named <txt>MattPlot</txt> with the four arguments
+    <txt>+#resample</txt>, <txt>[0:2:100)</txt>,
+    <txt>C:\my</txt> and <txt>data.dat</txt>;
+    this generates several errors,
+    because &mp; will complain about the
+    invalid/missing files
+    <txt>(0:2:100)</txt>, <txt>C:\my</txt>, <txt>dat\data.dat</txt>.
+    You can prevent those misunderstandings enclosing
+    arguments in double quotes;
+    the following examples are both correct:
+<cmdline>
+C:\> MattPlot +"#resample [0:2:100)" "C:\my dat\data.dat"
+C:\> MattPlot "+#resample [0:2:100)" "C:\my dat\data.dat"
+</cmdline>
+    Note that, as pointed in
+    <a href="Directives.html">directive section</a>,
+    extra spaces are part of the correct
+    syntax; for example the following line is
+    properly decomposed but causes parser to
+    complain about an unknown directive name:
+<cmdline>
+C:\> MattPlot +#resample[0:2:100) "C:\my dat\data.dat"
+</cmdline>
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="NoFurtherInstances"
+				title="Prevent further instances"
+				keywords="prevent further instances">
+
+    Prefixing the program arguments string with
+    the special character <kbd hint="U+0040">@</kbd>
+    prevents the creation of further &mp;
+    instances;
+    the arguments passed will be processed by
+    the process already running.
+    <p>
+    This is useful when user want to add by
+    command line different files obtained
+    subsequently to the same plot.
+    </p>
+    
+    <scrap name="InstanceSuppressionChar">
+        The instance suppression character <txt>@</txt>
+        must strictly be the first character of program
+        arguments.
+    </scrap>
+
+    In the following example the first
+    line creates a new &mp; instance
+    that processes <txt>file1</txt>, while
+    the second line causes the previous
+    instance to process <txt>file2</txt>
+    without creating another one.
+
+<cmdline>
+C:\> MattPlot "C:\file1"
+C:\> MattPlot @"C:\file2"
+</cmdline>
+
+    The following example shows that
+    the special character <kbd hint="U+0040">@</kbd>
+    must strictly be the first character of
+    arguments string:
+<cmdline>
+C:\> MattPlot @+"#resample [0:2:100)" "C:\my dat\data.dat"
+</cmdline>
+
+    </subsection>
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

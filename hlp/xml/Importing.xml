@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Importing"
+         title="Importing data"
+         keywords="importing data,retrieving data from text files"
+         description="data files format, headers and directives to data parser"
+         version="0.5" date="aug2008">
+
+    <intro toc="yes">
+        This chapter deals with the ways &mp;
+        can retrieve data from external world.
+        In other words, how other data processing
+        blocks like oscilloscopes, dataloggers or
+        elaboration programs can pass data to &mp;.
+    </intro>
+
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="DataSources"
+             title="Data sources"
+             keywords="data sources"
+             description="on data input channels">
+
+    &mp; uses the concept of stream to interface
+    with external data sources.
+    This will allows to treat strings, files,
+    compressed files, serial line data or any other
+    source of bytes in the same manner.
+
+    <!--....................................-->
+    <subsection name="FileSources"
+                title="Files"
+                keywords="files (opening), directories (opening)">
+
+    The main data source is constituted by
+    data previously stored in a medium:
+    the files.
+
+    You can tell &mp; to consider a file
+    (with this term I mean also directories)
+    using one of the following ways:
+    <listD>
+        <it>
+          Pass its path as
+          <a href="ProgramArguments.html">program parameter</a>
+          when launching &mp;
+        </it>
+        <it>
+          Drag and drop it in the
+          <a href="MainForm.html#PlotArea">plot area</a>;
+          pay attention on the zone you release it:
+          if you release the file on an existing &frame;,
+          the tracks will be added in it,
+          otherwise a new &frame; will be created in the
+          drop position
+        </it>
+        <it>
+          Using <action name="Open"/> action
+        </it>
+    </listD>
+    
+    The following figure roughly depicts
+    the program behaviour when a file is
+    considered:
+    <p style="text-align: center;"><img src="./files/images/import.gif"/></p>
+
+
+    <scrap name="FileImportBehaviour">
+        <p>
+        If opened file is a
+        <a href="Features.html">supported archive</a>,
+        &mp; will extract it in the temporary folder
+        (<option name="TempDir"/>)
+        and then will try to read the resulting directory.
+        </p>
+        <p>
+        When opened file is a directory
+        &mp; will parse recursively all contained files
+        (except those that match <option name="ExcludePattern"/>);
+        note that in this case eventual
+        <a href="ProgramArguments.html#AppendedLinesArgs">appended lines</a>
+        <a href="ProgramArguments.html">argument</a> will be used
+        in all these files.
+        </p>
+        Finally, if opened file is a known type,
+        it will be digested.
+    </scrap>
+    
+    <table>
+        <thead><c>File extension</c><c>Operation</c><c>Remarks</c></thead>
+        <row>
+            <c><dir>*.mpx</dir></c>
+            <c>&mp; will clear and load &XML; plot</c>
+            <c>Not yet supported</c>
+        </row>
+        <row>
+            <c><dir>*.ini</dir></c>
+            <c>&mp; will try to read its options</c>
+            <c>This can be used to manage a set of styles</c>
+        </row>
+        <row>
+            <c>Compressed files (<dir>*.gz</dir>)</c>
+            <c>&mp; will try to read compressed stream</c>
+            <c>Second extension is important (ex. <dir>data.txt.gz</dir>).
+               Proper &DLL; must be in path</c>
+        </row>
+        <row>
+            <c>Compressed archives (<dir>*.zip</dir>)</c>
+            <c>&mp; will expand compressed archive and read extracted files</c>
+            <c>Proper &DLL; must be in path</c>
+        </row>
+        <row>
+            <c>other extensions (<dir>*.txt</dir>, <dir>*.mpl</dir>, ...)</c>
+            <c>&mp; will try to import as <a href="TextFormat.html">text data file</a></c>
+            <c></c>
+        </row>
+    </table>
+
+    <scrap name="AbortFileParsing">
+        Generally reading files is a time
+        consuming task: remember that you can
+        use <action name="Abort"/> if
+        it takes too much time.
+    </scrap>
+
+    <scrap name="MPLExtension">
+        Note that the extension <dir>.mpl</dir> is
+        treated as <dir>.txt</dir>;
+        this strange extension is introduced to
+        provide a file filter and eventually to
+        associate &mp; with it (start executable
+        by a double click on file).<br/>
+        &quot;mpl&quot; may stand for: <dfn>MattPLot text file</dfn>
+        or better: <dfn>MultiPLe session text file</dfn>.
+    </scrap>
+    
+    <scrap name="CompressedFiles">
+        Supported compressed format are:
+        <listO>
+            <it><dir>*.zip</dir> and <dir>*.gz</dir> with &zlib; &API; &DLL; <dir>zlibwapi.dll</dir></it>
+        </listO>
+
+        <HHseealso>
+            <target title="Third party stuff" href="ThirdPartyStuff.html"/>
+            <target title="Compressed files question" href="Faqs.html#faq.importing.compressedfiles"/>
+            <target title="Zip files problem" href="Troubleshooting.html#faq.problems_files.zipnotsupported"/>
+        </HHseealso>
+    </scrap>
+
+    <HHseealso>
+        <target title="Exporting to text files" href="ToTXT.html"/>
+        <target title="Text files format" href="TextFormat.html"/>
+        <target title="File paths as arguments" href="ProgramArguments.html#FilePathArgs"/>
+        <target title="Program related files" href="RelatedFiles.html"/>
+    </HHseealso>
+
+    </subsection>
+    
+
+    <!--....................................-->
+    <subsection name="OtherStreamSources"
+                title="Other data streams"
+                keywords="other source streams,streams">
+
+    At the moment file streams are the only
+    way to retrieve data; in the future other
+    input streams may be considered.
+
+    <HHseealso>
+        <target title="Todos, wishlist" href="ToDo.html"/>
+    </HHseealso>
+
+    </subsection>
+    
+    </section>
+    
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="BinaryFormats"
+             title="Binary formats"
+             keywords="binary formats"
+             description="on supported binary formats">
+
+    At the moment no binary format is supported.
+
+    <HHseealso>
+        <target title="Todos, wishlist" href="ToDo.html"/>
+    </HHseealso>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="TextFormat"
+             title="Text format"
+             keywords="data text format, format of text data"
+             description="on supported text format">
+
+    As a matter of fact text format plays a fundamental
+    role in numeric data exchange, due to the almost
+    full portability in all platforms (&ASCII; text encoding
+    is well established).
+    The problem of larger size respect a binary format
+    can be reduced using a compression algorithm,
+    so a planned feature is auto extraction of
+    compressed text streams.
+
+    Here is a typical (ehm, except size) data text
+    file:
+
+<notepad caption="data.txt">
+// data acquisition
+1.2  2E3  -3.1E-4  .412  6
+6.0  1E2  -2.8E-3  .423  7
+</notepad>
+
+    It is composed by a first comment line,
+    then by two rows of data forming five
+    columns.
+    Another example:
+
+<notepad caption="data2.out">
+  00;10;20;30
+  01;11;21;31
+  02;12;22;32
+  03;13;23;33
+  04;14;24;34
+</notepad>
+
+    Now we have four columns with one semicolon
+    as data (columns) delimiter.
+    
+    This kind of structure resembles a
+    <a href="ToTXT.html#ToTxtTable">bidimensional table</a>;
+    &mp; supports also a
+    <a href="ToTXT.html#ToMPL">monodimensional format</a>,
+    taking advantage from parser's
+    <a href="Directives.html">directives</a>.
+    <HHseealso>
+        <target title="Exporting to text" href="ToTXT.html"/>
+        <target title="File sources" href="DataSources.html#FileSources"/>
+        <target title="Directives" href="Directives.html"/>
+        <target title="Directives as program arguments" href="CommandlineDirectives.html"/>
+        <target title="Program arguments" href="ProgramArguments.html"/>
+    </HHseealso>
+
+    <p>
+    <a href="Directives.html">Directives</a> are
+    additional informations embedded with data file,
+    according to a particular syntax; this mechanism
+    allow to pass to the parser other informations than
+    plain numbers, and perform some postprocessing on
+    retrieved data.
+    </p>
+
+    You can find more complex file examples in
+    <a href="TextFormat.html#DataFileExamples">the following sections</a>.
+
+    The next sections also explain in more detail
+    how parser works.
+
+
+    <!--....................................-->
+    <subsection name="ParserCharacteristics"
+                title="Parser characteristics"
+                keywords="parser characteristics">
+
+    <listO>
+      <it>Parser accepts only 8-bit <cpp>char</cpp>
+          &ASCII; encoded text; using <cpp>WideChar</cpp>
+          for number literals would be a waste.</it>
+      <it>The decimal separator character can be
+          declared explicitly.</it>
+      <it>Parser retrieves from local operating system
+          settings the thousand separator character in
+          <dfn hint="the strings representing numbers">number literals</dfn>
+          (ex. <ex>1,000,000.10</ex>) in order to ignore it
+          during string to number conversion.
+          This feature can be disabled or another
+          character can be specified using related
+          <a href="DirectiveList.html">directive</a>.</it>
+      <it>Stream position is an <cpp>int</cpp>, so
+          streams longer than <txt>2147483647</txt>
+          characters (files greater than 2Gb) cause
+          problems.</it>
+    </listO>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="LineDelimiters"
+                title="Line delimiters"
+                keywords="line delimiters,row delimiters">
+
+    The parser must be able to recognize lines
+    (data rows); this is accomplished chosing a
+    set of characters that act as line delimiters.
+    <p>
+    As explicit developer choice those lines (row)
+    delimiters cannot be chosen by user and are
+    instead forced to normal text end line characters
+    (see below): this should avoid confusion and
+    benefit clarity when viewing data file with
+    external editors; furthermore this of course
+    implies that users cannot adopt those characters
+    as data (column) delimiters.
+    </p>
+
+    Regarding end line characters, each platform
+    has its own standard:
+    <table>
+        <thead> <c>Platform</c> <c>text line delimiters</c> </thead>
+        <row><c><dfn>Mac</dfn></c> <c><kbd hint="Carriage Return: 0x0D">CR</kbd> (<cpp>\r = 0x0D</cpp>)</c></row>
+        <row><c><dfn>Unix</dfn></c> <c><kbd hint="Line Feed: 0x0A">LF</kbd> (<cpp>\n = 0x0A</cpp>)</c></row>
+        <row><c><dfn>&windows;</dfn></c> <c><kbd hint="Carriage Return: 0x0D">CR</kbd> <kbd hint="Line Feed: 0x0A">LF</kbd> (<cpp>\r\n = 0x0D 0x0A</cpp>)</c></row>
+    </table>
+
+    In order to keep compatibility with those standards,
+    &mp; text parser will detect line endings in
+    this way:
+    <p>
+      When a <kbd hint="Carriage Return: 0x0D">CR</kbd>
+      or <kbd hint="Line Feed: 0x0A">LF</kbd> character
+      is encountered, line is ending.
+      If this character is followed by another (but different)
+      end line character, this one will be eaten.
+    </p>
+
+    </subsection>
+
+
+    <!--....................................-->
+    <subsection name="DataDelimiters"
+                title="Data delimiters"
+                keywords="data delimiter,column delimiters">
+
+    Parser must also be able to recognize,
+    in a line, each data value.
+    As default behaviour, the parser realize that
+    a value string is finished when encounters
+    a <cpp>char</cpp> belonging to a previously
+    declared set; any other character will cause an
+    invalid number error.
+    
+    <p>
+    This default behaviour can be changed using
+    <a href="StrictDelimiters.html">Strictdelimiters directive</a>.
+    </p>
+
+    The expected data delimiters set contains
+    always space characters
+    <kbd hint="Space: 0x20">SPACE</kbd> and
+    <kbd hint="Horizontal tab: 0x09">TAB</kbd>;
+    these delimiters are recommended because enhance
+    human readability.
+    Other characters can be added editing the
+    <option name="ExpectedDelimiters"/> option.
+
+    This set cannot contain characters
+    composing
+    <dfn hint="the strings representing numbers">number literals</dfn>
+    (<txt>0123456789+-Ee</txt> plus decimal separator)
+    and cannot overlap with fixed line delimiters
+    <kbd hint="Carriage Return: 0x0D">CR</kbd>
+    and
+    <kbd hint="Line Feed: 0x0A">LF</kbd>.
+
+    It is also better avoid any character
+    that can cause possible conflict with particular
+    locale settings (for example comma is sometimes
+    used as decimal separator or apostrophe as
+    thousand separator).
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="DataFilesStructure"
+                title="Data files structure"
+                keywords="structure of data files,content of data files">
+
+    Parser thinks data files content as
+    divided in data sessions, each session
+    composed by two parts:
+    <listO>
+      <it>
+         Declarative part (data heading):
+         contains parser directives and comments;
+         other text is ignored but causes warnings
+      </it>
+      <it>
+         Data part (data body):
+         contains number literals and delimiters;
+         a warning is emitted for comments and empty
+         lines; directives causes session
+         termination; other text causes errors
+      </it>
+    </listO>
+
+    <scrap name="DataSessionDef">
+        I call &quot;data session&quot; each bunch
+        of data delimited by
+        <a href="Header.html"><txt>#header</txt></a>
+        <a href="Directives.html">directives</a>.
+    </scrap>
+
+    Summarizing:
+    <table>
+        <thead> <c>Content</c> <c>Switching chars</c> <c>Description</c> <c>Example</c> <c>notes</c> </thead>
+        
+        <row><c colspan="4" class="header">First part (declarative)</c></row>
+        <row>
+          <c><a href="Directives.html">Directives</a></c> <c><txt>#</txt></c>
+          <c>parser directives</c>
+          <c><txt>#title  Plot1</txt></c>
+          <c>directive names are case insensitive</c>
+        </row>
+        <row>
+          <c>Comments</c> <c><txt>//</txt> or <txt>/* */</txt></c>
+          <c>ignored text: <cpp>C++</cpp> and <cpp>C</cpp> style comments</c>
+          <c><txt>/* multiline comment */</txt> <br/>
+             <txt>//oneline&nbsp;comment</txt></c>
+        </row>
+        <row>
+          <c>Number literals</c> <c><txt>0123456789 +-E.</txt></c>
+          <c>numbers</c>
+          <c><txt>1 12.5E-3 .23 +2 -.4E+2 006</txt></c>
+          <c>cause switch to data part</c>
+        </row>
+        <row>
+          <c>Other</c> <c></c>
+          <c>Warning</c>
+          <c></c>
+          <c>Other text is tolerated but reported by Log warnings</c>
+        </row>
+
+        <row><c colspan="4" class="header">Second part (data)</c></row>
+        <row>
+          <c>Number literals</c> <c><txt>0123456789 +-E.</txt></c>
+          <c>numbers</c>
+          <c><txt>1 12.5E-3 .23 +2 -.4E+2 006</txt></c>
+          <c>When <txt>tolerant</txt> is <var>true</var>
+             strange numbers like <txt>+ - e . +e 2.1E-</txt>
+             are tolerated</c>
+        </row>
+        <row>
+          <c>Column delimiters</c> <c></c>
+          <c>declared characters</c>
+          <c></c>
+          <c>if <txt>strictdelimiter</txt> is not specified,
+             delimiters include spaces, tabs and those
+             declared in options</c>
+        </row>
+        <row>
+          <c>Comments</c> <c><txt>//</txt> or <txt>/* */</txt></c>
+          <c>ignored text: <cpp>C++</cpp> and <cpp>C</cpp> style comments</c>
+          <c><txt>/* multiline comment */</txt> <br/>
+             <txt>//oneline&nbsp;comment</txt></c>
+          <c>Comments in data part are tolerated but reported by Log warnings</c>
+        </row>
+        <row>
+          <c><a href="Directives.html">Directives</a></c> <c><txt>#</txt></c>
+          <c>parser directives</c>
+          <c><txt>#header &lt;y&gt;</txt></c>
+          <c>causes data session termination</c>
+        </row>
+        <row>
+          <c>Other</c> <c></c>
+          <c>Error</c>
+          <c></c>
+          <c>When <txt>tolerant</txt> is <var>true</var>
+             some errors may not be reported</c>
+        </row>
+    </table>
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="ParserStateMachine"
+                title="Parsing sequence"
+                keywords="parsing sequence">
+
+    Parser state machine works in
+    this way:
+
+    <listO>
+      <it>
+         New <a href="#DataSessionDef">session</a>: read
+         declarative part until a number is encountered.
+      </it>
+      <it>
+         Once a number is reached, the heading part will
+         be considered concluded and parser will
+         check declarations coherence confronting them
+         with first data row.
+      </it>
+      <it>
+         If all is ok parser starts to collect numbers
+         until end of file or a directive is reached;
+         numbers are arranged in arrays called columns.
+      </it>
+      <it>
+         Postprocessing operations for
+         current session are performed according
+         to the sequence:
+         <listD>
+           <it>Split columns</it>
+           <it>Assign header data</it>
+           <it>Rescale columns</it>
+           <it>Resample columns</it>
+         </listD>
+      </it>
+      <it>
+         If follows another
+         <a href="#DataSessionDef">session</a>
+         preceding steps are repeated,
+         otherwise parser resolves links between
+         overall columns
+         (ordinate-abscissa, real-imaginary parts)
+         and makes data available to &mp;.
+      </it>
+    </listO>
+
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="DataFileExamples"
+                title="Examples"
+                keywords="examples (data files),data files examples">
+
+    Some examples of valid data files;
+    the meaning of contained
+    <a href="Directives.html">directives</a>
+    are explained in the related
+    <a href="Directives.html">section</a>.
+    All these examples are referred to default
+    <option name="Importer"/> options.
+
+    <br/>
+    As first example consider a single
+    <a href="#DataSessionDef">session</a>
+    data file:
+<notepad caption="data1.dat">
+#header &lt;a()&gt;&lt;b()&gt;&lt;c()&gt;&lt;d()&gt;&lt;e()&gt;
+#title abcd acquisition
+#xlabel i
+1.2  2E3  -3.1E-4  .412  6
+6.0  1E2  -2.8E-3  .423  7
+</notepad>
+
+    The preceding data could be organized
+    in a single text column using multiple
+    <a href="#DataSessionDef">sessions</a>:
+<notepad caption="data1bis.dat">
+#title abcde acquisition
+#xlabel i
+#header &lt;a()&gt;
+1.2
+6.0
+#header &lt;b()&gt;
+2E3
+1E2
+#header &lt;c()&gt;
+-3.1E-4
+-2.8E-3
+#header &lt;d()&gt;
+.412
+.423
+#header &lt;e()&gt;
+6
+7
+</notepad>
+
+    <scrap name="SingleColsFiles">
+        Single column files are sometimes
+        preferred by data exporters because
+        are simpler to build.
+    </scrap>
+
+    Let's see another multiple session data file,
+    whose data sessions have different number
+    of columns:
+<notepad caption="I(t).out">
+#title Instantaneous phase currents
+#ymarker 1.21 // rms
+
+#header &lt;t1[us]&gt; &lt;I1(t1)[A]&gt;
+  0.0000000000000000e+000	  0.0000000000000000e+000
+  1.0000000000000001e-001	  9.9833416646828155e-002
+  2.0000000000000001e-001	  1.9866933079506122e-001
+
+#header &lt;I2(t2)[A]&gt; &lt;I3(t2)[A]&gt;
+  0.4574524247382252e+000	  2.9552020666133960e-001
+  1.8724824582489825e-001	  3.8941834230865052e-001
+  2.8765635385385348e-001	  4.7942553860420301e-001
+  
+#header &lt;t2[us]&gt;
+  0.0000000000000000e+000
+  1.0000000000000002e-001
+  2.0000000000000004e-001
+</notepad>
+
+
+    Use of comments:
+<notepad caption="comments.txt">
+// A commented line
+#header &lt;col0&gt;&lt;col1&gt;&lt;col2&gt;&lt;col3&gt;
+//#resample [3:6)[0:3)[6:10) -->ignoring directive
+/*  follows some data
+          ....          */
+ 00  10  20  30
+// 01  11  21  31  ignoring this line
+ 02  12  22  32
+ 03  13  23  33 /*
+ 04  14  24  34  this commented data
+ 05  15  25  35  block will generate
+ 06  16  26  36  a warning, never mind,
+ 07  17  27  37  I know what I'm doing
+ 08  18  28  38 */
+ 09  19  29  39
+ // No more data
+</notepad>
+
+    </subsection>
+    
+    <scrap name="HighlighterAdvice">
+        When you manually edit data files you should
+        choose &apos;C/C++&apos; highlighter in your
+        editor.
+    </scrap>
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

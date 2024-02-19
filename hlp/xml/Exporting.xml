@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Exporting"
+         title="Exporting data"
+         keywords="exporting data"
+         description="on exporting plot formats"
+         version="0.5" date="aug2008">
+
+    <intro toc="yes">
+        This chapter describes available ways
+        and formats to which plots can be
+        exported.
+    </intro>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Printing"
+             title="Printing plot"
+             keywords="printing"
+             description="on printing plot">
+    
+    You can print plots in two ways:
+    <listO>
+        <it><action name="Export"/> plot
+            as image and then print it
+            with an external program;
+            this can be useful to include also
+            measure lines and other volatile
+            stuff.</it>
+        <it>Use embedded <action name="Print"/>
+            function.</it>
+    </listO>
+
+    &mp; printing function can work in two ways:
+
+    <listO>
+        <it>Print screen bitmap -
+            takes what you see on the screen
+            and stretches it in paper area
+            <listD>
+                <it>feature: preserve plot aspect ratio,
+                    so paper area may not be optimally filled</it>
+                <it>advantage: should includes also temporary scribbles
+                    of <a href="PenMode.html">pen mode</a></it>
+                <it>drawback: low image resolution</it>
+            </listD>
+        </it>
+        <it>Redraw on print paper - 
+            redraws plot in the
+            printed page canvas
+            <listD>
+                <it>feature: changes plot aspect ratio
+                    to fill paper area</it>
+                <it>advantage: best resolution</it>
+                <it>drawback: temporary objects like scribbles
+                    are lost</it>
+            </listD>
+        </it>
+    </listO>
+    
+    In both cases you can set the paper margin
+    percentage editing the <option name="PrintMargin"/>
+    option.
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ToBMP"
+             title="Exporting to bitmap"
+             keywords="exporting to bitmap"
+             description="capturing the screen bitmap">
+
+    With <dfn>Bitmap</dfn> I mean a two dimensional
+    array of colors, either compressed (typically with
+    lossy algorithm) or not.
+    
+    <!--....................................-->
+    <subsection name="ScreenBitmap"
+                title="Screen bitmap"
+                keywords="screen bitmap (plot),capturing plot bitmap">
+
+    You can capture and save the plot bitmap rendered on
+    screen using <action name="Export"/> or <action name="Snapshot"/>
+    actions, setting properly the <option name="SnapshotAction"/>
+    option.
+    </subsection>
+    
+    <!--....................................-->
+    <subsection name="HiResBitmap"
+                title="High resolution bitmap"
+                keywords="high resolution bitmap (plot)">
+              
+    You can obtain a bitmap having an
+    higher resolution than screen in
+    two ways:
+    <listO>
+        <it>Using the <a href="Printing.html">print</a> function
+            in combination with a virtual printer like
+            &pdfcreator;</it>
+        <it>Exporting to
+            <a href="ToVectorialImage.html#ToEMF">metafile</a>
+            and converting it to bitmap with an external tool</it>
+    </listO>
+
+    </subsection>
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ToVectorialImage"
+             title="Exporting to vectorial image"
+             keywords="exporting to vectorial image"
+             description="on drawn image representations">
+
+    Simple pictures like plots can be described
+    in a manageably way at a higher level than
+    bitmap representation,
+    as a list of instructions that tell to
+    a particular interpreter how to redraw
+    the picture.
+    In this way we can generate a good
+    bitmap for all dimensions and media
+    resolutions.
+    This representation is lossless, because
+    permits to rescale picture without loss
+    of quality.
+
+    
+    <!--....................................-->
+    <subsection name="ToEMF"
+                title="Exporting to EMF"
+                keywords="exporting to EMF">
+
+    Metafiles are collections of shapes drawn into
+    a device context.
+    They are essentially a list of &GDI; calls that
+    can be played back on demand to create a picture.
+    
+    <scrap name="GDI">
+        &GDI; , Graphics Device Interface,
+        is a &windows; standard for representing
+        graphic objects and transitting them to
+        output devices
+    </scrap>
+
+    I recommend this format to embed plot images
+    in your &WYSIWYG; editor.
+
+    <scrap name="WMF">
+        There are two types of metafiles available
+        to Windows users.
+        The one supported in &mp; has the
+        extension &emf; (Enhanced MetaFile)
+        and is designed for use in the 32-bit world.
+        The other one, with extension
+        &wmf; (Windows MetaFile),
+        is a legacy from the old 16-bit world
+        and should be avoided.
+    </scrap>
+    </subsection>
+
+
+    <!--....................................-->
+    <subsection name="ToSVG"
+                title="Exporting to SVG"
+                keywords="exporting to SVG">
+    
+    <underconstruction/>
+    This function is not yet implemented.
+
+    &SVG; is an &XML; application that describes a
+    vectorial drawing.
+    Some browsers like &firefox; have an internal
+    &SVG; renderer.
+    </subsection>
+
+    </section>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ToTXT"
+             title="Exporting to text files"
+             keywords="exporting to text"
+             description="exporting to text files">
+
+    You can export the &track; set contained in
+    a &frame; in a &ASCII; text files whose
+    format is described <a href="TextFormat.html">here</a>.
+
+
+    <!--....................................-->
+    <subsection name="ToTxtTable"
+                title="Text table"
+                keywords="exporting to text table">
+
+    Exported text files can be organized
+    as a table like this:
+
+<notepad caption="exported.txt">
+#header &lt;x&gt; &lt;y1(x)&gt; &lt;y2(x)&gt;
+0    12.13  0
+0.1  11.93  1.34
+0.2  10.54  2.28
+0.3   9.93  3.27
+0.4   7.72  5.56
+</notepad>
+
+    <scrap name="MatlabImport">
+        Note that you can import this kind of file
+        in &matlab; using <txt>importdata</txt> function
+        (see <a href="ExportTextToMatlab.html">examples section</a>)
+        or the less powerful <txt>load</txt> function
+        (in that case is necessary a manual deletion of non-data parts).
+        Note that, as far I know, both these functions does not support
+        columns having different lengths.
+    </scrap>
+    </subsection>
+    
+
+    <!--....................................-->
+    <subsection name="ToMPL"
+                title="One column text"
+                keywords="exporting to text single column">
+
+    You can organize exported text
+    file as a single column
+    (multisession syntax)
+    choosing the extension <dir>.mpl</dir>:
+
+<notepad caption="exported.mpl">
+#header &lt;x&gt;
+ 0
+ 0.1
+ 0.2
+ 0.3
+ 0.4
+
+#header &lt;y1(x)&gt;
+ 12.13
+ 11.93
+ 10.54
+  9.93
+  7.72
+
+#header &lt;y2(x)&gt;
+ 0
+ 1.34
+ 2.28
+ 3.27
+ 5.56
+</notepad>
+
+    This kind of format is less standard than
+    <a href="ToTXT.html#ToTxtTable">table format</a>,
+    but is sometimes preferred because is
+    simpler to parse.
+
+    </subsection>
+
+    <HHseealso>
+        <target title="File sources" href="DataSources.html#FileSources"/>
+        <target title="Text files format" href="TextFormat.html"/>
+        <target title="Export to Matlab by txt file example" href="ExportTextToMatlab.html"/>
+        <target title="Directives" href="Directives.html"/>
+        <target title="Directives as program arguments" href="CommandlineDirectives.html"/>
+        <target title="File paths as arguments" href="ProgramArguments.html#FilePathArgs"/>
+        <target title="Program arguments" href="ProgramArguments.html"/>
+    </HHseealso>
+
+    </section>
+
+    
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="ToMfile"
+             title="Exporting to m-file"
+             keywords="exporting to m-file"
+             description="exporting to Matlab workspace via m-file">
+
+    &mp; can generate a &matlab; <dir>m-file</dir>
+    (seems to work in &freemat;, may work with minor changes
+    also in &octave; and &scilab;)
+    containing instruction to import in the
+    math interpreter workspace the tracks data
+    contained in current &frame;.
+    The <dir>m-file</dir> content depends on
+    program version, for actual usage instructions
+    open the file with a text editor and read its
+    comments.
+
+    <p>
+    A look to <a href="ExportToMatlab.html">examples section</a>
+    may be useful.
+    </p>
+
+    <scrap name="MatlabVariableNames">
+        Variable names are taken from track names,
+        converted when necessary to valid identifiers
+        (for example, spaces are converted to underscore).
+        In rare cases two distinct variables may get
+        the same identifier (ex, if a track is named
+        <txt>y&nbsp;z</txt> and another <txt>y_z</txt>);
+        when a name clashing occurs the last variable
+        overwrites the previous ones.
+    </scrap>
+    
+    <HHseealso>
+        <target title="Export to Matlab via m-files example" href="ExportToMatlab.html"/>
+        <target title="Export to Matlab via txt file example" href="ExportTextToMatlab.html"/>
+    </HHseealso>
+
+    </section>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

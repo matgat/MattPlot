@@ -1,0 +1,234 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>A memory dump plot</title>
+      <meta name="keywords" content="example: memory dump plot" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"></td>
+               <td class="pad_T"><a class="browse" href="Examples.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ImportFromMatlab.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ImportFromMatlab.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Examples" href="Examples.html">Examples</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li id="current"><a href="MemDumpPlot.html"><span>A memory dump plot</span></a></li>
+                        <li><a href="ImportFromMatlab.html"><span>Importing from Matlab</span></a></li>
+                        <li><a href="ExportTextToMatlab.html"><span>Exporting text files to Matlab</span></a></li>
+                        <li><a href="ExportToMatlab.html"><span>Exporting to Matlab via m-files</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="MemDumpPlot" title="importing data from raw ASCII data">A memory dump plot</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: memory dump plot" /></object>
+                  
+                  The <acronym title="Digital Signal Processor">DSP</acronym> of a servo drive has stored
+                  in its <acronym title="Random Access Memory">RAM</acronym> an array of words (16bit)
+                  encoded as signed integers containing the
+                  time history of some internal variables of
+                  the control algorithm, sampled with different
+                  frequency.
+                  The first 4000 words of this array are
+                  filled with the measure of quadrature current
+                  Iq sampled every 62.5us and scaled respect
+                  5A; the following 250 contains the motor
+                  speed sampled every 1ms and scaled respect
+                  3500rpm, while the remaining 125 are the
+                  samples of measured DC bus voltage
+                  taken every 2ms and scaled respect 1000V;
+                  voltage measures have a known offset of 23.5V.
+                  
+                  <p>
+                     The first chunk of each segment is
+                     used as initial buffer to collect a
+                     certain amount of samples before
+                     trigger event. The size of this chunk
+                     is equivalent to 20ms and so is equal to
+                     320 samples for the first segment, 20
+                     for the second and 10 for the third.
+                     The trigger fired at sample 6 of the
+                     third segment (the shortest one), corresponding
+                     to sample 12 of the second, 192 of the first.
+                     
+                  </p>
+                  After acquisition, data are converted to
+                  strings and sent character by character
+                  through a RS232 serial line to a PC that
+                  saves on hard disk a text file of 4375
+                  lines containing a sequence of base 10
+                  integer numbers literals reproducing the
+                  array of 16bit signed integers:
+                  
+                  
+                  <div class="notepad"> FromSerial.txt<pre class="notepad">
+ 9470
+ 9490
+ 9502
+ 9522
+ 9534
+ ...
+</pre></div>
+                  
+                  Ok, we want to plot these acquired three
+                  quantities with <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> in a suitable
+                  way without changing the raw data file.
+                  To do so we have to provide through
+                  command line argument the necessary
+                  informations to:
+                  
+                  <ul class="listO">
+                     <li>Split the single column in the three parts</li>
+                     <li>Reorder samples in each trigger buffer;
+                        the reordering sequence will be referred to shortest
+                        column to avoid rounding errors
+                        (see <a href="Resample.html" title="Resample.html">resample directive section</a>)
+                     </li>
+                     <li>Rescale samples to physical units: the signed 16bit
+                        integers must be scaled with <code class="txt">Full-Scale Value/32767</code>
+                        and apply an offset to voltage samples
+                     </li>
+                     <li>Apply the offset to voltage samples</li>
+                     <li>Give names and other infos</li>
+                  </ul>
+                  
+                  So here is the command to plot these data:
+                  
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +"#header &lt;Iq(t[0.0625ms])[1.526E-4A]&gt;
+&lt;n(t[1ms])[0.1068rpm]&gt;&lt;Vdc(t[2ms])[30.52E-3V-23.5]&gt;"
++"#resample [6:10)[0:6)[10:125)"
+".\Data\FromSerial.txt"
+</pre>
+                  
+                  The first argument, the most complex one, is
+                  a line added to file containing the
+                  <a href="Header.html" title="Header.html">header directive</a>:
+                  
+                  <p><code class="txt">#header &lt;Iq(t[0.0625ms])[1.526E-4A]&gt; &lt;n(t[1ms])[0.1068rpm]&gt; &lt;Vdc(t[2ms])[30.52E-3V-23.5]&gt;</code></p>
+                  
+                  It tells to <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> that:
+                  
+                  <ul class="listD">
+                     <li>The following data are composed by three columns</li>
+                     <li>The first one, named <code class="txt">Iq</code>,
+                        measured in <code class="txt">[A]</code>, will
+                        be rescaled by a factor of <code class="txt">0.0001526=5/32767</code>.
+                        This column is a dependent variable plotted respect
+                        an independent variable called
+                        <code class="txt">t</code>, measured in <code class="txt">ms</code>,
+                        not defined in the following
+                        data but given by the product of
+                        sample index and <code class="txt">0.0625</code></li>
+                     <li>The second one, named <code class="txt">n</code>,
+                        measured in <code class="txt">[rpm]</code>, will
+                        be rescaled by a factor of <code class="txt">0.1068=3500/32767</code>.
+                        This column is a dependent variable plotted respect
+                        an independent variable called
+                        <code class="txt">t</code>, measured in <code class="txt">ms</code>,
+                        not defined in the following
+                        data but simply given by the sample index
+                     </li>
+                     <li>The last one, named <code class="txt">Vdc</code>,
+                        measured in <code class="txt">[V]</code>, will
+                        be rescaled by a factor of <code class="txt">0.03052=1000/32767</code>;
+                        furthermore, the constant quantity <code class="txt">-23.5</code>
+                        will be added to each rescaled value.
+                        This column is a dependent variable plotted respect
+                        an independent variable called
+                        <code class="txt">t</code>, measured in <code class="txt">ms</code>,
+                        not defined in the following
+                        data but given by the product of
+                        sample index and <code class="txt">2</code></li>
+                  </ul>
+                  
+                  Actually this directive contains also the
+                  crucial information necessary to split properly
+                  the unique data column into its three
+                  constituent parts: this information is
+                  given by the independent variables scale.
+                  
+                  <p>
+                     The second argument is still an added line;
+                     it contains the
+                     <a href="Resample.html" title="Resample.html">resample directive</a>:
+                     
+                  </p>
+                  
+                  <p><code class="txt">#resample [6:10)[0:6)[10:125)</code></p>
+                  This defines the following sequence of indexes:
+                  
+                  <p><code class="txt">6,7,8,9,0,1,2,3,4,5,10,11,12,13,...,123,124</code></p>
+                  
+                  For each column this sequence is rescaled to
+                  fit column size, then the column samples are
+                  reordered according to the obtained sequence.
+                  Note that we have defined the sequence using
+                  the same size of the shortest column:
+                  this is a wise choice, because in this way
+                  the sequence must not be rescaled for that column,
+                  while for the other the index rescaling becomes
+                  a simple integer multiplication, without rounding
+                  errors.
+                  
+                  <p>
+                     Finally, the last argument is simply the path to file,
+                     assuming the file stored in a subfolder called
+                     <var title="">Data</var> in the current directory.
+                     
+                  </p>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html">Program arguments</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Header.html">Header directive</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Split.html">Split directive</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Resample.html">Resample directive</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="CommandlineDirectives.html">Directives in command line arguments</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

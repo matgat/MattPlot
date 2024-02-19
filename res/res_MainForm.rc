@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------
+#include "res_MainForm.h"
+
+        // XP Manifest
+        //1         24         ".\\Other\\MattPlot.manifest"
+
+        // Strings
+        STRINGTABLE
+                {
+                 ID_STR_MAIL , "matteo.gattanini@gmail.com"
+                 ID_STR_SITE , "http://matteo.gattanini.googlepages.com"
+                }
+
+        // Text
+        //ID_SAMPLE_TXT       TEXT     "sample.txt"
+
+        // Bitmaps
+        //ID_BMP_FRAME       BITMAP      ".\\Bitmaps\\Frame.bmp"
+        //ID_BMP_TRACK       BITMAP      ".\\Bitmaps\\Track.bmp"
+
+        // Icons
+        //ID_FOLDER          ICON        "Folder.ico"
+
+        // Cursors
+        //ID_CUR_FUCK        CURSOR      ".\\Cursors\\fuck.cur"
+        //ID_CUR_PLANE       ANICURSOR   ".\\Cursors\\plane.ani"
+
+        // Sounds
+        //ID_WAV_JINGLE      WAVE        ".\\Sounds\\jingle.wav"
+
+        // Movies
+        //ID_SEARCHAVI       AVI         "search.avi"
+
+        // Raw data
+        ID_RAW_EMBEDDED_HELPFILE   RCDATA   ".\\Other\\MattPlot.chm"
+
+//---------------------------------------------------------------------------

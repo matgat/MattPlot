@@ -1,0 +1,200 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Exporting to Matlab via m-files</title>
+      <meta name="keywords" content="example: exporting to Matlab" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="ExportTextToMatlab.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Examples.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="ExportTextToMatlab.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Examples" href="Examples.html">Examples</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="MemDumpPlot.html"><span>A memory dump plot</span></a></li>
+                        <li><a href="ImportFromMatlab.html"><span>Importing from Matlab</span></a></li>
+                        <li><a href="ExportTextToMatlab.html"><span>Exporting text files to Matlab</span></a></li>
+                        <li id="current"><a href="ExportToMatlab.html"><span>Exporting to Matlab via m-files</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ExportToMatlab" title="exporting to Matlab via m-files">Exporting to Matlab via m-files</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: exporting to Matlab" /></object>
+                  
+                  Imagine to have a some tracks in
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> <code class="txt">Frame1</code>, for example
+                  imported from a file like:
+                  
+                  
+                  <div class="notepad"> data.txt<pre class="notepad">
+#header &lt;x&gt;&lt;y1(x)&gt;&lt;y2([2.5s+2])&gt;
+1	1	5
+2	1	2
+3	2	4
+4	2	3
+5	3	1
+6	3
+7	4
+8	4
+9	4
+</pre></div>
+                  
+                  Now you want to import those
+                  data in <a href="http://www.mathworks.com" title="http://www.mathworks.com">MatLab<sup>®</sup></a> workspace
+                  (not yet tested in other math interpreters like <a href="http://freemat.sf.net/" title="http://freemat.sf.net/">FreeMat</a>, <a href="http://www.octave.org" title="http://www.octave.org">Octave</a>, <a href="http://scilabsoft.inria.fr" title="http://scilabsoft.inria.fr">Scilab</a>)
+                  to perform some kind of advanced elaboration.
+                  
+                  <p>
+                     Note that in this case you cannot pass
+                     informations between the two programs relying
+                     on plain text data files as described
+                     <a href="ExportTextToMatlab.html" title="ExportTextToMatlab.html">here</a>,
+                     since data columns have not the same size.
+                     
+                  </p>
+                  You must export <code class="txt">Frame1</code> using
+                  <a href="ActionsTable.html#actExport" title="action Export"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/Export.gif" alt="[Export]" /> <code class="txt">Export</code></a> or <a href="ActionsTable.html#actExportFrameToMatlab"
+                     title="action ExportFrameToMatlab"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/ExportFrameToMatlab.gif"
+                          alt="[ExportFrameToMatlab]" /> <code class="txt">ExportFrameToMatlab</code></a>
+                  action, obtaining the file
+                  <var title="">C:\Data\Plots\MattPlot\Frame1.m</var>
+                  
+                  
+                  <div class="notepad"> Frame1.m<pre class="notepad">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% MattPlot auto-generated m-file (04.01.2008 - 18:21:44.671)
+% This function loads in workspace Frame1 tracks data
+% Input: a figure handle, put 0 to disable plot
+% Output: a struct containing data
+%
+% Usage:
+% » Frame1 = LoadFrame1();
+% Specifying an existing figure handle for plot:
+% » Frame1 = LoadFrame1(2);
+% To disable plot:
+% »Frame1 = LoadFrame1(0);
+% Access data through struct syntax 'Frame1.fieldname'
+% » myvar = Frame1.zz;
+% » plot(Frame1.xx, Frame1.yy);
+% To see actual available fields, just type:
+% » Frame1
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function Frame1 = LoadFrame1(figID)
+
+%----------------------------------------------------------
+% -- Input arguments, default values
+if ( nargin &lt; 1 ) figID = 1;
+elseif ( nargin &gt; 1 )
+    disp('Usage: Frame1 = LoadFrame1(figID)');
+    return
+end
+
+%----------------------------------------------------------
+% -- Data section
+disp('Loading MattPlot Frame1 datas...')
+
+% This is the independent variable of Frame1.y1 
+Frame1.y1_x = (1:1:9)';
+% This is the track y1  linked to x
+Frame1.y1 = [1;1;2;2;3;3;4;4;4];
+
+% This is the independent variable of Frame1.y2 [s]
+Frame1.y2_x = (2:2.5:12)';
+% This is the track y2  linked to x2
+Frame1.y2 = [5;2;4;3;1];
+
+disp('...Done')
+
+%----------------------------------------------------------
+% -- Plot section
+if ( figID &gt; 0 )
+    disp('Preparing plots...')
+    figure(figID);
+    grid on;
+    hold on;
+    plot(Frame1.y1_x,Frame1.y1,Frame1.y2_x,Frame1.y2);
+    h = legend('y1','y2');
+    set(h,'Interpreter','none');
+    h = title('Frame1');
+    set(h,'Interpreter','none');
+    hold off;
+    disp('...Done')
+end
+</pre></div>
+                  
+                  As you can see the obtained <var title="">m-file</var>
+                  defines a function that returns a <code class="cpp">struct</code>
+                  containing tracks data.
+                  You can now execute the <var title="">m-file</var>
+                  calling it from math interpreter command line,
+                  of course after ensuring the visibility
+                  of <var title="">Frame1.m</var> in the interpreter
+                  path:
+                  
+                  <pre class="matlab">
+ To get started, select MATLAB Help or Demos from the Help menu.
+
+» addpath('C:\Data\Plots\MattPlot');
+
+» fr1 = Frame1()
+Loading MattPlot Frame1 datas...
+...Done
+Preparing plots...
+...Done
+
+fr1 = 
+
+    y1_x: [9x1 double]
+      y1: [9x1 double]
+    y2_x: [5x1 double]
+      y2: [5x1 double]
+
+» fr1.y2
+
+ans =
+     5
+     2
+     4
+     3
+     1
+
+»
+
+</pre>
+                  
+                  </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

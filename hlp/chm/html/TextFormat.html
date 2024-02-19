@@ -1,0 +1,666 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Text format</title>
+      <meta name="keywords" content="data text format, format of text data" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="BinaryFormats.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Importing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="BinaryFormats.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Importing" href="Importing.html">Importing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="DataSources.html"><span>Data sources</span></a></li>
+                        <li><a href="BinaryFormats.html"><span>Binary formats</span></a></li>
+                        <li id="current"><a href="TextFormat.html"><span>Text format</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="TextFormat" title="on supported text format">Text format</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="data text format" />
+                     <param name="Keyword" value="format of text data" /></object>
+                  
+                  As a matter of fact text format plays a fundamental
+                  role in numeric data exchange, due to the almost
+                  full portability in all platforms (<a href="http://www.ascii.org/" title="http://www.ascii.org/"><acronym title="American Standard Code for Information Interchange">ASCII</acronym></a> text encoding
+                  is well established).
+                  The problem of larger size respect a binary format
+                  can be reduced using a compression algorithm,
+                  so a planned feature is auto extraction of
+                  compressed text streams.
+                  
+                  Here is a typical (ehm, except size) data text
+                  file:
+                  
+                  
+                  <div class="notepad"> data.txt<pre class="notepad">
+// data acquisition
+1.2  2E3  -3.1E-4  .412  6
+6.0  1E2  -2.8E-3  .423  7
+</pre></div>
+                  
+                  It is composed by a first comment line,
+                  then by two rows of data forming five
+                  columns.
+                  Another example:
+                  
+                  
+                  <div class="notepad"> data2.out<pre class="notepad">
+  00;10;20;30
+  01;11;21;31
+  02;12;22;32
+  03;13;23;33
+  04;14;24;34
+</pre></div>
+                  
+                  Now we have four columns with one semicolon
+                  as data (columns) delimiter.
+                  
+                  This kind of structure resembles a
+                  <a href="ToTXT.html#ToTxtTable" title="ToTXT.html#ToTxtTable">bidimensional table</a>;
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> supports also a
+                  <a href="ToTXT.html#ToMPL" title="ToTXT.html#ToMPL">monodimensional format</a>,
+                  taking advantage from parser's
+                  <a href="Directives.html" title="Directives.html">directives</a>.
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ToTXT.html">Exporting to text</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="DataSources.html#FileSources">File sources</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Directives.html">Directives</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="CommandlineDirectives.html">Directives as program arguments</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html">Program arguments</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <p>
+                     <a href="Directives.html" title="Directives.html">Directives</a> are
+                     additional informations embedded with data file,
+                     according to a particular syntax; this mechanism
+                     allow to pass to the parser other informations than
+                     plain numbers, and perform some postprocessing on
+                     retrieved data.
+                     
+                  </p>
+                  
+                  You can find more complex file examples in
+                  <a href="TextFormat.html#DataFileExamples"
+                     title="TextFormat.html#DataFileExamples">the following sections</a>.
+                  
+                  The next sections also explain in more detail
+                  how parser works.
+                  
+                  
+                  
+                  
+                  <h3><a name="ParserCharacteristics" title="parser characteristics">Parser characteristics</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="parser characteristics" /></object>
+                  
+                  
+                  <ul class="listO">
+                     <li>Parser accepts only 8-bit <code class="cpp">char</code>
+                        <a href="http://www.ascii.org/" title="http://www.ascii.org/"><acronym title="American Standard Code for Information Interchange">ASCII</acronym></a> encoded text; using <code class="cpp">WideChar</code>
+                        for number literals would be a waste.
+                     </li>
+                     <li>The decimal separator character can be
+                        declared explicitly.
+                     </li>
+                     <li>Parser retrieves from local operating system
+                        settings the thousand separator character in
+                        <dfn title="the strings representing numbers">number literals</dfn>
+                        (ex. <samp>1,000,000.10</samp>) in order to ignore it
+                        during string to number conversion.
+                        This feature can be disabled or another
+                        character can be specified using related
+                        <a href="DirectiveList.html" title="DirectiveList.html">directive</a>.
+                     </li>
+                     <li>Stream position is an <code class="cpp">int</code>, so
+                        streams longer than <code class="txt">2147483647</code>
+                        characters (files greater than 2Gb) cause
+                        problems.
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="LineDelimiters" title="line delimiters,row delimiters">Line delimiters</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="line delimiters" />
+                     <param name="Keyword" value="row delimiters" /></object>
+                  
+                  The parser must be able to recognize lines
+                  (data rows); this is accomplished chosing a
+                  set of characters that act as line delimiters.
+                  
+                  <p>
+                     As explicit developer choice those lines (row)
+                     delimiters cannot be chosen by user and are
+                     instead forced to normal text end line characters
+                     (see below): this should avoid confusion and
+                     benefit clarity when viewing data file with
+                     external editors; furthermore this of course
+                     implies that users cannot adopt those characters
+                     as data (column) delimiters.
+                     
+                  </p>
+                  
+                  Regarding end line characters, each platform
+                  has its own standard:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Platform</td>
+                           <td>text line delimiters</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><dfn title="">Mac</dfn></td>
+                           <td><kbd title="Carriage Return: 0x0D">CR</kbd> (<code class="cpp">\r = 0x0D</code>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><dfn title="">Unix</dfn></td>
+                           <td><kbd title="Line Feed: 0x0A">LF</kbd> (<code class="cpp">\n = 0x0A</code>)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><dfn title=""><a href="http://www.microsoft.com" title="http://www.microsoft.com">Windows<sup>®</sup></a></dfn></td>
+                           <td><kbd title="Carriage Return: 0x0D">CR</kbd> <kbd title="Line Feed: 0x0A">LF</kbd> (<code class="cpp">\r\n = 0x0D 0x0A</code>)
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  In order to keep compatibility with those standards,
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> text parser will detect line endings in
+                  this way:
+                  
+                  <p>
+                     When a <kbd title="Carriage Return: 0x0D">CR</kbd>
+                     or <kbd title="Line Feed: 0x0A">LF</kbd> character
+                     is encountered, line is ending.
+                     If this character is followed by another (but different)
+                     end line character, this one will be eaten.
+                     
+                  </p>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="DataDelimiters" title="data delimiter,column delimiters">Data delimiters</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="data delimiter" />
+                     <param name="Keyword" value="column delimiters" /></object>
+                  
+                  Parser must also be able to recognize,
+                  in a line, each data value.
+                  As default behaviour, the parser realize that
+                  a value string is finished when encounters
+                  a <code class="cpp">char</code> belonging to a previously
+                  declared set; any other character will cause an
+                  invalid number error.
+                  
+                  
+                  <p>
+                     This default behaviour can be changed using
+                     <a href="StrictDelimiters.html" title="StrictDelimiters.html">Strictdelimiters directive</a>.
+                     
+                  </p>
+                  
+                  The expected data delimiters set contains
+                  always space characters
+                  <kbd title="Space: 0x20">SPACE</kbd> and
+                  <kbd title="Horizontal tab: 0x09">TAB</kbd>;
+                  these delimiters are recommended because enhance
+                  human readability.
+                  Other characters can be added editing the
+                  <a href="OptionsDescription.html#optExpectedDelimiters"
+                     title="option ExpectedDelimiters"><code class="txt">ExpectedDelimiters</code></a> option.
+                  
+                  This set cannot contain characters
+                  composing
+                  <dfn title="the strings representing numbers">number literals</dfn>
+                  (<code class="txt">0123456789+-Ee</code> plus decimal separator)
+                  and cannot overlap with fixed line delimiters
+                  <kbd title="Carriage Return: 0x0D">CR</kbd>
+                  and
+                  <kbd title="Line Feed: 0x0A">LF</kbd>.
+                  
+                  It is also better avoid any character
+                  that can cause possible conflict with particular
+                  locale settings (for example comma is sometimes
+                  used as decimal separator or apostrophe as
+                  thousand separator).
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="DataFilesStructure" title="structure of data files,content of data files">Data files structure</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="structure of data files" />
+                     <param name="Keyword" value="content of data files" /></object>
+                  
+                  Parser thinks data files content as
+                  divided in data sessions, each session
+                  composed by two parts:
+                  
+                  <ul class="listO">
+                     <li>
+                        Declarative part (data heading):
+                        contains parser directives and comments;
+                        other text is ignored but causes warnings
+                        
+                     </li>
+                     <li>
+                        Data part (data body):
+                        contains number literals and delimiters;
+                        a warning is emitted for comments and empty
+                        lines; directives causes session
+                        termination; other text causes errors
+                        
+                     </li>
+                  </ul>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="DataSessionDef"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 I call "data session" each bunch
+                                 of data delimited by
+                                 <a href="Header.html" title="Header.html"><code class="txt">#header</code></a>
+                                 <a href="Directives.html" title="Directives.html">directives</a>.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Summarizing:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Content</td>
+                           <td>Switching chars</td>
+                           <td>Description</td>
+                           <td>Example</td>
+                           <td>notes</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td class="header" colspan="4">First part (declarative)</td>
+                        </tr>
+                        <tr>
+                           <td><a href="Directives.html" title="Directives.html">Directives</a></td>
+                           <td><code class="txt">#</code></td>
+                           <td>parser directives</td>
+                           <td><code class="txt">#title  Plot1</code></td>
+                           <td>directive names are case insensitive</td>
+                        </tr>
+                        <tr>
+                           <td>Comments</td>
+                           <td><code class="txt">//</code> or <code class="txt">/* */</code></td>
+                           <td>ignored text: <code class="cpp">C++</code> and <code class="cpp">C</code> style comments
+                           </td>
+                           <td><code class="txt">/* multiline comment */</code> <br />
+                              <code class="txt">//oneline comment</code></td>
+                        </tr>
+                        <tr>
+                           <td>Number literals</td>
+                           <td><code class="txt">0123456789 +-E.</code></td>
+                           <td>numbers</td>
+                           <td><code class="txt">1 12.5E-3 .23 +2 -.4E+2 006</code></td>
+                           <td>cause switch to data part</td>
+                        </tr>
+                        <tr>
+                           <td>Other</td>
+                           <td></td>
+                           <td>Warning</td>
+                           <td></td>
+                           <td>Other text is tolerated but reported by Log warnings</td>
+                        </tr>
+                        <tr>
+                           <td class="header" colspan="4">Second part (data)</td>
+                        </tr>
+                        <tr>
+                           <td>Number literals</td>
+                           <td><code class="txt">0123456789 +-E.</code></td>
+                           <td>numbers</td>
+                           <td><code class="txt">1 12.5E-3 .23 +2 -.4E+2 006</code></td>
+                           <td>When <code class="txt">tolerant</code> is <var title="">true</var>
+                              strange numbers like <code class="txt">+ - e . +e 2.1E-</code>
+                              are tolerated
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Column delimiters</td>
+                           <td></td>
+                           <td>declared characters</td>
+                           <td></td>
+                           <td>if <code class="txt">strictdelimiter</code> is not specified,
+                              delimiters include spaces, tabs and those
+                              declared in options
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Comments</td>
+                           <td><code class="txt">//</code> or <code class="txt">/* */</code></td>
+                           <td>ignored text: <code class="cpp">C++</code> and <code class="cpp">C</code> style comments
+                           </td>
+                           <td><code class="txt">/* multiline comment */</code> <br />
+                              <code class="txt">//oneline comment</code></td>
+                           <td>Comments in data part are tolerated but reported by Log warnings</td>
+                        </tr>
+                        <tr>
+                           <td><a href="Directives.html" title="Directives.html">Directives</a></td>
+                           <td><code class="txt">#</code></td>
+                           <td>parser directives</td>
+                           <td><code class="txt">#header &lt;y&gt;</code></td>
+                           <td>causes data session termination</td>
+                        </tr>
+                        <tr>
+                           <td>Other</td>
+                           <td></td>
+                           <td>Error</td>
+                           <td></td>
+                           <td>When <code class="txt">tolerant</code> is <var title="">true</var>
+                              some errors may not be reported
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  
+                  
+                  <h3><a name="ParserStateMachine" title="parsing sequence">Parsing sequence</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="parsing sequence" /></object>
+                  
+                  Parser state machine works in
+                  this way:
+                  
+                  
+                  <ul class="listO">
+                     <li>
+                        New <a href="#DataSessionDef" title="#DataSessionDef">session</a>: read
+                        declarative part until a number is encountered.
+                        
+                     </li>
+                     <li>
+                        Once a number is reached, the heading part will
+                        be considered concluded and parser will
+                        check declarations coherence confronting them
+                        with first data row.
+                        
+                     </li>
+                     <li>
+                        If all is ok parser starts to collect numbers
+                        until end of file or a directive is reached;
+                        numbers are arranged in arrays called columns.
+                        
+                     </li>
+                     <li>
+                        Postprocessing operations for
+                        current session are performed according
+                        to the sequence:
+                        
+                        <ul class="listD">
+                           <li>Split columns</li>
+                           <li>Assign header data</li>
+                           <li>Rescale columns</li>
+                           <li>Resample columns</li>
+                        </ul>
+                        
+                     </li>
+                     <li>
+                        If follows another
+                        <a href="#DataSessionDef" title="#DataSessionDef">session</a>
+                        preceding steps are repeated,
+                        otherwise parser resolves links between
+                        overall columns
+                        (ordinate-abscissa, real-imaginary parts)
+                        and makes data available to <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>.
+                        
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="DataFileExamples" title="examples (data files),data files examples">Examples</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="examples (data files)" />
+                     <param name="Keyword" value="data files examples" /></object>
+                  
+                  Some examples of valid data files;
+                  the meaning of contained
+                  <a href="Directives.html" title="Directives.html">directives</a>
+                  are explained in the related
+                  <a href="Directives.html" title="Directives.html">section</a>.
+                  All these examples are referred to default
+                  <a href="OptionsDescription.html#optImporter" title="option Importer"><code class="txt">Importer</code></a> options.
+                  
+                  <br />
+                  As first example consider a single
+                  <a href="#DataSessionDef" title="#DataSessionDef">session</a>
+                  data file:
+                  
+                  <div class="notepad"> data1.dat<pre class="notepad">
+#header &lt;a()&gt;&lt;b()&gt;&lt;c()&gt;&lt;d()&gt;&lt;e()&gt;
+#title abcd acquisition
+#xlabel i
+1.2  2E3  -3.1E-4  .412  6
+6.0  1E2  -2.8E-3  .423  7
+</pre></div>
+                  
+                  The preceding data could be organized
+                  in a single text column using multiple
+                  <a href="#DataSessionDef" title="#DataSessionDef">sessions</a>:
+                  
+                  <div class="notepad"> data1bis.dat<pre class="notepad">
+#title abcde acquisition
+#xlabel i
+#header &lt;a()&gt;
+1.2
+6.0
+#header &lt;b()&gt;
+2E3
+1E2
+#header &lt;c()&gt;
+-3.1E-4
+-2.8E-3
+#header &lt;d()&gt;
+.412
+.423
+#header &lt;e()&gt;
+6
+7
+</pre></div>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="SingleColsFiles"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Single column files are sometimes
+                                 preferred by data exporters because
+                                 are simpler to build.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Let's see another multiple session data file,
+                  whose data sessions have different number
+                  of columns:
+                  
+                  <div class="notepad"> I(t).out<pre class="notepad">
+#title Instantaneous phase currents
+#ymarker 1.21 // rms
+
+#header &lt;t1[us]&gt; &lt;I1(t1)[A]&gt;
+  0.0000000000000000e+000	  0.0000000000000000e+000
+  1.0000000000000001e-001	  9.9833416646828155e-002
+  2.0000000000000001e-001	  1.9866933079506122e-001
+
+#header &lt;I2(t2)[A]&gt; &lt;I3(t2)[A]&gt;
+  0.4574524247382252e+000	  2.9552020666133960e-001
+  1.8724824582489825e-001	  3.8941834230865052e-001
+  2.8765635385385348e-001	  4.7942553860420301e-001
+  
+#header &lt;t2[us]&gt;
+  0.0000000000000000e+000
+  1.0000000000000002e-001
+  2.0000000000000004e-001
+</pre></div>
+                  
+                  
+                  Use of comments:
+                  
+                  <div class="notepad"> comments.txt<pre class="notepad">
+// A commented line
+#header &lt;col0&gt;&lt;col1&gt;&lt;col2&gt;&lt;col3&gt;
+//#resample [3:6)[0:3)[6:10) --&gt;ignoring directive
+/*  follows some data
+          ....          */
+ 00  10  20  30
+// 01  11  21  31  ignoring this line
+ 02  12  22  32
+ 03  13  23  33 /*
+ 04  14  24  34  this commented data
+ 05  15  25  35  block will generate
+ 06  16  26  36  a warning, never mind,
+ 07  17  27  37  I know what I'm doing
+ 08  18  28  38 */
+ 09  19  29  39
+ // No more data
+</pre></div>
+                  
+                  
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="HighlighterAdvice"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 When you manually edit data files you should
+                                 choose 'C/C++' highlighter in your
+                                 editor.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

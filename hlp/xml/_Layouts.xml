@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MatPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<scrap_page name="_Layouts"
+            title="Layout examples"
+            keywords="layouts (frames),positions (frames),arrangements (frames)"
+            description="example of possible frame layout in the canvas"
+            xmlns="/mattplot/xhelp">
+
+    <p style="text-align:left;">
+        Possible arrangement of
+        <dfn>frames</dfn> in the
+        <dfn>canvas</dfn> area.
+    </p>
+    <img src="./files/images/Layouts.png"/>
+
+</scrap_page>
+<!--_______________________End_of_file______________________-->

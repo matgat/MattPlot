@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Editing"
+         title="Editing and transforming data"
+         keywords="editing"
+         description="ways to modifying plotted data: track editing and elaboration"
+         version="0.6draft" date="nov2008">
+
+    <intro toc="yes">
+        This chapter describes tools that
+        allow users to modify or create tracks.
+        These tools can be divided in two categories:
+        manual editing tools and track operators that
+        transform one or more track.
+    </intro>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="EditTrackData"
+             title="Edit data manually"
+             keywords="edit data,manual data editing,correct data manually"
+             description="changing track data manually">
+
+    <!--....................................-->
+    <subsection name="ManualEdit"
+                title="Manual edit">
+
+    Although its use is improbable, this tool is
+    introduced for completeness.
+    The <action name="TrackData"/> action opens
+    an editor containing data columns:
+    the first is the independent variable, the
+    remaining is the dependent one.
+    
+    <scrap name="EditTrackDataWarning">
+        This conversion mechanism is very simple
+        and has no check on typing errors; if you
+        aren't sure of what you're doing, better
+        <a href="ToTXT.html">export to text</a>,
+        edit file, and then import back.
+    </scrap>
+
+    </subsection>
+
+    
+    <!--....................................-->
+    <subsection name="UsingEditMode"
+                title="Using EditMode">
+
+    The <action name="EditMode"/> provides
+    some tools like crop the track abscissa interval
+    (real tracks only).
+    </subsection>
+
+    </section>
+
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <section name="Transforming"
+             title="Transforming tracks"
+             keywords="elaborate tracks,transform tracks"
+             description="about track elaboration, operators and tools">
+
+    Please that this functionality is evolving
+    and not yet completed.
+    This section consists in just some notes...
+    
+    <underconstruction/>
+    
+    The tool <action name="TrackTransform"/>
+    gives the user the possibility to
+    create new tracks from an existing ones.
+
+    <!--....................................-->
+    <subsection name="TrackOperators"
+                title="Track operators"
+                keywords="track operators">
+
+    A track operator is something that transform one
+    or more track in another one.
+    Available operators are classified by their
+    number of arguments:
+    <listO>
+        <it><dfn>Unary</dfn>: applies on a track only, like square root or filters</it>
+        <it><dfn>Binary</dfn>: applies on a pair of tracks, like addition operator</it>
+    </listO>
+    
+    <table hcol="1">
+        <thead><c>Operator</c><c>Example</c><c>Description</c><c>Note</c></thead>
+        <!-- *************** Unary *************** -->
+        <row><c colspan="4" class="header">Unary operators</c></row>
+        
+        <row>
+            <c>Product and summation with a scalar</c>
+            <c>m*y + q,   m,q scalar</c>
+            <c>Linear transformation</c>
+            <c>Negate: m=-1,q=0</c>
+        </row>
+
+        <row>
+            <c>Absolute value</c>
+            <c>|y|</c>
+            <c>Take the absolute value of each sample</c>
+            <c></c>
+        </row>
+        <row>
+            <c>Power elevation</c>
+            <c>pow(y,n)</c>
+            <c>Perform n-esimal power elevation of each sample</c>
+            <c>When n&lt;0 and y=0, or n not integer and y&lt;0, a &NaN; value is given.
+               Square root: n=0.5</c>
+        </row>
+        <row>
+            <c>Natural logarithm</c>
+            <c>log(y)</c>
+            <c>Perform logarithm (base e) of each sample</c>
+            <c>When argument is null or negative, a &NaN; value is given</c>
+        </row>
+        <row>
+            <c>Low pass filter</c>
+            <c>filt(y,0.5)</c>
+            <c>Apply a low pass filter (which? order?)</c>
+            <c>Second argument (0÷1) is the cut-off frequency normalized respect Nyquist freq</c>
+        </row>
+        <row>
+            <c>Derivative</c>
+            <c>D(y)</c>
+            <c>Calculate the incremental ratios for each pair of samples</c>
+            <c></c>
+        </row>
+        <row>
+            <c>Integration</c>
+            <c>S(y,0)</c>
+            <c>Sum the samples area</c>
+            <c>Second argument is the integration constant</c>
+        </row>
+        
+        <!-- ************** Binary *************** -->
+        <row><c colspan="4" class="header">Binary operators</c></row>
+        <row>
+            <c>Addition</c>
+            <c>y1 + y2</c>
+            <c>Sample to sample addition</c>
+            <c>Not commutative: resulting track has
+               the first track domain; values of second track
+               corresponding to abscissa of first track are
+               obtained by linear interpolation</c>
+        </row>
+        <row>
+            <c>Subtraction</c>
+            <c>y1 - y2</c>
+            <c>Sample to sample subtraction</c>
+            <c>Same</c>
+        </row>
+        <row>
+            <c>Multiplication</c>
+            <c>y1 * y2</c>
+            <c>Sample to sample multiplication</c>
+            <c>Same; has precedence respect addition and subtraction</c>
+        </row>
+        <row>
+            <c>Division</c>
+            <c>y1 / y2</c>
+            <c>Sample to sample division</c>
+            <c>Same</c>
+        </row>
+    </table>
+
+    </subsection>
+
+
+    </section>
+
+
+</chapter>
+<!--_______________________End_of_file______________________-->

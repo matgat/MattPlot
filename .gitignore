@@ -1,0 +1,28 @@
+# [General]
+*.t*mp
+*.bak
+*.sav
+*.lnk
+*.orig
+~*
+**/backup
+*.log
+**/Logs
+
+# [windows]
+Thumbs.db
+
+# [c++ development]
+*.obj
+
+# [Borland development]
+*.~*
+*.tds
+*.dcu
+*.dpu
+*.dsk
+*.cgl
+*.local
+*.identcache
+__history
+

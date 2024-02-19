@@ -1,0 +1,904 @@
+    /* * * * * * * * * * * * * * * * * * * * * * * * * * *\
+    *
+    *   Matteo Gattanini
+    *
+    *   `hlp_style.css' v0.6
+    *
+    *   `Cascading Style Sheet' file for help files
+    *
+    *   Last changes:
+    *       18aug2006 (MG) - Quite mature now
+    *       14aug2006 (MG) - Introduction of LR text tags
+    *       08may2006 (MG) - Mature structure
+    *       01may2006 (MG) - Created
+    *
+    \* * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+/*********************** General classes *********************/
+.hide { display: none; visibility: hidden; }
+
+.lieve
+    {
+     font: italic normal 50% Georgia;
+     letter-spacing: 1px;
+     margin: 0px;
+     color: rgb(142,133,114);
+    }
+
+.docversion /* Version informations */
+    {
+     float: right;
+     height: 0;
+     font: italic normal 80% Garamond;
+     color: rgb(172,169,154);
+    }
+
+.descriptions /* descriptive captions */
+    {
+     font-size: smaller;
+     font-style: italic;
+     color: rgb(132,128,108);
+     margin-top: .5ex;
+     margin-bottom: 1em;
+     padding-left: 1em;
+    }
+
+.cpp /* C++ source code (see also `code,pre´) */
+    {
+     font: normal bold 100% Prestige,monospace;
+     color: rgb(40,39,36);
+    }
+
+.txt /* plain text (see also `pre´) */
+    {
+     font: normal 100% 'MS Courier New',monospace;
+     color: black;
+    }
+.button /* redmont button */
+    {
+     display: block;
+     background-color: rgb(236,233,216);
+     border-top: 2px solid rgb(252,251,248);
+     border-bottom: 2px solid rgb(172,168,153);
+     border-left: 2px solid rgb(252,251,248);
+     border-right: 2px solid rgb(172,168,153);
+     font: normal normal 80% 'MS Arial',sans-serif;
+     color: black;
+     padding: 4px;
+     margin: 2px;
+     text-align: center;
+     vertical-align: middle;
+    }
+
+/*************************** Document ************************/
+/*
+@page
+    {
+     size: 210mm 297mm; //A4
+     margin: 10mm;
+    }
+
+
+html
+    {
+     scrollbar-face-color: #99ccff;
+     scrollbar-shadow-color: #ccccff;
+     scrollbar-highlight-color: #ccccff;
+     scrollbar-3dlight-color: #99ccff;
+     scrollbar-darkshadow-color: #ccccff;
+     scrollbar-track-color: #ccccff;
+     scrollbar-arrow-color: #000033;
+    }
+*/
+
+body
+    {
+     color: rgb(103,101,91); /*rgb(82,77,68);*/
+     background-color: rgb(236,233,216);
+     font-family: Georgia;
+     /*font: normal 11pt Georgia,Geneva,Verdana,cursive;*/
+     /*font: 12pt 'Century Gothic',Verdana,sans-serif;*/
+     margin: 0mm;
+    }
+
+table.page
+    {
+     /* display: inline; */
+     width: 100%;
+     margin-top: 0em;
+     margin-bottom: 0em;
+     margin: auto;
+     border: none;
+     padding: 0px;
+     border-collapse: collapse;
+     border-spacing: 0px;
+     empty-cells: show;
+    }
+thead.page /* page header */
+    {
+     background: transparent;
+    }
+tfoot.page /* page footer */
+    {
+     background: transparent;
+    }
+
+/*sections inlined frames
+iframe
+    {
+     display: block;
+      width: auto;
+     height: auto;
+    }*/
+
+/**************************** Links **************************/
+a , :link , :visited
+    {
+     color: rgb(106,96,52);
+     text-decoration: none;
+     /*background: transparent;*/
+     /*font-weight: bold;*/
+    }
+
+a:active
+    {
+     color: rgb(103,101,91);
+     /*border: thin solid yellow;*/
+     /*background: yellow;*/
+    }
+a:hover
+    {
+     color: rgb(163,163,255); /*viola   150,133,186*/
+     text-decoration: underline;
+     /*background: url(./images/CSS/hlp_Go.png) no-repeat;*/
+    }
+
+
+a:link img, a:visited img
+    {
+     border-style: none /* no border on img links */
+    }
+
+a.browse
+    {
+     padding: 0px;
+    }
+
+/*********************** Text attributes *********************/
+
+h1 /*Header 1*/
+    {
+     text-align: center;
+     margin-top: 0em;
+     margin-bottom: 1em; /*spacing of body text*/
+     font-size: 220%;
+     font-weight: bold;
+     /*font-variant: small-caps;*/
+     clear: both;
+    }
+h2 /*Header 2*/
+    {
+     margin: 1ex; /*spacing of body text*/
+     margin-top: 2em; /*spacing of body text*/
+     font-size: 140%;
+     font-weight: bold;
+     clear: both;
+    }
+h2:before
+    {
+     content: ' ';
+    }
+h3 /*Header 3*/
+    {
+     margin: 1ex; /*spacing of body text*/
+     margin-top: 1em; /*spacing of body text*/
+     font-size: 110%;
+     font-weight: bold;
+     /*font-style: italic;*/
+     clear: both;
+    }
+h3:before
+    {
+     content: '  ';
+    }
+h4 /*Header 4*/
+    {
+     margin: 1ex; /*spacing of body text*/
+     margin-top: 1em; /*spacing of body text*/
+     font-size: 100%;
+     font-weight: bold;
+     font-style: italic;
+     clear: both;
+    }
+
+em /* emphasis */
+    {
+     background-color: rgb(252,244,176);
+     /* font-style: italic; */
+    }
+
+strong /* strong emphasis (> logo) */
+    {
+     font: italic bold 100% 'Comic Sans MS',cursive;
+    }
+
+dfn /* definition (> labels)  <dfn title="definition">word</dfn> */
+    {
+     /*font-family: monospace; /*Courier,MS Courier New,Prestige,Everson Mono,*/
+     font-style: oblique;
+     /*font-weight: lighter;*/
+     /*background-color: rgb(71,255,215);*/
+    }
+
+kbd /* keyboard input (> ) */
+    {
+     font: normal 100% Fixedsys,monospace;
+     /*background-color: rgb(255,71,71);*/
+    }
+
+var /* variables (> files) */
+    {
+     font-family: 'Century Gothic',Prestige,Everson Mono;
+     /*background-color: rgb(147,196,255);*/
+    }
+
+code /* source code (see also `pre´) */
+    {
+     font: normal 100% 'MS Courier New',monospace;
+    }
+
+samp /* samples (> ) */
+    {
+     font: normal 100% 'MS Trebuchet','ITC Avant Garde Gothic','MS Arial','MS Verdana',sans-serif;
+    }
+
+cite /* citation (> names)  <cite title="citation">name</cite> */
+    {
+     font: oblique normal 100% sans-serif;
+     /*background-color: rgb(255,147,248);*/
+    }
+
+q /* quotation (> )  <q lang="en-us">quotation</q> */
+    {
+     /*font: italic normal 120% 'Caflisch Script','Adobe Poetica',Sanvito,'Ex Ponto','Snell Roundhand',Zapf-Chancery,ScriptC,ScriptS,Garamond,cursive;*/
+     font-style: italic;
+    }
+
+abbr /* abbreviations (> )  <abbr lang="fr" title="Soci&eacute;t&eacute;">soc.</abbr> */
+    {
+    }
+
+acronym /* acronyms (> )  <acronym title="World Wide Web">WWW</acronym> */
+    {
+     font: normal small-caps normal 100% sans-serif;
+     color: rgb(84,82,74);
+     /*background-color: rgb(255,210,147);*/
+    }
+
+
+
+
+
+/************************ Text blocks ************************/
+
+p.minipage
+    {
+     margin-left: 2cm;
+     margin-right: 2cm;
+     margin-top: 0.8ex;
+     margin-bottom: 0.8ex;
+    }
+
+div.intro /* Introduction paragraph */
+    {
+     display: block;
+     width: 80%;
+     margin: auto;
+     text-align: justify;
+     font-style: italic;
+     /*font-size: 100%;*/
+     color: rgb(172,169,154);
+     margin-bottom: 1ex;
+    }
+
+div.foil /* A foil */
+    {
+     display: block;
+     width: auto;
+     margin: auto;
+     position: relative;
+     padding: 1ex;
+     border-top: 1px solid white;
+     border-bottom: 1px solid gray;
+     border-right: 1px solid gray;
+     border-left: 1px solid white;
+     color: rgb(62,58,40);
+     font: normal normal 100% Georgia,Garamond,'Times New Roman',serif;
+     background: url(./images/CSS/paper.gif) top left repeat scroll;
+    }
+
+/*************************** Blocks **************************/
+
+/* images */
+
+img
+    {
+    }
+
+img.browse
+    {
+     visibility: visible; /*hidden*/
+    }
+
+img.browse:hover
+    {
+     visibility: visible;
+    }
+
+/* Preformatted (verbatim) text */
+pre
+    {
+     display: block;
+     text-align: left;
+     padding: 1ex;
+     width: auto;
+     max-width: 100% !important;
+     min-width: 10px !important;
+     overflow: scroll;
+    }
+
+pre.cmdline /* command line */
+    {
+     background-color: black;
+     border: 2px solid rgb(172,168,153);
+     border-top: 17px solid rgb(138,166,229);
+     color: rgb(192,192,192);
+     font: normal 100% Fixedsys,monospace;
+    }
+    
+pre.matlab /* command line */
+    {
+     background-color: white;
+     border: 2px solid rgb(0,84,228);
+     border-top: 10px solid rgb(0,84,228);
+     color: black;
+     font: normal 80% 'Courier new',monospace;
+    }
+
+div.notepad
+    {
+     background-color: rgb(27,113,240);
+     color: white;
+     font-family: Arial, sans-serif;
+     font-size: smaller;
+     font-weight: bold;
+     margin: 1em 0px;
+     padding: 0px;
+     border: 1px solid rgb(132,119,92);
+     border-bottom-width: 1px;
+     width: auto;
+     max-width: 100% !important;
+     /*float: left; clear: both;*/
+    }
+
+pre.notepad
+    {
+     background-color: white;
+     color: black;
+     font-family: "Courier New", monospace;
+     font-weight: normal;
+     padding: 0px;
+     margin: 0px;
+     border: 3px solid rgb(154,145,126);
+     border-bottom-color: rgb(212,208,200);
+     border-right-color: rgb(212,208,200);
+    }
+
+
+/**************************** Lists **************************/
+
+
+ul.listQ
+    {
+     list-style: square outside url(./images/CSS/ListQ.gif);
+    }
+ul.listO
+    {
+     list-style: square outside url(./images/CSS/ListO.gif);
+    }
+ul.listD
+    {
+     list-style: square outside url(./images/CSS/ListD.gif);
+    }
+
+ol
+    {
+     font-family: Times New Roman,serif;
+     list-style: hebrew outside;
+    }
+ol.withroman { list-style-type: lower-roman }
+
+li
+    {
+     padding-top: 0.5ex;
+     padding-bottom: 0.5ex;
+    }
+
+dt
+    {
+    }
+dd
+    {
+     font-size: smaller;
+     font-style: oblique;
+    }
+
+
+
+/*************************** Tables **************************/
+
+table /* generic (seealso: table.page) */
+    {
+     display: table;
+     width: 90%;
+     margin: auto;
+     margin-top: 1em;
+     margin-bottom: 1em;
+     empty-cells: hide; /* show */
+     border: none;
+     /* border: thin solid gray; */
+     border-collapse: separate; /*collapse*/
+     border-spacing: 5px;
+    }
+
+caption /* generic */
+    {
+     caption-side: top;
+     text-align: right;
+     vertical-align: bottom;
+     width: auto;
+     font-style: italic;
+     font-size: smaller;
+     color: gray;
+    }
+
+thead /* generic table header */
+    {
+     background-color: rgb(255,246,199); /*rgb(248,244,254); /*lilla*/
+     text-align: center;
+     font-weight: bold;
+     font-variant: small-caps;
+    }
+
+tfoot /* generic table footer */
+    {
+     background-color: transparent;
+     text-align: center;
+     font-weight: bold;
+     font-variant: small-caps;
+    }
+
+td.header /* header class */
+    {
+     background-color:rgb(226,240,244);
+     font-variant:small-caps;
+     text-align: center;
+     font-weight: bold;
+    }
+
+td /* generic (seealso: td.body) */
+    {
+     vertical-align: middle;
+     text-align: left; /* justify */
+     padding: 5px 5px; /*vertical - horizontal*/
+     border: 1px solid rgb(172,169,154);
+    }
+td.spacer
+    {
+     background: transparent;
+     border: none;
+     height: 20px;
+     page-break-inside: auto;
+    }
+
+
+/* Actions */
+table.actions
+    {
+     width: 95%;
+     empty-cells: hide;
+     border: thin outset rgb(172,169,154);
+     border-collapse: separate; /*collapse*/
+     border-spacing: 5px;
+    }
+
+td.actions
+    {
+    }
+
+
+/* Faqs */
+
+table.faqs
+    {
+     width: 95%;
+     empty-cells: hide;
+     border-collapse: separate; /*collapse*/
+     border-spacing: 5px; /* not work in ie */
+    }
+
+table.faqs .leftcol { width: 15%; }
+table.faqs .middlecol { width: 70%; }
+table.faqs .rightcol { width: 15%; }
+
+.faqs_topic /* topic titles */
+    {
+     font: normal small-caps 150% 'Lucida Grande',Lucida,Geneva,sans-serif;
+     /* text-decoration: underline; */
+    }
+td.faqs_topic   /* topic titles cells */
+    {
+     /* background-color: rgb(253,248,211); */
+     text-align: left;
+     margin-top: 1em;
+     border-top: 2px solid rgb(103,101,91);
+     border-bottom: none;
+     border-right: none;
+     border-left: none;
+     /* border-width: 3px; */
+     padding: 5px 5px;
+    }
+
+.faqs_que   /* questions */
+    {
+     /* font: normal 100% 'Century Gothic',Verdana,Helvetica,'MS Arial',sans-serif; */
+     font-weight: normal;
+     border:none; padding:2px;
+    }
+td.faqs_que /* question cells */
+    {
+     text-align: left;
+     vertical-align: top;
+     border: none;
+     /* border-top: 4px solid rgb(106,96,52);
+     border-left: 2px solid rgb(106,96,52); */
+     /* background-color: rgb(249,245,221); */
+     page-break-before: auto;
+     page-break-inside: avoid;
+     page-break-after: avoid;
+    }
+/* td.faqs_que:hover { cursor: pointer; } */
+/* td.faqs_que:active { background: yellow;} */
+
+
+td.faqs_ans /* answer cells */
+    {
+     vertical-align: top;
+     border: none;
+     page-break-before: avoid;
+     page-break-inside: avoid;
+     page-break-after: auto;
+    }
+ /* {
+     text-align: justify;
+     vertical-align: top;
+     font: normal 120% Bodoni,Garamond,Times New Roman,serif;
+     color: rgb(62,58,40);
+     background: rgb(254,251,232) url(./images/CSS/paper.gif) top left repeat scroll;
+     border-top: 1px solid white;
+     border-bottom: 1px solid gray;
+     border-right: 1px solid gray;
+     border-left: 1px solid white;
+     padding: 1ex;
+     page-break-before: avoid;
+     page-break-inside: avoid;
+     page-break-after: auto;
+    } */
+
+/***************************** Tabs **************************/
+/* based on http://www.alistapart.com/articles/slidingdoors */
+
+DIV.tabs
+    {
+     float: left;
+     width: 100%;
+     background : url("./images/CSS/tab_b.gif") repeat-x bottom;
+     /*border-bottom: 2pt solid rgb(95,87,47); /*under current active also*/
+     margin-bottom: 2em;
+    }
+
+DIV.tabs UL
+{
+   margin           : 0px;
+   padding-left     : 10px;
+   list-style       : none;
+}
+
+DIV.tabs LI, DIV.tabs FORM
+{
+   display          : inline;
+   margin           : 0px;
+   padding          : 0px;
+}
+
+DIV.tabs FORM
+{
+   float            : right;
+}
+
+DIV.tabs A
+{
+   float: left;
+   background: url("./images/CSS/tab_r.gif") no-repeat right top;
+   border-bottom: 1px solid rgb(147,133,90);
+   font-size: 90%;
+   font-weight: bold;
+   text-decoration: none;
+}
+
+DIV.tabs A:hover
+{
+   /*background-position: 100% -150px;*/
+   background: url("./images/CSS/tab_r_active.gif") no-repeat right top;
+   text-decoration  : none;
+}
+
+
+DIV.tabs SPAN
+{
+   float            : left;
+   display          : block;
+   background       : url("./images/CSS/tab_l.gif") no-repeat left top;
+   padding          : 5px 9px;
+   white-space      : nowrap;
+}
+
+DIV.tabs INPUT
+{
+   float            : right;
+   display          : inline;
+   font-size        : 1em;
+}
+
+DIV.tabs TD
+{
+   font-size        : x-small;
+   font-weight      : bold;
+   text-decoration  : none;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+DIV.tabs SPAN {float : none;}
+/* End IE5-Mac hack */
+
+DIV.tabs A:hover SPAN
+{
+   /*background-position: 0% -150px;*/
+   background: url("./images/CSS/tab_l_active.gif") no-repeat left top;
+}
+
+DIV.tabs LI#current A
+    {
+     /*background-position: 100% -150px;*/
+     background: url("./images/CSS/tab_r_active.gif") no-repeat right top;
+     border-width: 0px;
+    }
+
+DIV.tabs LI#current SPAN
+    {
+     /*background-position: 0% -150px;*/
+     background: url("./images/CSS/tab_l_active.gif") no-repeat left top;
+     padding-bottom: 6px;
+    }
+
+DIV.nav
+    {
+     background: none;
+     border: none;
+     border-bottom: 1px solid rgb(147,133,90);
+    }
+
+
+/************************** Pad border ***********************/
+td.pad_Body
+    {
+     border: none;
+     padding: 0mm 5mm;
+     background: rgb(254,251,232) url(./images/CSS/bkg_Hrules24.gif) top left repeat scroll;
+     text-align: justify;
+    }
+
+td.pad_T,td.pad_TL,td.pad_TR,
+td.pad_L,td.pad_R,
+td.pad_B,td.pad_BL,td.pad_BR
+    {
+     border: none;
+     padding: 0px;
+     text-align: center;
+     vertical-align: middle;
+    }
+
+td.pad_T,td.pad_TL,td.pad_TR
+    {
+     vertical-align: bottom;
+    }
+td.pad_B,td.pad_BL,td.pad_BR
+    {
+     vertical-align: top;
+    }
+td.pad_T,td.pad_TL,td.pad_TR,td.pad_B,td.pad_BL,td.pad_BR
+    {
+     height: 40px; /*Must be equal to background image height*/
+    }
+td.pad_L,td.pad_TL,td.pad_BL
+    {
+     width: 76px; /*Must be equal to background image width*/
+    }
+td.pad_R,td.pad_TR,td.pad_BR
+    {
+     width: 40px; /*Must be equal to background image width*/
+     text-align: left;
+    }
+
+td.pad_T
+    {
+     background: transparent url(./images/CSS/pad_T.gif) top left repeat-x scroll;
+    }
+td.pad_TL
+    {
+     background: transparent url(./images/CSS/pad_TL.gif) top left no-repeat scroll;
+    }
+td.pad_TR
+    {
+     background: transparent url(./images/CSS/pad_TR.gif) top right no-repeat scroll;
+    }
+td.pad_B
+    {
+     background: transparent url(./images/CSS/pad_B.gif) bottom left repeat-x scroll;
+    }
+td.pad_BL
+    {
+     background: transparent url(./images/CSS/pad_BL.gif) bottom left no-repeat scroll;
+    }
+td.pad_BR
+    {
+     background: transparent url(./images/CSS/pad_BR.gif) bottom right no-repeat scroll;
+    }
+td.pad_L
+    {
+     background: transparent url(./images/CSS/pad_L.gif) top left repeat-y scroll;
+    }
+td.pad_R
+    {
+     background: transparent url(./images/CSS/pad_R.gif) top right repeat-y scroll;
+    }
+
+
+/************************* Scrap border **********************/
+
+td.scrap_Body
+    {
+     border: none;
+     padding: 0mm 0mm;
+     background: url(./images/CSS/paper.gif) top left repeat scroll;
+     text-align: justify;
+    }
+
+td.scrap_T,td.scrap_L,td.scrap_R,td.scrap_B,
+td.scrap_TL,td.scrap_TR,td.scrap_BL,td.scrap_BR
+    {
+     border: none;
+     padding: 0px;
+     text-align: center;
+     vertical-align: middle;
+    }
+
+td.scrap_T,td.scrap_B,td.scrap_TL,td.scrap_TR,td.scrap_BL,td.scrap_BR
+    {
+     height: 33px; /*Must be equal to background image height*/
+    }
+
+td.scrap_L,td.scrap_TL,td.scrap_BL
+    {
+     width: 33px; /*Must be equal to background image width*/
+    }
+
+td.scrap_R,td.scrap_TR,td.scrap_BR
+    {
+     width: 33px; /*Must be equal to background image width*/
+    }
+td.scrap_T
+    {
+     background: transparent url(./images/CSS/scrap_T.gif) top left repeat-x scroll;
+    }
+td.scrap_TL
+    {
+     background: transparent url(./images/CSS/scrap_TL.gif) top left no-repeat scroll;
+    }
+td.scrap_TR
+    {
+     background: transparent url(./images/CSS/scrap_TR.gif) top right no-repeat scroll;
+    }
+td.scrap_B
+    {
+     background: transparent url(./images/CSS/scrap_B.gif) bottom left repeat-x scroll;
+    }
+td.scrap_BL
+    {
+     background: transparent url(./images/CSS/scrap_BL.gif) bottom left no-repeat scroll;
+    }
+td.scrap_BR
+    {
+     background: transparent url(./images/CSS/scrap_BR.gif) bottom right no-repeat scroll;
+    }
+td.scrap_L
+    {
+     background: transparent url(./images/CSS/scrap_L.gif) top left repeat-y scroll;
+    }
+td.scrap_R
+    {
+     background: transparent url(./images/CSS/scrap_R.gif) top right repeat-y scroll;
+    }
+
+/*************************** Aural ***************************/
+@media aural
+    {
+     h1, h2, h3 { stress: 20; richness: 90 }
+     .hide { speak: none }
+     p.copyright { volume: x-soft; speech-rate: x-fast }
+     dt { pause-before: 20% }
+     pre { speak-punctuation: code }
+    }
+
+/*
+
+Wingdings
+.mc {list-style-type: lower-alpha;}
+
+Selezioni
+table {width: 200px;}
+h1, h2, h3 {background: white;}
+* { color: black; }
+div p {color: black;}
+div > p {color: black;}
+h1 + p {color: red;}
+img [ alt ] {margin: 10px;}
+img [ alt="foto" ] {margin: 10px;}
+img [ alt t="foto" ] {margin: 10px;}
+img [ alt |="foto" ] {margin: 10px;}
+
+classi
+p.testorosso.grassetto {color:red font-weight:bold;}
+<p class="testorosso grassetto altro">...</p>
+
+id
+#titolo {color: blue;}
+<h1 id="titolo">text1</h1>
+<h1 id="titolo">text2</h1>
+
+pseudo classi
+:link   link ipertestuale non visitato
+:visited
+:active
+:hover
+:first-letter
+:first-line
+:before
+:after
+
+
+font: [ <font-style> | <font-variant> | <font-weight> | <font-size> [ / <line-height> ] <font-family> ];
+ex. font: italic bold 12pt/14pt sans-serif
+vertical-align: [ baseline | sub | super | top | text-top | middle | bottom | text-bottom ];
+
+ Font families
+ Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz
+serif, 'Times New Roman',Bodoni,Garamond,'Minion Web','ITC Stone Serif','MS Georgia','Bitstream Cyberbit'
+sans-serif, 'Century Gothic','MS Trebuchet','ITC Avant Garde Gothic','MS Arial','MS Verdana',Univers,Futura,'ITC Stone Sans','Gill Sans','Akzidenz Grotesk',Helvetica,'Alpha Geometrique',Critter,Cottonwood,'FB Reactor',Studz
+monospace, Courier,'MS Courier New',Prestige,'Everson Mono'
+cursive, 'Comic Sans','Caflisch Script','Adobe Poetica',Sanvito,'Ex Ponto','Snell Roundhand',Zapf-Chancery
+
+*/
+
+/************************* END OF FILE ***********************/

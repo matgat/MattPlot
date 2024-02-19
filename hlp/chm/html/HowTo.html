@@ -1,0 +1,237 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>How to...</title>
+      <meta name="keywords" content="howtos,examples,tutorials" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="Tips.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="UserTips.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="Faqs.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="Tips.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="Faqs.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="UserTips" href="UserTips.html">Questions and tips</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="Tips.html"><span>Tips</span></a></li>
+                        <li id="current"><a href="HowTo.html"><span>How to...</span></a></li>
+                        <li><a href="Faqs.html"><span>Questions and answers</span></a></li>
+                        <li><a href="Troubleshooting.html"><span>Troubleshooting</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="HowTo" title="use examples, tutorials on some particular useful features">How to...</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="howtos" />
+                     <param name="Keyword" value="examples" />
+                     <param name="Keyword" value="tutorials" /></object>
+                  <img src="./files/images/underconstruction.gif" style="float:right;margin:1em;"
+                       alt="[Under construction]" />
+                  
+                  
+                  
+                  <h3><a name="PlacingMarkers" title="placing markers">Placing markers</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="placing markers" /></object>
+                  
+                  Try <a href="ActionsTable.html#actAddMarker" title="action AddMarker"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/AddMarker.gif" alt="[AddMarker]" /> <code class="txt">AddMarker</code></a> action; you
+                  can then drag the marker during
+                  <a href="SelectMode.html" title="SelectMode.html">select mode</a>.
+                  
+                  
+                  
+                  
+                  <h3><a name="AnalyzeSpectrum" title="example: analyze spectrum">Analyze spectrum</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: analyze spectrum" /></object>
+                  
+                  To understand how it works,
+                  try to follow these steps:
+                  
+                  <ul class="listO">
+                     <li>Open <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> (see <a href="Launching.html" title="Launching.html">here</a>)
+                     </li>
+                     <li>Start <a href="ActionsTable.html#actDemo" title="action Demo" style="margin-left:0.5ex;"><img src="./files/images/actions/Demo.gif" alt="[Demo]" /> <code class="txt">Demo</code></a>, you'll see a <dfn title="tracks container">Frame</dfn>
+                        containing a <dfn title="set of points">Track</dfn> named <code class="txt">Sum</code>, given by
+                        the sum of three harmonics
+                     </li>
+                     <li>You may want remove unusued <dfn title="tracks container">Frame</dfn>s switching
+                        to <a href="ActionsTable.html#actSelectMode" title="action SelectMode"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/SelectMode.gif" alt="[SelectMode]" /> <code class="txt">SelectMode</code></a> and dragging them
+                        out of plot area or using <a href="ActionsTable.html#actRemoveFrame" title="action RemoveFrame"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/RemoveFrame.gif" alt="[RemoveFrame]" /> <code class="txt">RemoveFrame</code></a></li>
+                     <li>Start <a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a></li>
+                     <li>Select the <dfn title="set of points">Track</dfn> <code class="txt">Sum</code> and then the
+                        unary operation <code class="txt">Spectrum</code>, <code class="txt">fft</code> 
+                        or <code class="txt">dft</code>, then press <code class="txt">Do</code></li>
+                     <li>A new <dfn title="tracks container">Frame</dfn> appeared containing the spectrum of <code class="txt">Sum</code></li>
+                     <li>Close the <a href="ActionsTable.html#actTrackTransform" title="action TrackTransform"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/TrackTransform.gif" alt="[TrackTransform]" /> <code class="txt">TrackTransform</code></a> window and
+                        inspect the spectrum, which should contain the proper
+                        harmonic components
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="AttachInDocuments" title="example: paste plot in external documents">Paste plot image in documents</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: paste plot in external documents" /></object>
+                  
+                  You can easily paste plots as vectorial
+                  image in your <acronym title="What You See Is What You Get">WYSIWYG</acronym> editor:
+                  
+                  <ul class="listO">
+                     <li>Check <a href="OptionsDescription.html#optSnapshotAction" title="option SnapshotAction"><code class="txt">SnapshotAction</code></a> option
+                     </li>
+                     <li>Do <a href="ActionsTable.html#actSnapshot" title="action Snapshot"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/Snapshot.gif" alt="[Snapshot]" /> <code class="txt">Snapshot</code></a> action to copy the plot  image in the clipboard
+                     </li>
+                     <li>Switch to your editor and place cursor in the desired position</li>
+                     <li>Paste the  file (<kbd title="">CTRL+V</kbd>)
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="Snapshots" title="taking snapshots">Taking snapshot with volatile text</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="taking snapshots" /></object>
+                  
+                  User can take a snapshot of plot
+                  with volatile text (like pen comments and
+                  measure lines) triggering the
+                  <a href="ActionsTable.html#actSnapshot" title="action Snapshot"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/Snapshot.gif" alt="[Snapshot]" /> <code class="txt">Snapshot</code></a>
+                  action, after setting properly the
+                  <a href="OptionsDescription.html#optSnapshotAction" title="option SnapshotAction"><code class="txt">SnapshotAction</code></a>
+                  option to generate a bitmap.
+                  
+                  
+                  
+                  
+                  <h3><a name="Comparing" title="comparing two acquisitions">Comparing two acquisitions</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="comparing two acquisitions" /></object>
+                  
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> provides functions to ease data comparison.
+                  Suppose you want compare two set of data,
+                  for example two oscilloscope acquisition of the
+                  same quantities done at different conditions,
+                  stored in the two files <var title="">data1.txt</var>
+                  and <var title="">data2.txt</var>.
+                  To compare them, first load these data in two
+                  different frames; you can do that either by drag and
+                  drop, or by <a href="ActionsTable.html#actOpen" title="action Open" style="margin-left:0.5ex;"><img src="./files/images/actions/Open.gif" alt="[Open]" /> <code class="txt">Open</code></a> action,
+                  or by command line typing:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot data1.txt
+C:\&gt; MattPlot @data2.txt
+</pre>
+                  
+                  The prefix <code class="txt">@</code> in the second call
+                  prevents a further instance of <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>.
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ProgramArguments.html#NoFurtherInstances">No further instances</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Faqs.html#faq.arguments.nofurtherinstances">No further instances question</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  Now we have two frames each containing a data set;
+                  we can synchronize frames physical space using
+                  <a href="ActionsTable.html#actLockX" title="action LockX"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LockX.gif" alt="[LockX]" /> <code class="txt">LockX</code></a> or <a href="ActionsTable.html#actLockY" title="action LockY"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LockY.gif" alt="[LockY]" /> <code class="txt">LockY</code></a>
+                  actions.
+                  
+                  <p>
+                     At this point operations on frames like
+                     <a href="ActionsTable.html#actPanMode" title="action PanMode"
+                        style="margin-left:0.5ex;"><img src="./files/images/actions/PanMode.gif" alt="[PanMode]" /> <code class="txt">PanMode</code></a> or <a href="ActionsTable.html#actZoomMode" title="action ZoomMode"
+                        style="margin-left:0.5ex;"><img src="./files/images/actions/ZoomMode.gif" alt="[ZoomMode]" /> <code class="txt">ZoomMode</code></a>
+                     are spread on all frames.
+                     
+                  </p>
+                  
+                  
+                  
+                  
+                  <h3><a name="ManualSample" title="example: manual sample">Manually sampling a track</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: manual sample" /></object>
+                  
+                  You can extract some points from a track using
+                  mouse following these steps:
+                  
+                  <ul class="listO">
+                     <li>Open the <a href="Log.html" title="Log.html">log</a> with <a href="ActionsTable.html#actShowLog" title="action ShowLog"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/ShowLog.gif" alt="[ShowLog]" /> <code class="txt">ShowLog</code></a>;
+                        if you desire, you may dock it on the form right border
+                     </li>
+                     <li>Zoom your track properly</li>
+                     <li>Switch to <a href="ActionsTable.html#actMeasureMode" title="action MeasureMode"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/MeasureMode.gif" alt="[MeasureMode]" /> <code class="txt">MeasureMode</code></a> and select track
+                     </li>
+                     <li>It is handy enable <a href="ActionsTable.html#actMeasureAbscissa" title="action MeasureAbscissa"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/MeasureAbscissa.gif" alt="[MeasureAbscissa]" /> <code class="txt">MeasureAbscissa</code></a> and <a href="ActionsTable.html#actMeasureOrdinate" title="action MeasureOrdinate"
+                           style="margin-left:0.5ex;"><img src="./files/images/actions/MeasureOrdinate.gif" alt="[MeasureOrdinate]" /> <code class="txt">MeasureOrdinate</code></a></li>
+                     <li>Move mouse and double click on desired points</li>
+                     <li>When you finished, select and copy the coordinates in <a href="Log.html" title="Log.html">log</a>
+                        and paste in your text file; you can then import it back in <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>,
+                        eventually adding an header like <code class="txt">#header&lt;X&gt;&lt;MySamples(X)&gt;</code></li>
+                  </ul>
+                  
+                  
+                  
+                  
+                  <h3><a name="CompleteUse" title="example: complete use">Complete use example</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="example: complete use" /></object>
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

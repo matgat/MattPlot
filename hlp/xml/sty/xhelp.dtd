@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--    * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *   MattPlot help source
+    *   `Document Type Definition' (DTD)
+    *   2007 Matteo Gattanini
+    *
+    *   History:
+    *       15aug2006 (MG) initial structure
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<!--_____________External parsed general entities_______________-->
+
+<!ENTITY Welcome SYSTEM "../Welcome.xml">
+<!ENTITY ReleaseNotes SYSTEM "../ReleaseNotes.xml">
+<!ENTITY GeneralInfo SYSTEM "../GeneralInfo.xml">
+<!ENTITY Interface SYSTEM "../Interface.xml">
+<!ENTITY Running SYSTEM "../Running.xml">
+<!ENTITY Importing SYSTEM "../Importing.xml">
+<!ENTITY Directives SYSTEM "../Directives.xml">
+<!ENTITY Viewing SYSTEM "../Viewing.xml">
+<!ENTITY Editing SYSTEM "../Editing.xml">
+<!ENTITY Exporting SYSTEM "../Exporting.xml">
+<!ENTITY Customizing SYSTEM "../Customizing.xml">
+<!ENTITY UserTips SYSTEM "../UserTips.xml">
+<!ENTITY Examples SYSTEM "../Examples.xml">
+<!ENTITY Development SYSTEM "../Development.xml">
+
+<!ENTITY _MainForm SYSTEM "../_MainForm.xml">
+<!ENTITY _Layouts SYSTEM "../_Layouts.xml">
+<!ENTITY _KeyCodes SYSTEM "../_KeyCodes.xml">
+
+<!ENTITY faqs SYSTEM "../_faqs.xml">
+<!ENTITY problems SYSTEM "../_problems.xml">
+
+
+<!--____________External unparsed general entities______________-->
+
+<!--
+<!NOTATION notation_name SYSTEM resource_URI>
+<!NOTATION notation_name PUBLIC public_ID resource_URI>
+
+<!NOTATION gif SYSTEM "gif">
+<!NOTATION jpeg SYSTEM "jpg">
+<!ENTITY image.topimage SYSTEM "topimage.gif" NDATA gif>
+<!ENTITY image.topnav1 SYSTEM "topnav1.gif" NDATA gif>
+<!ENTITY image.topnav2 SYSTEM "topnav2.gif" NDATA gif>
+<!ENTITY Welcome SYSTEM "Welcome.jpg" NDATA jpg>
+<!ELEMENT topimages EMPTY>
+<!ATTLIST topimages
+    topimage ENTITY #FIXED "image.topimage"
+    topnav ENTITIES "image.topnav1 image.topnav2">
+-->
+
+
+<!--________________External parameter entities_________________-->
+
+<!--
+<!ENTITY % name SYSTEM  DTD-URI>
+<!ENTITY % parameterentities SYSTEM "Parameter.dtd">
+-->
+
+<!--________________Internal parameter entities_________________-->
+
+<!--
+<!ENTITY % events
+   'onclick     CDATA #IMPLIED
+    ondblclick  CDATA #IMPLIED
+    onmousedown CDATA #IMPLIED
+    onmouseup   CDATA #IMPLIED
+    onmouseover CDATA #IMPLIED
+    onmousemove CDATA #IMPLIED
+    onmouseout  CDATA #IMPLIED
+    onkeypress  CDATA #IMPLIED
+    onkeydown   CDATA #IMPLIED
+    onkeyup     CDATA #IMPLIED'
+    >
+-->
+
+<!ENTITY % texttags 'br|span|em|strong|sup|p|a|dfn|var|dir|kbd|ac|quote|cite|ex|code|verbatim|div|img|listQ|listO|listD|table|txt|cpp|notepad|cmdline|cppsource|foil|scrap|sourcefiles|faqs|underconstruction|action|option'>
+<!ENTITY % HHobjects 'HHobject|HHbutton|HHseealso|HHkeywords'>
+
+
+
+<!--__________________Conditional_ compilation__________________-->
+
+<!--
+<!ENTITY % mypar  'INCLUDE/IGNORE'>
+
+<![%mypar;[
+    included/ignored content
+]]>
+
+-->
+
+
+
+<!--________________Internal general entities___________________-->
+
+<!-- Specific -->
+<!ENTITY mp '<span style="font:italic bold 100&#037; Comic Sans MS,cursive;">MattPlot</span>'>
+<!ENTITY fix '<span style="font:italic bold 120&#037; Arial;">fix:</span>'>
+<!ENTITY site '<a href="http://gattanini.altervista.org/mplot.html" hint="current website">http://gattanini.altervista.org/mplot.html</a>'>
+<!ENTITY me 'gattanini(at)altervista.org'>
+
+<!-- Names -->
+<!ENTITY acrobat '<cite href="http://www.adobe.com">Adobe Reader<sup>®</sup></cite>'>
+<!ENTITY bcb '<cite href="http://www.borland.com">Borland C++ Builder<sup>®</sup></cite>'>
+<!ENTITY bds '<cite href="http://www.codegear.com">Borland Developer Studio<sup>®</sup></cite>'>
+<!ENTITY bibtex '<cite href="http://www.ctan.org" hint="Oren Patashnik">BibTeX</cite>'>
+<!ENTITY bzip2 '<cite href="http://www.bzip.org" hint="Julian Seward bz2 compressor">bzip2</cite>'>
+<!ENTITY cpp '<cite href="http://www.research.att.com/~bs/homepage.html" hint="Bjarne Stroustrup AT&amp;T">C++</cite>'>
+<!ENTITY ctan '<cite href="http://www.ctan.org" hint="TeX Archive Network">CTAN</cite>'>
+<!ENTITY context '<cite href="http://www.contexteditor.org/">ConTEXT</cite>'>
+<!ENTITY emacs '<cite href="http://www.gnu.org/software/emacs/emacs.html">Emacs</cite>'>
+<!ENTITY firefox '<cite href="http://www.mozilla.org">Firefox<sup>®</sup></cite>'>
+<!ENTITY freemat '<cite href="http://freemat.sf.net/">FreeMat</cite>'>
+<!ENTITY ghostscript '<cite href="http://www.ghostscript.com">GhostScript</cite>'>
+<!ENTITY hhlib '<cite href="http://msdn.microsoft.com/library/en-us/htmlhelp/html/vsconHH1Start.asp">Microsoft<sup>®</sup> HtmlHelp library</cite>'>
+<!ENTITY hhw '<cite href="http://msdn.microsoft.com/workshop/author/htmlhelp/download.asp">Microsoft<sup>®</sup> HtmlHelp Workshop</cite>'>
+<!ENTITY java '<cite href="http://www.java.com/">java</cite>'>
+<!ENTITY labview '<cite href="http://www.ni.com">Labview<sup>®</sup></cite>'>
+<!ENTITY latex '<cite href="http://www.latex-project.org" hint="Lamport TeX macros">LaTeX</cite>'>
+<!ENTITY lecroy '<cite href="http://www.lecroy.com">LeCroy</cite>'>
+<!ENTITY linux '<cite href="http://www.linux.org/">Linux</cite>'>
+<!ENTITY lua '<cite href="http://www.lua.org/">LUA</cite>'>
+<!ENTITY lzma '<cite href="http://www.7-zip.org/sdk.html">LZMA</cite>'>
+<!ENTITY matlab '<cite href="http://www.mathworks.com">MatLab<sup>®</sup></cite>'>
+<!ENTITY mathcad '<cite href="http://www.mathsoft.com">Mathcad<sup>®</sup></cite>'>
+<!ENTITY microsoft '<cite href="http://www.microsoft.com">Microsoft™</cite>'>
+<!ENTITY miktex '<cite href="http://www.miktex.org" hint="A win32 LaTeX engine">MiKTeX</cite>'>
+<!ENTITY octave '<cite href="http://www.octave.org">Octave</cite>'>
+<!ENTITY ooo '<cite href="http://www.openoffice.org/">OpenOffice</cite>'>
+<!ENTITY pdfcreator '<cite href="http://sourceforge.net/projects/pdfcreator/">pdfcreator</cite>'>
+<!ENTITY postscript '<cite href="http://www.adobe.com/products/postscript/main.html">PostScript</cite>'>
+<!ENTITY pspad '<cite href="http://www.pspad.com" hint="PSPad editor">PSPad</cite>'>
+<!ENTITY pspice '<cite href="http://www.pspice.com" hint="Cadence">pspice<sup>®</sup></cite>'>
+<!ENTITY pstricks '<cite href="http://www.tug.org/applications/PSTricks/">PStricks</cite>'>
+<!ENTITY saxon '<cite href="http://sourceforge.net/projects/saxon">Saxon</cite>'>
+<!ENTITY sbasic '<cite href="http://www.openoffice.org">StarBasic</cite>'>
+<!ENTITY scilab '<cite href="http://scilabsoft.inria.fr">Scilab</cite>'>
+<!ENTITY simulink '<cite href="http://www.mathworks.com">Simulink<sup>®</sup></cite>'>
+<!ENTITY spice '<cite href="http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/">spice<sup>®</sup></cite>'>
+<!-- <!ENTITY sqx '<cite href="http://www.sqx-archiver.org" hint="SQueeze compressor-eXtractor">SQX</cite>'> -->
+<!ENTITY svn '<cite href="http://subversion.tigris.org/">Subversion</cite>'>
+<!ENTITY tetex '<cite href="http://www.tug.org/teTeX/">teTeX</cite>'>
+<!ENTITY tex '<cite href="http://www.tug.org" hint="Donald E. Knuth text formatting language">TeX</cite>'>
+<!ENTITY tortoise '<cite href="http://tortoisesvn.tigris.org/">tortoiseSVN</cite>'>
+<!ENTITY tugzip '<cite href="http://www.tugzip.com" hint="archiver utility">tugzip</cite>'>
+<!ENTITY winedt '<cite href="http://www.winedt.com" hint="LaTeX editor">WinEdt</cite>'>
+<!ENTITY windows '<cite href="http://www.microsoft.com">Windows<sup>®</sup></cite>'>
+<!ENTITY winmerge '<cite href="http://winmerge.org/">winmerge</cite>'>
+<!ENTITY winxpe '<cite href="http://www.microsoft.com">Windows XP Embedded<sup>®</sup></cite>'>
+<!ENTITY yokogawa '<cite href="http://www.yokogawa.tw">Yokogawa</cite>'>
+<!ENTITY zlib '<cite href="http://www.zlib.net" hint="A Massively Spiffy Yet Delicately Unobtrusive Compression Library">zlib</cite>'>
+
+
+<!-- Acronyms -->
+<!ENTITY ASCII '<a href="http://www.ascii.org/"><ac hint="American Standard Code for Information Interchange">ASCII</ac></a>'>
+<!ENTITY ANSI '<a href="http://www.ansi.org/"><ac hint="American National Standards Institute">ANSI</ac></a>'>
+<!ENTITY API '<ac hint="Application Program Interface">API</ac>'>
+<!ENTITY CAD '<ac hint="Computer Aided Design">CAD</ac>'>
+<!ENTITY CORBA '<ac hint="Common Object Request Broker Architecture">CORBA</ac>'>
+<!ENTITY CTS '<ac hint="Clear To Send">CTS</ac>'>
+<!ENTITY DFT '<ac hint="Discrete Fourier Transform">DFT</ac>'>
+<!ENTITY DLL '<ac hint="Dynamic Link Libraries">DLL</ac>'>
+<!ENTITY DSP '<ac hint="Digital Signal Processor">DSP</ac>'>
+<!ENTITY DTD '<ac hint="Document Type Definition">DTD</ac>'>
+<!ENTITY FAQ '<ac hint="Frequently Asked Questions">FAQ</ac>'>
+<!ENTITY FFT '<ac hint="Fast Fourier Transform">FFT</ac>'>
+<!ENTITY GDI '<ac hint="Graphics Device Interface">GDI</ac>'>
+<!ENTITY GNU '<a href="http://www.gnu.org"><ac hint="GNU&apos;s Not Unix">GNU</ac></a>'>
+<!ENTITY HTML '<a href="http://www.w3.org/MarkUp/"><ac hint="HyperText Markup Language">HTML</ac></a>'>
+<!ENTITY IDE '<ac hint="Integrated Development Environment">IDE</ac>'>
+<!ENTITY IEEE '<ac hint="Institute of Electrical and Electronics Engineers">IEEE</ac>'>
+<!ENTITY LAN '<ac hint="Local Area Network">LAN</ac>'>
+<!ENTITY LBA '<ac hint="Logical Block Addressing">LBA</ac>'>
+<!ENTITY LCD '<ac hint="Liquid Crystal Display">LCD</ac>'>
+<!ENTITY PCI '<ac hint="Peripheral Component Interconnect">PCI</ac>'>
+<!ENTITY PCMCIA '<ac hint="Personal Computer Memory Card International Association">PCMCIA</ac>'>
+<!ENTITY PIC '<ac hint="Programmable Interrupt Controller">PIC</ac>'>
+<!ENTITY PIO '<ac hint="Programmed I/O">PIO</ac>'>
+<!ENTITY POST '<ac hint="Power On Self Test">POST</ac>'>
+<!ENTITY RAM '<ac hint="Random Access Memory">RAM</ac>'>
+<!ENTITY RAMDAC '<ac hint="RAM Digital to Analog Converter">RAMDAC</ac>'>
+<!ENTITY RPC '<ac hint="Remote Procedure Call">RPC</ac>'>
+<!ENTITY RTS '<ac hint="Request To Send">RTS</ac>'>
+<!ENTITY SCSI '<ac hint="Small Computer System Interface">SCSI</ac>'>
+<!ENTITY SGML '<ac hint="Standard Generalized Markup Language">SGML</ac>'>
+<!ENTITY SQL '<a href="http://www.sql.org"><ac hint="Structured Query Language">SQL</ac></a>'>
+<!ENTITY STL '<a href="file://"><ac hint="Standard Template Library">STL</ac></a>'>
+<!ENTITY SVG '<a href="http://www.w3.org/Graphics/SVG/"><ac hint="Scalable Vector Graphics">SVG</ac></a>'>
+<!ENTITY UML '<a href="http://www.omg.org"><ac hint="Unified Modeling Language">UML</ac></a>'>
+<!ENTITY USB '<ac hint="Universal Serial Bus">USB</ac>'>
+<!ENTITY VCL '<a href="http://www.borland.com"><ac hint="Visual Components Library">VCL</ac></a>'>
+<!ENTITY VRML '<ac hint="Virtual Reality Markup/Modeling Language">VRML</ac>'>
+<!ENTITY WAN '<ac hint="Wide Area Network">WAN</ac>'>
+<!ENTITY WYSIWYG '<ac hint="What You See Is What You Get">WYSIWYG</ac>'>
+<!ENTITY XML '<a href="http://www.w3.org/"><ac hint="eXtensible Markup Language">XML</ac></a>'>
+<!ENTITY XSL '<a href="http://www.w3.org/"><ac hint="eXtensible Stylesheet Language">XSL</ac></a>'>
+
+<!-- Extensions -->
+<!ENTITY bmp '<dir hint="BitMaP">.bmp</dir>'>
+<!ENTITY emf '<dir hint="Enhanced MetaFile">.emf</dir>'>
+<!ENTITY png '<dir hint="Portable Network Graphic">.png</dir>'>
+<!ENTITY gif '<dir hint="Graphic Interchange Format">.gif</dir>'>
+<!ENTITY jpg '<dir hint="Joint Photographic experts Group">.jpg</dir>'>
+<!ENTITY pdf '<dir hint="Portable Document Format">.pdf</dir>'>
+<!ENTITY svg '<dir hint="Scalable Vector Graphics"><a href="http://www.w3.org/Graphics/SVG/">.svg</a></dir>'>
+<!ENTITY wmf '<dir hint="Windows MetaFile">.wmf</dir>'>
+
+<!-- Specific -->
+<!ENTITY frame '<dfn hint="tracks container">Frame</dfn>'>
+<!ENTITY track '<dfn hint="set of points">Track</dfn>'>
+<!ENTITY NaN '<dfn hint="Not A Number">NaN</dfn>'>
+
+<!-- Text characters -->
+<!ENTITY nbsp '&#160;'>
+
+
+<!--___________________________Elements_________________________-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT help  (chapter*)>
+<!ATTLIST help
+    title   CDATA   #REQUIRED
+    description CDATA   #REQUIRED
+    default CDATA   #REQUIRED
+    version CDATA   #IMPLIED
+    date    CDATA   #IMPLIED
+    xmlns   CDATA   #REQUIRED
+    >
+
+
+
+<!--~~~~~~~~~~~~~~~~~~~Sectioning~~~~~~~~~~~~~~~~~~~-->
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT chapter   (intro?,print-toc+,HHobject*,section*)>
+<!ATTLIST chapter
+    name    CDATA   #REQUIRED
+    title   CDATA   #REQUIRED
+    keywords    CDATA   #REQUIRED
+    description CDATA   #REQUIRED
+    version CDATA   #IMPLIED
+    date    CDATA   #IMPLIED
+    >
+
+<!ELEMENT section   (#PCDATA|subsection|%texttags;|%HHobjects;)*>
+<!ATTLIST section
+    name    CDATA   #REQUIRED
+    title   CDATA   #REQUIRED
+    keywords    CDATA   #REQUIRED
+    description CDATA   #IMPLIED
+    >
+
+<!ELEMENT subsection    (#PCDATA|subsubsection|%texttags;|%HHobjects;)*>
+<!ATTLIST subsection
+    name    CDATA   #REQUIRED
+    title   CDATA   #REQUIRED
+    keywords    CDATA   ""
+    >
+
+<!ELEMENT subsubsection (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST subsubsection
+    name    CDATA   #REQUIRED
+    title   CDATA   #REQUIRED
+    >
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT intro (#PCDATA|%texttags;)*>
+<!ATTLIST intro
+    toc CDATA   "no"
+    >
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT print-toc (#PCDATA|%texttags;)*>
+<!ATTLIST print-toc
+    verbose CDATA   "no"
+    >
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~Lists~~~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT list  (it+)>
+<!ELEMENT listQ (it+)>
+<!ELEMENT listO (it+)>
+<!ELEMENT listD (it+)>
+<!ELEMENT it    (#PCDATA|ds|%texttags;)*>
+<!ELEMENT ds    (#PCDATA|%texttags;)*>
+
+
+<!--~~~~~~~~~~~~~~~~~~~~HTML tags~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT br    EMPTY>
+<!ELEMENT sup   (#PCDATA)>
+<!ELEMENT span  (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST span
+    style   CDATA   #IMPLIED
+    >
+<!ELEMENT em    (#PCDATA)>
+<!ELEMENT strong    (#PCDATA)>
+<!ELEMENT p (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST p
+    style   CDATA   #IMPLIED
+    >
+<!ELEMENT a (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST a
+    href    CDATA   #IMPLIED
+    name    CDATA   #IMPLIED
+    hint    CDATA   #IMPLIED
+    onclick CDATA   #IMPLIED
+    >
+<!ELEMENT dfn   (#PCDATA)>
+<!ATTLIST dfn
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT var   (#PCDATA)>
+<!ATTLIST var
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT dir   (#PCDATA)>
+<!ATTLIST dir
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT kbd   (#PCDATA)>
+<!ATTLIST kbd
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT ac    (#PCDATA)>
+<!ATTLIST ac
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT cite  (#PCDATA)>
+<!ATTLIST cite
+    href    CDATA   #IMPLIED
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT quote (#PCDATA)>
+<!ATTLIST quote
+    hint    CDATA   #IMPLIED
+    >
+<!ELEMENT ex    (#PCDATA)>
+<!ELEMENT code  (#PCDATA)>
+<!ATTLIST code
+    class   CDATA   #IMPLIED
+    >
+
+<!ELEMENT verbatim  (#PCDATA)>
+<!ATTLIST verbatim
+    class   CDATA   #IMPLIED
+    >
+
+<!ELEMENT div   (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST div
+    class   CDATA   #IMPLIED
+    style   CDATA   #IMPLIED
+    >
+
+<!ELEMENT img   EMPTY>
+<!ATTLIST img
+    src CDATA   #REQUIRED
+    class   CDATA   #IMPLIED
+    hint    CDATA   #IMPLIED
+    >
+
+<!ELEMENT table (thead?,row+,tfoot?)>
+<!ATTLIST table
+    class   CDATA   #IMPLIED
+    hcol    CDATA   "0"
+    >
+<!ELEMENT thead (c+)>
+<!ATTLIST thead
+    class   CDATA   #IMPLIED
+    >
+<!ELEMENT tfoot (c+)>
+<!ATTLIST tfoot
+    class   CDATA   #IMPLIED
+    >
+<!ELEMENT row   (c+)>
+<!ELEMENT c (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST c
+    class   CDATA   #IMPLIED
+    colspan CDATA   #IMPLIED
+    >
+
+
+<!--~~~~~~~~~~~~~~~~~~~Added tags~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT txt   (#PCDATA)>
+<!ELEMENT notepad   (#PCDATA)>
+<!ATTLIST notepad
+    caption   CDATA   #IMPLIED
+    >
+
+<!ELEMENT cpp   (#PCDATA)>
+<!ELEMENT cppsource (#PCDATA)>
+<!ATTLIST cppsource
+    style   CDATA   #IMPLIED
+    >
+
+<!ELEMENT cmdline   (#PCDATA)>
+<!ATTLIST cmdline
+    style   CDATA   #IMPLIED
+    >
+<!ELEMENT foil  (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST foil
+    id  CDATA   #REQUIRED
+    >
+
+<!ELEMENT pad   (#PCDATA|%texttags;|%HHobjects;)*>
+<!ELEMENT scrap (#PCDATA|%texttags;|%HHobjects;)*>
+<!ATTLIST scrap
+    name    CDATA   #REQUIRED
+    >
+
+<!ELEMENT sourcefiles   (file*)>
+<!ELEMENT file  EMPTY>
+<!ATTLIST file
+    name    CDATA   #REQUIRED
+    href    CDATA   #IMPLIED
+    >
+
+<!ELEMENT faqs  (topic+)>
+<!ATTLIST faqs
+    title   CDATA   #IMPLIED
+    maintainer  CDATA   #IMPLIED
+    lang    CDATA   #IMPLIED
+    version CDATA   #IMPLIED
+    date    CDATA   #IMPLIED
+    >
+<!ELEMENT topic (faq+)>
+<!ATTLIST topic
+    title   CDATA   #IMPLIED
+    name    CDATA   #IMPLIED
+    description CDATA   #IMPLIED
+    >
+<!ELEMENT faq   (que,ans)>
+<!ATTLIST faq
+    name    CDATA   #IMPLIED
+    keywords    CDATA   #IMPLIED
+    >
+<!ELEMENT que   (#PCDATA|%texttags;|%HHobjects;)*>
+<!ELEMENT ans   (#PCDATA|%texttags;|%HHobjects;)*>
+
+
+<!--~~~~~~~~~~~~~~~~~~~Utilities~~~~~~~~~~~~~~~~~~~~-->
+<!ELEMENT underconstruction EMPTY>
+
+<!ELEMENT action EMPTY>
+<!ATTLIST action
+    name    CDATA   #REQUIRED
+    >
+
+<!ELEMENT option EMPTY>
+<!ATTLIST option
+    name    CDATA   #REQUIRED
+    >
+
+
+<!--~~~~~~~~~~~~~~~~Html help objects~~~~~~~~~~~~~~~-->
+
+
+<!ELEMENT HHobject EMPTY>
+<!ATTLIST HHobject
+    id  CDATA   #REQUIRED
+    >
+
+<!ELEMENT HHbutton EMPTY>
+<!ATTLIST HHbutton
+    id  CDATA   #REQUIRED
+    caption CDATA   #REQUIRED
+    command CDATA   #REQUIRED
+    item1   CDATA   #IMPLIED
+    item2   CDATA   #IMPLIED
+    item3   CDATA   #IMPLIED
+    >
+
+<!ELEMENT HHseealso (target+)>
+<!ELEMENT target EMPTY>
+<!ATTLIST target
+    title   CDATA   #REQUIRED
+    href    CDATA   #REQUIRED
+    >
+
+<!ELEMENT HHkeywords    (keyword+)>
+<!ELEMENT keyword   EMPTY>
+<!ATTLIST keyword
+    value   CDATA   #REQUIRED
+    >
+
+
+
+<!--_________________________End_of_file________________________-->
+
+

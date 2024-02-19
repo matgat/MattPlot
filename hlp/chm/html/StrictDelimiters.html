@@ -1,0 +1,149 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Strictdelimiters directive</title>
+      <meta name="keywords" content="strict delimiters,rigid delimiters,fussy delimiters" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="Resample.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Directives.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="CommandlineDirectives.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="Resample.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="CommandlineDirectives.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Directives" href="Directives.html">Parser directives</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="DirectiveList.html"><span>Available directives</span></a></li>
+                        <li><a href="Header.html"><span>Header directive</span></a></li>
+                        <li><a href="Split.html"><span>Split directive</span></a></li>
+                        <li><a href="Resample.html"><span>Resample directive</span></a></li>
+                        <li id="current"><a href="StrictDelimiters.html"><span>Strictdelimiters directive</span></a></li>
+                        <li><a href="CommandlineDirectives.html"><span>Directives in command line arguments</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="StrictDelimiters" title="indicating a rigid data structure">Strictdelimiters directive</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="strict delimiters" />
+                     <param name="Keyword" value="rigid delimiters" />
+                     <param name="Keyword" value="fussy delimiters" /></object>
+                  
+                  Sometimes you may want a parser more
+                  fussy on data delimiters, consider for
+                  example the following data:
+                  
+                  
+                  <div class="notepad"> a strange acquisition<pre class="notepad">
+  00  10  20
+  01  11  21
+  02  12  22
+  03  13  23
+      14  24
+      15  25
+      16  26
+          27
+          28
+          29
+</pre></div>
+                  
+                  With the default sloppy delimiters policy
+                  the file would be actually interpreted as:
+                  
+                  
+                  <div class="notepad"> equivocation<pre class="notepad">
+  00  10  20
+  01  11  21
+  02  12  22
+  03  13  23
+  14  24
+  15  25
+  16  26
+  27
+  28
+  29
+</pre></div>
+                  
+                  This is a consequence of the ambiguous
+                  delimiter definition, which does not
+                  provide any knowledge on columns position.
+                  It is possible overcome this problem in two
+                  ways: the first trivial workaround is
+                  rearranging columns in this way:
+                  
+                  
+                  <div class="notepad"> rearranged<pre class="notepad">
+  20   10   00
+  21   11   01
+  22   12   02
+  23   13   03
+  24   14
+  25   15
+  26   16
+  27
+  28          
+  29
+</pre></div>
+                  
+                  The second solution is declare a precise
+                  column delimiter, telling the parser to
+                  strictly expect a rigid data structure:
+                  
+                  
+                  <div class="notepad"> forcing a rigid format<pre class="notepad">
+ #strictdelimiter ;
+ 00 ; 10 ; 20
+ 01 ; 11 ; 21
+ 02 ; 12 ; 22
+ 03 ; 13 ; 23
+ ; 14 ; 24
+ ; 15 ; 25
+ ; 16 ; 26
+ ; ; 27
+ ; ; 28
+ ; ; 29
+</pre></div>
+                  
+                  Now parser is aware of empty columns, so
+                  column <samp>0</samp> will contain only four
+                  numbers.
+                  Note that spaces between delimiters
+                  and numbers are still allowed, while spaces
+                  between numbers will result in an
+                  invalid number error.
+                  
+                  As explicit developer choice the declared
+                  data delimiter must strictly be one
+                  <code class="cpp">char</code>: a <code class="cpp">string</code>
+                  delimiter would be a useless waste of space
+                  and parsing complexity.
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

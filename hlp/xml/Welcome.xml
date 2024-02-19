@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *    MattPlot help xml source
+    *    2007 Matteo Gattanini
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<chapter name="Welcome"
+         title="Table of contents"
+         keywords="table of contents,help structure,toc"
+         description="structure of this help document"
+         version="0.6" date="nov2008">
+
+    <intro>
+        This is the &mp; program help file.
+        Current page shows the organization of
+        contained informations.
+    </intro>
+
+    <print-toc verbose="yes"/>
+
+</chapter>
+<!--_______________________End_of_file______________________-->

@@ -1,0 +1,135 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Pan mode</title>
+      <meta name="keywords" content="pan mode" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="EditMode.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Viewing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"><a class="browse" href="ZoomMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="EditMode.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"><a class="browse" href="ZoomMode.html"><img class="browse" src="./files/images/Browse_Next.gif" alt="Next" /></a></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Viewing" href="Viewing.html">Viewing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="OnRenderedTracks.html"><span>Viewed data</span></a></li>
+                        <li><a href="SelectMode.html"><span>Select mode</span></a></li>
+                        <li><a href="EditMode.html"><span>Edit mode</span></a></li>
+                        <li id="current"><a href="PanMode.html"><span>Pan mode</span></a></li>
+                        <li><a href="ZoomMode.html"><span>Zoom mode</span></a></li>
+                        <li><a href="MeasureMode.html"><span>Measure mode</span></a></li>
+                        <li><a href="PenMode.html"><span>Pen mode</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="PanMode" title="drag domain offset">Pan mode</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="pan mode" /></object>
+                  
+                  During <a href="ActionsTable.html#actPanMode" title="action PanMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/PanMode.gif" alt="[PanMode]" /> <code class="txt">PanMode</code></a> you can
+                  modify <dfn title="tracks container">Frame</dfn> mapped space
+                  offset, in other words you can shift plots
+                  moving along plane directions.
+                  Use <a href="ActionsTable.html#actLockX" title="action LockX"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LockX.gif" alt="[LockX]" /> <code class="txt">LockX</code></a> or <a href="ActionsTable.html#actLockY" title="action LockY"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/LockY.gif" alt="[LockY]" /> <code class="txt">LockY</code></a>
+                  actions to involve all frames.
+                  
+                  
+                  
+                  
+                  <h3><a name="PanMouseCommands" title="mouse commands in PanMode">Mouse effects</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="mouse commands in PanMode" /></object>
+                  
+                  <a href="ActionsTable.html#actPanMode" title="action PanMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/PanMode.gif" alt="[PanMode]" /> <code class="txt">PanMode</code></a> supports the following
+                  mouse operations:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Mouse operation</td>
+                           <td>Target</td>
+                           <td>Effect</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Left button drag</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Frame space dragging</td>
+                        </tr>
+                        <tr>
+                           <td>Right button drag</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Continuous Pan feature</td>
+                        </tr>
+                        <tr>
+                           <td>Left double click or middle click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Reset position returning to axes origin</td>
+                        </tr>
+                        <tr>
+                           <td>Wheel</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Horizontal Pan (default increment)</td>
+                        </tr>
+                        <tr>
+                           <td>Wheel + Right button</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Vertical Pan (default increment)</td>
+                        </tr>
+                        <tr>
+                           <td>Left-Right click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Selects frame</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="PlotActions.html">Plot actions</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

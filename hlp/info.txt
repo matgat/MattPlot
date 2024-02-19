@@ -1,0 +1,87 @@
+  * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  *                        
+  *	 MattPlot help info file
+  *	 2009 - Matteo Gattanini
+  *    
+  * * * * * * * * * * * * * * * * * * * * * * * * * * *
+       
+  /---------------------------------------------------\
+    How to compile
+  \---------------------------------------------------/
+
+    Double Click on `compile.bat' to obtain the chm file
+    and the header for program source project inclusion.
+    This batch file performs the following actions:
+     .) Transform `*.xml' files with `Saxon'
+     .) Compile generated `*.html' files with `MS Html Help'
+
+    Note: be sure to run previously 'generate_gifs.bat'
+
+  /---------------------------------------------------\
+    Requirements
+  \---------------------------------------------------/
+
+   .) Microsoft™ HTML Workshop installed
+   .) Java runtime for 'java saxon'
+
+  /---------------------------------------------------\
+    Notes on files
+  \---------------------------------------------------/
+    Regarding the XML sources, I also edited
+    the document type definition.
+    Unfortunately `instant Saxon' doesn't
+    perfom the validation, so you must use other tools
+    to take advantage of that.
+    
+    Regarding styles, they're distributed between
+    CSS and XSL stylesheets; I know this is not
+    good for maintaining, but is good for speed-up
+    creation time.
+    However, the big part is in CSS.
+
+    The XSL stylesheets may contains saxon extensions
+
+
+  /---------------------------------------------------\
+    Directories tree
+  \---------------------------------------------------/
+..\ 
+   |
+   |-hlp\ (main directory)
+        |
+        |-compile.bat (batch file)
+        |-info.txt (this file)
+        |
+        |-bin\ (used binaries)
+        |    |
+        |    |- hhc.exe (MS Help Workshop compiler)
+        |    |- saxon (XSL interpreter)
+        |
+        |-chm\ (CHM project related files)
+        |    |
+        |    |- *.hhp,*.h,*.ali,*.txt,*.hhk,*.hhc
+        |    |
+        |    |-html\ (generated html files - DO NOT EDIT!)
+        |          |
+        |          |-files\ (other files referenced from html files)
+        |                 |
+        |                 |- *.css (cascading style sheets)
+        |                 |- *.js (javascripts)
+        |                 |
+        |                 |-images\
+        |                         |
+        |                         |-actions\ (images of actions)
+        |                         |-CSS\ (images referenced in css files)
+        |                         |- *.png,*.gif,*.jpg
+        |-xml\ (XML related)
+              |
+              |- *.xml (source files)
+              |
+              |-sty\ (style and definition files)
+                   |
+                   |- *.dtd (document type definition)
+                   |- *.xsl (xsl transformation)
+
+  /---------------------------------------------------\
+    End of file
+  \---------------------------------------------------/

@@ -1,0 +1,179 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Pen mode</title>
+      <meta name="keywords" content="pen mode,scribble,highlighter" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="MeasureMode.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Viewing.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="MeasureMode.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Viewing" href="Viewing.html">Viewing data</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="OnRenderedTracks.html"><span>Viewed data</span></a></li>
+                        <li><a href="SelectMode.html"><span>Select mode</span></a></li>
+                        <li><a href="EditMode.html"><span>Edit mode</span></a></li>
+                        <li><a href="PanMode.html"><span>Pan mode</span></a></li>
+                        <li><a href="ZoomMode.html"><span>Zoom mode</span></a></li>
+                        <li><a href="MeasureMode.html"><span>Measure mode</span></a></li>
+                        <li id="current"><a href="PenMode.html"><span>Pen mode</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="PenMode" title="scribble and highlight plot">Pen mode</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="pen mode" />
+                     <param name="Keyword" value="scribble" />
+                     <param name="Keyword" value="highlighter" /></object>
+                  
+                  During <a href="ActionsTable.html#actPenMode" title="action PenMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/PenMode.gif" alt="[PenMode]" /> <code class="txt">PenMode</code></a> you can
+                  scribble on plot canvas;
+                  this tool is meant to be used in combination with
+                  <a href="ActionsTable.html#actSnapshot" title="action Snapshot"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/Snapshot.gif" alt="[Snapshot]" /> <code class="txt">Snapshot</code></a> action and works only
+                  with <a href="ToBMP.html" title="ToBMP.html">bitmap output</a>.
+                  You have two customizable tools: pen and highlighter;
+                  hold down respectively left or right mouse button
+                  to use them.
+                  Customize them modifying the option entries:
+                  <a href="OptionsDescription.html#optPencilSize" title="option PencilSize"><code class="txt">PencilSize</code></a>,
+                  <a href="OptionsDescription.html#optPencilColor" title="option PencilColor"><code class="txt">PencilColor</code></a>,
+                  <a href="OptionsDescription.html#optHighlighterSize"
+                     title="option HighlighterSize"><code class="txt">HighlighterSize</code></a>,
+                  <a href="OptionsDescription.html#optHighlighterColor"
+                     title="option HighlighterColor"><code class="txt">HighlighterColor</code></a>.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="VolatileTextWarn"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 <span style="color: red; font-weight: bolder;">Warning</span>: the scribbles drawn in this way are
+                                 ephemeral, and will be cleaned at next repaint;
+                                 however they are freezed when Canvas is
+                                 transformed in a bitmap, when using
+                                 <a href="ActionsTable.html#actExport" title="action Export"
+                                    style="margin-left:0.5ex;"><img src="./files/images/actions/Export.gif" alt="[Export]" /> <code class="txt">Export</code></a> or
+                                 <a href="ActionsTable.html#actSnapshot" title="action Snapshot"
+                                    style="margin-left:0.5ex;"><img src="./files/images/actions/Snapshot.gif" alt="[Snapshot]" /> <code class="txt">Snapshot</code></a> action,
+                                 in this case setting properly the
+                                 <a href="OptionsDescription.html#optSnapshotAction" title="option SnapshotAction"><code class="txt">SnapshotAction</code></a> option.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  <h3><a name="PenMouseCommands" title="mouse commands in PenMode">Mouse effects</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="mouse commands in PenMode" /></object>
+                  
+                  <a href="ActionsTable.html#actPenMode" title="action PenMode"
+                     style="margin-left:0.5ex;"><img src="./files/images/actions/PenMode.gif" alt="[PenMode]" /> <code class="txt">PenMode</code></a> supports the following
+                  mouse operations:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Mouse operation</td>
+                           <td>Target</td>
+                           <td>Effect</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Left button drag</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Draw with pencil</td>
+                        </tr>
+                        <tr>
+                           <td>Right button drag</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Draw with highlighter</td>
+                        </tr>
+                        <tr>
+                           <td>Middle click</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Refresh erasing all scribbles</td>
+                        </tr>
+                        <tr>
+                           <td>Wheel</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Default horizontal Pan</td>
+                        </tr>
+                        <tr>
+                           <td>Wheel + Right button</td>
+                           <td><dfn title="tracks container">Frame</dfn></td>
+                           <td>Default vertical Pan</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="PlotActions.html">Plot actions</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+               </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

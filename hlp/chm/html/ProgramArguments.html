@@ -1,0 +1,397 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <!--
+    
+    File created with a XSLT transformation: do not edit!
+    
+    apr2011 - Matteo Gattanini
+    -->
+   <head>
+      <meta http-equiv="Content-Type" content="screen; charset=ISO-8859-1" />
+      <title>Program arguments</title>
+      <meta name="keywords"
+            content="program arguments,command line arguments,arguments (program)" />
+      <meta name="Description" content="Mplot html help page" />
+      <link rel="StyleSheet" href="./files/hlp_style.css" type="text/css" />
+   </head>
+   <body><a name="top_page"></a><table class="page" border="0">
+         <thead class="page">
+            <tr>
+               <td class="pad_TL"><a class="browse" href="Launching.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_T"><a class="browse" href="Running.html"><img class="browse" src="./files/images/Browse_Top.gif" alt="Up" /></a></td>
+               <td class="pad_TR"></td>
+            </tr>
+         </thead>
+         <tfoot class="page">
+            <tr>
+               <td class="pad_BL"><a class="browse" href="Launching.html"><img class="browse" src="./files/images/Browse_Prev.gif" alt="Previous" /></a></td>
+               <td class="pad_B"><a class="browse" href="#top_page"><img class="browse" src="./files/images/Browse_Top.gif" alt="Top of page" /></a></td>
+               <td class="pad_BR"></td>
+            </tr>
+         </tfoot>
+         <tbody>
+            <tr>
+               <td class="pad_L"></td>
+               <td class="pad_Body">
+                  <h1><a name="Running" href="Running.html">Running program</a></h1>
+                  <div class="tabs">
+                     <ul>
+                        <li><a href="Installation.html"><span>Installation</span></a></li>
+                        <li><a href="Update.html"><span>Update</span></a></li>
+                        <li><a href="Launching.html"><span>Launching the executable</span></a></li>
+                        <li id="current"><a href="ProgramArguments.html"><span>Program arguments</span></a></li>
+                     </ul>
+                  </div>
+                  <h2><a name="ProgramArguments" title="passing informations when starting program">Program arguments</a></h2><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="program arguments" />
+                     <param name="Keyword" value="command line arguments" />
+                     <param name="Keyword" value="arguments (program)" /></object>
+                  
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> has the following calling convention:
+                  
+                  <p><code class="txt">MattPlot [@] [-h] [["+appended line"]...["+appended line"] [file]] ... [["+appended line"]...["+appended line"] [file]]</code></p>
+                  
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> supports the following arguments:
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>argument string</td>
+                           <td>argument description</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><dfn title="">-char</dfn></td>
+                           <td>general option</td>
+                        </tr>
+                        <tr>
+                           <td><dfn title="">+"string"</dfn></td>
+                           <td>appends `string´ to next file</td>
+                        </tr>
+                        <tr>
+                           <td><dfn title="">"string"</dfn></td>
+                           <td>path to a file to be opened</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  
+                  <h3><a name="OptionArgs" title="option arguments">General option arguments</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="option arguments" /></object>
+                  
+                  Options arguments are case insensitive.
+                  
+                  
+                  <table>
+                     <thead>
+                        <tr>
+                           <td>Option</td>
+                           <td>Effect</td>
+                           <td>Note</td>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><kbd title="">-t</kbd></td>
+                           <td>stay on top</td>
+                           <td>Force the main form in foreground (equivalent to <a href="ActionsTable.html#actStayOnTop" title="action StayOnTop"
+                                 style="margin-left:0.5ex;"><img src="./files/images/actions/StayOnTop.gif" alt="[StayOnTop]" /> <code class="txt">StayOnTop</code></a> action)
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><kbd title="">-x</kbd></td>
+                           <td>Clear all</td>
+                           <td>When open a file, clear all existing plots
+                              replacing them with new data
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><kbd title="">-f</kbd></td>
+                           <td>Same frame</td>
+                           <td>When open a file, put all in the current frame</td>
+                        </tr>
+                        <tr>
+                           <td><kbd title="">-h</kbd> or <kbd title="">-?</kbd></td>
+                           <td>help</td>
+                           <td>Ehm, quite useless since not redirecting
+                              some strings to calling shell
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="AppendedLinesArgs" title="appended lines arguments">Appended lines arguments</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="appended lines arguments" /></object>
+                  				   
+                  <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> accepts another kind of argument:
+                  lines appended at the top of text files that
+                  are going to be opened.
+                  These arguments are preceded by a `+´ character.
+                  <br />
+                  For example, if
+                  <var title="">file.txt</var> is:
+                  
+                  <div class="notepad"> file.txt<pre class="notepad">
+1  2  3  4
+5  6  7  8
+</pre></div>
+                  
+                  Calling:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +"a line" +"another one" file.txt
+</pre>
+                  
+                  Makes things as if <var title="">file.txt</var>
+                  would be:
+                  
+                  <div class="notepad"> file.txt<pre class="notepad">
+a line
+another one
+1  2  3  4
+5  6  7  8
+</pre></div>
+                  
+                  This is useful to pass directives to parser
+                  externally, without embeddeding them in the
+                  data file.
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="CommandlineDirectives.html">Directives as program arguments</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Directives.html">Directives</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Examples.html">Examples</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="DataSources.html#FileSources">File sources</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="FilePathArgs" title="path arguments">File path arguments</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="path arguments" /></object>
+                  
+                  You can open one or more files passing their path
+                  as command line argument:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot data1.txt
+C:\&gt; MattPlot D:\acq\plot2.mpz "C:\my data\acq.out"
+</pre>
+                  
+                  In the first example the text file
+                  <var title="">data1.dat</var> is parsed and
+                  its data imported, in the second the plot
+                  file <var title="">plot2.mpz</var> will be opened
+                  and then <var title="">acq.out</var> imported.
+                  Note the double quotes surrounding path.
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="AlsoWithDragDrop"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 Remember that you can open files/directories
+                                 also dragging them in
+                                 <a href="MainForm.html#PlotArea" title="MainForm.html#PlotArea">plot area</a>
+                                 or by <a href="ActionsTable.html#actOpen" title="action Open" style="margin-left:0.5ex;"><img src="./files/images/actions/Open.gif" alt="[Open]" /> <code class="txt">Open</code></a> action.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  <div style="width: 25%; float: right; clear: both; border: 1px solid rgb(172,169,154); margin: 1ex; padding: 0px; spacing: 0px;">
+                     <table style="border-collapse: collapse; border-spacing: 0px; border: none; margin: auto;">
+                        <caption style="caption-side: top; text-align: left; color: gray;">See also</caption>
+                        <tbody>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="Examples.html">Examples</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="DataSources.html#FileSources">File sources</a></td>
+                           </tr>
+                           <tr>
+                              <td style="border: none; margin: 0px; padding: 1px; spacing: 0px;"><a class="button" href="ToTXT.html">Exporting to text files</a></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  
+                  
+                  
+                  
+                  <h3><a name="SpaceInArgs" title="spaces in arguments">A note on spaces in arguments</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="spaces in arguments" /></object>
+                  
+                  The string containing the arguments passed
+                  by <cite>command line shell</cite>
+                  are decomposed using
+                  <kbd title="0x20">SPACE</kbd> and
+                  <kbd title="Horizontal tab: 0x09">TAB</kbd>
+                  characters as token delimiters, so the line:
+                  <pre class="cmdline" style="">
+C:\&gt; aaa bbb ccc
+</pre>
+                  is decomposed in three strings,
+                  so when you must pass a file path containing
+                  spaces, you must enclose it in double quotes:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot E:\my data\data.dat
+C:\&gt; ??ERROR: invalid file `E:\my´ and `data\data.dat´
+
+C:\&gt; MattPlot "E:\my data\data.dat"
+C:\&gt; Ok
+</pre>
+                  Consider now:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +#resample [0:2:100) C:\my dat\data.dat
+</pre>
+                  Tells the <cite>shell</cite> to run a program
+                  named <code class="txt">MattPlot</code> with the four arguments
+                  <code class="txt">+#resample</code>, <code class="txt">[0:2:100)</code>,
+                  <code class="txt">C:\my</code> and <code class="txt">data.dat</code>;
+                  this generates several errors,
+                  because <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> will complain about the
+                  invalid/missing files
+                  <code class="txt">(0:2:100)</code>, <code class="txt">C:\my</code>, <code class="txt">dat\data.dat</code>.
+                  You can prevent those misunderstandings enclosing
+                  arguments in double quotes;
+                  the following examples are both correct:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +"#resample [0:2:100)" "C:\my dat\data.dat"
+C:\&gt; MattPlot "+#resample [0:2:100)" "C:\my dat\data.dat"
+</pre>
+                  Note that, as pointed in
+                  <a href="Directives.html" title="Directives.html">directive section</a>,
+                  extra spaces are part of the correct
+                  syntax; for example the following line is
+                  properly decomposed but causes parser to
+                  complain about an unknown directive name:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot +#resample[0:2:100) "C:\my dat\data.dat"
+</pre>
+                  
+                  
+                  
+                  <h3><a name="NoFurtherInstances" title="prevent further instances">Prevent further instances</a></h3><object type="application/x-oleobject"
+                          classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+                     <param name="Keyword" value="prevent further instances" /></object>
+                  
+                  Prefixing the program arguments string with
+                  the special character <kbd title="U+0040">@</kbd>
+                  prevents the creation of further <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span>
+                  instances;
+                  the arguments passed will be processed by
+                  the process already running.
+                  
+                  <p>
+                     This is useful when user want to add by
+                     command line different files obtained
+                     subsequently to the same plot.
+                     
+                  </p>
+                  
+                  
+                  <div style="width: 80%; margin: auto;"><a name="InstanceSuppressionChar"></a><table class="page" border="0">
+                        <thead class="page">
+                           <tr>
+                              <td class="scrap_TL"></td>
+                              <td class="scrap_T"></td>
+                              <td class="scrap_TR"></td>
+                           </tr>
+                        </thead>
+                        <tfoot class="page">
+                           <tr>
+                              <td class="scrap_BL"></td>
+                              <td class="scrap_B"></td>
+                              <td class="scrap_BR"></td>
+                           </tr>
+                        </tfoot>
+                        <tbody>
+                           <tr>
+                              <td class="scrap_L"></td>
+                              <td class="scrap_Body">
+                                 The instance suppression character <code class="txt">@</code>
+                                 must strictly be the first character of program
+                                 arguments.
+                                 
+                              </td>
+                              <td class="scrap_R"></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  
+                  In the following example the first
+                  line creates a new <span style="font:italic bold 100% Comic Sans MS,cursive;">MattPlot</span> instance
+                  that processes <code class="txt">file1</code>, while
+                  the second line causes the previous
+                  instance to process <code class="txt">file2</code>
+                  without creating another one.
+                  
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot "C:\file1"
+C:\&gt; MattPlot @"C:\file2"
+</pre>
+                  
+                  The following example shows that
+                  the special character <kbd title="U+0040">@</kbd>
+                  must strictly be the first character of
+                  arguments string:
+                  <pre class="cmdline" style="">
+C:\&gt; MattPlot @+"#resample [0:2:100)" "C:\my dat\data.dat"
+</pre>
+                  
+                  
+                  </td>
+               <td class="pad_R"></td>
+            </tr>
+         </tbody>
+      </table>
+   </body>
+</html>

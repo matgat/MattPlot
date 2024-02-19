@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    *
+    *   MattPlot help xml source FAQs
+    *   2006 Matteo Gattanini
+    *                                                       -->
+<faqs title="Problems faqs"
+      maintainer="Matteo Gattanini"
+      lang="en"  version="0.6"  date="nov2008">
+<!--*
+    *   Note:
+    *       `name' is like an id in the current tag scope
+    *       link to faqs using faq.<topicname>.<faqname>
+    *       ex: faq.arguments.nofurtherinstances
+    *   History:
+    *       19aug2006 (MG) document structure
+    *
+    * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_general"
+       title="General problems"
+       description="On general problems">
+
+    <!--................................................-->
+    <faq name="criticalerror"
+         keywords="critical errors">
+    <que>
+        When running &mp; appear a lot of message errors,
+        or program crashes.
+    </que>
+    <ans>
+        Wrong option values may cause errors, try to
+        run program with the default options
+        deleting the <a href="OptionFile.html">option file</a>.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="somethingwrong"
+         keywords="something wrong">
+    <que>
+        Something is wrong, the program does
+        not work: what happened?
+    </que>
+    <ans>
+        &mp; keeps a log of his activity:
+        trigger <action name="ShowLog"/> action
+        and read its lines to understand what happened.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="nohelp"
+         keywords="problems with help">
+    <que>
+        In my system the &mp; help doesn't work.
+    </que>
+    <ans>
+        Maybe something is wrong with your HtmlHelp
+        installation.
+        The related files are:
+        <listD>
+        <it><dir hint="not registered">%windir%\hh.exe</dir></it>
+        <it><dir hint="registered">%windir%\system32\hhctrl.ocx</dir></it>
+        <it><dir hint="registered">%windir%\system32\itss.dll</dir></it>
+        <it><dir hint="registered">%windir%\system32\itircl.dll</dir></it>
+        </listD>
+        These files are considered as system files, so
+        is not easy dealing with them.
+        You can try to remove and reinstall &hhlib; doing
+        something like:
+<notepad caption="reinstall.bat">
+@echo off
+title Remove and reinstall HH library
+rem download the HtmlHelp library distribution
+rem 'hhupd.exe' from http://msdn.microsoft.com
+rem and place it in the same dir of this file
+set prevdir=%CD%
+cd %windir%\system32
+rem regsvr32 -u itcc.dll
+regsvr32 -u hhctrl.ocx
+del hhctrl.ocx
+del itss.dll
+del itircl.dll
+cd %prevdir%
+hhupd.exe
+</notepad>
+    </ans>
+    </faq>
+
+</topic>
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_arguments"
+       title="Program arguments"
+       description="On arguments passed via command line">
+
+    <!--................................................-->
+    <faq name="commandlineerrors"
+         keywords="command line arguments errors">
+    <que>
+        When using program passing arguments
+        by command line something goes wrong;
+        inspecting the <a href="Log.html"><txt>Log</txt></a>
+        the program complains.
+    </que>
+    <ans>
+        See typical errors in
+        <a href="CommandlineDirectives.html#CmdDirsTypicalErrs">directive section</a>
+        and the notes in
+        <a href="ProgramArguments.html#SpaceInArgs">program arguments section</a>.
+    </ans>
+    </faq>
+    
+</topic>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_files"
+       title="Files"
+       description="Problems with program related files">
+
+    <!--................................................-->
+    <faq name="readonlyoptions"
+         keywords="cannot modify options">
+    <que>
+        I can't modify the option file, or my
+        changes are ignored.
+    </que>
+    <ans>
+        Check the read-only flag and to use a
+        support that allows writing.
+        Remember that the option file has a fixed
+        name and must be in the same directory of
+        the executable; see
+        <a href="OptionFile.html">option file section</a>
+        for further informations.
+    </ans>
+    </faq>
+
+
+    <!--................................................-->
+    <faq name="fixplotfiles"
+         keywords="cannot open a plot file">
+    <que>
+        I can't open a plot file.
+    </que>
+    <ans>
+        Maybe the file is corrupted,
+        see the log to view the specific cause.
+        The plot files are simply text files,
+        so you can try to perform manual corrections.
+    </ans>
+    </faq>
+    
+    <!--................................................-->
+    <faq name="zipnotsupported"
+         keywords="cannot open or save a compressed file,zip,gz">
+    <que>
+        I can't open a compressed file, nor
+        save plot as compressed archive!
+    </que>
+    <ans>
+        Make sure the &zlib; &API; &DLL;
+        <dir>zlibwapi.dll</dir> is in path
+        or at least in the &mp; directory.
+        To see your path:
+<cmdline>
+C:\> path
+
+C:\WINDOWS;C:\WINDOWS\system32;C:\PROGRA~1\
+Borland\CBUILD~1\Projects\Bpl;C:\PROGRA~1\B
+orland\CBUILD~1\Bin;C:\Programmi\Subversion
+\bin;C:\Programmi\TortoiseSVN\bin
+</cmdline>
+    </ans>
+    </faq>
+    
+
+
+</topic>
+
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_importing"
+       title="Importing issues"
+       description="When importing data">
+
+    <!--................................................-->
+    <faq name="droppingzone"
+         keywords="dropping zone in plot area">
+    <que>
+        To open a file I drag and drop it
+        in the plot area; why am I experience
+        a different behaviour every time?
+    </que>
+    <ans>
+        Pay attention on the zone you are
+        releasing the file: if you release it
+        on an existing &frame;, tracks will be
+        added to it, otherwise a new frame will
+        be created in the drop position.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="indexunit"
+         keywords="how to set index unit">
+    <que>
+        In <kbd>header</kbd> directive I can
+        set index unit, but when I declare for
+        example <txt>y(cm)</txt>, the parser thinks
+        that I want to plot <txt>y</txt> respect the
+        missing column <txt>cm</txt> instead that
+        <txt>y</txt> must be plotted respect line
+        index measured in <txt>cm</txt>.
+        What's the trick?
+    </que>
+    <ans>
+        To declare a self contained independent
+        variable you must use the unit braces:
+        <txt>y([cm])</txt>.
+        Remember that you can declare also a
+        label: <txt>y(L[cm])</txt>.
+        Take a look at the examples in
+        <a href="Header.html">the related section</a>.
+    </ans>
+    </faq>
+
+</topic>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_exporting"
+       title="Exporting issues"
+       description="When exporting data">
+
+    <!--................................................-->
+    <faq name="mfilenotwork"
+         keywords="launching mfile from matlab">
+    <que>
+        Launching from &matlab; an exported m-file
+        named <txt>x</txt> it complains telling:
+        <txt>??? Undefined function or variable 'x'.</txt>
+    </que>
+    <ans>
+        Check &matlab; help about m-file valid
+        names; avoid characters like +-*/ in the
+        file name.
+    </ans>
+    </faq>
+</topic>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_viewing"
+       title="Viewing plots"
+       description="Problems when viewing plots">
+
+    <!--................................................-->
+    <faq name="losescale"
+         keywords="unwanted scale fit">
+    <que>
+        The plot sometimes change its scale
+        forcing to manually restore the
+        desired scale.
+    </que>
+    <ans>
+        Take a look at
+        <a href="PlotActions.html">plot keys description table</a>:
+        some of them involve a fit to current track,
+        so to keep current scale you should avoid them.
+    </ans>
+    </faq>
+    
+    <!--................................................-->
+    <faq name="zoomreset"
+         keywords="unwanted zoom reset">
+    <que>
+        Sometimes, when zooming with mouse left
+        single clicks, the scale resets.
+    </que>
+    <ans>
+        Check the
+        <a href="ZoomMode.html">zoom mode</a>
+        mouse clicks events, maybe
+        left button double click cause frame
+        to fit scale respect current track.
+    </ans>
+    </faq>
+    
+    <!--................................................-->
+    <faq name="nocoords"
+         keywords="showcoords fails">
+    <que>
+        I would like to see point coordinates
+        using <action name="ShowCoords"/>, but
+        it does not work.
+    </que>
+    <ans>
+        First ensure to select the correct
+        &track; (see <a href="SelectMode.html">select mode</a>
+        and <a href="PlotActions.html">plot keys</a>).
+        Then try to <a href="ZoomMode.html">zoom</a> points:
+        the coordinates are shown only when point distance
+        is greater than the value set in
+        <option name ="TrackCoordsDist"/> option entry.
+    </ans>
+    </faq>
+
+</topic>
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<topic name="problems_options"
+       title="Options"
+       description="on program customization">
+
+
+    <!--................................................-->
+    <faq name="optionmissing"
+         keywords="missing options">
+    <que>
+        After program startup I see in the
+        <a href="Log.html">log</a>
+        a lot of lines like:
+        <txt>Value `xxx´ in section `yyy´ is missing, using default: `zzz´</txt>.
+        Is there something wrong in my system?
+        How can I fix this?
+    </que>
+    <ans>
+        It is normal: as described in
+        <a href="HowCustomize.html">related section</a>,
+        initially no
+        <a href="OptionFile.html">option file</a>
+        <dir>MattPlot.ini</dir> is present, so defaults
+        are used.
+        You can create a new one triggering
+        <action name="StoreOptions"/>
+        or <action name="EditOptions"/> actions.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="shortcutnotworking"
+         keywords="shortcut not working">
+    <que>
+        The keyboard shortcut set in
+        <option name="Shortcuts.html"/> option
+        entries does not seem to work.
+    </que>
+    <ans>
+        Be sure that the string represent a
+        valid shortcut; refer to
+        <a href="_KeyCodes.html">key codes table</a>
+        to see the correct key strings.
+    </ans>
+    </faq>
+
+    <!--................................................-->
+    <faq name="fontignored"
+         keywords="font setting ignored">
+    <que>
+        Modifying a Font in the
+        <a href="OptionFile.html">option file</a>
+        my changes are ignored.
+    </que>
+    <ans>
+        Ensure to read options using
+        <action name="ReadOptions"/>.
+        If the Font family is not recognized,
+        windows substitutes it with a
+        default; check your
+        <a href="OptionsDescription.html">option entry</a>
+        in the <a href="OptionFile.html">option file</a>.
+    </ans>
+    </faq>
+
+</topic>
+
+</faqs><!--~~~~~~~~~~~~~~~~~ End of file ~~~~~~~~~~~~~~~~~~~-->

@@ -1,0 +1,50 @@
+//---------------------------------------------------------------------------
+#include "res_MPlot.h"
+
+        // Cursors
+        ID_CUR_FRAME        CURSOR      ".\\Cursors\\dragframe.cur"
+        ID_CUR_TRACK        CURSOR      ".\\Cursors\\dragtrack.cur"
+        ID_CUR_CANCEL       CURSOR      ".\\Cursors\\cancel.cur"
+        ID_CUR_SELECT       CURSOR      ".\\Cursors\\select.cur"
+        ID_CUR_HAND_OP      CURSOR      ".\\Cursors\\hand-opened.cur"
+        ID_CUR_HAND_CL      CURSOR      ".\\Cursors\\hand-closed.cur"
+        ID_CUR_ZOOM         CURSOR      ".\\Cursors\\zoom.cur"
+        ID_CUR_ZOOM_P       CURSOR      ".\\Cursors\\zoom+.cur"
+        ID_CUR_ZOOM_X       CURSOR      ".\\Cursors\\zoomx.cur"
+        ID_CUR_MEASURE      CURSOR      ".\\Cursors\\cross.cur"
+        ID_CUR_SQCROSS      CURSOR      ".\\Cursors\\squarecross.cur"
+        ID_CUR_EDIT         CURSOR      ".\\Cursors\\edit.cur"
+        ID_CUR_CROP         CURSOR      ".\\Cursors\\crop.cur"
+        ID_CUR_PEN          CURSOR      ".\\Cursors\\pen.cur"
+        ID_CUR_HIGHLIGHTER  CURSOR      ".\\Cursors\\highlighter.cur"
+        //ID_CUR_      ANICURSOR   ".\\Cursors\\arrowwagtail.ani"
+
+        // Sounds
+        #ifdef INCLUDE_SOUNDS
+          ID_WAV_EDIT        WAVE        ".\\Sounds\\plik.wav"
+          ID_WAV_PAN         WAVE        ".\\Sounds\\cip.wav"
+          ID_WAV_ZOOM        WAVE        ".\\Sounds\\sscio.wav"
+          ID_WAV_MEASURE     WAVE        ".\\Sounds\\click.wav"
+          ID_WAV_SET         WAVE        ".\\Sounds\\tlick.wav"
+          ID_WAV_PEN         WAVE        ".\\Sounds\\scribble.wav"
+          ID_WAV_SELTRACK    WAVE        ".\\Sounds\\pit.wav"
+          ID_WAV_DELFRAME    WAVE        ".\\Sounds\\oum.wav"
+          ID_WAV_DELTRACK    WAVE        ".\\Sounds\\ufiu.wav"
+          ID_WAV_DROPFRAME   WAVE        ".\\Sounds\\clup.wav"
+          ID_WAV_DROPTRACK   WAVE        ".\\Sounds\\trrl.wav"
+          ID_WAV_MERGE       WAVE        ".\\Sounds\\sfum.wav"
+          ID_WAV_SYNC        WAVE        ".\\Sounds\\drill.wav"
+          ID_WAV_RESET       WAVE        ".\\Sounds\\fit.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\clangsh.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\clenk.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\sffit.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\ploun.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\crr.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\blip.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\cirr.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\gnek.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\clap.wav"
+          //ID_WAV_       WAVE        ".\\Sounds\\blinn.wav"
+        #endif
+
+//---------------------------------------------------------------------------
